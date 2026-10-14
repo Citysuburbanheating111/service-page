@@ -1,5 +1,5 @@
 // Generic reverse proxy. Every /services URL is owned by the Vercel app.
-const ORIGIN = 'https://city-suburban-service-pages.vercel.app';
+const ORIGIN = 'https://service-page-p7ot.vercel.app';
 const BASE_PATH = '/services';
 
 const worker = {

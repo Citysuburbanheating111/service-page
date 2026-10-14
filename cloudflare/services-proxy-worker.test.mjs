@@ -3,7 +3,7 @@ import worker from './services-proxy-worker.mjs';
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 const pages = ['catalog.json', 'retained-catalog.json'].flatMap(file => JSON.parse(fs.readFileSync(new URL(`../src/reference-pages/${file}`, import.meta.url), 'utf8')));
-const origin = 'https://city-suburban-service-pages.vercel.app';
+const origin = 'https://service-page-p7ot.vercel.app';
 const publicOrigin = 'https://citysuburbanheating.com';
 let call;
 let status = 200;

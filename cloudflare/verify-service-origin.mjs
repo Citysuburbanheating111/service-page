@@ -1,6 +1,6 @@
 // Read-only HTTP verification. Default: Vercel; pass the public origin after rollout.
 import fs from 'node:fs';
-const origin = new URL(process.argv[2] || 'https://city-suburban-service-pages.vercel.app').origin;
+const origin = new URL(process.argv[2] || 'https://service-page-p7ot.vercel.app').origin;
 const pages = ['catalog.json', 'retained-catalog.json'].flatMap(file => JSON.parse(fs.readFileSync(new URL(`../src/reference-pages/${file}`, import.meta.url), 'utf8')));
 const pending = [...pages];
 const failures = [];
