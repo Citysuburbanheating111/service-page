@@ -11,7 +11,7 @@ for (const line of fs.readFileSync('.env.local', 'utf8').split(/\r?\n/)) {
 const token = process.env.SANITY_API_WRITE_TOKEN || process.env.SANITY_AUTH_TOKEN
 if (!token || /^(PASTE_|your_)/i.test(token)) throw new Error('Missing Sanity write token')
 const client = createClient({
-  projectId: process.env.NEXT_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'q0tvhxym',
+  projectId: process.env.NEXT_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'boolyxr0',
   dataset: process.env.NEXT_SANITY_DATASET || process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   apiVersion: '2026-03-01', token, useCdn: false, perspective: 'raw',
 })

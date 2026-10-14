@@ -7,7 +7,7 @@ for (const line of fs.readFileSync('.env.local', 'utf8').split(/\r?\n/)) {
   const match = line.match(/^([A-Z0-9_]+)=(.*)$/)
   if (match && !process.env[match[1]]) process.env[match[1]] = match[2].replace(/^['"]|['"]$/g, '')
 }
-const client = createClient({projectId: process.env.NEXT_SANITY_PROJECT_ID || 'q0tvhxym',
+const client = createClient({projectId: process.env.NEXT_SANITY_PROJECT_ID || 'boolyxr0',
   dataset: process.env.NEXT_SANITY_DATASET || 'production', apiVersion: '2026-03-01',
   token: process.env.SANITY_API_WRITE_TOKEN || process.env.SANITY_AUTH_TOKEN, useCdn: false, perspective: 'raw'})
 

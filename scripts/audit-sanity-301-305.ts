@@ -18,7 +18,7 @@ function loadLocalEnv() {
 
 loadLocalEnv()
 
-const projectId = process.env.NEXT_SANITY_PROJECT_ID || 'q0tvhxym'
+const projectId = process.env.NEXT_SANITY_PROJECT_ID || 'boolyxr0'
 const dataset = process.env.NEXT_SANITY_DATASET || 'production'
 const token = process.env.SANITY_API_WRITE_TOKEN || process.env.SANITY_AUTH_TOKEN
 if (!token || /^(PASTE_|your_)/i.test(token)) throw new Error('A configured Sanity token is required')

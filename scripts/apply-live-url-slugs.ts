@@ -31,7 +31,7 @@ function loadLocalEnv() {
 loadLocalEnv()
 const apply = process.argv.includes('--apply')
 const revert = process.argv.includes('--revert')
-const projectId = 'q0tvhxym'
+const projectId = 'boolyxr0'
 const dataset = 'production'
 const token = process.env.SANITY_API_WRITE_TOKEN || process.env.SANITY_AUTH_TOKEN || process.env.SANITY_API_READ_TOKEN
 if (!token) throw new Error('No Sanity token in .env.local')

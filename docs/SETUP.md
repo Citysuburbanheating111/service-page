@@ -2,8 +2,8 @@
 
 ## Current state
 
-- Sanity project: `q0tvhxym`
-- Sanity organization: `oj4qqrbea`
+- Sanity project: `boolyxr0`
+- Sanity organization: `o3xwsz6oj`
 - Dataset: `production`
 - The dataset exists, allows public reads, and was empty when checked on 2026-08-27.
 - The embedded Studio is mounted at `/studio`.
@@ -14,12 +14,12 @@
 The repository contains an ignored `.env.local` with placeholders and a committed `.env.example`. Paste token values directly into `.env.local`; never paste secrets into chat or commit that file.
 
 ```dotenv
-NEXT_SANITY_PROJECT_ID=q0tvhxym
+NEXT_SANITY_PROJECT_ID=boolyxr0
 NEXT_SANITY_DATASET=production
 NEXT_SANITY_API_VERSION=2026-03-01
 NEXT_SANITY_STUDIO_URL=/studio
 NEXT_SITE_URL=http://localhost:3000
-SANITY_ORGANIZATION_ID=oj4qqrbea
+SANITY_ORGANIZATION_ID=o3xwsz6oj
 SANITY_API_READ_TOKEN=PASTE_SANITY_VIEWER_TOKEN_HERE
 SANITY_API_WRITE_TOKEN=PASTE_SANITY_EDITOR_TOKEN_HERE
 SANITY_AUTH_TOKEN=PASTE_SANITY_EDITOR_TOKEN_HERE
@@ -29,7 +29,7 @@ LEAD_FROM_EMAIL=City & Suburban Heating & Cooling <leads@your-verified-domain.co
 LEAD_NOTIFICATION_EMAIL=YOUR_LEAD_INBOX@example.com
 ```
 
-Create two Sanity project tokens in **manage.sanity.io → project q0tvhxym → API → Tokens**:
+Create two Sanity project tokens in **manage.sanity.io → project boolyxr0 → API → Tokens**:
 
 1. A Viewer token for `SANITY_API_READ_TOKEN`. It supports authenticated previews and Visual Editing without write authority.
 2. An Editor token for local-only `SANITY_API_WRITE_TOKEN` and `SANITY_AUTH_TOKEN`. The import script and Sanity CLI can use the same Editor token. Remove or rotate it after migration if it is no longer needed.
@@ -91,7 +91,7 @@ Configure variables separately for Development, Preview, and Production. Redeplo
 
 | Variable | Dev | Preview | Prod | Secret? | Notes |
 | --- | --- | --- | --- | --- | --- |
-| `NEXT_SANITY_PROJECT_ID` | Yes | Recommended | Yes | No | `q0tvhxym` |
+| `NEXT_SANITY_PROJECT_ID` | Yes | Recommended | Yes | No | `boolyxr0` |
 | `NEXT_SANITY_DATASET` | Yes | Recommended | Yes | No | `production` |
 | `NEXT_SANITY_API_VERSION` | Yes | Yes | Yes | No | `2026-03-01` |
 | `NEXT_SANITY_STUDIO_URL` | Yes | Yes | Yes | No | `/studio` |

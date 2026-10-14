@@ -9,7 +9,7 @@ import {schemaTypes} from './src/sanity/schemaTypes'
 import {structure} from './src/sanity/structure'
 import {migrateServiceUrls} from './src/lib/service-base-path'
 
-const projectId = process.env.NEXT_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'q0tvhxym'
+const projectId = process.env.NEXT_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'boolyxr0'
 const dataset = process.env.NEXT_SANITY_DATASET || process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
 const siteUrl = (process.env.NEXT_SITE_URL || 'http://localhost:3000').replace(/\/+$/, '')
 

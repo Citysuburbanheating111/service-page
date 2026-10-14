@@ -12,7 +12,7 @@ for (const line of fs.readFileSync('.env.local', 'utf8').split(/\r?\n/)) {
 }
 const token = process.env.SANITY_API_WRITE_TOKEN || process.env.SANITY_AUTH_TOKEN
 if (!token) throw new Error('Sanity write token required')
-const client = createClient({projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'q0tvhxym',
+const client = createClient({projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'boolyxr0',
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production', apiVersion: '2026-03-01', token, useCdn: false, perspective: 'raw'})
 type Section = {_key: string; module: string; html: string; [key: string]: unknown}
 type Document = {_id: string; _type: string; _rev: string; _createdAt?: string; _updatedAt?: string; sections?: Section[]; responsiveCss?: string; [key: string]: unknown}

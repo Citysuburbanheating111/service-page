@@ -19,7 +19,7 @@ The original spreadsheet package is preserved locally but ignored by Git. The no
 ## Local setup
 
 1. Copy `.env.example` to `.env.local` or fill the provided `.env.local`.
-2. Create a Sanity Viewer token and Editor token in project `q0tvhxym` under organization `oj4qqrbea`.
+2. Create a Sanity Viewer token and Editor token in project `boolyxr0` under organization `o3xwsz6oj`.
 3. Install dependencies with `pnpm install`.
 4. Validate the normalized source with `pnpm source:validate`.
 5. Import content with `pnpm content:import`, then map the workbook taxonomy with `pnpm content:import-clusters`.
