@@ -7,8 +7,9 @@
 // collection page is the way into the cluster and landing-page layers.
 
 import {LiveSiteFooter} from './live-site-footer'
+import {SiteNavigation} from './site-navigation'
 
-import {business, liveMenu, servicesLink, topBarLinks, LIVE_SITE} from '@/lib/site-navigation'
+import {business, topBarLinks, LIVE_SITE} from '@/lib/site-navigation'
 
 const icons = {
   phone: 'M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z',
@@ -50,21 +51,7 @@ export function CollectionHeader() {
             <img src={business.logo} alt="City Suburban Logo" width={190} height={67} />
           </a>
 
-          <nav className="site-nav" aria-label="Main">
-            <ul className="site-menu">
-              {liveMenu.map((group) => (
-                <li className="site-menu-item has-sub" key={group.label}>
-                  <a href={group.href} aria-haspopup="true">{group.label}</a>
-                  <ul className="site-submenu">
-                    {group.items.map((item) => <li key={item.label}><a href={item.href}>{item.label}</a></li>)}
-                  </ul>
-                </li>
-              ))}
-              <li className="site-menu-item">
-                <a href={servicesLink.href}>{servicesLink.label}</a>
-              </li>
-            </ul>
-          </nav>
+          <SiteNavigation />
 
           <div className="site-header-actions">
             <a className="site-call" href={business.phoneHref}>
@@ -74,21 +61,6 @@ export function CollectionHeader() {
             <a className="site-schedule" href={business.scheduleHref}>Schedule Service<Icon name="calendar" className="site-btn-icon" /></a>
           </div>
 
-          <details className="site-mobile-menu">
-            <summary aria-label="Open navigation menu"><span /><span /><span /></summary>
-            <nav aria-label="Mobile">
-              {liveMenu.map((group) => (
-                <details key={group.label}>
-                  <summary>{group.label}</summary>
-                  <a href={group.href}>All {group.label}</a>
-                  {group.items.map((item) => <a href={item.href} key={item.label}>{item.label}</a>)}
-                </details>
-              ))}
-              <a className="site-mobile-plain" href={servicesLink.href}>{servicesLink.label}</a>
-              {topBarLinks.map((link) => <a className="site-mobile-plain" href={link.href} key={link.label}>{link.label}</a>)}
-              <a className="site-schedule" href={business.scheduleHref}>Schedule Service</a>
-            </nav>
-          </details>
         </div>
       </header>
 
