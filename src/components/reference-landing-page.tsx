@@ -7,6 +7,7 @@ import liveFooter from '@/reference-pages/shared-footer.json'
 import {migrateServiceUrls} from '@/lib/service-base-path'
 import {CollectionHeader} from './collection-chrome'
 import {withoutReferenceHeader} from '@/lib/reference-header'
+import {refineServicePageLinks} from '@/lib/service-page-links'
 
 type Props = {snapshot: Pick<ReferenceSnapshot, 'style' | 'html' | 'schema'>; serviceName: string}
 
@@ -65,7 +66,7 @@ export function ReferenceLandingPage({snapshot, serviceName}: Props) {
       .replaceAll('header a[href', '.reference-design header a[href')
       .replaceAll('header > div', '.reference-design header > div')}} />
     <style dangerouslySetInnerHTML={{__html: liveFooter.style}} />
-    <div dangerouslySetInnerHTML={{__html: migrateServiceUrls(withoutReferenceHeader(html))}} />
+    <div dangerouslySetInnerHTML={{__html: refineServicePageLinks(migrateServiceUrls(withoutReferenceHeader(html)))}} />
     {snapshot.schema && <script type="application/ld+json" dangerouslySetInnerHTML={{__html: migrateServiceUrls(snapshot.schema).replace(/</g, '\\u003c')}} />}
   </div></>
 }

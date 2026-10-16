@@ -276,6 +276,8 @@ a{color:var(--brand);text-underline-offset:3px}
 .site-logo img{display:block;width:150px;height:auto}
 .site-navigation{margin-right:auto}
 .site-menu-toggle,.site-submenu-toggle{display:none}
+.reference-design .service-area-directory-link{text-align:center;margin:28px 24px 0;font-weight:700}
+.reference-design .service-area-directory-link a{color:#09263A;text-underline-offset:4px}
 /* Main menu: copied from the live theme (.nav-main .menu-items-cover, ul.sub-menu). */
 .site-menu,.site-submenu{list-style:none;margin:0;padding:0}
 .site-menu{display:flex;align-items:center;gap:15px 30px}
