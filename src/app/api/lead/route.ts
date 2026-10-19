@@ -29,9 +29,9 @@ export async function POST(request: Request) {
   const recipients = notificationRecipients(configured(process.env.LEAD_NOTIFICATION_EMAIL))
   if (!apiKey || !from || !recipients.length) return NextResponse.json({message: 'Lead email delivery is not configured'}, {status: 503})
 
-  const subject = `New ${clean.service || 'service'} lead${clean.area ? ` — ${clean.area}` : ''}`.slice(0, 200)
+  const subject = `New service page lead: ${clean.service || 'Service'}${clean.area ? ` (${clean.area})` : ''}`.slice(0, 200)
   const text = [
-    'New website service request',
+    'New request from a service page',
     '',
     `Name: ${clean.name}`,
     `Email: ${clean.email || 'Not provided'}`,
