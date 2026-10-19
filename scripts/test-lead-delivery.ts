@@ -48,7 +48,7 @@ async function run() {
   const email = JSON.parse(String(capturedInit?.body)) as {from: string; to: string[]; subject: string; text: string}
   assert.equal(email.from, 'City & Suburban Heating & Cooling <leads@updates.example.com>')
   assert.deepEqual(email.to, ['dispatch@example.com', 'owner@example.com'])
-  assert.equal(email.subject, 'New Generator Installation lead — Chicago')
+  assert.equal(email.subject, 'New service page lead: Generator Installation (Chicago)')
   assert.match(email.text, /Name: QA Customer/)
   assert.match(email.text, /Email: qa@example.com/)
   assert.match(email.text, /Phone: \(773\) 555-0100/)
