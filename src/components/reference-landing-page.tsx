@@ -8,6 +8,7 @@ import {migrateServiceUrls} from '@/lib/service-base-path'
 import {CollectionHeader} from './collection-chrome'
 import {withoutReferenceHeader} from '@/lib/reference-header'
 import {refineServicePageLinks} from '@/lib/service-page-links'
+import {validEmail, withLeadEmailField} from '@/lib/lead-form-email'
 
 type Props = {snapshot: Pick<ReferenceSnapshot, 'style' | 'html' | 'schema'>; serviceName: string}
 
@@ -34,16 +35,17 @@ export function ReferenceLandingPage({snapshot, serviceName}: Props) {
       const fields = new FormData(form)
       const name = String(fields.get('name') || '').trim()
       const phone = String(fields.get('phone') || '').replace(/\D/g, '')
+      const email = String(fields.get('email') || '').trim()
       if (button) button.disabled = true
       let message = 'Your request could not be sent. Please call (773) 238-3838.'
-      if (!name || phone.length < 7) {
-        message = 'Enter your name and a valid phone number to request service.'
+      if (!name || phone.length < 7 || !validEmail(email)) {
+        message = 'Enter your name, a valid phone number and a valid email to request service.'
       } else try {
         const response = await fetch('/services/api/lead/', {
           method: 'POST',
           headers: {'content-type': 'application/json'},
           body: JSON.stringify({
-            name: fields.get('name'), phone: fields.get('phone'), address: fields.get('area'),
+            name: fields.get('name'), phone: fields.get('phone'), email, address: fields.get('area'),
             issue: fields.get('issue'), area: 'Chicago', service: serviceName,
             form: 'Booking form', page: window.location.pathname,
           }),
@@ -67,7 +69,7 @@ export function ReferenceLandingPage({snapshot, serviceName}: Props) {
       .replaceAll('header a[href', '.reference-design header a[href')
       .replaceAll('header > div', '.reference-design header > div')}} />
     <style dangerouslySetInnerHTML={{__html: liveFooter.style}} />
-    <div dangerouslySetInnerHTML={{__html: refineServicePageLinks(migrateServiceUrls(withoutReferenceHeader(html)))}} />
+    <div dangerouslySetInnerHTML={{__html: withLeadEmailField(refineServicePageLinks(migrateServiceUrls(withoutReferenceHeader(html))))}} />
     {snapshot.schema && <script type="application/ld+json" dangerouslySetInnerHTML={{__html: migrateServiceUrls(snapshot.schema).replace(/</g, '\\u003c')}} />}
   </div></>
 }

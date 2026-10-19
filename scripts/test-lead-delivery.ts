@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict'
+import {readdirSync, readFileSync} from 'node:fs'
 import {POST} from '../src/app/api/lead/route'
+import {withLeadEmailField} from '../src/lib/lead-form-email'
 
 const originalFetch = global.fetch
 const originalEnv = {
@@ -57,12 +59,39 @@ async function run() {
   assert.match(email.text, /Request: Quote only/)
 
   global.fetch = async () => new Response(null, {status: 429})
-  const upstreamFailure = await POST(leadRequest({name: 'QA Customer', phone: '7735550100'}))
+  const upstreamFailure = await POST(leadRequest({name: 'QA Customer', phone: '7735550100', email: 'qa@example.com'}))
   assert.equal(upstreamFailure.status, 502)
 
   delete process.env.RESEND_API_KEY
-  const unconfigured = await POST(leadRequest({name: 'QA Customer', phone: '7735550100'}))
+  const unconfigured = await POST(leadRequest({name: 'QA Customer', phone: '7735550100', email: 'qa@example.com'}))
   assert.equal(unconfigured.status, 503)
+
+  // Jobber needs an email to create the client, so a missing or malformed email is refused before sending
+  for (const email of [undefined, '', 'not-an-email', 'qa@example', 'qa @example.com']) {
+    let called = false
+    global.fetch = async () => { called = true; return new Response('{}', {status: 200}) }
+    process.env.RESEND_API_KEY = 're_test_key'
+    const refused = await POST(leadRequest({name: 'QA Customer', phone: '7735550100', email}))
+    assert.equal(refused.status, 400, `email ${JSON.stringify(email)} is refused`)
+    assert.equal(called, false)
+  }
+  delete process.env.RESEND_API_KEY
+
+  // The booking form on every service page gets exactly one Email field, right after Phone
+  const pages = readdirSync('src/reference-pages').filter((file) => file.includes('--'))
+  assert.equal(pages.length, 41)
+  for (const file of pages) {
+    const page = JSON.parse(readFileSync(`src/reference-pages/${file}`, 'utf8')) as {html: string}
+    const form = withLeadEmailField(page.html).match(/<form id="book"[\s\S]*?<\/form>/)?.[0] ?? ''
+    const inputs = [...form.matchAll(/<input\b[^>]*>/g)].map((m) => m[0])
+    const names = inputs.map((input) => input.match(/\bname="([^"]+)"/)?.[1])
+    assert.deepEqual(names.slice(0, 3), ['name', 'phone', 'email'], `${file}: Email follows Phone`)
+    assert.equal(names.filter((n) => n === 'email').length, 1, `${file}: one Email field`)
+    assert.match(inputs[2], /type="email"/)
+    assert.match(inputs[2], /autocomplete="email"/)
+    assert.match(form, />Email<input/)
+    assert.equal(withLeadEmailField(withLeadEmailField(page.html)), withLeadEmailField(page.html), `${file}: adding twice changes nothing`)
+  }
 
   const invalid = await POST(leadRequest({name: 'QA Customer', phone: '123'}))
   assert.equal(invalid.status, 400)
@@ -103,22 +132,22 @@ async function run() {
   // Zapier only (email not set up yet): still accepted
   delete process.env.RESEND_API_KEY
   calls.length = 0
-  assert.equal((await POST(leadRequest({name: 'QA', phone: '7735550100'}))).status, 200)
+  assert.equal((await POST(leadRequest({name: 'QA', phone: '7735550100', email: 'qa@example.com'}))).status, 200)
   assert.deepEqual(calls.map((c) => c.url), [hook])
 
   // One delivery failing does not lose the lead; both failing does
   process.env.RESEND_API_KEY = 're_test_key'
   for (const failing of ['https://api.resend.com/emails', hook]) {
     global.fetch = async (input) => String(input) === failing ? new Response(null, {status: 500}) : new Response('{}', {status: 200})
-    assert.equal((await POST(leadRequest({name: 'QA', phone: '7735550100'}))).status, 200, `accepted when only ${failing} fails`)
+    assert.equal((await POST(leadRequest({name: 'QA', phone: '7735550100', email: 'qa@example.com'}))).status, 200, `accepted when only ${failing} fails`)
   }
   global.fetch = async () => { throw new TypeError('fetch failed') }
-  assert.equal((await POST(leadRequest({name: 'QA', phone: '7735550100'}))).status, 502)
+  assert.equal((await POST(leadRequest({name: 'QA', phone: '7735550100', email: 'qa@example.com'}))).status, 502)
 
   // A webhook value that is not an https address is ignored
   delete process.env.RESEND_API_KEY
   process.env.LEAD_WEBHOOK_URL = 'http://hooks.zapier.com/x'
-  assert.equal((await POST(leadRequest({name: 'QA', phone: '7735550100'}))).status, 503)
+  assert.equal((await POST(leadRequest({name: 'QA', phone: '7735550100', email: 'qa@example.com'}))).status, 503)
 
   console.log('Lead delivery test passed: Resend request, recipients, content, idempotency, validation, and failure handling.')
 }
