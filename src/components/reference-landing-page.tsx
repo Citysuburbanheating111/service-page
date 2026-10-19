@@ -45,6 +45,7 @@ export function ReferenceLandingPage({snapshot, serviceName}: Props) {
           body: JSON.stringify({
             name: fields.get('name'), phone: fields.get('phone'), address: fields.get('area'),
             issue: fields.get('issue'), area: 'Chicago', service: serviceName,
+            form: 'Booking form', page: window.location.pathname,
           }),
         })
         if (response.ok) {message = 'Thanks—your request was sent.'; form.reset()}

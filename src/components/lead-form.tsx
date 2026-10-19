@@ -26,7 +26,7 @@ export function LeadForm(props: Props) {
       const response = await fetch('/services/api/lead/', {
         method: 'POST',
         headers: {'content-type': 'application/json'},
-        body: JSON.stringify(Object.fromEntries(form.entries())),
+        body: JSON.stringify({...Object.fromEntries(form.entries()), form: 'Booking form', page: window.location.pathname}),
       })
       setStatus(response.ok ? 'sent' : 'error')
       if (response.ok) target.reset()
