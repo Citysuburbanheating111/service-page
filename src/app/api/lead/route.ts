@@ -37,6 +37,8 @@ function zapierLead(clean: Lead, submitted: Date) {
     source: 'Service page',
     service: clean.service,
     area: clean.area,
+    // The city of the address in Jobber; the service pages all serve Chicago
+    city: 'Chicago',
     form: clean.form,
     page_url: clean.page.startsWith('/') ? `${siteUrl}${clean.page}` : clean.page,
     first_name: firstName,

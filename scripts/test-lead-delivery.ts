@@ -113,9 +113,10 @@ async function run() {
   assert.equal(both.status, 200)
   assert.deepEqual(calls.map((c) => c.url).sort(), ['https://api.resend.com/emails', hook])
   const zap = JSON.parse(calls.find((c) => c.url === hook)!.body) as Record<string, string>
-  assert.deepEqual(Object.keys(zap).sort(), ['area', 'building_type', 'email', 'first_name', 'form', 'full_name', 'issue', 'last_name',
+  assert.deepEqual(Object.keys(zap).sort(), ['area', 'building_type', 'city', 'email', 'first_name', 'form', 'full_name', 'issue', 'last_name',
     'message', 'page_url', 'phone', 'service', 'source', 'street', 'submitted_at'])
   assert.equal(zap.source, 'Service page')
+  assert.equal(zap.city, 'Chicago')
   assert.equal(zap.first_name, 'Mary')
   assert.equal(zap.last_name, 'Ann Smith')
   assert.equal(zap.email, 'qa@example.com')
