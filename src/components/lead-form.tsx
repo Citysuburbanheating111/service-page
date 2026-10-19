@@ -45,6 +45,7 @@ export function LeadForm(props: Props) {
         <label className="honeypot" aria-hidden="true">Website<input name="website" tabIndex={-1} autoComplete="off" /></label>
         <div className="field"><label htmlFor={`${id}-name`}>Name</label><input id={`${id}-name`} name="name" required autoComplete="name" /></div>
         <div className="field"><label htmlFor={`${id}-phone`}>Phone</label><input id={`${id}-phone`} name="phone" type="tel" required autoComplete="tel" /></div>
+        <div className="field"><label htmlFor={`${id}-email`}>Email</label><input id={`${id}-email`} name="email" type="email" required autoComplete="email" /></div>
         <div className="field"><label htmlFor={`${id}-address`}>Street or cross streets</label><input id={`${id}-address`} name="address" placeholder={props.addressPlaceholder} autoComplete="street-address" /></div>
         <div className="field"><label htmlFor={`${id}-building`}>Building type</label><select id={`${id}-building`} name="buildingType">{props.buildingTypes?.map((item) => <option key={item}>{item}</option>)}</select></div>
         <div className="field"><label htmlFor={`${id}-issue`}>{props.issueQuestion || 'What do you need?'}</label><select id={`${id}-issue`} name="issue">{props.issueOptions?.map((item) => <option key={item}>{item}</option>)}</select></div>

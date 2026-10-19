@@ -1,5 +1,6 @@
 import {randomUUID} from 'node:crypto'
 import {NextResponse} from 'next/server'
+import {validEmail} from '@/lib/lead-form-email'
 
 // Each lead is emailed through Resend (RESEND_API_KEY, LEAD_FROM_EMAIL, LEAD_NOTIFICATION_EMAIL) and sent
 // to the Zapier webhook (LEAD_WEBHOOK_URL) that creates the client and request in City & Suburban's
@@ -112,6 +113,8 @@ export async function POST(request: Request) {
   if (!payload || payload.website) return NextResponse.json({ok: true})
   const clean = Object.fromEntries(allowedFields.map((field) => [field, cleanField(payload[field])])) as Lead
   if (!clean.name || clean.phone.replace(/\D/g, '').length < 7) return NextResponse.json({message: 'A valid name and phone are required'}, {status: 400})
+  // Jobber (through Zapier) needs an email to create the client, so the forms require one
+  if (!validEmail(clean.email)) return NextResponse.json({message: 'A valid email is required'}, {status: 400})
 
   const apiKey = configured(process.env.RESEND_API_KEY)
   const from = configured(process.env.LEAD_FROM_EMAIL)
