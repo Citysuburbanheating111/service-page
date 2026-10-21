@@ -10,7 +10,7 @@ import taxonomy from '../data/service-taxonomy.json'
 import {getReferenceService, getReferenceSnapshot, referenceNavigation, referencePagePath} from '../src/lib/reference-pages'
 import {proxy} from '../src/proxy'
 import {NextRequest} from 'next/server'
-import {liveMenu, servicesLink} from '../src/lib/site-navigation'
+import {LIVE_SITE, liveMenu, servicesMenu} from '../src/lib/site-navigation'
 import {applyReferenceContentFields, synchronizeVisibleSchema} from '../src/lib/reference-content-fields'
 import {migrateServiceContent} from '../src/lib/service-base-path'
 import {renderReferencePage} from '../src/lib/reference-page-rendering'
@@ -24,8 +24,8 @@ assert.equal(new Set(catalog.map((page) => page.livePath)).size, 24)
 assert.equal(catalog.filter((page) => page.qcStatus === 'PASS').length, 16)
 assert.equal(retainedCatalog.length, 17)
 assert.equal(new Set([...catalog, ...retainedCatalog].map(page => page.cardImage)).size, 41, 'Every service card needs a distinct image')
-assert.equal(servicesLink.href, '/services/')
-assert.deepEqual(liveMenu.flatMap((group) => group.items.map((item) => [item.label, new URL(item.href).pathname])), catalog.map((page) => [page.name, page.livePath]))
+assert.equal(servicesMenu.href, '/services/')
+assert.deepEqual(liveMenu.flatMap((group) => group.items.map((item) => [item.label, new URL(item.href, LIVE_SITE).pathname])), catalog.map((page) => [page.name, page.livePath]))
 
 for (const page of catalog) {
   const snapshot = referenceSnapshots[`${page.clusterSlug}/${page.slug}`]

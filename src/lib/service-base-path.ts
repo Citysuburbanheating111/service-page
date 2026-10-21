@@ -9,6 +9,12 @@ export function migrateServiceUrls(value: string): string {
     .replace(/\/service(?=\/|$|[?#"'])/g, '/services')
 }
 
+/** Keep links to service pages inside this app (relative), so a local or preview build
+ * stays in that build. On the live site they resolve to the same citysuburbanheating.com page. */
+export function withAppServiceLinks(html: string): string {
+  return html.replaceAll('href="https://citysuburbanheating.com/services/', 'href="/services/')
+}
+
 export function migrateServiceContent<T>(value: T): T {
   if (typeof value === 'string') return migrateServiceUrls(value) as T
   if (Array.isArray(value)) return value.map(item => migrateServiceContent(item)) as T
