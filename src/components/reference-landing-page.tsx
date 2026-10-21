@@ -4,7 +4,7 @@
 import {useEffect, useRef} from 'react'
 import type {ReferenceSnapshot} from '@/reference-pages/types'
 import liveFooter from '@/reference-pages/shared-footer.json'
-import {migrateServiceUrls} from '@/lib/service-base-path'
+import {migrateServiceUrls, withAppServiceLinks} from '@/lib/service-base-path'
 import {CollectionHeader} from './collection-chrome'
 import {withoutReferenceHeader} from '@/lib/reference-header'
 import {refineServicePageLinks} from '@/lib/service-page-links'
@@ -69,7 +69,7 @@ export function ReferenceLandingPage({snapshot, serviceName}: Props) {
       .replaceAll('header a[href', '.reference-design header a[href')
       .replaceAll('header > div', '.reference-design header > div')}} />
     <style dangerouslySetInnerHTML={{__html: liveFooter.style}} />
-    <div dangerouslySetInnerHTML={{__html: withLeadEmailField(refineServicePageLinks(migrateServiceUrls(withoutReferenceHeader(html))))}} />
+    <div dangerouslySetInnerHTML={{__html: withAppServiceLinks(withLeadEmailField(refineServicePageLinks(migrateServiceUrls(withoutReferenceHeader(html)))))}} />
     {snapshot.schema && <script type="application/ld+json" dangerouslySetInnerHTML={{__html: migrateServiceUrls(snapshot.schema).replace(/</g, '\\u003c')}} />}
   </div></>
 }

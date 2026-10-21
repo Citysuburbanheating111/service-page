@@ -1,7 +1,7 @@
 // Header and footer menus, mirroring the live citysuburbanheating.com menus.
 //
 // Labels, order and links are copied exactly from the live WordPress menu and footer
-// (03/10/2026). These 24 dropdown keyword URLs are the exact paths in the approved
+// (03/10/2026); links to service pages are relative (see app() below). These 24 dropdown keyword URLs are the exact paths in the approved
 // GitHub directory. The production proxy rollout is managed separately.
 // "Service Areas" is replaced by "Services", with the same two-column dropdown as
 // the live home page menu: four other services and four main service areas.
@@ -12,54 +12,58 @@ export type MenuLink = {label: string; href: string}
 export type MenuGroup = MenuLink & {items: MenuLink[]}
 
 const wp = (path: string) => `${LIVE_SITE}${path}`
+// Service pages are this app, so their links stay relative: on the live site they
+// open citysuburbanheating.com/services/..., and in a local or preview build they
+// stay in that build. WordPress pages (home, about, service areas) use wp().
+const app = (path: string) => path
 
 export const liveMenu: MenuGroup[] = [
   {
     label: 'Heating',
-    href: wp('/services/heating/'),
+    href: app('/services/heating/'),
     items: [
-      {label: 'Heater repair', href: wp('/services/heating/heater-repair/')},
-      {label: 'Boiler Services', href: wp('/services/heating/boiler-service/')},
-      {label: 'Heat Pump', href: wp('/services/heating/heat-pump/')},
-      {label: 'Hybrid Heating Systems', href: wp('/services/heating/hybrid-heating-systems/')},
-      {label: 'HVAC Maintenance Plans', href: wp('/services/heating/hvac-maintenance-plans/')},
-      {label: 'Heater Installation', href: wp('/services/heating/heater-installation/')},
-      {label: 'Heater Maintenance', href: wp('/services/heating/heater-maintenance/')},
+      {label: 'Heater repair', href: app('/services/heating/heater-repair/')},
+      {label: 'Boiler Services', href: app('/services/heating/boiler-service/')},
+      {label: 'Heat Pump', href: app('/services/heating/heat-pump/')},
+      {label: 'Hybrid Heating Systems', href: app('/services/heating/hybrid-heating-systems/')},
+      {label: 'HVAC Maintenance Plans', href: app('/services/heating/hvac-maintenance-plans/')},
+      {label: 'Heater Installation', href: app('/services/heating/heater-installation/')},
+      {label: 'Heater Maintenance', href: app('/services/heating/heater-maintenance/')},
     ],
   },
   {
     label: 'Cooling',
-    href: wp('/services/cooling/'),
+    href: app('/services/cooling/'),
     items: [
-      {label: 'Ductless HVAC Services', href: wp('/services/cooling/ductless-hvac-service/')},
-      {label: 'Air Conditioning Repair', href: wp('/services/cooling/air-conditioning-repair/')},
-      {label: 'Air Conditioning Maintenance', href: wp('/services/cooling/air-conditioning-maintenance/')},
-      {label: 'Air Conditioning Installation', href: wp('/services/cooling/air-conditioning-installation/')},
-      {label: 'Cooling Maintenance Plans', href: wp('/services/cooling/cooling-maintenance-plans/')},
-      {label: 'Heat Pump Services', href: wp('/services/cooling/heat-pump-services/')},
+      {label: 'Ductless HVAC Services', href: app('/services/cooling/ductless-hvac-service/')},
+      {label: 'Air Conditioning Repair', href: app('/services/cooling/air-conditioning-repair/')},
+      {label: 'Air Conditioning Maintenance', href: app('/services/cooling/air-conditioning-maintenance/')},
+      {label: 'Air Conditioning Installation', href: app('/services/cooling/air-conditioning-installation/')},
+      {label: 'Cooling Maintenance Plans', href: app('/services/cooling/cooling-maintenance-plans/')},
+      {label: 'Heat Pump Services', href: app('/services/cooling/heat-pump-services/')},
     ],
   },
   {
     label: 'Air Quality',
-    href: wp('/services/air-quality/'),
+    href: app('/services/air-quality/'),
     items: [
-      {label: 'Dehumidifier Installation', href: wp('/services/air-quality/dehumidifier-installation/')},
-      {label: 'Indoor Air Quality Test', href: wp('/services/air-quality/indoor-air-quality-test/')},
-      {label: 'Duct Repair', href: wp('/services/air-quality/duct-repair/')},
-      {label: 'Duct Maintenance', href: wp('/services/air-quality/duct-maintenance/')},
-      {label: 'Humidifier & Air Cleaner', href: wp('/services/air-quality/humidifier-air-cleaner/')},
+      {label: 'Dehumidifier Installation', href: app('/services/air-quality/dehumidifier-installation/')},
+      {label: 'Indoor Air Quality Test', href: app('/services/air-quality/indoor-air-quality-test/')},
+      {label: 'Duct Repair', href: app('/services/air-quality/duct-repair/')},
+      {label: 'Duct Maintenance', href: app('/services/air-quality/duct-maintenance/')},
+      {label: 'Humidifier & Air Cleaner', href: app('/services/air-quality/humidifier-air-cleaner/')},
     ],
   },
   {
     label: 'Commercial',
-    href: wp('/services/commercial/'),
+    href: app('/services/commercial/'),
     items: [
-      {label: 'Commercial HVAC System Installation', href: wp('/services/commercial/commercial-hvac-system-installation/')},
-      {label: 'Commercial HVAC System Replacement', href: wp('/services/commercial/commercial-hvac-system-replacement/')},
-      {label: 'Emergency & Routine Commercial HVAC Repairs', href: wp('/services/commercial/emergency-routine-commercial-hvac-repairs/')},
-      {label: 'Energy-Efficient HVAC Upgrades', href: wp('/services/commercial/energy-efficient-hvac-upgrades/')},
-      {label: 'Custom HVAC Maintenance Plan', href: wp('/services/commercial/custom-hvac-maintenance-plan/')},
-      {label: 'Ductwork Design & Repair Services', href: wp('/services/commercial/ductwork-design-repair-services/')},
+      {label: 'Commercial HVAC System Installation', href: app('/services/commercial/commercial-hvac-system-installation/')},
+      {label: 'Commercial HVAC System Replacement', href: app('/services/commercial/commercial-hvac-system-replacement/')},
+      {label: 'Emergency & Routine Commercial HVAC Repairs', href: app('/services/commercial/emergency-routine-commercial-hvac-repairs/')},
+      {label: 'Energy-Efficient HVAC Upgrades', href: app('/services/commercial/energy-efficient-hvac-upgrades/')},
+      {label: 'Custom HVAC Maintenance Plan', href: app('/services/commercial/custom-hvac-maintenance-plan/')},
+      {label: 'Ductwork Design & Repair Services', href: app('/services/commercial/ductwork-design-repair-services/')},
     ],
   },
 ]
@@ -74,12 +78,12 @@ export const servicesMenu: MenuLink & {columns: ServicesColumn[]} = {
     {
       heading: 'Other services',
       items: [
-        {label: 'Radiator & Radiant Heat Service', href: wp('/services/heating/radiator-radiant-heat-repair-installation/')},
-        {label: 'Window & Portable AC Installation & Repair', href: wp('/services/cooling/window-portable-ac-installation-repair/')},
-        {label: 'Air Duct Cleaning, Repair & Sealing', href: wp('/services/indoor-air-quality-ventilation/air-duct-cleaning-repair/')},
-        {label: 'Commercial Refrigeration & Ice Machine Service', href: wp('/services/commercial-specialty/commercial-refrigeration-repair-maintenance/')},
+        {label: 'Radiator & Radiant Heat Service', href: app('/services/heating/radiator-radiant-heat-repair-installation/')},
+        {label: 'Window & Portable AC Installation & Repair', href: app('/services/cooling/window-portable-ac-installation-repair/')},
+        {label: 'Air Duct Cleaning, Repair & Sealing', href: app('/services/indoor-air-quality-ventilation/air-duct-cleaning-repair/')},
+        {label: 'Commercial Refrigeration & Ice Machine Service', href: app('/services/commercial-specialty/commercial-refrigeration-repair-maintenance/')},
       ],
-      all: {label: 'All services →', href: wp('/services/')},
+      all: {label: 'All services →', href: app('/services/')},
     },
     {
       heading: 'Service areas',
@@ -101,10 +105,10 @@ export const topBarLinks: MenuLink[] = [
 ]
 
 export const footerServiceLinks: MenuLink[] = [
-  {label: 'Heating', href: wp('/services/heating/')},
-  {label: 'Cooling', href: wp('/services/cooling/')},
-  {label: 'Air Quality', href: wp('/services/air-quality/')},
-  {label: 'Commercial', href: wp('/services/commercial/')},
+  {label: 'Heating', href: app('/services/heating/')},
+  {label: 'Cooling', href: app('/services/cooling/')},
+  {label: 'Air Quality', href: app('/services/air-quality/')},
+  {label: 'Commercial', href: app('/services/commercial/')},
 ]
 
 export const business = {

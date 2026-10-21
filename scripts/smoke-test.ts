@@ -20,8 +20,12 @@ const areaBySlug = new Map(source.area.map((row) => [row.slug, row]))
 const sourceIds = new Set(navigationPages.map((row) => Number(row.service_id)))
 const availableClusterSlugs = new Set(taxonomy.services.filter((item) => sourceIds.has(item.serviceId)).map((item) => item.clusterSlug))
 const clusterByServiceId = new Map(taxonomy.services.map((item) => [item.serviceId, item.clusterSlug]))
+// The live service pages this app serves; the menus link to them with relative URLs.
+const referencePages = ['catalog.json', 'retained-catalog.json'].flatMap((file) =>
+  JSON.parse(fs.readFileSync(path.resolve('src/reference-pages', file), 'utf8')) as Array<{clusterSlug: string; livePath: string}>)
 const validServicePaths = new Set([
   '/services/',
+  ...referencePages.flatMap((page) => [page.livePath, `/services/${page.clusterSlug}/`]),
   ...clusters.clusters.filter((cluster) => availableClusterSlugs.has(cluster.slug)).map((cluster) => `/services/${cluster.slug}/`),
   ...navigationEquipment.map((row) => `/services/${clusterByServiceId.get(Number(row.C))}/${row.slug}/`),
 ])
@@ -105,7 +109,7 @@ async function run() {
     '/services/',
     'tel:+17732383838',
     'mailto:service@citysuburbanheating.com',
-  ]) expect(anchorHrefs(collection).includes(href), `Collection page is missing live destination ${href}`)
+  ]) expect(anchorHrefs(collection).includes(href) || anchorHrefs(collection).includes(href.replace('https://citysuburbanheating.com/services/', '/services/')), `Collection page is missing live destination ${href}`)
   expect(collection.includes('Need quick help?') && collection.includes('class="site-footer"'), 'Collection page is missing the live-site footer')
   expect(collection.includes('>Services<') && !collection.includes('>Service Areas<'), 'Header must show Services in place of Service Areas')
   expect(collection.includes('We provide top-quality heating, ventilation, and air conditioning services tailored to your needs.'), 'Collection footer is missing the live company summary')
