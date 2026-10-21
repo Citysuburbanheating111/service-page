@@ -52,7 +52,7 @@ export function workWeHandleSection(serviceName: string, items: WorkItem[]): str
   const heading = `${titleCase(serviceName)} Work We Handle`
   const item = (work: WorkItem, clone: boolean) => `<div class="cs-work-item"${clone ? ' aria-hidden="true"' : ''}><svg viewBox="0 0 48 48" aria-hidden="true">${icons[work.icon] || icons.clipboard}</svg><b>${escapeHtml(work.title)}</b><span>${escapeHtml(work.text)}</span></div>`
   return `<section data-module="work-we-handle" class="cs-work" id="work-we-handle"><div class="cs-work-wrap">`
-    + `<h2>${escapeHtml(heading)}</h2>`
+    + `<p class="cs-work-eyebrow">Service types</p><h2>${escapeHtml(heading)}</h2>`
     + `<p class="cs-work-lede">Common ${escapeHtml(serviceName.toLowerCase())} jobs City &amp; Suburban handles for Chicago homes and businesses.</p>`
     + `<div class="cs-work-strip" aria-label="${escapeHtml(heading)}"><div class="cs-work-track">`
     + items.map(work => item(work, false)).join('') + items.map(work => item(work, true)).join('')
@@ -84,9 +84,15 @@ export function insertAfterModule(html: string, module: string, extra: string): 
   return html
 }
 
+/** The equipment listing's eyebrow label reads "Equipment types" on every page. */
+export function withEquipmentTypesLabel(html: string): string {
+  return html.replace(/(<section\b[^>]*\bdata-module="systems"[^>]*>\s*<div\b[^>]*>\s*<p\b[^>]*>)[\s\S]*?(<\/p>)/, '$1Equipment types$2')
+}
+
 /** Add the work strip after the quick facts and the 24/7 band after the pricing section.
  * Pages without work items (services City & Suburban refers out) get neither. */
 export function withServicePageSections(html: string, serviceName: string, items?: WorkItem[]): string {
-  if (!items?.length) return html
-  return insertAfterModule(insertAfterModule(html, 'quick-facts', workWeHandleSection(serviceName, items)), 'pricing', allDaySection())
+  const labelled = withEquipmentTypesLabel(html)
+  if (!items?.length) return labelled
+  return insertAfterModule(insertAfterModule(labelled, 'quick-facts', workWeHandleSection(serviceName, items)), 'pricing', allDaySection())
 }
