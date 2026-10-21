@@ -3,8 +3,8 @@
 // Labels, order and links are copied exactly from the live WordPress menu and footer
 // (03/10/2026). These 24 dropdown keyword URLs are the exact paths in the approved
 // GitHub directory. The production proxy rollout is managed separately.
-// "Service Areas" is replaced by "Services": a plain link with no dropdown, to
-// this app's collection page, which leads on to the cluster and landing pages.
+// "Service Areas" is replaced by "Services", with the same two-column dropdown as
+// the live home page menu: four other services and four main service areas.
 
 export const LIVE_SITE = 'https://citysuburbanheating.com'
 
@@ -64,7 +64,35 @@ export const liveMenu: MenuGroup[] = [
   },
 ]
 
-export const servicesLink: MenuLink = {label: 'Services', href: '/services/'}
+export type ServicesColumn = {heading: string; items: MenuLink[]; all: MenuLink}
+
+// Copied from the live home page "Services" menu (21/10/2026).
+export const servicesMenu: MenuLink & {columns: ServicesColumn[]} = {
+  label: 'Services',
+  href: '/services/',
+  columns: [
+    {
+      heading: 'Other services',
+      items: [
+        {label: 'Radiator & Radiant Heat Service', href: wp('/services/heating/radiator-radiant-heat-repair-installation/')},
+        {label: 'Window & Portable AC Installation & Repair', href: wp('/services/cooling/window-portable-ac-installation-repair/')},
+        {label: 'Air Duct Cleaning, Repair & Sealing', href: wp('/services/indoor-air-quality-ventilation/air-duct-cleaning-repair/')},
+        {label: 'Commercial Refrigeration & Ice Machine Service', href: wp('/services/commercial-specialty/commercial-refrigeration-repair-maintenance/')},
+      ],
+      all: {label: 'All services →', href: wp('/services/')},
+    },
+    {
+      heading: 'Service areas',
+      items: [
+        {label: 'West Loop', href: wp('/service-area/west-loop/')},
+        {label: 'Lincoln Park', href: wp('/service-area/lincoln-park/')},
+        {label: 'Wicker Park', href: wp('/service-area/wicker-park/')},
+        {label: 'Lakeview', href: wp('/service-area/lakeview/')},
+      ],
+      all: {label: 'All service areas →', href: wp('/service-areas/')},
+    },
+  ],
+}
 
 export const topBarLinks: MenuLink[] = [
   {label: 'Finance', href: 'https://retailservices.wellsfargo.com/pl/0024376626'},

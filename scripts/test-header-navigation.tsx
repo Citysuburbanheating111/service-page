@@ -3,7 +3,7 @@ import {renderToStaticMarkup} from 'react-dom/server'
 import {CollectionHeader} from '../src/components/collection-chrome'
 import {ReferenceLandingPage} from '../src/components/reference-landing-page'
 import {referenceServices, getReferenceSnapshot} from '../src/lib/reference-pages'
-import {LIVE_SITE, liveMenu, servicesLink} from '../src/lib/site-navigation'
+import {LIVE_SITE, liveMenu, servicesMenu} from '../src/lib/site-navigation'
 import {refineServicePageLinks} from '../src/lib/service-page-links'
 
 function internalLinks(markup: string, currentPath?: string) {
@@ -16,24 +16,30 @@ function internalLinks(markup: string, currentPath?: string) {
 
 const header = renderToStaticMarkup(<CollectionHeader />)
 const links = internalLinks(header)
-for (const link of [...liveMenu.flatMap(group => [group, ...group.items]), servicesLink]) {
+const servicesLinks = [servicesMenu, ...servicesMenu.columns.flatMap(column => [...column.items, column.all])]
+for (const link of [...liveMenu.flatMap(group => [group, ...group.items]), ...servicesLinks]) {
   const pathname = new URL(link.href, LIVE_SITE).pathname
-  assert.equal(links.filter(path => path === pathname).length, 1, `Duplicate or missing menu destination: ${pathname}`)
+  // As on the live home page, "Services" and its "All services →" link share /services/.
+  const expected = pathname === '/services/' ? 2 : 1
+  assert.equal(links.filter(path => path === pathname).length, expected, `Duplicate or missing menu destination: ${pathname}`)
 }
 assert.equal((header.match(/aria-label="Main"/g) || []).length, 1)
 assert.equal((header.match(/class="site-submenu"/g) || []).length, 4)
-assert.equal((header.match(/class="site-submenu-toggle"/g) || []).length, 4)
+assert.equal((header.match(/class="site-submenu site-submenu-services"/g) || []).length, 1)
+assert.equal((header.match(/class="site-submenu-toggle"/g) || []).length, 5)
 assert.ok(header.includes('aria-controls="site-primary-navigation"'))
 assert.ok(header.includes('aria-expanded="false"'))
 assert.ok(!header.includes('aria-label="Mobile"'), 'Mobile must reuse the main menu')
 
+// The home page's Services dropdown adds its links to every page's budget.
+const linkBudget = 55 + servicesLinks.length - 1
 const totals = referenceServices.map(page => {
   const snapshot = getReferenceSnapshot(page.clusterSlug, page.slug)!
   const markup = renderToStaticMarkup(<ReferenceLandingPage snapshot={snapshot} serviceName={page.name} />)
   assert.equal((markup.match(/id="site-primary-navigation"/g) || []).length, 1, page.livePath)
   assert.ok(!markup.includes('data-module="site-header"') || (markup.match(/data-module="site-header"/g) || []).length === 1)
   const count = internalLinks(markup, page.livePath).length
-  assert.ok(count < 55, `${page.livePath}: ${count} internal placements with the full menu retained`)
+  assert.ok(count < linkBudget, `${page.livePath}: ${count} internal placements with the full menu retained`)
   // Every page still has contextual related links and its full location coverage.
   assert.ok(markup.includes('data-module="related"') && markup.includes('data-module="service-areas"'), page.livePath)
   const refined = refineServicePageLinks(snapshot.html)
@@ -70,4 +76,4 @@ const nested = '<div data-module="faq"><div><a href="/services/heating/boiler-se
 const refinedNested = refineServicePageLinks(nested)
 assert.equal((refinedNested.match(/href="\/services\/heating\/boiler-service\/"/g) || []).length, 1)
 assert.ok(refinedNested.endsWith('<footer data-module="site-footer"><a href="/services/heating/">Heating</a></footer>'), 'Nested module parsing damaged the following footer')
-console.log(`Link checks passed: full 24-service menu retained; original copy and actions preserved; all ${totals.length} landing pages have ${Math.min(...totals)}–${Math.max(...totals)} internal placements.`)
+console.log(`Link checks passed: full 24-service menu and Services dropdown retained; original copy and actions preserved; all ${totals.length} landing pages have ${Math.min(...totals)}–${Math.max(...totals)} internal placements.`)

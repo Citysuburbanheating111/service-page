@@ -109,7 +109,8 @@ async function run() {
   expect(collection.includes('Need quick help?') && collection.includes('class="site-footer"'), 'Collection page is missing the live-site footer')
   expect(collection.includes('>Services<') && !collection.includes('>Service Areas<'), 'Header must show Services in place of Service Areas')
   expect(collection.includes('We provide top-quality heating, ventilation, and air conditioning services tailored to your needs.'), 'Collection footer is missing the live company summary')
-  expect(!anchorHrefs(collection).includes('https://citysuburbanheating.com/service-areas/'), 'Header still links to Service Areas')
+  // The only /service-areas/ link is the home page Services dropdown's "All service areas →".
+  expect(anchorHrefs(collection).filter(href => href === 'https://citysuburbanheating.com/service-areas/').length === 1 && collection.includes('All service areas →'), 'Header still links to Service Areas')
   expect(!collection.includes('nearby suburbs'), 'Collection page still makes the removed nearby-suburbs claim')
   expect(!collection.includes('NATE'), 'Collection page still makes an unverified NATE certification claim')
   expect(collection.includes('class="site-topbar"'), 'Collection page is missing the live top bar')
