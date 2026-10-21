@@ -12,6 +12,7 @@ import {ReferenceLandingPage} from '@/components/reference-landing-page'
 import {legacyReplacementPath} from '@/lib/legacy-service-replacements'
 import {migrateServiceContent} from '@/lib/service-base-path'
 import {renderReferencePage} from '@/lib/reference-page-rendering'
+import {getWorkItems} from '@/lib/service-page-sections'
 
 type Props = {params: Promise<{serviceSlug: string; areaSlug: string}>}
 
@@ -55,7 +56,8 @@ export default async function ServicePage({params}: Props) {
   const result = await sanityFetch({query: REFERENCE_SERVICE_QUERY, params: {clusterSlug: firstSlug, serviceSlug: reference?.slug || secondSlug}, stega: false}).catch(() => null)
   const updated = result?.data as ReferenceDocument | null
   const editedSnapshot = renderReferencePage(updated, snapshot)
-  if (editedSnapshot) return <ReferenceLandingPage snapshot={editedSnapshot} serviceName={updated?.name || reference?.name || secondSlug} />
+  const workItems = reference && getWorkItems(reference.clusterSlug, reference.slug)
+  if (editedSnapshot) return <ReferenceLandingPage snapshot={editedSnapshot} serviceName={updated?.name || reference?.name || secondSlug} workItems={workItems} />
   const {data: navigation} = await sanityFetch({query: SERVICE_NAVIGATION_QUERY, stega: false})
   const clusters = prepareServiceNavigation((navigation || {}) as ServiceNavigationPayload)
 

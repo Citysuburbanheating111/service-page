@@ -1,0 +1,1445 @@
+{
+  "air-quality/dehumidifier-installation": [
+    {
+      "title": "Damp basement assessment",
+      "text": "Basement compared with the main level before sizing",
+      "icon": "home"
+    },
+    {
+      "title": "Garden unit moisture",
+      "text": "Clammy units separated from visible water entry",
+      "icon": "building"
+    },
+    {
+      "title": "Capacity sizing",
+      "text": "Sized to the moisture load and spaces served",
+      "icon": "gauge"
+    },
+    {
+      "title": "Duct connections",
+      "text": "Air path planned to reach damp and closed rooms",
+      "icon": "duct"
+    },
+    {
+      "title": "Drain route planning",
+      "text": "Discharge point, distance and any pumping set",
+      "icon": "drop"
+    },
+    {
+      "title": "Humidity controls",
+      "text": "Control placed to read the damp spaces",
+      "icon": "thermostat"
+    },
+    {
+      "title": "AC pairing",
+      "text": "Drying in mild weather with little cooling demand",
+      "icon": "snowflake"
+    }
+  ],
+  "air-quality/duct-maintenance": [
+    {
+      "title": "Duct inspection",
+      "text": "Accessible supply and return runs checked first",
+      "icon": "clipboard"
+    },
+    {
+      "title": "Inspection-based cleaning",
+      "text": "Cleaning scoped to buildup the inspection found",
+      "icon": "duct"
+    },
+    {
+      "title": "Filter care",
+      "text": "Filter fit and condition tied to room airflow",
+      "icon": "filter"
+    },
+    {
+      "title": "Register and grille care",
+      "text": "Registers and grilles removed where needed",
+      "icon": "vent"
+    },
+    {
+      "title": "Weak room airflow",
+      "text": "Obstructions separated from branch problems",
+      "icon": "fan"
+    },
+    {
+      "title": "Post-remodel dust",
+      "text": "Remodeling debris checked in the air path",
+      "icon": "home"
+    },
+    {
+      "title": "Uneven room assessment",
+      "text": "Supply and return paths assessed together",
+      "icon": "thermostat"
+    }
+  ],
+  "air-quality/duct-repair": [
+    {
+      "title": "Weak room airflow tracing",
+      "text": "Weak branch traced and compared with nearby rooms",
+      "icon": "fan"
+    },
+    {
+      "title": "Leaking seam sealing",
+      "text": "Joints secured, then sealed with mastic or UL 181 tape",
+      "icon": "shield"
+    },
+    {
+      "title": "Disconnected branch repair",
+      "text": "Connection restored and support addressed",
+      "icon": "duct"
+    },
+    {
+      "title": "Crushed flex duct",
+      "text": "Crushed or torn flex sections replaced",
+      "icon": "pipe"
+    },
+    {
+      "title": "Sagging run support",
+      "text": "Wide support straps at specified spacing",
+      "icon": "wrench"
+    },
+    {
+      "title": "Concealed run access",
+      "text": "Two-flat and balloon-frame routes assessed for access",
+      "icon": "building"
+    },
+    {
+      "title": "Airflow and pressure readings",
+      "text": "Register airflow and static pressure measured",
+      "icon": "gauge"
+    }
+  ],
+  "air-quality/humidifier-air-cleaner": [
+    {
+      "title": "Winter dryness assessment",
+      "text": "Low humidity separated from supply or control faults",
+      "icon": "radiator"
+    },
+    {
+      "title": "Bypass humidifiers",
+      "text": "Mounted beside the furnace with a bypass duct",
+      "icon": "drop"
+    },
+    {
+      "title": "Fan-powered humidifiers",
+      "text": "Own blower and no bypass duct for tight closets",
+      "icon": "fan"
+    },
+    {
+      "title": "Steam humidifiers",
+      "text": "Highest output, with a dedicated electrical circuit",
+      "icon": "plug"
+    },
+    {
+      "title": "Return-air air cleaners",
+      "text": "Dust, pollen and smoke particles filtered before the furnace",
+      "icon": "filter"
+    },
+    {
+      "title": "Filter cabinet fit",
+      "text": "Cabinet size, seals and filter access checked",
+      "icon": "furnace"
+    },
+    {
+      "title": "Humidifier leak service",
+      "text": "Leaks traced at water and drainage connections",
+      "icon": "pipe"
+    }
+  ],
+  "air-quality/indoor-air-quality-test": [
+    {
+      "title": "Humidity readings",
+      "text": "Moisture readings for damp rooms and condensation",
+      "icon": "drop"
+    },
+    {
+      "title": "Particle testing",
+      "text": "Airborne particulates measured during sampling",
+      "icon": "filter"
+    },
+    {
+      "title": "Dry winter air",
+      "text": "Winter humidity read in the affected rooms",
+      "icon": "radiator"
+    },
+    {
+      "title": "Stale closed bedrooms",
+      "text": "Door, occupancy and timing context for stale rooms",
+      "icon": "vent"
+    },
+    {
+      "title": "Selected gas measurements",
+      "text": "CO, VOC or CO2 readings where the scope includes them",
+      "icon": "gauge"
+    },
+    {
+      "title": "Multi-floor comparisons",
+      "text": "Several rooms and the basement sampled for comparison",
+      "icon": "building"
+    },
+    {
+      "title": "Recorded results",
+      "text": "Readings logged with units, rooms and times",
+      "icon": "clipboard"
+    }
+  ],
+  "commercial-specialty/commercial-refrigeration-repair-maintenance": [
+    {
+      "title": "Walk-in cooler diagnosis",
+      "text": "Temperature history, controls and refrigerant circuit",
+      "icon": "snowflake"
+    },
+    {
+      "title": "Walk-in freezer faults",
+      "text": "Defrost, heaters, drains and door infiltration",
+      "icon": "thermostat"
+    },
+    {
+      "title": "Ice machine cleaning",
+      "text": "Scale, water filtration and sanitizer procedure",
+      "icon": "drop"
+    },
+    {
+      "title": "Leak and refrigerant repair",
+      "text": "Leak located, refrigerant recovered and evacuated",
+      "icon": "pipe"
+    },
+    {
+      "title": "Reach-in refrigerators",
+      "text": "Airflow, gaskets, evaporator icing and compressor",
+      "icon": "fan"
+    },
+    {
+      "title": "Remote condensing systems",
+      "text": "Roof access, line condition and shutdown planning",
+      "icon": "building"
+    },
+    {
+      "title": "Condenser and alarm checks",
+      "text": "Dirty or overheating condensers and alarm history",
+      "icon": "gauge"
+    }
+  ],
+  "commercial/commercial-hvac-system-installation": [
+    {
+      "title": "Load review of the space",
+      "text": "Room use, occupancy and hours set the starting load",
+      "icon": "clipboard"
+    },
+    {
+      "title": "Packaged rooftop units",
+      "text": "Set or rigged into place where the roof carries the weight",
+      "icon": "building"
+    },
+    {
+      "title": "Split systems for suites",
+      "text": "Indoor air handler paired with an outdoor unit",
+      "icon": "snowflake"
+    },
+    {
+      "title": "Zoning and controls",
+      "text": "Zones and schedules matched to room use and hours",
+      "icon": "thermostat"
+    },
+    {
+      "title": "Tenant build-outs",
+      "text": "Rooms served and connections stated for the new layout",
+      "icon": "wrench"
+    },
+    {
+      "title": "Startup and commissioning",
+      "text": "Charge, airflow, safeties and every zone checked",
+      "icon": "gauge"
+    },
+    {
+      "title": "Handover and operating plan",
+      "text": "Controls walkthrough, model details and service contact",
+      "icon": "shield"
+    }
+  ],
+  "commercial/commercial-hvac-system-replacement": [
+    {
+      "title": "Repair or replace assessment",
+      "text": "Diagnosis before any replacement is quoted",
+      "icon": "clipboard"
+    },
+    {
+      "title": "Second opinions",
+      "text": "Specific reasons, never a verdict on age alone",
+      "icon": "shield"
+    },
+    {
+      "title": "Rooftop change-outs",
+      "text": "Crane or stair haul access planned in the scope",
+      "icon": "building"
+    },
+    {
+      "title": "Phased multi-unit replacement",
+      "text": "One unit at a time so trading continues",
+      "icon": "clock"
+    },
+    {
+      "title": "Split-system compatibility",
+      "text": "Retained coil or air handler matched to new equipment",
+      "icon": "snowflake"
+    },
+    {
+      "title": "Mixed-use boiler replacement",
+      "text": "Heat continuity for storefronts and dwellings above",
+      "icon": "radiator"
+    },
+    {
+      "title": "Refrigerant and line set review",
+      "text": "Refrigerant rules and line set condition confirmed",
+      "icon": "pipe"
+    }
+  ],
+  "commercial/custom-hvac-maintenance-plan": [
+    {
+      "title": "Seasonal check-ups",
+      "text": "Visits timed before cooling and heating seasons",
+      "icon": "clock"
+    },
+    {
+      "title": "Unit-by-unit coverage",
+      "text": "Each unit and the spaces it serves named in the plan",
+      "icon": "clipboard"
+    },
+    {
+      "title": "Filter schedules",
+      "text": "Filter intervals and responsibility set by unit",
+      "icon": "filter"
+    },
+    {
+      "title": "Heating season checks",
+      "text": "Gas pressure, temperature rise and burner condition",
+      "icon": "flame"
+    },
+    {
+      "title": "Cooling season checks",
+      "text": "Superheat, subcooling and motor amp draw measured",
+      "icon": "snowflake"
+    },
+    {
+      "title": "Landlord and insurer records",
+      "text": "Unit identity, service dates and completed work",
+      "icon": "shield"
+    },
+    {
+      "title": "Priority dispatch",
+      "text": "Member priority when equipment fails between visits",
+      "icon": "bolt"
+    }
+  ],
+  "commercial/ductwork-design-repair-services": [
+    {
+      "title": "Tenant build-out layouts",
+      "text": "Supply and return paths planned before ceilings close",
+      "icon": "building"
+    },
+    {
+      "title": "Airflow balancing",
+      "text": "Dampers set and final settings recorded",
+      "icon": "gauge"
+    },
+    {
+      "title": "Leak and joint sealing",
+      "text": "Separated joints resealed, sound runs retained",
+      "icon": "duct"
+    },
+    {
+      "title": "Crushed run replacement",
+      "text": "Damaged sections replaced above the ceiling grid",
+      "icon": "wrench"
+    },
+    {
+      "title": "Undersized branch resizing",
+      "text": "Branches resized for changed room use",
+      "icon": "pipe"
+    },
+    {
+      "title": "Duct noise correction",
+      "text": "Resizing, lining and isolation for noisy runs",
+      "icon": "fan"
+    },
+    {
+      "title": "Return air paths",
+      "text": "Returns opened for closed offices and new partitions",
+      "icon": "vent"
+    }
+  ],
+  "commercial/emergency-routine-commercial-hvac-repairs": [
+    {
+      "title": "No heat before opening",
+      "text": "Flame sensor, igniter and limit faults traced",
+      "icon": "furnace"
+    },
+    {
+      "title": "Cooling loss in business hours",
+      "text": "Contactor, capacitor and condenser fan faults",
+      "icon": "snowflake"
+    },
+    {
+      "title": "Rooftop unit diagnosis",
+      "text": "Pressures, voltage and amp draw measured first",
+      "icon": "building"
+    },
+    {
+      "title": "Water near cooling equipment",
+      "text": "Condensate pump, drain pan and drain line checks",
+      "icon": "drop"
+    },
+    {
+      "title": "Short-cycling equipment",
+      "text": "Start and stop pattern diagnosed from operation",
+      "icon": "clock"
+    },
+    {
+      "title": "Recurring fault messages",
+      "text": "Control board and thermostat communication faults",
+      "icon": "thermostat"
+    },
+    {
+      "title": "Scheduled-visit faults",
+      "text": "Diagnosed repairs while the system still runs",
+      "icon": "wrench"
+    }
+  ],
+  "commercial/energy-efficient-hvac-upgrades": [
+    {
+      "title": "Schedule and override review",
+      "text": "Clock settings matched to actual opening hours",
+      "icon": "clock"
+    },
+    {
+      "title": "Smart thermostat setup",
+      "text": "Sensing location and equipment compatibility checked",
+      "icon": "thermostat"
+    },
+    {
+      "title": "Zoning feasibility",
+      "text": "Dampers and separate zones where the duct layout allows",
+      "icon": "building"
+    },
+    {
+      "title": "Economizer review",
+      "text": "Sensor readings and operating limits checked",
+      "icon": "vent"
+    },
+    {
+      "title": "Duct sealing",
+      "text": "Joints sealed and dropped takeoffs reconnected",
+      "icon": "duct"
+    },
+    {
+      "title": "High-efficiency equipment",
+      "text": "Condensing furnaces, heat pumps and rooftop units compared",
+      "icon": "furnace"
+    },
+    {
+      "title": "Baseline and payback review",
+      "text": "Energy use compared on the same basis before and after",
+      "icon": "gauge"
+    }
+  ],
+  "cooling/air-conditioning-installation": [
+    {
+      "title": "Aging AC replacement",
+      "text": "Repair scope compared with age and condition",
+      "icon": "clipboard"
+    },
+    {
+      "title": "Capacity and SEER2 sizing",
+      "text": "Cooling load and duct airflow assessed before ordering",
+      "icon": "gauge"
+    },
+    {
+      "title": "Indoor coil matching",
+      "text": "Coil fit and match with the outdoor unit confirmed",
+      "icon": "snowflake"
+    },
+    {
+      "title": "AC and furnace replacement",
+      "text": "Blower capacity checked before replacing a furnace",
+      "icon": "furnace"
+    },
+    {
+      "title": "Line set reuse or replacement",
+      "text": "Copper size, condition and route checked",
+      "icon": "pipe"
+    },
+    {
+      "title": "Condo and rooftop installs",
+      "text": "Roof access, lifting gear and building approvals",
+      "icon": "building"
+    },
+    {
+      "title": "Start-up and handover checks",
+      "text": "Charge, airflow and drain flow verified at start-up",
+      "icon": "wrench"
+    }
+  ],
+  "cooling/air-conditioning-maintenance": [
+    {
+      "title": "Outdoor coil cleaning",
+      "text": "Cottonwood and grime cleared from between the fins",
+      "icon": "fan"
+    },
+    {
+      "title": "Refrigerant operation check",
+      "text": "Pressures and temperature split measured",
+      "icon": "gauge"
+    },
+    {
+      "title": "Condensate drain flush",
+      "text": "Pan and drain cleared before humid weather",
+      "icon": "drop"
+    },
+    {
+      "title": "Filter and airflow check",
+      "text": "Filter size, fit and condition, dirty filter replaced",
+      "icon": "filter"
+    },
+    {
+      "title": "Electrical checks",
+      "text": "Electrical side tightened and tested",
+      "icon": "bolt"
+    },
+    {
+      "title": "Evaporator coil inspection",
+      "text": "Indoor coil checked with the filter and drain",
+      "icon": "snowflake"
+    },
+    {
+      "title": "Condo and roof access",
+      "text": "Roof routes and building approval set at booking",
+      "icon": "building"
+    }
+  ],
+  "cooling/air-conditioning-repair": [
+    {
+      "title": "No-cooling diagnosis",
+      "text": "Checks whether cooling is made and reaches the rooms",
+      "icon": "snowflake"
+    },
+    {
+      "title": "Short cycling",
+      "text": "Start and stop pattern tested for control faults",
+      "icon": "clock"
+    },
+    {
+      "title": "Frozen coil and line ice",
+      "text": "Airflow and refrigerant conditions behind icing",
+      "icon": "fan"
+    },
+    {
+      "title": "Refrigerant leak work",
+      "text": "Leak location addressed, not just a refill",
+      "icon": "gauge"
+    },
+    {
+      "title": "Water leak tracing",
+      "text": "Condensate drain, pump and melting ice sources",
+      "icon": "drop"
+    },
+    {
+      "title": "Breaker trips and noisy units",
+      "text": "Outdoor unit starting and electrical faults",
+      "icon": "bolt"
+    },
+    {
+      "title": "Thermostat and control wiring",
+      "text": "Cooling request traced from thermostat to equipment",
+      "icon": "thermostat"
+    }
+  ],
+  "cooling/cooling-maintenance-plans": [
+    {
+      "title": "Seasonal check-ups",
+      "text": "Ongoing cooling care booked ahead each season",
+      "icon": "clock"
+    },
+    {
+      "title": "Priority dispatch",
+      "text": "Member requests put first when the schedule allows",
+      "icon": "shield"
+    },
+    {
+      "title": "Member discounts",
+      "text": "Discounts on eligible service work for members",
+      "icon": "wrench"
+    },
+    {
+      "title": "Two-flat system coverage",
+      "text": "Each apartment's cooling equipment listed in the plan",
+      "icon": "building"
+    },
+    {
+      "title": "Landlord and rental care",
+      "text": "Access contacts organized for occupied units",
+      "icon": "home"
+    },
+    {
+      "title": "Older system care",
+      "text": "Condition and service history kept in view",
+      "icon": "clipboard"
+    },
+    {
+      "title": "Equipment list for coverage",
+      "text": "AC, air handler, heat pump and ductless units listed",
+      "icon": "snowflake"
+    }
+  ],
+  "cooling/ductless-hvac-service": [
+    {
+      "title": "Attic and addition installs",
+      "text": "Dedicated comfort zones without extending ductwork",
+      "icon": "home"
+    },
+    {
+      "title": "Head and line set planning",
+      "text": "Head placement, line sets and condensate route set",
+      "icon": "pipe"
+    },
+    {
+      "title": "Head not cooling or heating",
+      "text": "Airflow, refrigerant and control faults tested",
+      "icon": "snowflake"
+    },
+    {
+      "title": "Indoor head water leaks",
+      "text": "Drain route traced and icing cause checked",
+      "icon": "drop"
+    },
+    {
+      "title": "Remote and control faults",
+      "text": "Remote problems separated from head control faults",
+      "icon": "thermostat"
+    },
+    {
+      "title": "Multi-zone shutdowns",
+      "text": "Shared outdoor unit, power and communication checked",
+      "icon": "bolt"
+    },
+    {
+      "title": "Condo and two-flat layouts",
+      "text": "Association approvals, routes and per-floor zoning",
+      "icon": "building"
+    }
+  ],
+  "cooling/heat-pump-services": [
+    {
+      "title": "Warm air in cool mode",
+      "text": "Supply-to-return temperatures and airflow measured",
+      "icon": "fan"
+    },
+    {
+      "title": "Reversing valve faults",
+      "text": "Valve control voltage and pipe temperatures checked",
+      "icon": "bolt"
+    },
+    {
+      "title": "Weak or slow cooling",
+      "text": "Outdoor coil condition and refrigerant pressures read",
+      "icon": "gauge"
+    },
+    {
+      "title": "Iced coil or line",
+      "text": "Airflow and line temperatures checked after thawing",
+      "icon": "snowflake"
+    },
+    {
+      "title": "Refrigerant leak repair",
+      "text": "Leak located instead of a refill every summer",
+      "icon": "pipe"
+    },
+    {
+      "title": "Mode change and controls",
+      "text": "Thermostat configuration and control compatibility",
+      "icon": "thermostat"
+    },
+    {
+      "title": "Central AC to heat pump",
+      "text": "Ducts, controls and indoor equipment checked for fit",
+      "icon": "home"
+    }
+  ],
+  "cooling/window-portable-ac-installation-repair": [
+    {
+      "title": "Window unit not cooling",
+      "text": "Model, age and symptom checked before repair",
+      "icon": "snowflake"
+    },
+    {
+      "title": "Seasonal window installation",
+      "text": "Bracket, sash security, slope and drainage",
+      "icon": "home"
+    },
+    {
+      "title": "Through-wall sleeve units",
+      "text": "Chassis size, louvers and drainage matched to sleeve",
+      "icon": "building"
+    },
+    {
+      "title": "Portable unit leaks",
+      "text": "Drainage, exhaust setup, pump or sensor faults",
+      "icon": "drop"
+    },
+    {
+      "title": "Circuit and cord checks",
+      "text": "Cord, plug and circuit condition for tripping units",
+      "icon": "plug"
+    },
+    {
+      "title": "Drain and control repairs",
+      "text": "Control board, fan, pump, hose or remote parts",
+      "icon": "wrench"
+    },
+    {
+      "title": "Repair or replace advice",
+      "text": "Sealed-system failures weighed against replacement",
+      "icon": "clipboard"
+    }
+  ],
+  "fireplace-chimney/chimney-sweeping-inspection-repair": [
+    {
+      "title": "HVAC venting diagnosis",
+      "text": "Combustion and draft checked at the appliance",
+      "icon": "flame"
+    },
+    {
+      "title": "Vent connector review",
+      "text": "Furnace, boiler or water-heater connection checked",
+      "icon": "pipe"
+    },
+    {
+      "title": "Shared-flue draft checks",
+      "text": "Draft behavior where appliances share a flue",
+      "icon": "vent"
+    },
+    {
+      "title": "Startup fume spillage",
+      "text": "Connector pitch, blockage and depressurization reviewed",
+      "icon": "gauge"
+    },
+    {
+      "title": "Furnace and boiler draft calls",
+      "text": "Draft problems handled as HVAC diagnosis",
+      "icon": "furnace"
+    },
+    {
+      "title": "Venting scope confirmation",
+      "text": "Appliance venting questions confirmed before booking",
+      "icon": "clipboard"
+    },
+    {
+      "title": "Responsible-trade routing",
+      "text": "Sweeping, liner and masonry work kept with specialists",
+      "icon": "shield"
+    }
+  ],
+  "fireplace-chimney/gas-fireplace-repair-installation": [
+    {
+      "title": "Scope and model check",
+      "text": "Listing, fuel, vent type and parts availability",
+      "icon": "clipboard"
+    },
+    {
+      "title": "Pilot and ignition repair",
+      "text": "Valve, thermocouple, module and safety testing",
+      "icon": "flame"
+    },
+    {
+      "title": "Blower and control repair",
+      "text": "Fan, remote and wall control faults",
+      "icon": "fan"
+    },
+    {
+      "title": "Sooting glass diagnosis",
+      "text": "Combustion, media placement and vent restriction",
+      "icon": "gauge"
+    },
+    {
+      "title": "B-vent draft checks",
+      "text": "Draft verified on vertical B-vent units",
+      "icon": "vent"
+    },
+    {
+      "title": "Gas insert installation",
+      "text": "Listed liner, gas connection and surround",
+      "icon": "home"
+    },
+    {
+      "title": "Gas log set compatibility",
+      "text": "Damper, chimney and listing checked first",
+      "icon": "shield"
+    }
+  ],
+  "heating/boiler-service": [
+    {
+      "title": "Cold radiator diagnosis",
+      "text": "Heat delivery traced to the rooms that stay cold",
+      "icon": "radiator"
+    },
+    {
+      "title": "Steam banging and hissing",
+      "text": "Air release and water return checked at the branch",
+      "icon": "pipe"
+    },
+    {
+      "title": "Boiler leak assessment",
+      "text": "Leak source found at connections, valves or sections",
+      "icon": "drop"
+    },
+    {
+      "title": "Circulator and pressure faults",
+      "text": "Hot-water circulation, expansion tank and gauge checks",
+      "icon": "gauge"
+    },
+    {
+      "title": "Repeated shutdown faults",
+      "text": "Low water cutoff and operating control checks",
+      "icon": "bolt"
+    },
+    {
+      "title": "Two-flat and greystone heat",
+      "text": "Shared boilers traced across apartments",
+      "icon": "building"
+    },
+    {
+      "title": "Annual boiler maintenance",
+      "text": "Seasonal check-ups for steam and hot-water boilers",
+      "icon": "clipboard"
+    }
+  ],
+  "heating/heat-pump": [
+    {
+      "title": "Cold-climate heat pump installs",
+      "text": "American Standard equipment planned for winter demand",
+      "icon": "home"
+    },
+    {
+      "title": "No-heat and no-start repair",
+      "text": "Power and controls traced when the heat pump stays off",
+      "icon": "bolt"
+    },
+    {
+      "title": "Icing and defrost faults",
+      "text": "Defrost operation checked when heavy ice persists",
+      "icon": "snowflake"
+    },
+    {
+      "title": "Backup heat checks",
+      "text": "Backup operation checked against the heating plan",
+      "icon": "flame"
+    },
+    {
+      "title": "Short cycling and airflow",
+      "text": "Controls and airflow assessed before any replacement",
+      "icon": "fan"
+    },
+    {
+      "title": "Noise and mechanical wear",
+      "text": "Loose parts, fan obstructions and wear located",
+      "icon": "wrench"
+    },
+    {
+      "title": "Air handler and coil matching",
+      "text": "Indoor equipment matched to the outdoor unit",
+      "icon": "vent"
+    }
+  ],
+  "heating/heater-installation": [
+    {
+      "title": "Furnace replacement",
+      "text": "American Standard furnaces for aging equipment",
+      "icon": "furnace"
+    },
+    {
+      "title": "Furnace sizing review",
+      "text": "Capacity matched to heat loss and duct capacity",
+      "icon": "gauge"
+    },
+    {
+      "title": "Efficiency level choices",
+      "text": "80% and condensing furnace options compared",
+      "icon": "flame"
+    },
+    {
+      "title": "Vent and chimney planning",
+      "text": "Vent route and shared chimney appliances addressed",
+      "icon": "vent"
+    },
+    {
+      "title": "Closet and condo installs",
+      "text": "Cabinet fit, clearances and removal route checked",
+      "icon": "building"
+    },
+    {
+      "title": "Thermostat and control changes",
+      "text": "Controls matched to two-stage or modulating furnaces",
+      "icon": "thermostat"
+    },
+    {
+      "title": "Permit responsibility",
+      "text": "City permit responsibility stated in the written scope",
+      "icon": "clipboard"
+    }
+  ],
+  "heating/heater-maintenance": [
+    {
+      "title": "Furnace tune-up",
+      "text": "Burners, ignition and heat exchanger checked",
+      "icon": "furnace"
+    },
+    {
+      "title": "Seasonal furnace cleaning",
+      "text": "Carbon and dust removed from fouled parts",
+      "icon": "wrench"
+    },
+    {
+      "title": "Filter fit and replacement",
+      "text": "Filter size, seating and airflow resistance checked",
+      "icon": "filter"
+    },
+    {
+      "title": "Combustion safety checks",
+      "text": "Flue draft, flame pattern and gas pressure checked",
+      "icon": "flame"
+    },
+    {
+      "title": "Safety switch testing",
+      "text": "Rollout and limit switches checked in a full cycle",
+      "icon": "shield"
+    },
+    {
+      "title": "Airflow and blower checks",
+      "text": "Blower buildup and weak airflow concerns reviewed",
+      "icon": "fan"
+    },
+    {
+      "title": "Call for heat check",
+      "text": "Thermostat call and furnace response checked",
+      "icon": "thermostat"
+    }
+  ],
+  "heating/heater-repair": [
+    {
+      "title": "No-heat diagnosis",
+      "text": "Start sequence traced to find where it stops",
+      "icon": "clipboard"
+    },
+    {
+      "title": "Ignition and flame sensor faults",
+      "text": "Igniter or flame sensor faults that interrupt startup",
+      "icon": "flame"
+    },
+    {
+      "title": "Inducer and pressure switch faults",
+      "text": "Faults that stop the furnace start sequence",
+      "icon": "gauge"
+    },
+    {
+      "title": "Blower motor and capacitor repair",
+      "text": "Faults that reduce airflow from the furnace",
+      "icon": "fan"
+    },
+    {
+      "title": "Control board faults",
+      "text": "Board faults that interrupt furnace operation",
+      "icon": "bolt"
+    },
+    {
+      "title": "Safety switch trips",
+      "text": "Trigger found before a tripping switch is replaced",
+      "icon": "shield"
+    },
+    {
+      "title": "Noise and moving-part repair",
+      "text": "Worn motors and rubbing components located",
+      "icon": "wrench"
+    }
+  ],
+  "heating/hvac-maintenance-plans": [
+    {
+      "title": "Seasonal heating check-ups",
+      "text": "Heating visit booked before the first cold snap",
+      "icon": "furnace"
+    },
+    {
+      "title": "Seasonal cooling check-ups",
+      "text": "Cooling visit booked before the first humid week",
+      "icon": "snowflake"
+    },
+    {
+      "title": "Priority member dispatch",
+      "text": "Plan members get priority dispatch",
+      "icon": "clock"
+    },
+    {
+      "title": "Equipment list review",
+      "text": "Each covered unit named in the written quote",
+      "icon": "clipboard"
+    },
+    {
+      "title": "Multi-unit coverage",
+      "text": "Several units at one address identified separately",
+      "icon": "building"
+    },
+    {
+      "title": "Filter check and report",
+      "text": "Filter condition checked on seasonal visits",
+      "icon": "filter"
+    },
+    {
+      "title": "Full-cycle safety checks",
+      "text": "Controls and safeties tested through a full cycle",
+      "icon": "shield"
+    }
+  ],
+  "heating/hybrid-heating-systems": [
+    {
+      "title": "Dual-fuel system installs",
+      "text": "Heat pump paired with a gas furnace",
+      "icon": "home"
+    },
+    {
+      "title": "Heat pump add-on to furnace",
+      "text": "Outdoor heat pump added beside a sound, compatible furnace",
+      "icon": "snowflake"
+    },
+    {
+      "title": "Balance-point changeover setup",
+      "text": "Changeover set for when gas heat takes over",
+      "icon": "gauge"
+    },
+    {
+      "title": "Dual-fuel thermostat setup",
+      "text": "Compatibility, wiring and configuration checked",
+      "icon": "thermostat"
+    },
+    {
+      "title": "Changeover faults",
+      "text": "Furnace starting early or house cooling at transfer",
+      "icon": "flame"
+    },
+    {
+      "title": "Evaporator coil matching",
+      "text": "Coil matched to the outdoor unit and airflow",
+      "icon": "duct"
+    },
+    {
+      "title": "Furnace fit assessment",
+      "text": "Blower capacity and furnace condition checked for pairing",
+      "icon": "furnace"
+    }
+  ],
+  "heating/oil-propane-heating-repair-maintenance": [
+    {
+      "title": "No-heat diagnosis",
+      "text": "Fuel supply, burner, ignition, draft and controls",
+      "icon": "flame"
+    },
+    {
+      "title": "Annual oil-burner service",
+      "text": "Filter, nozzle, electrodes and burner cleaning",
+      "icon": "filter"
+    },
+    {
+      "title": "Combustion and smoke readings",
+      "text": "Draft, smoke and combustion readings recorded",
+      "icon": "gauge"
+    },
+    {
+      "title": "Propane appliance repair",
+      "text": "Gas pressure, ignition, venting and parts checked",
+      "icon": "wrench"
+    },
+    {
+      "title": "Burner lockout diagnosis",
+      "text": "Lockout code noted and restart failure diagnosed",
+      "icon": "shield"
+    },
+    {
+      "title": "Oil and propane boilers",
+      "text": "Hydronic or steam controls, pumps and water level",
+      "icon": "radiator"
+    },
+    {
+      "title": "Soot and heat exchanger checks",
+      "text": "Poor combustion, draft or heat exchanger concerns",
+      "icon": "furnace"
+    }
+  ],
+  "heating/radiator-radiant-heat-repair-installation": [
+    {
+      "title": "Cold radiator diagnosis",
+      "text": "Vents, traps, valves, pitch, air and flow traced",
+      "icon": "radiator"
+    },
+    {
+      "title": "One-pipe steam radiators",
+      "text": "Air venting, pitch and supply valve position",
+      "icon": "vent"
+    },
+    {
+      "title": "Hot-water radiator service",
+      "text": "Trapped air, valve condition and circulator flow",
+      "icon": "drop"
+    },
+    {
+      "title": "Banging and water hammer",
+      "text": "Trapped condensate and pitch problems located",
+      "icon": "pipe"
+    },
+    {
+      "title": "Valve and trap replacement",
+      "text": "Seized fittings, shutdown, refill or steam test",
+      "icon": "wrench"
+    },
+    {
+      "title": "Radiator replacement",
+      "text": "Output, connections, floor support and piping planned",
+      "icon": "clipboard"
+    },
+    {
+      "title": "Radiant floor zone repair",
+      "text": "Pump, mixing valve, manifold and controls checked",
+      "icon": "home"
+    }
+  ],
+  "heating/space-heater-repair-installation": [
+    {
+      "title": "Gas unit heater diagnosis",
+      "text": "Ignition, venting, gas pressure and control voltage",
+      "icon": "flame"
+    },
+    {
+      "title": "Wall furnace repair",
+      "text": "Pilot assembly, thermocouple and gas valve faults",
+      "icon": "furnace"
+    },
+    {
+      "title": "Garage unit heater service",
+      "text": "Ceiling-hung gas or electric units and controls",
+      "icon": "home"
+    },
+    {
+      "title": "Hydronic unit heater repair",
+      "text": "Boiler-side valves, pump flow, coil and fan control",
+      "icon": "pipe"
+    },
+    {
+      "title": "Electric wall heaters",
+      "text": "Control, element and circuit checks first",
+      "icon": "bolt"
+    },
+    {
+      "title": "Fixed heater replacement",
+      "text": "Fuel connection, vent route, clearances and wiring",
+      "icon": "wrench"
+    },
+    {
+      "title": "Floor furnace inspection",
+      "text": "Floor grille and flue inspected on older units",
+      "icon": "vent"
+    }
+  ],
+  "heating/water-heater-repair-installation": [
+    {
+      "title": "No hot water repair",
+      "text": "Thermocouple, gas valve, igniter or element faults",
+      "icon": "flame"
+    },
+    {
+      "title": "Leak diagnosis",
+      "text": "Tank, fitting, drain valve and relief valve leaks",
+      "icon": "drop"
+    },
+    {
+      "title": "Gas tank replacement",
+      "text": "40-50 gallon tanks, venting route and gas line size",
+      "icon": "wrench"
+    },
+    {
+      "title": "Sidewall vent conversions",
+      "text": "Power-vent or direct-vent with condensate route",
+      "icon": "fan"
+    },
+    {
+      "title": "Tankless conversion",
+      "text": "Gas line sizing assessed before appliance choice",
+      "icon": "pipe"
+    },
+    {
+      "title": "Draft and venting correction",
+      "text": "Shared flue, draft hood spillage and liner checks",
+      "icon": "vent"
+    },
+    {
+      "title": "Shared furnace flue work",
+      "text": "Shared flue resized or relined for both appliances",
+      "icon": "furnace"
+    }
+  ],
+  "hvac-systems/hvac-repair-installation": [
+    {
+      "title": "Furnace and AC replaced together",
+      "text": "Matched equipment with load and duct capacity checks",
+      "icon": "furnace"
+    },
+    {
+      "title": "Ductless multi-zone systems",
+      "text": "Head placement, line sets and outdoor unit siting",
+      "icon": "snowflake"
+    },
+    {
+      "title": "New building assessment",
+      "text": "Age, condition and safety checks on both systems",
+      "icon": "clipboard"
+    },
+    {
+      "title": "Second opinion on quotes",
+      "text": "Sizing, matched equipment and scope checked",
+      "icon": "shield"
+    },
+    {
+      "title": "Whole-system diagnostics",
+      "text": "Shared blower, control board or thermostat faults",
+      "icon": "fan"
+    },
+    {
+      "title": "Seasonal maintenance on both",
+      "text": "Spring cooling and autumn heating visits",
+      "icon": "clock"
+    },
+    {
+      "title": "Controls and staging setup",
+      "text": "Control configured for multi-stage equipment",
+      "icon": "thermostat"
+    }
+  ],
+  "hvac-systems/smart-thermostat-installation-repair": [
+    {
+      "title": "Compatibility check",
+      "text": "Voltage, stages, accessories and conductors checked",
+      "icon": "clipboard"
+    },
+    {
+      "title": "Smart thermostat installation",
+      "text": "Every mode tested against the equipment sequence",
+      "icon": "thermostat"
+    },
+    {
+      "title": "C-wire power solutions",
+      "text": "Adapter or spare conductor verified at the equipment",
+      "icon": "plug"
+    },
+    {
+      "title": "Blank screen repair",
+      "text": "Power loss, low-voltage fuse or wiring faults traced",
+      "icon": "bolt"
+    },
+    {
+      "title": "Heat pump thermostat setup",
+      "text": "Reversing valve, auxiliary heat and lockouts",
+      "icon": "snowflake"
+    },
+    {
+      "title": "Zoned and communicating controls",
+      "text": "Zone panels, dampers, sensors and valves checked",
+      "icon": "duct"
+    },
+    {
+      "title": "New control cable runs",
+      "text": "Cable routing, conductor count and wall repair",
+      "icon": "wrench"
+    }
+  ],
+  "indoor-air-quality-ventilation/air-duct-cleaning-repair": [
+    {
+      "title": "Airflow and leakage diagnosis",
+      "text": "Static-pressure testing and visible disconnections",
+      "icon": "gauge"
+    },
+    {
+      "title": "Targeted duct sealing",
+      "text": "Joints sealed where leakage is found",
+      "icon": "duct"
+    },
+    {
+      "title": "Whole-system cleaning",
+      "text": "Supplies, returns, trunks and blower compartment",
+      "icon": "filter"
+    },
+    {
+      "title": "Return leak checks",
+      "text": "Return side tested separately from supply",
+      "icon": "vent"
+    },
+    {
+      "title": "Branch repair or replacement",
+      "text": "Crushed flex and disconnected runs corrected",
+      "icon": "wrench"
+    },
+    {
+      "title": "Register and damper balancing",
+      "text": "Balancing once system airflow is verified",
+      "icon": "fan"
+    },
+    {
+      "title": "Dust source assessment",
+      "text": "Dust traced before cleaning is recommended",
+      "icon": "clipboard"
+    }
+  ],
+  "indoor-air-quality-ventilation/attic-fan-installation-repair": [
+    {
+      "title": "Attic fan diagnosis",
+      "text": "Motor, control, sensor, blade and vibration checks",
+      "icon": "fan"
+    },
+    {
+      "title": "Continuous runtime faults",
+      "text": "Sensor location and setpoint checked",
+      "icon": "thermostat"
+    },
+    {
+      "title": "Gable fan replacement",
+      "text": "Opening size, intake and weather protection",
+      "icon": "home"
+    },
+    {
+      "title": "Roof-mounted installation",
+      "text": "Pitch, flashing, structure and controls",
+      "icon": "building"
+    },
+    {
+      "title": "Ventilation assessment",
+      "text": "Intake area, air sealing and insulation reviewed",
+      "icon": "vent"
+    },
+    {
+      "title": "Solar attic fans",
+      "text": "Panel placement, solar exposure and roof penetration",
+      "icon": "bolt"
+    },
+    {
+      "title": "Combustion safety check",
+      "text": "Depressurization risk checked before a fan is added",
+      "icon": "shield"
+    }
+  ],
+  "indoor-air-quality-ventilation/ceiling-fan-installation-repair": [
+    {
+      "title": "Existing-fan diagnosis",
+      "text": "Control, receiver, capacitor and motor checks",
+      "icon": "fan"
+    },
+    {
+      "title": "Wobble and balance",
+      "text": "Mounting checked before blades are balanced",
+      "icon": "wrench"
+    },
+    {
+      "title": "Remote control faults",
+      "text": "Receiver and handset pairing diagnosed",
+      "icon": "plug"
+    },
+    {
+      "title": "Fan-rated box check",
+      "text": "Box and brace confirmed for fan weight and load",
+      "icon": "shield"
+    },
+    {
+      "title": "Fan and light controls",
+      "text": "Shared or separate controls on light kit fans",
+      "icon": "bolt"
+    },
+    {
+      "title": "Like-for-like replacement",
+      "text": "Assembly and controls once electrical scope is confirmed",
+      "icon": "home"
+    },
+    {
+      "title": "Outdoor fan rating check",
+      "text": "Damp or wet rating and corrosion-resistant mounting",
+      "icon": "drop"
+    }
+  ],
+  "indoor-air-quality-ventilation/dryer-vent-cleaning-repair": [
+    {
+      "title": "Vent inspection",
+      "text": "Route length, elbows, material and termination",
+      "icon": "clipboard"
+    },
+    {
+      "title": "Mechanical cleaning",
+      "text": "Lint restriction removed and airflow compared",
+      "icon": "filter"
+    },
+    {
+      "title": "Disconnected-joint repair",
+      "text": "Approved metal connection, sealing and patching",
+      "icon": "wrench"
+    },
+    {
+      "title": "Roof termination service",
+      "text": "Cap, screens and damper opening checked",
+      "icon": "home"
+    },
+    {
+      "title": "Booster-fan systems",
+      "text": "Fan, pressure switch and cleaning access matched",
+      "icon": "fan"
+    },
+    {
+      "title": "Unsafe duct correction",
+      "text": "Plastic, foil and crushed flex flagged for correction",
+      "icon": "shield"
+    },
+    {
+      "title": "Vent reroute",
+      "text": "New path with exterior penetration and firestopping",
+      "icon": "duct"
+    }
+  ],
+  "indoor-air-quality-ventilation/exhaust-fan-installation-repair": [
+    {
+      "title": "Bathroom fan diagnosis",
+      "text": "Motor, wheel, housing and controls checked",
+      "icon": "fan"
+    },
+    {
+      "title": "Noisy fan repair",
+      "text": "Dirt, loose wheel or damper chatter found first",
+      "icon": "wrench"
+    },
+    {
+      "title": "Damp bathroom airflow",
+      "text": "Fan size, duct and exterior discharge checked",
+      "icon": "drop"
+    },
+    {
+      "title": "Like-for-like replacement",
+      "text": "Housing size, ceiling access and duct adapter",
+      "icon": "home"
+    },
+    {
+      "title": "Exterior vent routing",
+      "text": "Roof or wall termination with a dampered outlet",
+      "icon": "vent"
+    },
+    {
+      "title": "Range hood correction",
+      "text": "Blower, grease duct, clearances and make-up air",
+      "icon": "duct"
+    },
+    {
+      "title": "Post-install verification",
+      "text": "Airflow, damper, discharge and sound checked",
+      "icon": "gauge"
+    }
+  ]
+}

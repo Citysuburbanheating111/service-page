@@ -9,10 +9,11 @@ import {CollectionHeader} from './collection-chrome'
 import {withoutReferenceHeader} from '@/lib/reference-header'
 import {refineServicePageLinks} from '@/lib/service-page-links'
 import {validEmail, withLeadEmailField} from '@/lib/lead-form-email'
+import {withServicePageSections, type WorkItem} from '@/lib/service-page-sections'
 
-type Props = {snapshot: Pick<ReferenceSnapshot, 'style' | 'html' | 'schema'>; serviceName: string}
+type Props = {snapshot: Pick<ReferenceSnapshot, 'style' | 'html' | 'schema'>; serviceName: string; workItems?: WorkItem[]}
 
-export function ReferenceLandingPage({snapshot, serviceName}: Props) {
+export function ReferenceLandingPage({snapshot, serviceName, workItems}: Props) {
   const root = useRef<HTMLDivElement>(null)
   // Older published CMS revisions adopt the footer correction immediately;
   // current revisions retain their editable footer copy and images.
@@ -69,7 +70,7 @@ export function ReferenceLandingPage({snapshot, serviceName}: Props) {
       .replaceAll('header a[href', '.reference-design header a[href')
       .replaceAll('header > div', '.reference-design header > div')}} />
     <style dangerouslySetInnerHTML={{__html: liveFooter.style}} />
-    <div dangerouslySetInnerHTML={{__html: withAppServiceLinks(withLeadEmailField(refineServicePageLinks(migrateServiceUrls(withoutReferenceHeader(html)))))}} />
+    <div dangerouslySetInnerHTML={{__html: withServicePageSections(withAppServiceLinks(withLeadEmailField(refineServicePageLinks(migrateServiceUrls(withoutReferenceHeader(html))))), serviceName, workItems)}} />
     {snapshot.schema && <script type="application/ld+json" dangerouslySetInnerHTML={{__html: migrateServiceUrls(snapshot.schema).replace(/</g, '\\u003c')}} />}
   </div></>
 }
