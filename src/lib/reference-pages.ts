@@ -35,7 +35,18 @@ export type ReferenceDocument = ReferenceOverride & {
 }
 
 export function getReferenceService(clusterSlug: string, slug: string): ReferenceService | undefined {
-  return referenceServices.find((item) => item.clusterSlug === clusterSlug && (item.slug === slug || item.legacySlug === slug))
+  return referenceServices.find((item) => item.clusterSlug === clusterSlug && (item.slug === slug || item.legacySlug === slug || item.previousSlug === slug))
+}
+
+/** Sanity slugs that identify a catalog page: the current "-near-me" slug, then the slug it had before. */
+export function referenceSlugs(service: ReferenceService | undefined, requested: string): string[] {
+  return service ? [...new Set([service.slug, service.previousSlug].filter(Boolean))] : [requested]
+}
+
+/** A canonical left on the slug a page had before the "-near-me" rename is replaced by the catalog's. */
+export function currentCanonical(service: ReferenceService, cmsCanonical?: string): string {
+  const stale = !cmsCanonical || new URL(cmsCanonical, 'https://citysuburbanheating.com').pathname === `/services/${service.clusterSlug}/${service.previousSlug}/`
+  return stale ? service.canonicalUrl : cmsCanonical
 }
 
 export function getReferenceSnapshot(clusterSlug: string, slug: string): ReferenceSnapshot | undefined {
@@ -68,6 +79,7 @@ export function referenceNavigation(overrides: ReferenceOverride[] = []): Prepar
       .sort((a, b) => (a.name || '').localeCompare(b.name || ''))
     const pages = services.map((item) => {
       const override = overrides.find((row) => row.clusterSlug === item.clusterSlug && row.slug === item.slug)
+        || overrides.find((row) => row.clusterSlug === item.clusterSlug && row.slug === item.previousSlug)
       return ({
       _id: `reference-${slug}-${item.slug}`,
       serviceSlug: item.slug,

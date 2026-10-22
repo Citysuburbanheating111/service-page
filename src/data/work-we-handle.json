@@ -1,5 +1,5 @@
 {
-  "air-quality/dehumidifier-installation": [
+  "air-quality/dehumidifier-installation-near-me": [
     {
       "title": "Damp basement assessment",
       "text": "Basement compared with the main level before sizing",
@@ -36,7 +36,7 @@
       "icon": "snowflake"
     }
   ],
-  "air-quality/duct-maintenance": [
+  "air-quality/duct-maintenance-near-me": [
     {
       "title": "Duct inspection",
       "text": "Accessible supply and return runs checked first",
@@ -73,7 +73,7 @@
       "icon": "thermostat"
     }
   ],
-  "air-quality/duct-repair": [
+  "air-quality/duct-repair-near-me": [
     {
       "title": "Weak room airflow tracing",
       "text": "Weak branch traced and compared with nearby rooms",
@@ -110,7 +110,7 @@
       "icon": "gauge"
     }
   ],
-  "air-quality/humidifier-air-cleaner": [
+  "air-quality/humidifier-air-cleaner-near-me": [
     {
       "title": "Winter dryness assessment",
       "text": "Low humidity separated from supply or control faults",
@@ -147,7 +147,7 @@
       "icon": "pipe"
     }
   ],
-  "air-quality/indoor-air-quality-test": [
+  "air-quality/indoor-air-quality-test-near-me": [
     {
       "title": "Humidity readings",
       "text": "Moisture readings for damp rooms and condensation",
@@ -184,7 +184,7 @@
       "icon": "clipboard"
     }
   ],
-  "commercial-specialty/commercial-refrigeration-repair-maintenance": [
+  "commercial-specialty/commercial-refrigeration-repair-maintenance-near-me": [
     {
       "title": "Walk-in cooler diagnosis",
       "text": "Temperature history, controls and refrigerant circuit",
@@ -221,7 +221,7 @@
       "icon": "gauge"
     }
   ],
-  "commercial/commercial-hvac-system-installation": [
+  "commercial/commercial-hvac-system-installation-near-me": [
     {
       "title": "Load review of the space",
       "text": "Room use, occupancy and hours set the starting load",
@@ -258,7 +258,7 @@
       "icon": "shield"
     }
   ],
-  "commercial/commercial-hvac-system-replacement": [
+  "commercial/commercial-hvac-system-replacement-near-me": [
     {
       "title": "Repair or replace assessment",
       "text": "Diagnosis before any replacement is quoted",
@@ -295,7 +295,7 @@
       "icon": "pipe"
     }
   ],
-  "commercial/custom-hvac-maintenance-plan": [
+  "commercial/custom-hvac-maintenance-plan-near-me": [
     {
       "title": "Seasonal check-ups",
       "text": "Visits timed before cooling and heating seasons",
@@ -332,7 +332,7 @@
       "icon": "bolt"
     }
   ],
-  "commercial/ductwork-design-repair-services": [
+  "commercial/ductwork-design-repair-services-near-me": [
     {
       "title": "Tenant build-out layouts",
       "text": "Supply and return paths planned before ceilings close",
@@ -369,7 +369,7 @@
       "icon": "vent"
     }
   ],
-  "commercial/emergency-routine-commercial-hvac-repairs": [
+  "commercial/emergency-routine-commercial-hvac-repairs-near-me": [
     {
       "title": "No heat before opening",
       "text": "Flame sensor, igniter and limit faults traced",
@@ -406,7 +406,7 @@
       "icon": "wrench"
     }
   ],
-  "commercial/energy-efficient-hvac-upgrades": [
+  "commercial/energy-efficient-hvac-upgrades-near-me": [
     {
       "title": "Schedule and override review",
       "text": "Clock settings matched to actual opening hours",
@@ -443,7 +443,7 @@
       "icon": "gauge"
     }
   ],
-  "cooling/air-conditioning-installation": [
+  "cooling/air-conditioning-installation-near-me": [
     {
       "title": "Sizing from the house",
       "text": "Size should come from the house, not the old unit's label",
@@ -480,7 +480,7 @@
       "icon": "duct"
     }
   ],
-  "cooling/air-conditioning-maintenance": [
+  "cooling/air-conditioning-maintenance-near-me": [
     {
       "title": "Condenser coil cleaning",
       "text": "Fins rinsed clear of cottonwood, grass and city grime",
@@ -517,7 +517,7 @@
       "icon": "clipboard"
     }
   ],
-  "cooling/air-conditioning-repair": [
+  "cooling/air-conditioning-repair-near-me": [
     {
       "title": "Warm air from the vents",
       "text": "Capacitor, contactor and charge tested before a quote",
@@ -554,7 +554,7 @@
       "icon": "clock"
     }
   ],
-  "cooling/cooling-maintenance-plans": [
+  "cooling/cooling-maintenance-plans-near-me": [
     {
       "title": "Seasonal check-ups",
       "text": "Ongoing cooling care booked ahead each season",
@@ -591,7 +591,7 @@
       "icon": "snowflake"
     }
   ],
-  "cooling/ductless-hvac-service": [
+  "cooling/ductless-hvac-service-near-me": [
     {
       "title": "Single-zone and multi-zone",
       "text": "One head per room, or several heads on one outdoor unit",
@@ -628,7 +628,7 @@
       "icon": "pipe"
     }
   ],
-  "cooling/heat-pump-services": [
+  "cooling/heat-pump-services-near-me": [
     {
       "title": "Outdoor coil cleaning",
       "text": "Cottonwood, leaves and winter grit cleared from the coil",
@@ -665,7 +665,7 @@
       "icon": "thermostat"
     }
   ],
-  "cooling/window-portable-ac-installation-repair": [
+  "cooling/window-portable-ac-installation-repair-near-me": [
     {
       "title": "Window unit not cooling",
       "text": "Model, age and symptom checked before repair",
@@ -702,7 +702,7 @@
       "icon": "clipboard"
     }
   ],
-  "fireplace-chimney/chimney-sweeping-inspection-repair": [
+  "fireplace-chimney/chimney-sweeping-inspection-repair-near-me": [
     {
       "title": "HVAC venting diagnosis",
       "text": "Combustion and draft checked at the appliance",
@@ -739,7 +739,7 @@
       "icon": "shield"
     }
   ],
-  "fireplace-chimney/gas-fireplace-repair-installation": [
+  "fireplace-chimney/gas-fireplace-repair-installation-near-me": [
     {
       "title": "Scope and model check",
       "text": "Listing, fuel, vent type and parts availability",
@@ -776,7 +776,7 @@
       "icon": "shield"
     }
   ],
-  "heating/boiler-service": [
+  "heating/boiler-service-near-me": [
     {
       "title": "No-heat boiler calls",
       "text": "Low-water cutoff, ignition and controls traced first",
@@ -813,7 +813,7 @@
       "icon": "clock"
     }
   ],
-  "heating/heat-pump": [
+  "heating/heat-pump-near-me": [
     {
       "title": "Defrost and ice faults",
       "text": "Defrost boards, sensors and coils sealed in ice",
@@ -850,7 +850,7 @@
       "icon": "thermostat"
     }
   ],
-  "heating/heater-installation": [
+  "heating/heater-installation-near-me": [
     {
       "title": "Emergency furnace replacement",
       "text": "A final breakdown replaced, with the price in writing",
@@ -887,7 +887,7 @@
       "icon": "clipboard"
     }
   ],
-  "heating/heater-maintenance": [
+  "heating/heater-maintenance-near-me": [
     {
       "title": "Annual furnace tune-up",
       "text": "A yearly visit before the first cold day of fall",
@@ -924,7 +924,7 @@
       "icon": "building"
     }
   ],
-  "heating/heater-repair": [
+  "heating/heater-repair-near-me": [
     {
       "title": "No-heat furnace calls",
       "text": "Furnaces that will not start, traced to the failed part",
@@ -961,7 +961,7 @@
       "icon": "thermostat"
     }
   ],
-  "heating/hvac-maintenance-plans": [
+  "heating/hvac-maintenance-plans-near-me": [
     {
       "title": "Seasonal heating check-ups",
       "text": "Heating visit booked before the first cold snap",
@@ -998,7 +998,7 @@
       "icon": "shield"
     }
   ],
-  "heating/hybrid-heating-systems": [
+  "heating/hybrid-heating-systems-near-me": [
     {
       "title": "Dual-fuel system installs",
       "text": "Heat pump paired with a gas furnace",
@@ -1035,7 +1035,7 @@
       "icon": "furnace"
     }
   ],
-  "heating/oil-propane-heating-repair-maintenance": [
+  "heating/oil-propane-heating-repair-maintenance-near-me": [
     {
       "title": "No-heat diagnosis",
       "text": "Fuel supply, burner, ignition, draft and controls",
@@ -1072,7 +1072,7 @@
       "icon": "furnace"
     }
   ],
-  "heating/radiator-radiant-heat-repair-installation": [
+  "heating/radiator-radiant-heat-repair-installation-near-me": [
     {
       "title": "Cold radiator diagnosis",
       "text": "Vents, traps, valves, pitch, air and flow traced",
@@ -1109,7 +1109,7 @@
       "icon": "home"
     }
   ],
-  "heating/space-heater-repair-installation": [
+  "heating/space-heater-repair-installation-near-me": [
     {
       "title": "Gas unit heater diagnosis",
       "text": "Ignition, venting, gas pressure and control voltage",
@@ -1146,7 +1146,7 @@
       "icon": "vent"
     }
   ],
-  "heating/water-heater-repair-installation": [
+  "heating/water-heater-repair-installation-near-me": [
     {
       "title": "No hot water calls",
       "text": "Pilot, igniter, gas control or element traced first",
@@ -1183,7 +1183,7 @@
       "icon": "radiator"
     }
   ],
-  "hvac-systems/hvac-repair-installation": [
+  "hvac-systems/hvac-repair-installation-near-me": [
     {
       "title": "Furnace and AC replaced together",
       "text": "Matched equipment with load and duct capacity checks",
@@ -1220,7 +1220,7 @@
       "icon": "thermostat"
     }
   ],
-  "hvac-systems/smart-thermostat-installation-repair": [
+  "hvac-systems/smart-thermostat-installation-repair-near-me": [
     {
       "title": "Compatibility check",
       "text": "Voltage, stages, accessories and conductors checked",
@@ -1257,7 +1257,7 @@
       "icon": "wrench"
     }
   ],
-  "indoor-air-quality-ventilation/air-duct-cleaning-repair": [
+  "indoor-air-quality-ventilation/air-duct-cleaning-repair-near-me": [
     {
       "title": "Airflow and leakage diagnosis",
       "text": "Static-pressure testing and visible disconnections",
@@ -1294,7 +1294,7 @@
       "icon": "clipboard"
     }
   ],
-  "indoor-air-quality-ventilation/attic-fan-installation-repair": [
+  "indoor-air-quality-ventilation/attic-fan-installation-repair-near-me": [
     {
       "title": "Attic fan diagnosis",
       "text": "Motor, control, sensor, blade and vibration checks",
@@ -1331,7 +1331,7 @@
       "icon": "shield"
     }
   ],
-  "indoor-air-quality-ventilation/ceiling-fan-installation-repair": [
+  "indoor-air-quality-ventilation/ceiling-fan-installation-repair-near-me": [
     {
       "title": "Existing-fan diagnosis",
       "text": "Control, receiver, capacitor and motor checks",
@@ -1368,7 +1368,7 @@
       "icon": "drop"
     }
   ],
-  "indoor-air-quality-ventilation/dryer-vent-cleaning-repair": [
+  "indoor-air-quality-ventilation/dryer-vent-cleaning-repair-near-me": [
     {
       "title": "Vent inspection",
       "text": "Route length, elbows, material and termination",
@@ -1405,7 +1405,7 @@
       "icon": "duct"
     }
   ],
-  "indoor-air-quality-ventilation/exhaust-fan-installation-repair": [
+  "indoor-air-quality-ventilation/exhaust-fan-installation-repair-near-me": [
     {
       "title": "Bathroom fan diagnosis",
       "text": "Motor, wheel, housing and controls checked",
@@ -1442,7 +1442,7 @@
       "icon": "gauge"
     }
   ],
-  "heating/water-heater-installation": [
+  "heating/water-heater-installation-near-me": [
     {
       "title": "Leaking tank replacement",
       "text": "Rusted-through tanks replaced, sized and vented right",
@@ -1479,7 +1479,7 @@
       "icon": "clock"
     }
   ],
-  "heating/water-heater-maintenance": [
+  "heating/water-heater-maintenance-near-me": [
     {
       "title": "Tank flush and sediment",
       "text": "Drains and flushes sediment until the water runs clear",

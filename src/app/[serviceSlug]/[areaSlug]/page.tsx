@@ -7,7 +7,7 @@ import {siteUrl} from '@/sanity/env'
 import {sanityFetch} from '@/sanity/lib/live'
 import {REFERENCE_SERVICE_QUERY, SERVICE_NAVIGATION_QUERY, SERVICE_PAGE_METADATA_QUERY, SERVICE_PAGE_QUERY} from '@/sanity/lib/queries'
 import type {ServicePageData} from '@/types/content'
-import {getReferenceService, getReferenceSnapshot, type ReferenceDocument} from '@/lib/reference-pages'
+import {currentCanonical, getReferenceService, getReferenceSnapshot, referenceSlugs, type ReferenceDocument} from '@/lib/reference-pages'
 import {ReferenceLandingPage} from '@/components/reference-landing-page'
 import {legacyReplacementPath} from '@/lib/legacy-service-replacements'
 import {migrateServiceContent} from '@/lib/service-base-path'
@@ -23,12 +23,12 @@ function primaryPage(service: PreparedService) {
 export async function generateMetadata({params}: Props): Promise<Metadata> {
   const {serviceSlug: clusterSlug, areaSlug: serviceSlug} = await params
   const reference = getReferenceService(clusterSlug, serviceSlug)
-  const updated = migrateServiceContent(await metadataClient.fetch(REFERENCE_SERVICE_QUERY, {clusterSlug, serviceSlug: reference?.slug || serviceSlug}).catch(() => null)) as ReferenceDocument | null
+  const updated = migrateServiceContent(await metadataClient.fetch(REFERENCE_SERVICE_QUERY, {clusterSlug, serviceSlugs: referenceSlugs(reference, serviceSlug)}).catch(() => null)) as ReferenceDocument | null
   if (reference || updated?.sections?.length) {
     return {
     title: {absolute: updated?.metaTitle || reference?.title || updated?.name || serviceSlug},
     description: updated?.metaDescription || reference?.description,
-    alternates: {canonical: reference ? updated?.canonicalUrl || reference.canonicalUrl : `${siteUrl.replace(/\/+$/, '')}/services/${clusterSlug}/${serviceSlug}/`},
+    alternates: {canonical: reference ? currentCanonical(reference, updated?.canonicalUrl) : `${siteUrl.replace(/\/+$/, '')}/services/${clusterSlug}/${serviceSlug}/`},
     robots: {index: true, follow: true},
   }
   }
@@ -53,7 +53,7 @@ export default async function ServicePage({params}: Props) {
   if (replacement) permanentRedirect(replacement.replace(/^\/services/, ''))
   const reference = getReferenceService(firstSlug, secondSlug)
   const snapshot = reference && getReferenceSnapshot(firstSlug, secondSlug)
-  const result = await sanityFetch({query: REFERENCE_SERVICE_QUERY, params: {clusterSlug: firstSlug, serviceSlug: reference?.slug || secondSlug}, stega: false}).catch(() => null)
+  const result = await sanityFetch({query: REFERENCE_SERVICE_QUERY, params: {clusterSlug: firstSlug, serviceSlugs: referenceSlugs(reference, secondSlug)}, stega: false}).catch(() => null)
   const updated = result?.data as ReferenceDocument | null
   const editedSnapshot = renderReferencePage(updated, snapshot)
   const workItems = resolveWorkItems(updated?.workWeHandle, reference?.clusterSlug || firstSlug, reference?.slug || secondSlug)
