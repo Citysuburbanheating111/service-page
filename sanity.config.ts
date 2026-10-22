@@ -6,7 +6,7 @@ import {presentationTool} from 'sanity/presentation'
 import {structureTool} from 'sanity/structure'
 import {resolve} from './src/sanity/presentation'
 import {schemaTypes} from './src/sanity/schemaTypes'
-import {structure} from './src/sanity/structure'
+import {defaultDocumentNode, structure} from './src/sanity/structure'
 import {migrateServiceUrls} from './src/lib/service-base-path'
 
 const projectId = process.env.NEXT_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'boolyxr0'
@@ -55,12 +55,13 @@ export default defineConfig({
   dataset,
   basePath: '/services/studio',
   plugins: [
-    structureTool({structure}),
+    structureTool({structure, defaultDocumentNode}),
     presentationTool({
       resolve,
+      // No origin: the preview loads from the Studio's own origin (this same app), so the
+      // draft-mode cookie and the Studio connection work. citysuburbanheating.com could not connect.
       previewUrl: {
-        origin: siteUrl,
-        preview: '/services/',
+        initial: '/services/',
         previewMode: {enable: '/services/api/draft-mode/enable/'},
       },
     }),
