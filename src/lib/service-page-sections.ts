@@ -89,10 +89,33 @@ export function withEquipmentTypesLabel(html: string): string {
   return html.replace(/(<section\b[^>]*\bdata-module="systems"[^>]*>\s*<div\b[^>]*>\s*<p\b[^>]*>)[\s\S]*?(<\/p>)/, '$1Equipment types$2')
 }
 
+// Symptom rows ("Match the symptom"): a warning triangle reads like a site error, so rows get a
+// magnifying glass (symptom check) and emergency rows a siren on a solid red circle.
+const symptomIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9302A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>'
+const emergencyIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18v-6a5 5 0 0 1 10 0v6"/><path d="M5 21h14"/><path d="M12 3v1M4.9 5.9l.7.7M19.1 5.9l-.7.7M3 12h1M20 12h1"/></svg>'
+const TRIANGLE = /<svg\b[^>]*>\s*<path d="M12 3l10 18H2z"><\/path>[\s\S]*?<\/svg>/
+
+// Note boxes: safety notes (gas, carbon monoxide, hazards) get the siren; other notes an info mark.
+const noteInfoIcon = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9302A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>'
+const noteSafetyIcon = '<span aria-hidden="true" style="flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; background: #C9302A; display: inline-flex; align-items: center; justify-content: center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18v-6a5 5 0 0 1 10 0v6"/><path d="M5 21h14"/><path d="M12 3v1M4.9 5.9l.7.7M19.1 5.9l-.7.7M3 12h1M20 12h1"/></svg></span>'
+const SAFETY = /\bgas\b|carbon monoxide|\bCO\b|hazard|safety|electrical warning|\bstop\b/i
+const NOTE = /(<div role="note"[^>]*>\s*)<svg\b[^>]*>\s*<path d="M12 3l10 18H2z"><\/path>[\s\S]*?<\/svg>([\s\S]*?<\/div>)/g
+
+export function withSymptomIcons(html: string): string {
+  const notes = html.replace(NOTE, (_match, open: string, rest: string) =>
+    open + (SAFETY.test(rest.replace(/<[^>]+>/g, ' ')) ? noteSafetyIcon : noteInfoIcon) + rest)
+  return notes.replace(/<summary\b[^>]*>[\s\S]*?<\/summary>/g, summary => {
+    if (!TRIANGLE.test(summary)) return summary
+    const emergency = />\s*Emergency\s*</.test(summary)
+    const marked = emergency ? summary.replace(/<span aria-hidden="true" style="/, '<span aria-hidden="true" data-symptom="emergency" style="') : summary
+    return marked.replace(TRIANGLE, emergency ? emergencyIcon : symptomIcon)
+  })
+}
+
 /** Add the work strip after the quick facts and the 24/7 band after the pricing section.
  * Pages without work items (services City & Suburban refers out) get neither. */
 export function withServicePageSections(html: string, serviceName: string, items?: WorkItem[]): string {
-  const labelled = withEquipmentTypesLabel(html)
+  const labelled = withSymptomIcons(withEquipmentTypesLabel(html))
   if (!items?.length) return labelled
   return insertAfterModule(insertAfterModule(labelled, 'quick-facts', workWeHandleSection(serviceName, items)), 'pricing', allDaySection())
 }
