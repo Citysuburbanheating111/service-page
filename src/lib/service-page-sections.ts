@@ -4,16 +4,62 @@
 // - A 24/7 band: any job, big or small, gets round-the-clock service.
 // The equipment listing ("systems" section) is restyled in CSS to the Highlights
 // "Parts of..." tiles; its copy is not touched.
+// Shared copy comes from the Sanity Service-page template ("V1 design system: shared
+// sections"); each page's items come from its own "Work We Handle strip" field, with
+// src/data/work-we-handle.json as the fallback for pages not yet edited in Sanity.
 
 import workItems from '@/data/work-we-handle.json'
+import type {WorkIconName} from './work-icons'
 
 export type WorkItem = {title: string; text: string; icon: string}
 
-const PHONE_HREF = 'tel:+17732383838'
-const PHONE_DISPLAY = '(773) 238-3838'
+/** The template's shared section copy; any field left empty falls back to the default. */
+export type ServiceSectionsDesign = {
+  workEyebrow?: string
+  workHeadingSuffix?: string
+  workLede?: string
+  workNote?: string
+  equipmentLabel?: string
+  allDayEyebrow?: string
+  allDayHeading?: string
+  allDayText?: string
+  allDayPoints?: string[]
+  allDayBadge?: string
+  allDayBadgeLabel?: string
+  phoneDisplay?: string
+  phoneHref?: string
+  requestLabel?: string
+}
+
+export const defaultServiceSections: Required<ServiceSectionsDesign> = {
+  workEyebrow: 'Service types',
+  workHeadingSuffix: 'Work We Handle',
+  workLede: 'Common {service} jobs City & Suburban handles for Chicago homes and businesses.',
+  workNote: 'Final recommendations follow the installed conditions, equipment instructions and applicable Chicago requirements.',
+  equipmentLabel: 'Equipment types',
+  allDayEyebrow: 'Open 24 hours, 7 days a week',
+  allDayHeading: '24/7 service, whatever the size of the job',
+  allDayText: 'A small fix or a full breakdown, City & Suburban answers around the clock, every day of the week. Call any time, day or night, and describe the problem.',
+  allDayPoints: ['Big jobs and small jobs', 'Day, night and weekends', 'One number: {phone}'],
+  allDayBadge: '24/7',
+  allDayBadgeLabel: 'Always open',
+  phoneDisplay: '(773) 238-3838',
+  phoneHref: 'tel:+17732383838',
+  requestLabel: 'Request service',
+}
+
+function resolveDesign(design?: ServiceSectionsDesign | null): Required<ServiceSectionsDesign> {
+  const resolved = {...defaultServiceSections}
+  for (const [key, value] of Object.entries(design || {}) as Array<[keyof ServiceSectionsDesign, unknown]>) {
+    if (Array.isArray(value) ? value.some(item => typeof item === 'string' && item.trim()) : typeof value === 'string' && value.trim()) {
+      (resolved as Record<string, unknown>)[key] = Array.isArray(value) ? value.filter(item => typeof item === 'string' && item.trim()) : value
+    }
+  }
+  return resolved
+}
 
 // 48 x 48 line icons in the Highlights style: a filled base shape plus `ln` strokes.
-const icons: Record<string, string> = {
+const icons: Record<WorkIconName, string> = {
   furnace: '<rect x="12" y="8" width="24" height="32" rx="3"/><path class="ln" d="M18 15h12M18 21h12"/><circle class="ln" cx="24" cy="31" r="3"/>',
   flame: '<path d="M24 8c4 6 10 10 10 18a10 10 0 0 1-20 0c0-5 3-8 5-11 1 4 3 5 5 5-2-4-1-8 0-12z"/>',
   fan: '<circle cx="24" cy="24" r="15"/><path class="ln" d="M24 24c0-6 3-9 7-8M24 24c-6 0-9 3-8 7M24 24c6 0 9-3 8-7M24 24c0 6-3 9-7 8"/>',
@@ -48,25 +94,28 @@ export function getWorkItems(clusterSlug: string, slug: string): WorkItem[] | un
   return (workItems as Record<string, WorkItem[]>)[`${clusterSlug}/${slug}`]
 }
 
-export function workWeHandleSection(serviceName: string, items: WorkItem[]): string {
-  const heading = `${titleCase(serviceName)} Work We Handle`
-  const item = (work: WorkItem, clone: boolean) => `<div class="cs-work-item"${clone ? ' aria-hidden="true"' : ''}><svg viewBox="0 0 48 48" aria-hidden="true">${icons[work.icon] || icons.clipboard}</svg><b>${escapeHtml(work.title)}</b><span>${escapeHtml(work.text)}</span></div>`
+export function workWeHandleSection(serviceName: string, items: WorkItem[], design?: ServiceSectionsDesign | null): string {
+  const d = resolveDesign(design)
+  const heading = `${titleCase(serviceName)} ${d.workHeadingSuffix}`
+  const item = (work: WorkItem, clone: boolean) => `<div class="cs-work-item"${clone ? ' aria-hidden="true"' : ''}><svg viewBox="0 0 48 48" aria-hidden="true">${icons[work.icon as WorkIconName] || icons.clipboard}</svg><b>${escapeHtml(work.title)}</b><span>${escapeHtml(work.text)}</span></div>`
   return `<section data-module="work-we-handle" class="cs-work" id="work-we-handle"><div class="cs-work-wrap">`
-    + `<p class="cs-work-eyebrow">Service types</p><h2>${escapeHtml(heading)}</h2>`
-    + `<p class="cs-work-lede">Common ${escapeHtml(serviceName.toLowerCase())} jobs City &amp; Suburban handles for Chicago homes and businesses.</p>`
+    + `<p class="cs-work-eyebrow">${escapeHtml(d.workEyebrow)}</p><h2>${escapeHtml(heading)}</h2>`
+    + `<p class="cs-work-lede">${escapeHtml(d.workLede).replaceAll('{service}', escapeHtml(serviceName.toLowerCase()))}</p>`
     + `<div class="cs-work-strip" aria-label="${escapeHtml(heading)}"><div class="cs-work-track">`
     + items.map(work => item(work, false)).join('') + items.map(work => item(work, true)).join('')
-    + `</div></div><p class="cs-work-note">Final recommendations follow the installed conditions, equipment instructions and applicable Chicago requirements.</p></div></section>`
+    + `</div></div><p class="cs-work-note">${escapeHtml(d.workNote)}</p></div></section>`
 }
 
-export function allDaySection(): string {
+export function allDaySection(design?: ServiceSectionsDesign | null): string {
+  const d = resolveDesign(design)
+  const phone = escapeHtml(d.phoneDisplay)
   return `<section data-module="service-24-7" class="cs-247" id="open-24-7"><div class="cs-247-wrap">`
-    + `<div class="cs-247-copy"><p class="cs-247-eyebrow">Open 24 hours, 7 days a week</p>`
-    + `<h2>24/7 service, whatever the size of the job</h2>`
-    + `<p>A small fix or a full breakdown, City &amp; Suburban answers around the clock, every day of the week. Call any time, day or night, and describe the problem.</p>`
-    + `<ul class="cs-247-points"><li>Big jobs and small jobs</li><li>Day, night and weekends</li><li>One number: ${PHONE_DISPLAY}</li></ul></div>`
-    + `<div class="cs-247-side"><div class="cs-247-badge"><b>24/7</b><span>Always open</span></div>`
-    + `<a class="cs-247-call" href="${PHONE_HREF}">Call ${PHONE_DISPLAY}</a><a class="cs-247-book" href="#book">Request service</a></div>`
+    + `<div class="cs-247-copy"><p class="cs-247-eyebrow">${escapeHtml(d.allDayEyebrow)}</p>`
+    + `<h2>${escapeHtml(d.allDayHeading)}</h2>`
+    + `<p>${escapeHtml(d.allDayText)}</p>`
+    + `<ul class="cs-247-points">${d.allDayPoints.map(point => `<li>${escapeHtml(point).replaceAll('{phone}', phone)}</li>`).join('')}</ul></div>`
+    + `<div class="cs-247-side"><div class="cs-247-badge"><b>${escapeHtml(d.allDayBadge)}</b><span>${escapeHtml(d.allDayBadgeLabel)}</span></div>`
+    + `<a class="cs-247-call" href="${escapeHtml(d.phoneHref)}">Call ${phone}</a><a class="cs-247-book" href="#book">${escapeHtml(d.requestLabel)}</a></div>`
     + `</div></section>`
 }
 
@@ -85,8 +134,8 @@ export function insertAfterModule(html: string, module: string, extra: string): 
 }
 
 /** The equipment listing's eyebrow label reads "Equipment types" on every page. */
-export function withEquipmentTypesLabel(html: string): string {
-  return html.replace(/(<section\b[^>]*\bdata-module="systems"[^>]*>\s*<div\b[^>]*>\s*<p\b[^>]*>)[\s\S]*?(<\/p>)/, '$1Equipment types$2')
+export function withEquipmentTypesLabel(html: string, label = defaultServiceSections.equipmentLabel): string {
+  return html.replace(/(<section\b[^>]*\bdata-module="systems"[^>]*>\s*<div\b[^>]*>\s*<p\b[^>]*>)[\s\S]*?(<\/p>)/, (_match, open: string, close: string) => open + escapeHtml(label) + close)
 }
 
 // Symptom rows ("Match the symptom"): a warning triangle reads like a site error, so rows get a
@@ -114,8 +163,15 @@ export function withSymptomIcons(html: string): string {
 
 /** Add the work strip after the quick facts and the 24/7 band after the pricing section.
  * Pages without work items (services City & Suburban refers out) get neither. */
-export function withServicePageSections(html: string, serviceName: string, items?: WorkItem[]): string {
-  const labelled = withSymptomIcons(withEquipmentTypesLabel(html))
+export function withServicePageSections(html: string, serviceName: string, items?: WorkItem[], design?: ServiceSectionsDesign | null): string {
+  const labelled = withSymptomIcons(withEquipmentTypesLabel(html, resolveDesign(design).equipmentLabel))
   if (!items?.length) return labelled
-  return insertAfterModule(insertAfterModule(labelled, 'quick-facts', workWeHandleSection(serviceName, items)), 'pricing', allDaySection())
+  return insertAfterModule(insertAfterModule(labelled, 'quick-facts', workWeHandleSection(serviceName, items, design)), 'pricing', allDaySection(design))
+}
+
+/** A page's own Sanity strip wins; pages not yet edited in Sanity use the bundled items. */
+export function resolveWorkItems(cmsItems: WorkItem[] | null | undefined, clusterSlug: string, slug: string): WorkItem[] | undefined {
+  const own = cmsItems?.filter(item => item?.title?.trim() && item?.text?.trim())
+  if (own?.length) return own.map(({title, text, icon}) => ({title, text, icon: icon || 'clipboard'}))
+  return getWorkItems(clusterSlug, slug)
 }

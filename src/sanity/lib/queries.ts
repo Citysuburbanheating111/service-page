@@ -6,7 +6,9 @@ export const REFERENCE_SERVICE_QUERY = defineQuery(`
     metaTitle, metaDescription, canonicalUrl, livePath, qcStatus, structuredData,
     "responsiveCss": coalesce(template->responsiveCss, responsiveCss), sections[]{_key, module, html, contentFields[]{_key,target,kind,label,value}},
     "cardImage": coalesce(cardImage.asset->url, cardImageUrl),
-    cardDescription, keyPhrases
+    cardDescription, keyPhrases,
+    workWeHandle[]{title, text, icon},
+    "serviceSections": template->serviceSections
   }
 `)
 
