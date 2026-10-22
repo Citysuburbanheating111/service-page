@@ -436,3 +436,15 @@ a{color:var(--brand);text-underline-offset:3px}
   .reference-design details[data-role="problem"]>summary>span:nth-of-type(3){grid-column:2;grid-row:2}
   .reference-design details[data-role="problem"]>summary>span:nth-of-type(4){grid-column:3;grid-row:2;white-space:normal}
 }
+
+/* Symptom details: the three blocks (causes, safe checks, technician) as navy cards */
+.reference-design details[data-role="problem"]{container-type:inline-size}
+.reference-design details[data-role="problem"]>summary+div{grid-template-columns:1fr !important;gap:14px !important;padding:18px 20px 8px !important}
+.reference-design details[data-role="problem"]>summary+div>div{background:#09263A;border-radius:10px;padding:18px 20px;color:#fff}
+.reference-design details[data-role="problem"]>summary+div>div h3{color:rgba(255,255,255,.72) !important}
+.reference-design details[data-role="problem"]>summary+div>div li{color:#fff}
+.reference-design details[data-role="problem"]>summary+div>div li::marker{color:#DD382B}
+.reference-design details[data-role="problem"]>summary+div>div p{color:rgba(255,255,255,.9) !important}
+.reference-design details[data-role="problem"]>summary+div>div p:last-child:not(:first-of-type){color:#fff !important}
+@container (min-width:460px){.reference-design details[data-role="problem"]>summary+div{grid-template-columns:repeat(2,minmax(0,1fr)) !important}.reference-design details[data-role="problem"]>summary+div>div:nth-child(3){grid-column:1/-1}}
+@container (min-width:860px){.reference-design details[data-role="problem"]>summary+div{grid-template-columns:repeat(3,minmax(0,1fr)) !important}.reference-design details[data-role="problem"]>summary+div>div:nth-child(3){grid-column:auto}}
