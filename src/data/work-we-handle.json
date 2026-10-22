@@ -852,113 +852,113 @@
   ],
   "heating/heater-installation": [
     {
-      "title": "Furnace replacement",
-      "text": "American Standard furnaces for aging equipment",
+      "title": "Emergency furnace replacement",
+      "text": "A final breakdown replaced, with the price in writing",
+      "icon": "clock"
+    },
+    {
+      "title": "80% AFUE furnaces",
+      "text": "Mid-efficiency furnaces venting into a lined chimney",
       "icon": "furnace"
     },
     {
-      "title": "Furnace sizing review",
-      "text": "Capacity matched to heat loss and duct capacity",
-      "icon": "gauge"
-    },
-    {
-      "title": "Efficiency level choices",
-      "text": "80% and condensing furnace options compared",
+      "title": "90%+ condensing furnaces",
+      "text": "Condensing furnaces with plastic venting and a drain",
       "icon": "flame"
     },
     {
-      "title": "Vent and chimney planning",
-      "text": "Vent route and shared chimney appliances addressed",
-      "icon": "vent"
+      "title": "Furnace with central air",
+      "text": "Replacing the furnace and central air together",
+      "icon": "snowflake"
     },
     {
-      "title": "Closet and condo installs",
-      "text": "Cabinet fit, clearances and removal route checked",
-      "icon": "building"
+      "title": "Dual-fuel heat pump pairing",
+      "text": "A heat pump for mild days, the furnace for deep cold",
+      "icon": "fan"
     },
     {
-      "title": "Thermostat and control changes",
-      "text": "Controls matched to two-stage or modulating furnaces",
-      "icon": "thermostat"
+      "title": "Ductwork and zoning updates",
+      "text": "Duct transitions, return air upgrades and zoning",
+      "icon": "duct"
     },
     {
-      "title": "Permit responsibility",
-      "text": "City permit responsibility stated in the written scope",
+      "title": "Replacement quote reviews",
+      "text": "A second opinion before signing a furnace replacement",
       "icon": "clipboard"
     }
   ],
   "heating/heater-maintenance": [
     {
-      "title": "Furnace tune-up",
-      "text": "Burners, ignition and heat exchanger checked",
-      "icon": "furnace"
+      "title": "Annual furnace tune-up",
+      "text": "A yearly visit before the first cold day of fall",
+      "icon": "clock"
     },
     {
-      "title": "Seasonal furnace cleaning",
-      "text": "Carbon and dust removed from fouled parts",
-      "icon": "wrench"
-    },
-    {
-      "title": "Filter fit and replacement",
-      "text": "Filter size, seating and airflow resistance checked",
-      "icon": "filter"
-    },
-    {
-      "title": "Combustion safety checks",
-      "text": "Flue draft, flame pattern and gas pressure checked",
+      "title": "Burner and flame checks",
+      "text": "Burners, flame sensor, igniter and gas pressure",
       "icon": "flame"
     },
     {
-      "title": "Safety switch testing",
-      "text": "Rollout and limit switches checked in a full cycle",
+      "title": "Condensate drain care",
+      "text": "Drain trap, hose and pump on high-efficiency furnaces",
+      "icon": "drop"
+    },
+    {
+      "title": "Electric furnace service",
+      "text": "Elements, sequencers and limit switches tested",
+      "icon": "bolt"
+    },
+    {
+      "title": "Carbon monoxide checks",
+      "text": "Carbon monoxide check as part of gas furnace service",
       "icon": "shield"
     },
     {
-      "title": "Airflow and blower checks",
-      "text": "Blower buildup and weak airflow concerns reviewed",
-      "icon": "fan"
+      "title": "Furnace humidifier upkeep",
+      "text": "Pads or steam canisters, water valve and drain",
+      "icon": "vent"
     },
     {
-      "title": "Call for heat check",
-      "text": "Thermostat call and furnace response checked",
-      "icon": "thermostat"
+      "title": "Commercial furnace service",
+      "text": "Commercial HVAC service and custom maintenance plans",
+      "icon": "building"
     }
   ],
   "heating/heater-repair": [
     {
-      "title": "No-heat diagnosis",
-      "text": "Start sequence traced to find where it stops",
-      "icon": "clipboard"
+      "title": "No-heat furnace calls",
+      "text": "Furnaces that will not start, traced to the failed part",
+      "icon": "furnace"
     },
     {
-      "title": "Ignition and flame sensor faults",
-      "text": "Igniter or flame sensor faults that interrupt startup",
+      "title": "Lights then shuts off",
+      "text": "Burners that light, then drop out within minutes",
       "icon": "flame"
     },
     {
-      "title": "Inducer and pressure switch faults",
-      "text": "Faults that stop the furnace start sequence",
-      "icon": "gauge"
-    },
-    {
-      "title": "Blower motor and capacitor repair",
-      "text": "Faults that reduce airflow from the furnace",
+      "title": "Cold air from the vents",
+      "text": "Blower running while the registers blow cold air",
       "icon": "fan"
     },
     {
-      "title": "Control board faults",
-      "text": "Board faults that interrupt furnace operation",
-      "icon": "bolt"
-    },
-    {
-      "title": "Safety switch trips",
-      "text": "Trigger found before a tripping switch is replaced",
-      "icon": "shield"
-    },
-    {
-      "title": "Noise and moving-part repair",
-      "text": "Worn motors and rubbing components located",
+      "title": "Banging and squealing noises",
+      "text": "Banging, squealing or scraping from the furnace",
       "icon": "wrench"
+    },
+    {
+      "title": "Condensate water leaks",
+      "text": "Water pooling around a high-efficiency furnace",
+      "icon": "drop"
+    },
+    {
+      "title": "Oil furnace repair",
+      "text": "Oil furnaces that will not fire or smell of smoke",
+      "icon": "gauge"
+    },
+    {
+      "title": "Thermostat fault checks",
+      "text": "Wiring, settings and batteries checked before any part",
+      "icon": "thermostat"
     }
   ],
   "heating/hvac-maintenance-plans": [
