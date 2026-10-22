@@ -11,6 +11,7 @@ import {getReferenceSnapshot, referenceServices} from '@/lib/reference-pages'
 import {legacyReplacementPath} from '@/lib/legacy-service-replacements'
 import {ReferenceLandingPage} from './reference-landing-page'
 import {migrateServiceUrls} from '@/lib/service-base-path'
+import {getWorkItems} from '@/lib/service-page-sections'
 
 type Props = {data: ServicePageData}
 
@@ -204,7 +205,7 @@ export function ServiceLandingPage({data}: Props) {
   const replacement = legacyReplacementPath(service.slug)
   const approved = referenceServices.find((item) => item.livePath === replacement || item.slug === service.slug)
   const currentDesign = approved && getReferenceSnapshot(approved.clusterSlug, approved.slug)
-  if (approved && currentDesign) return <ReferenceLandingPage snapshot={{style: currentDesign.style, html: currentDesign.html, schema: currentDesign.schema}} serviceName={approved.name} />
+  if (approved && currentDesign) return <ReferenceLandingPage snapshot={{style: currentDesign.style, html: currentDesign.html, schema: currentDesign.schema}} serviceName={approved.name} workItems={getWorkItems(approved.clusterSlug, approved.slug)} />
   const localFaqs = page.localFaqOverrides?.length ? page.localFaqOverrides : area.localFaqs
   const rating = settings.google?.rating
   const reviewCount = settings.google?.reviewCount
