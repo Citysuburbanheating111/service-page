@@ -1,13 +1,13 @@
 {
   "overlaps": {
-    "air-conditioner-repair-installation": "/services/cooling/air-conditioning-repair/",
-    "furnace-repair-installation": "/services/heating/heater-repair/",
-    "heat-pump-repair-installation": "/services/cooling/heat-pump-services/",
-    "boiler-repair-installation": "/services/heating/boiler-service/",
-    "ductless-mini-split-installation-repair": "/services/cooling/ductless-hvac-service/",
-    "indoor-air-quality-testing-installation": "/services/air-quality/indoor-air-quality-test/",
-    "humidifier-installation-repair": "/services/air-quality/humidifier-air-cleaner/",
-    "dehumidifier-installation-repair": "/services/air-quality/dehumidifier-installation/"
+    "air-conditioner-repair-installation": "/services/cooling/air-conditioning-repair-near-me/",
+    "furnace-repair-installation": "/services/heating/heater-repair-near-me/",
+    "heat-pump-repair-installation": "/services/cooling/heat-pump-services-near-me/",
+    "boiler-repair-installation": "/services/heating/boiler-service-near-me/",
+    "ductless-mini-split-installation-repair": "/services/cooling/ductless-hvac-service-near-me/",
+    "indoor-air-quality-testing-installation": "/services/air-quality/indoor-air-quality-test-near-me/",
+    "humidifier-installation-repair": "/services/air-quality/humidifier-air-cleaner-near-me/",
+    "dehumidifier-installation-repair": "/services/air-quality/dehumidifier-installation-near-me/"
   },
   "directoryCategories": {
     "heating": "heating",

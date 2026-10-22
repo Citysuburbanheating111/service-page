@@ -1,7 +1,8 @@
 import {defineQuery} from 'next-sanity'
 
 export const REFERENCE_SERVICE_QUERY = defineQuery(`
-  *[_type == "referenceServicePage" && clusterSlug == $clusterSlug && slug.current == $serviceSlug][0] {
+  *[_type == "referenceServicePage" && clusterSlug == $clusterSlug && slug.current in $serviceSlugs]
+    | order(select(slug.current == $serviceSlugs[0] => 0, 1) asc)[0] {
     name, clusterSlug, directoryClusterSlug, "slug": slug.current,
     metaTitle, metaDescription, canonicalUrl, livePath, qcStatus, structuredData,
     "responsiveCss": coalesce(template->responsiveCss, responsiveCss), sections[]{_key, module, html, contentFields[]{_key,target,kind,label,value}},

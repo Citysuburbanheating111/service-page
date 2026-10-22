@@ -196,7 +196,7 @@ export const furnaceLincolnParkSample: ServicePageData = {
       slug: furnaceEquipmentRow.slug,
       parentName: furnaceEquipmentRow.categoryGroup,
       parentUrl: 'https://citysuburbanheating.com/services/heating/',
-      hubUrl: 'https://citysuburbanheating.com/services/heating/heater-repair/',
+      hubUrl: 'https://citysuburbanheating.com/services/heating/heater-repair-near-me/',
       h1Prefix: 'Furnace Repair',
       heroLede: furnaceLincolnParkPageRow.openingParagraph,
       secondaryCta: 'Schedule furnace service',
@@ -215,7 +215,7 @@ export const furnaceLincolnParkSample: ServicePageData = {
       whyItems: [...furnaceEquipmentRow.contractorQuestions, furnaceLincolnParkPageRow.customContractorQuestion].map((item, index) => ({_key: `question-${index + 1}`, title: item.question, body: item.answer})),
       featuredCategory: {tag: 'Heating services', title: 'Complete heating service', description: 'Repair, maintenance, and replacement support for furnaces, boilers, heat pumps, and related comfort systems.', cta: 'Explore heating', url: 'https://citysuburbanheating.com/services/heating/'},
       otherServices: [
-        {_key: 'heater-repair', name: 'Heater repair', description: 'Diagnosis and repair for furnaces, boilers, and other heating systems.', url: 'https://citysuburbanheating.com/services/heating/heater-repair/'},
+        {_key: 'heater-repair', name: 'Heater repair', description: 'Diagnosis and repair for furnaces, boilers, and other heating systems.', url: 'https://citysuburbanheating.com/services/heating/heater-repair-near-me/'},
         {_key: 'maintenance', name: 'Heating maintenance', description: 'Seasonal inspection and tune-up before peak winter demand.', url: 'https://citysuburbanheating.com/services/heating/'},
         {_key: 'ac-repair', name: 'Air-conditioning repair', description: 'Cooling diagnostics and repair for Chicago homes and businesses.', url: 'https://citysuburbanheating.com/services/cooling/'},
         {_key: 'air-quality', name: 'Indoor air quality', description: 'Filtration and air-quality options for healthier indoor comfort.', url: 'https://citysuburbanheating.com/services/air-quality/'},

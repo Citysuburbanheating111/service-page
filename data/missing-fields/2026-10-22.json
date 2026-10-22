@@ -1,0 +1,129 @@
+{
+  "_about": "Missing fields found on the published service pages on 22 Oct 2026 and written from each page's own copy. notes: the short note after the badge in each 'Match the symptom' row, keyed by page then row title. brands/reviewsIntro: Ductwork Design & Repair's empty brands box and reviews intro.",
+  "notes": {
+    "air-quality/dehumidifier-installation": {
+      "The basement feels damp through summer": "Plan a humidity visit",
+      "The garden unit stays clammy": "Before committing to equipment",
+      "A musty smell returns after airing out": "Address the moisture promptly",
+      "Rooms feel cold but still sticky": "Review humidity and AC use",
+      "Condensation appears on cool surfaces": "Before finishes stay wet",
+      "Portable units need constant emptying": "Before buying another portable",
+      "Water collects near HVAC equipment": "Promptly when water appears",
+      "Dampness returns when the AC stops running": "Before choosing controls"
+    },
+    "air-quality/duct-maintenance": {
+      "Dust collects around register edges": "Routine inspection",
+      "One room has weaker airflow": "Compare rooms in one cycle",
+      "Rooms stay uneven after basic care": "If the imbalance persists",
+      "A filter gets dirty unusually quickly": "Review the care routine",
+      "A register whistles or rattles": "If the noise persists",
+      "Dust appears after remodeling": "Before more remodeling work",
+      "An odor comes from an air opening": "Find the source first",
+      "A return opening is blocked": "Clear it, then observe",
+      "Cleaning history is unknown": "Inspection comes first"
+    },
+    "air-quality/duct-repair": {
+      "One room gets little air": "Airflow assessment first",
+      "Air escapes through a visible seam": "Before the joint is covered",
+      "A duct hangs loose or has disconnected": "Prompt service needed",
+      "Flex duct is flattened or sharply bent": "Inspect before reshaping",
+      "Dust returns around room openings": "If dust or airflow changes",
+      "Bills rise while rooms stay uneven": "Diagnose before replacing equipment",
+      "Ducts bang or rattle during operation": "If the sound is new",
+      "Rust or moisture appears on a duct": "Before coating or concealing",
+      "Airflow changed after remodeling": "Before closing remaining access"
+    },
+    "air-quality/humidifier-air-cleaner": {
+      "Static shocks and dry skin during heating season": "While the dryness recurs",
+      "New gaps between wood floorboards": "Assess before adding humidity",
+      "Dust returns soon after cleaning": "If dust persists",
+      "Pollen concerns during spring and fall": "Before pollen season",
+      "Smoke particles or odors linger indoors": "After the smoke source is fixed",
+      "Water appears near the humidifier": "Stop use, then book",
+      "Windows collect moisture after humidity is raised": "Lower the setting first",
+      "Airflow drops after a filter upgrade": "Check filter fit promptly",
+      "Humidity control appears to have no effect": "During heating season"
+    },
+    "air-quality/indoor-air-quality-test": {
+      "Condensation on windows": "Around the recurring pattern",
+      "Dry air during winter": "Record winter conditions first",
+      "Dust returns soon after cleaning": "Note household activities",
+      "A closed bedroom feels stale": "Note occupancy and doors",
+      "Odors after decorating or cleaning": "List recent products",
+      "One floor differs from the rest": "Plan room comparisons",
+      "A CO alarm sounds": "Leave first, then call 911",
+      "An odor keeps returning": "Log the time and activity",
+      "Existing readings seem inconsistent": "Bring dated readings"
+    },
+    "commercial/commercial-hvac-system-installation": {
+      "The new building has no agreed HVAC scope": "Before the equipment proposal",
+      "Roof access or delivery routes are unresolved": "Before a delivery date",
+      "The business must stay open during work": "Before scheduling installation",
+      "Permits and approvals have no named owner": "Before the start date"
+    },
+    "commercial/commercial-hvac-system-replacement": {
+      "Breakdowns keep interrupting business hours": "Before the next peak season",
+      "A major repair is proposed on aging equipment": "Before approving the repair",
+      "Some work areas stay too hot or cold": "Before choosing equipment",
+      "Roof access could delay the changeover": "Before committing to a shutdown",
+      "Several systems may need replacement": "Before ordering replacements",
+      "Building approvals are still unresolved": "Before scheduling the work",
+      "Old equipment makes noise but still operates": "At the next diagnostic visit"
+    },
+    "commercial/ductwork-design-repair-services": {
+      "New rooms stay uncomfortable after a build-out": "Before ceilings close",
+      "One work area gets much less air than another": "Airflow assessment first",
+      "Conditioned air escapes above the ceiling": "Before enclosing the area",
+      "A duct run whistles when the system operates": "While the sound repeats",
+      "Metal rattles over a desk or meeting room": "Prompt check if loose",
+      "Airflow dropped after a layout or equipment change": "Review before more work",
+      "A closed office feels stuffy despite supply airflow": "Supply and return review",
+      "A damaged branch serves several occupied rooms": "Prompt review needed",
+      "A proposed duct route conflicts with the build-out": "Before fabrication"
+    },
+    "commercial/energy-efficient-hvac-upgrades": {
+      "HVAC keeps running after the business closes": "Controls review first",
+      "Energy bills rise while operating hours stay steady": "Compare seasonal records",
+      "Meeting rooms and work areas need different temperatures": "Feasibility before scheduling",
+      "Cool weather does not reduce cooling run time": "Ask about economizer use",
+      "Airflow is weak at distant workspaces": "Review duct sealing needs",
+      "Temperature swings continue after a thermostat change": "Allow for setup checks",
+      "Existing equipment runs frequently at light demand": "Compare condition first",
+      "A rarely used area drives whole-building operation": "Consider a focused option",
+      "A proposed upgrade comes with a fixed savings promise": "Ask for the assumptions"
+    },
+    "cooling/cooling-maintenance-plans": {
+      "Seasonal check-ups keep slipping off the calendar": "Before the cooling season",
+      "A two-flat has more than one cooling system": "Before accepting a quote",
+      "A landlord needs to coordinate occupied apartments": "Before booking a check-up",
+      "An older system has an incomplete service history": "Before deciding on membership",
+      "Summer service timing is a concern": "Before relying on priority",
+      "Member savings are hard to compare": "Before budgeting savings",
+      "A recently purchased home needs a cooling care schedule": "After taking ownership",
+      "Cooling has stopped before the next planned visit": "Request service now",
+      "The equipment or property may change during membership": "Before a move or change"
+    },
+    "heating/hvac-maintenance-plans": {
+      "The furnace short-cycles during a January cold snap": "Arrange service now",
+      "Cooling weakens as the outdoor coil gets dirty": "Arrange service for cooling",
+      "Priority dispatch is the main reason to join": "Before relying on the benefit",
+      "An inspection finds soot or heat exchanger damage": "Do not wait for seasonal care",
+      "The system has stopped working already": "Call about it now"
+    },
+    "heating/hybrid-heating-systems": {
+      "House cools when heating transfers to gas": "Book prompt service",
+      "Heat pump runs but the house keeps getting colder": "Book if temperatures fall",
+      "Operating bills rise after a hybrid conversion": "Review bills first",
+      "Cooling equipment needs replacement but the furnace works": "Book before choosing equipment"
+    }
+  },
+  "ductwork": {
+    "page": "commercial/ductwork-design-repair-services",
+    "brandsHeading": "American Standard equipment",
+    "brandChips": [
+      {"kind": "logo", "src": "/services/images/brands/american-standard.png", "alt": "American Standard"},
+      {"kind": "text", "value": "All makes and models repaired"}
+    ],
+    "reviewsIntro": "These Google reviews describe individual experiences, primarily in homes, with communication and repair work. City & Suburban averages 4.98 across 204 Google reviews."
+  }
+}

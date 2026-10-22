@@ -55,15 +55,15 @@ for (const page of catalog) {
   }
 }
 
-const editable = referenceSnapshots['heating/heater-repair'].sections.find((section) => section.module === 'hero')!
+const editable = referenceSnapshots['heating/heater-repair-near-me'].sections.find((section) => section.module === 'hero')!
 const titleField = editable.contentFields!.find((field) => field.label?.startsWith('H1:'))!
 const editedHero = applyReferenceContentFields(editable.html, [{...titleField, value: 'A heading with <unsafe> & text'}])
 assert.ok(editedHero.includes('A heading with &lt;unsafe&gt; &amp; text'))
 assert.ok(!editedHero.includes('<unsafe>'))
-const faq = referenceSnapshots['heating/heater-repair'].sections.find((section) => section.module === 'faq')!
+const faq = referenceSnapshots['heating/heater-repair-near-me'].sections.find((section) => section.module === 'faq')!
 const faqField = faq.contentFields!.find((field) => field.label?.startsWith('SUMMARY:'))!
 const editedFaq = applyReferenceContentFields(faq.html, [{...faqField, value: 'Updated service question?'}])
-const synchronized = JSON.parse(synchronizeVisibleSchema(referenceSnapshots['heating/heater-repair'].schema, editedFaq))
+const synchronized = JSON.parse(synchronizeVisibleSchema(referenceSnapshots['heating/heater-repair-near-me'].schema, editedFaq))
 assert.equal(synchronized['@graph'].find((node: {'@type': string}) => node['@type'] === 'FAQPage').mainEntity[0].name, 'Updated service question?')
 
 for (const cluster of referenceNavigation()) {
@@ -87,7 +87,7 @@ for (const old of taxonomy.services) {
     }
   } else {
     assert.equal(legacyReplacementPath(old.slug), undefined)
-    const retained = retainedCatalog.find((page) => page.slug === old.slug)
+    const retained = retainedCatalog.find((page) => page.slug === old.slug || page.previousSlug === old.slug)
     assert.ok(retained, `Distinct keyword was lost: ${old.slug}`)
     const snapshot = referenceSnapshots[`${retained.clusterSlug}/${retained.slug}`]
     assert.ok(snapshot.html.includes('data-module="hero"') && snapshot.html.includes('type="submit"'))
@@ -127,8 +127,17 @@ assert.ok(futureSnapshot.html.includes('<h1>New published CMS service</h1>'))
 assert.ok(futureSnapshot.html.includes('/services/images/new.jpg'))
 assert.equal(futureSnapshot.style, '.test{color:red}')
 assert.equal(renderReferencePage(null), undefined)
-assert.equal(renderReferencePage(null, referenceSnapshots['heating/heater-repair']), referenceSnapshots['heating/heater-repair'])
+assert.equal(renderReferencePage(null, referenceSnapshots['heating/heater-repair-near-me']), referenceSnapshots['heating/heater-repair-near-me'])
 assert.deepEqual(migrateServiceContent({url: '/service/heating/water-heater-repair-installation/', image: '/service/images/logo.png', neighborhood: '/service-area/lincoln-park/', collection: '/service/heating-services/'}), {
   url: '/services/heating/water-heater-repair-installation/', image: '/services/images/logo.png', neighborhood: '/service-area/lincoln-park/', collection: '/services/heating/',
 })
-console.log('Reference checks passed: 24 exact live URLs, 17 retained keyword pages, 8 consolidated overlaps, cards, editable markup and schema.')
+// "-near-me" URLs: every page's previous address answers with one permanent redirect to the new one.
+for (const page of [...catalog, ...retainedCatalog]) {
+  assert.equal(page.slug, `${page.previousSlug}-near-me`, `Slug is not the near-me form: ${page.slug}`)
+  for (const old of [`/services/${page.clusterSlug}/${page.previousSlug}/`, `/services/${page.clusterSlug}/${page.previousSlug}`, `/service/${page.clusterSlug}/${page.previousSlug}/`]) {
+    const response = proxy(new NextRequest(`http://localhost${old}?utm=old`))
+    assert.equal(response.status, 308, `No permanent redirect from ${old}`)
+    assert.equal(response.headers.get('location'), `http://localhost${page.livePath}?utm=old`)
+  }
+}
+console.log('Reference checks passed: 24 exact live URLs (all -near-me, old addresses redirect), 17 retained keyword pages, 8 consolidated overlaps, cards, editable markup and schema.')

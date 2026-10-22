@@ -10,7 +10,8 @@ export function serviceRouteAliases(): Map<string, string> {
   const categories = {...migrations.directoryCategories, ...collections, 'commercial': 'commercial', 'air-quality': 'air-quality', 'commercial-hvac': 'commercial'}
   for (const [slug, target] of Object.entries(categories)) routes.set(`/services/${slug}`, `/services/${target}/`)
   for (const page of [...catalog, ...retained]) {
-    for (const slug of new Set([page.slug, page.legacySlug])) {
+    // previousSlug: the address the page had before the "-near-me" rename (permanent redirect).
+    for (const slug of new Set([page.slug, page.legacySlug, page.previousSlug])) {
       for (const path of [`/services/${slug}`, `/services/${slug}/chicago`, `/services/${page.clusterSlug}/${slug}`, `/services/${page.clusterSlug}/${slug}/chicago`]) {
         routes.set(path, page.livePath)
       }

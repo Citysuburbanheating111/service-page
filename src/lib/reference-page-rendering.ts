@@ -12,7 +12,7 @@ function htmlAttributes(attributes: Record<string, string>) {
 export function renderReferencePage(document: ReferenceDocument | null, fallback?: ReferenceSnapshot): Pick<ReferenceSnapshot, 'style' | 'html' | 'schema'> | undefined {
   const updated = migrateServiceContent(document)
   if (!updated?.sections?.length) return fallback
-  const standard = fallback || referenceSnapshots['heating/heater-repair']
+  const standard = fallback || referenceSnapshots['heating/heater-repair-near-me']
   const html = `<main ${htmlAttributes(standard.mainAttributes)}><div ${htmlAttributes(standard.wrapperAttributes)}>${updated.sections.map(section => applyReferenceContentFields(section.html, section.contentFields)).join('')}</div></main>`
   return {
     style: updated.responsiveCss || standard.style,
