@@ -445,113 +445,113 @@
   ],
   "cooling/air-conditioning-installation": [
     {
-      "title": "Aging AC replacement",
-      "text": "Repair scope compared with age and condition",
-      "icon": "clipboard"
-    },
-    {
-      "title": "Capacity and SEER2 sizing",
-      "text": "Cooling load and duct airflow assessed before ordering",
+      "title": "Sizing from the house",
+      "text": "Size should come from the house, not the old unit's label",
       "icon": "gauge"
     },
     {
-      "title": "Indoor coil matching",
-      "text": "Coil fit and match with the outdoor unit confirmed",
-      "icon": "snowflake"
-    },
-    {
-      "title": "AC and furnace replacement",
-      "text": "Blower capacity checked before replacing a furnace",
+      "title": "Coil matched to the furnace",
+      "text": "New coil fits the furnace cabinet and suits its blower",
       "icon": "furnace"
     },
     {
-      "title": "Line set reuse or replacement",
-      "text": "Copper size, condition and route checked",
+      "title": "Line set: reuse or replace",
+      "text": "Copper lines stay only when size and condition allow",
       "icon": "pipe"
     },
     {
-      "title": "Condo and rooftop installs",
-      "text": "Roof access, lifting gear and building approvals",
+      "title": "Rooftop condenser installs",
+      "text": "Roof stands, a safe lift and longer lines in the quote",
       "icon": "building"
     },
     {
-      "title": "Start-up and handover checks",
-      "text": "Charge, airflow and drain flow verified at start-up",
-      "icon": "wrench"
+      "title": "Furnace and AC together",
+      "text": "One matched system, one crew visit, one disruption",
+      "icon": "home"
+    },
+    {
+      "title": "SEER2 ratings explained",
+      "text": "Efficiency rated for the matched condenser and coil",
+      "icon": "clipboard"
+    },
+    {
+      "title": "Central air without ducts",
+      "text": "Attic air handler with new ducts, or a ductless layout",
+      "icon": "duct"
     }
   ],
   "cooling/air-conditioning-maintenance": [
     {
-      "title": "Outdoor coil cleaning",
-      "text": "Cottonwood and grime cleared from between the fins",
+      "title": "Condenser coil cleaning",
+      "text": "Fins rinsed clear of cottonwood, grass and city grime",
       "icon": "fan"
     },
     {
-      "title": "Refrigerant operation check",
-      "text": "Pressures and temperature split measured",
-      "icon": "gauge"
-    },
-    {
-      "title": "Condensate drain flush",
-      "text": "Pan and drain cleared before humid weather",
+      "title": "Drain line and pan flush",
+      "text": "Line flushed, pan checked and float switch tested",
       "icon": "drop"
     },
     {
-      "title": "Filter and airflow check",
-      "text": "Filter size, fit and condition, dirty filter replaced",
-      "icon": "filter"
+      "title": "Refrigerant pressure check",
+      "text": "Charge read against the manufacturer's chart",
+      "icon": "gauge"
     },
     {
-      "title": "Electrical checks",
-      "text": "Electrical side tightened and tested",
+      "title": "Capacitor and contactor tests",
+      "text": "Electrical wear parts tested against their rating",
       "icon": "bolt"
     },
     {
-      "title": "Evaporator coil inspection",
-      "text": "Indoor coil checked with the filter and drain",
+      "title": "Indoor coil and airflow",
+      "text": "Evaporator coil, filter and indoor fan speed inspected",
       "icon": "snowflake"
     },
     {
-      "title": "Condo and roof access",
-      "text": "Roof routes and building approval set at booking",
-      "icon": "building"
+      "title": "Thermostat accuracy check",
+      "text": "Calibration, wiring and schedules checked for accuracy",
+      "icon": "thermostat"
+    },
+    {
+      "title": "Repairs priced before work",
+      "text": "Any repair a tune-up finds is priced in writing first",
+      "icon": "clipboard"
     }
   ],
   "cooling/air-conditioning-repair": [
     {
-      "title": "No-cooling diagnosis",
-      "text": "Checks whether cooling is made and reaches the rooms",
+      "title": "Warm air from the vents",
+      "text": "Capacitor, contactor and charge tested before a quote",
+      "icon": "thermostat"
+    },
+    {
+      "title": "Frozen coils and iced lines",
+      "text": "Coil thawed and airflow checked before pressures are read",
       "icon": "snowflake"
     },
     {
-      "title": "Short cycling",
-      "text": "Start and stop pattern tested for control faults",
-      "icon": "clock"
-    },
-    {
-      "title": "Frozen coil and line ice",
-      "text": "Airflow and refrigerant conditions behind icing",
-      "icon": "fan"
-    },
-    {
-      "title": "Refrigerant leak work",
-      "text": "Leak location addressed, not just a refill",
+      "title": "AC refrigerant leaks",
+      "text": "Leak search, or a recharge the homeowner chooses",
       "icon": "gauge"
     },
     {
-      "title": "Water leak tracing",
-      "text": "Condensate drain, pump and melting ice sources",
+      "title": "Humming or stalled condenser",
+      "text": "Capacitors, contactors and condenser fan motors",
+      "icon": "fan"
+    },
+    {
+      "title": "Water leaking indoors",
+      "text": "Drain lines cleared and float switches tested",
       "icon": "drop"
     },
     {
-      "title": "Breaker trips and noisy units",
-      "text": "Outdoor unit starting and electrical faults",
+      "title": "Compressor will not start",
+      "text": "Windings and starting current tested before any quote",
       "icon": "bolt"
     },
     {
-      "title": "Thermostat and control wiring",
-      "text": "Cooling request traced from thermostat to equipment",
-      "icon": "thermostat"
+      "title": "Heat wave emergency calls",
+      "text": "Emergency AC repair 24 hours a day, 7 days a week",
+      "icon": "clock"
     }
   ],
   "cooling/cooling-maintenance-plans": [
@@ -593,76 +593,76 @@
   ],
   "cooling/ductless-hvac-service": [
     {
-      "title": "Attic and addition installs",
-      "text": "Dedicated comfort zones without extending ductwork",
+      "title": "Single-zone and multi-zone",
+      "text": "One head per room, or several heads on one outdoor unit",
       "icon": "home"
     },
     {
-      "title": "Head and line set planning",
-      "text": "Head placement, line sets and condensate route set",
-      "icon": "pipe"
-    },
-    {
-      "title": "Head not cooling or heating",
-      "text": "Airflow, refrigerant and control faults tested",
+      "title": "Ductless heat pumps",
+      "text": "Models that heat as well as cool, placed above the snow line",
       "icon": "snowflake"
     },
     {
       "title": "Indoor head water leaks",
-      "text": "Drain route traced and icing cause checked",
+      "text": "Drain lines cleared, slope checked, drain pumps tested",
       "icon": "drop"
     },
     {
-      "title": "Remote and control faults",
-      "text": "Remote problems separated from head control faults",
+      "title": "Error codes and remotes",
+      "text": "Codes matched to the maker's service data, then tested",
       "icon": "thermostat"
     },
     {
-      "title": "Multi-zone shutdowns",
-      "text": "Shared outdoor unit, power and communication checked",
-      "icon": "bolt"
+      "title": "Line set refrigerant leaks",
+      "text": "Leaks at flare fittings, coils and line sets",
+      "icon": "gauge"
     },
     {
-      "title": "Condo and two-flat layouts",
-      "text": "Association approvals, routes and per-floor zoning",
-      "icon": "building"
+      "title": "Mini split cleaning",
+      "text": "Indoor coil, blower wheel, drain pan and drain line cleaned",
+      "icon": "filter"
+    },
+    {
+      "title": "Head and line set placement",
+      "text": "Heads mounted high, lines run through one small hole",
+      "icon": "pipe"
     }
   ],
   "cooling/heat-pump-services": [
     {
-      "title": "Warm air in cool mode",
-      "text": "Supply-to-return temperatures and airflow measured",
+      "title": "Outdoor coil cleaning",
+      "text": "Cottonwood, leaves and winter grit cleared from the coil",
       "icon": "fan"
     },
     {
-      "title": "Reversing valve faults",
-      "text": "Valve control voltage and pipe temperatures checked",
-      "icon": "bolt"
-    },
-    {
-      "title": "Weak or slow cooling",
-      "text": "Outdoor coil condition and refrigerant pressures read",
-      "icon": "gauge"
-    },
-    {
-      "title": "Iced coil or line",
-      "text": "Airflow and line temperatures checked after thawing",
+      "title": "Forced defrost test",
+      "text": "Defrost run to confirm the outdoor coil clears in winter",
       "icon": "snowflake"
     },
     {
-      "title": "Refrigerant leak repair",
-      "text": "Leak located instead of a refill every summer",
-      "icon": "pipe"
-    },
-    {
-      "title": "Mode change and controls",
-      "text": "Thermostat configuration and control compatibility",
-      "icon": "thermostat"
-    },
-    {
-      "title": "Central AC to heat pump",
-      "text": "Ducts, controls and indoor equipment checked for fit",
+      "title": "Snow and ice clearance",
+      "text": "Fins checked after snow, and drift risks pointed out",
       "icon": "home"
+    },
+    {
+      "title": "Heat pump charge check",
+      "text": "Charge measured; a low reading means a leak to find",
+      "icon": "gauge"
+    },
+    {
+      "title": "Electrical parts tested",
+      "text": "Capacitor, contactor and wiring checked at both units",
+      "icon": "bolt"
+    },
+    {
+      "title": "Backup heat staging",
+      "text": "Heat strips and lockout set so the heat pump leads",
+      "icon": "plug"
+    },
+    {
+      "title": "Filters and thermostat setup",
+      "text": "Filter, airflow and heat pump thermostat settings checked",
+      "icon": "thermostat"
     }
   ],
   "cooling/window-portable-ac-installation-repair": [
@@ -778,76 +778,76 @@
   ],
   "heating/boiler-service": [
     {
-      "title": "Cold radiator diagnosis",
-      "text": "Heat delivery traced to the rooms that stay cold",
+      "title": "No-heat boiler calls",
+      "text": "Low-water cutoff, ignition and controls traced first",
+      "icon": "flame"
+    },
+    {
+      "title": "Cold radiator fixes",
+      "text": "Stuck air vents, trapped air and zone valves cleared",
       "icon": "radiator"
     },
     {
-      "title": "Steam banging and hissing",
-      "text": "Air release and water return checked at the branch",
+      "title": "Banging steam pipes",
+      "text": "Water line, pressure control and pipe pitch put right",
       "icon": "pipe"
     },
     {
-      "title": "Boiler leak assessment",
-      "text": "Leak source found at connections, valves or sections",
-      "icon": "drop"
-    },
-    {
-      "title": "Circulator and pressure faults",
-      "text": "Hot-water circulation, expansion tank and gauge checks",
+      "title": "Leak and pressure faults",
+      "text": "Relief valves, fill valves and expansion tanks tested",
       "icon": "gauge"
     },
     {
-      "title": "Repeated shutdown faults",
-      "text": "Low water cutoff and operating control checks",
-      "icon": "bolt"
+      "title": "Annual boiler service",
+      "text": "Low-water cutoff flush, burner clean and a CO test",
+      "icon": "wrench"
     },
     {
-      "title": "Two-flat and greystone heat",
-      "text": "Shared boilers traced across apartments",
-      "icon": "building"
-    },
-    {
-      "title": "Annual boiler maintenance",
-      "text": "Seasonal check-ups for steam and hot-water boilers",
+      "title": "Repair or replace pricing",
+      "text": "Repair and replacement priced side by side in writing",
       "icon": "clipboard"
+    },
+    {
+      "title": "Round-the-clock boiler calls",
+      "text": "Boiler calls answered 24 hours a day, 7 days a week",
+      "icon": "clock"
     }
   ],
   "heating/heat-pump": [
     {
-      "title": "Cold-climate heat pump installs",
-      "text": "American Standard equipment planned for winter demand",
-      "icon": "home"
-    },
-    {
-      "title": "No-heat and no-start repair",
-      "text": "Power and controls traced when the heat pump stays off",
-      "icon": "bolt"
-    },
-    {
-      "title": "Icing and defrost faults",
-      "text": "Defrost operation checked when heavy ice persists",
+      "title": "Defrost and ice faults",
+      "text": "Defrost boards, sensors and coils sealed in ice",
       "icon": "snowflake"
     },
     {
-      "title": "Backup heat checks",
-      "text": "Backup operation checked against the heating plan",
-      "icon": "flame"
-    },
-    {
-      "title": "Short cycling and airflow",
-      "text": "Controls and airflow assessed before any replacement",
-      "icon": "fan"
-    },
-    {
-      "title": "Noise and mechanical wear",
-      "text": "Loose parts, fan obstructions and wear located",
+      "title": "Reversing valve repair",
+      "text": "Solenoid coils and stuck valves tested in both modes",
       "icon": "wrench"
     },
     {
-      "title": "Air handler and coil matching",
-      "text": "Indoor equipment matched to the outdoor unit",
-      "icon": "vent"
+      "title": "Aux and emergency heat",
+      "text": "Backup heat strips that never shut off, diagnosed",
+      "icon": "bolt"
+    },
+    {
+      "title": "Heat pump refrigerant leaks",
+      "text": "Refrigerant leaks traced at coils, valves and lines",
+      "icon": "gauge"
+    },
+    {
+      "title": "Cold-climate heat pumps",
+      "text": "Variable-speed models built for below-zero nights",
+      "icon": "fan"
+    },
+    {
+      "title": "Dual-fuel with a furnace",
+      "text": "A heat pump paired with a gas furnace for deep cold",
+      "icon": "furnace"
+    },
+    {
+      "title": "Heat pump thermostat wiring",
+      "text": "O/B settings, aux staging and outdoor lockouts",
+      "icon": "thermostat"
     }
   ],
   "heating/heater-installation": [
@@ -1148,39 +1148,39 @@
   ],
   "heating/water-heater-repair-installation": [
     {
-      "title": "No hot water repair",
-      "text": "Thermocouple, gas valve, igniter or element faults",
+      "title": "No hot water calls",
+      "text": "Pilot, igniter, gas control or element traced first",
       "icon": "flame"
     },
     {
-      "title": "Leak diagnosis",
-      "text": "Tank, fitting, drain valve and relief valve leaks",
+      "title": "Tank and fitting leaks",
+      "text": "Leak calls answered 24/7, price in writing before work",
       "icon": "drop"
     },
     {
-      "title": "Gas tank replacement",
-      "text": "40-50 gallon tanks, venting route and gas line size",
-      "icon": "wrench"
+      "title": "Relief valve discharge",
+      "text": "Spraying relief valves answered 24 hours a day",
+      "icon": "gauge"
     },
     {
-      "title": "Sidewall vent conversions",
-      "text": "Power-vent or direct-vent with condensate route",
-      "icon": "fan"
+      "title": "Electric element faults",
+      "text": "Burned-out elements and tripped high-limit cutoffs",
+      "icon": "bolt"
     },
     {
-      "title": "Tankless conversion",
-      "text": "Gas line sizing assessed before appliance choice",
+      "title": "Tankless error codes",
+      "text": "Scale, flow sensors and gas pressure behind the code",
       "icon": "pipe"
     },
     {
-      "title": "Draft and venting correction",
-      "text": "Shared flue, draft hood spillage and liner checks",
+      "title": "Shared chimney venting",
+      "text": "A chimney sized for two can spill water heater exhaust",
       "icon": "vent"
     },
     {
-      "title": "Shared furnace flue work",
-      "text": "Shared flue resized or relined for both appliances",
-      "icon": "furnace"
+      "title": "Boiler-fed hot water",
+      "text": "Indirect tanks and combi boilers that leave taps cold",
+      "icon": "radiator"
     }
   ],
   "hvac-systems/hvac-repair-installation": [
@@ -1440,6 +1440,80 @@
       "title": "Post-install verification",
       "text": "Airflow, damper, discharge and sound checked",
       "icon": "gauge"
+    }
+  ],
+  "heating/water-heater-installation": [
+    {
+      "title": "Leaking tank replacement",
+      "text": "Rusted-through tanks replaced, sized and vented right",
+      "icon": "drop"
+    },
+    {
+      "title": "Tankless water heater installs",
+      "text": "Wall-hung units with new venting and a gas line check",
+      "icon": "flame"
+    },
+    {
+      "title": "Shared furnace flue venting",
+      "text": "Liner or power vent when the furnace moves to plastic pipe",
+      "icon": "vent"
+    },
+    {
+      "title": "Sized to the busiest hour",
+      "text": "First-hour rating matched to the household's peak use",
+      "icon": "gauge"
+    },
+    {
+      "title": "Expansion tank and relief line",
+      "text": "Pressure safety parts listed in the written price",
+      "icon": "pipe"
+    },
+    {
+      "title": "Electric heater circuits",
+      "text": "Dedicated circuit with the right breaker and wire",
+      "icon": "bolt"
+    },
+    {
+      "title": "Emergency calls 24/7",
+      "text": "Same-day replacement when the schedule allows",
+      "icon": "clock"
+    }
+  ],
+  "heating/water-heater-maintenance": [
+    {
+      "title": "Tank flush and sediment",
+      "text": "Drains and flushes sediment until the water runs clear",
+      "icon": "drop"
+    },
+    {
+      "title": "Anode rod inspection",
+      "text": "Rod checked for wear before the tank steel starts to rust",
+      "icon": "shield"
+    },
+    {
+      "title": "Relief valve test",
+      "text": "T&P valve lifted, checked for flow and a clean reseat",
+      "icon": "gauge"
+    },
+    {
+      "title": "Burner and draft checks",
+      "text": "Gas burner cleaned and draft tested at the draft hood",
+      "icon": "flame"
+    },
+    {
+      "title": "Electric element tests",
+      "text": "Each element and its control tested with a meter",
+      "icon": "bolt"
+    },
+    {
+      "title": "Tankless descaling",
+      "text": "Heat exchanger descaled and inlet filter screen cleaned",
+      "icon": "pipe"
+    },
+    {
+      "title": "Upfront price first",
+      "text": "Upfront price before any work starts, no hidden fees",
+      "icon": "clipboard"
     }
   ]
 }
