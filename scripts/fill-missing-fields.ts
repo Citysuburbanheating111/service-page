@@ -19,7 +19,7 @@ const client = createClient({projectId: 'boolyxr0', dataset: 'production', apiVe
 
 type Field = {_key: string; _type: string; target: string; kind: string; label: string; value: string}
 type Section = {_key?: string; module: string; html: string; contentFields?: Field[]}
-type Doc = {_id: string; _rev: string; clusterSlug: string; slug: {current: string}; sections: Section[]; [key: string]: unknown}
+type Doc = {_id: string; _rev: string; _type: string; clusterSlug: string; slug: {current: string}; sections: Section[]; [key: string]: unknown}
 type Data = {
   notes: Record<string, Record<string, string>>
   ductwork: {page: string; brandsHeading: string; brandChips: Array<{kind: 'logo' | 'text'; src?: string; alt?: string; value?: string}>; reviewsIntro: string}

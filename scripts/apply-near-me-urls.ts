@@ -31,7 +31,7 @@ function rewrite(text: string): [string, number] {
 
 type Field = {target: string; kind: string; value: string; label?: string}
 type Section = {module: string; html: string; contentFields?: Field[]}
-type Doc = {_id: string; _rev: string; clusterSlug: string; slug: {_type?: string; current: string}; livePath?: string; canonicalUrl?: string; structuredData?: string; sections: Section[]; [key: string]: unknown}
+type Doc = {_id: string; _rev: string; _type: string; clusterSlug: string; slug: {_type?: string; current: string}; livePath?: string; canonicalUrl?: string; structuredData?: string; sections: Section[]; [key: string]: unknown}
 
 async function main() {
   const docs = await client.fetch<Doc[]>('*[_type == "referenceServicePage"]')
