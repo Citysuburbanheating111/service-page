@@ -366,3 +366,85 @@ a{color:var(--brand);text-underline-offset:3px}
 @media(max-width:768px){.site-logo img{max-width:130px}}
 @media(max-width:576px){.site-shell.site-header-inner{padding:18px 0 12px}.site-mobile-actions{display:grid}}
 @media(max-width:640px){.site-footer-grid{grid-template-columns:1fr;gap:34px}.site-footer h4{font-size:24px}}
+
+/* "<Service> Work We Handle": the Highlights Chicago auto-scrolling strip (.equip-strip), in City & Suburban colours */
+.reference-design .cs-work{padding:72px 0;background:#fff}
+.reference-design .cs-work-wrap,.reference-design .cs-247-wrap{max-width:1180px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+.reference-design .cs-work-eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 12px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#09263A}
+.reference-design .cs-work-eyebrow::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:#DD382B}
+.reference-design .cs-work h2{margin:0 0 14px;font-family:'Ubuntu',sans-serif;font-weight:700;font-size:clamp(28px,2.2vw + 12px,44px);line-height:1.2;color:#09263A}
+.reference-design .cs-work-lede{margin:0;max-width:760px;font-size:19px;line-height:1.6;color:#3F4B57}
+.reference-design .cs-work-strip{margin-top:40px;border-top:1px solid #E3E8EE;border-bottom:1px solid #E3E8EE;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,#0000,#000 6% 94%,#0000);mask-image:linear-gradient(90deg,#0000,#000 6% 94%,#0000)}
+.reference-design .cs-work-track{display:flex;width:max-content;animation:cs-work-marquee 46s linear infinite}
+.reference-design .cs-work-strip:hover .cs-work-track,.reference-design .cs-work-strip:focus-within .cs-work-track{animation-play-state:paused}
+.reference-design .cs-work-item{display:flex;flex-direction:column;align-items:center;gap:8px;flex:0 0 clamp(178px,19vw,232px);padding:28px 18px;text-align:center;border-left:1px solid #EEF1F4;transition:background .16s}
+.reference-design .cs-work-item:hover{background:linear-gradient(180deg,#EAF2F8,#fff)}
+.reference-design .cs-work-item svg{width:46px;height:46px;margin-bottom:8px;stroke:#0A4265;fill:#EEF4F8;stroke-width:2.2px;stroke-linecap:round;stroke-linejoin:round}
+.reference-design .cs-work-item svg .ln{fill:none}
+.reference-design .cs-work-item b{font-size:16px;line-height:1.25;color:#09263A}
+.reference-design .cs-work-item span{font-size:14px;line-height:1.4;color:#5B6875}
+.reference-design .cs-work-note{margin:20px 0 0;font-size:15px;line-height:1.5;color:#5B6875}
+@keyframes cs-work-marquee{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.reference-design .cs-work-track{animation:none}.reference-design .cs-work-strip{overflow-x:auto}}
+
+/* 24/7 band: every job, big or small, gets round-the-clock service */
+.reference-design .cs-247{padding:72px 0;background:linear-gradient(110deg,#0A4265 6%,#09263A 100%);color:#fff}
+.reference-design .cs-247-wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:center}
+.reference-design .cs-247-eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 12px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.reference-design .cs-247-eyebrow::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:#DD382B}
+.reference-design .cs-247 h2{margin:0 0 14px;font-family:'Ubuntu',sans-serif;font-weight:700;font-size:clamp(28px,2.2vw + 12px,44px);line-height:1.2;color:#fff}
+.reference-design .cs-247-copy>p:not(.cs-247-eyebrow){margin:0;max-width:640px;font-size:18px;line-height:1.6;color:rgba(255,255,255,.86)}
+.reference-design .cs-247-points{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 0;padding:0;list-style:none}
+.reference-design .cs-247-points li{display:flex;align-items:center;gap:8px;padding:8px 16px;border:1px solid rgba(255,255,255,.3);border-radius:999px;font-size:15px;font-weight:600;line-height:1.4}
+.reference-design .cs-247-points li::before{content:"\2713";display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#DD382B;font-size:12px}
+.reference-design .cs-247-side{display:flex;flex-direction:column;align-items:center;gap:14px}
+.reference-design .cs-247-badge{display:grid;place-items:center;align-content:center;width:176px;height:176px;margin-bottom:8px;border-radius:50%;background:#DD382B;box-shadow:0 0 0 10px rgba(221,56,43,.25)}
+.reference-design .cs-247-badge b{font-family:'Ubuntu',sans-serif;font-size:58px;line-height:1;font-weight:700}
+.reference-design .cs-247-badge span{margin-top:6px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.reference-design .cs-247-call,.reference-design .cs-247-book{display:block;width:100%;padding:14px 20px;border-radius:999px;text-align:center;font-size:16px;font-weight:700;line-height:1.3;text-decoration:none;box-sizing:border-box}
+.reference-design .cs-247-call{background:#DD382B;color:#fff}
+.reference-design .cs-247-book{border:1.5px solid #fff;color:#fff}
+.reference-design .cs-247-call:hover,.reference-design .cs-247-book:hover{opacity:.85}
+@media(max-width:900px){.reference-design .cs-247-wrap{grid-template-columns:1fr;gap:36px}.reference-design .cs-247-side{flex-direction:row;flex-wrap:wrap;justify-content:flex-start}.reference-design .cs-247-badge{width:120px;height:120px;margin:0 12px 0 0}.reference-design .cs-247-badge b{font-size:40px}.reference-design .cs-247-call,.reference-design .cs-247-book{width:auto;flex:1 1 200px}}
+@media(max-width:640px){.reference-design .cs-work,.reference-design .cs-247{padding:56px 0}.reference-design .cs-work-wrap,.reference-design .cs-247-wrap{padding:0 18px}}
+
+/* Equipment listing ("systems" section) in the Highlights "Parts of..." tile style; copy and images unchanged */
+.reference-design [data-module="systems"]{background:#F5F7F9 !important;padding:80px 0 !important}
+.reference-design [data-module="systems"]>div>p:first-child{display:flex;align-items:center;gap:12px;text-align:left !important;color:#09263A !important}
+.reference-design [data-module="systems"]>div>p:first-child::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:#DD382B}
+.reference-design [data-module="systems"]>div>h2{text-align:left !important;margin:0 0 20px !important}
+.reference-design [data-module="systems"]>div>h2+p{text-align:left !important;margin:0 0 50px !important;max-width:660px !important}
+.reference-design [data-module="systems"]>div>h2+div{margin-top:30px}
+.reference-design [data-module="systems"]>div>div[style*="grid-template-columns"]{grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:24px !important}
+.reference-design [data-module="systems"] [data-role="card"]{border:1px solid #E3E8EE;border-radius:12px !important;box-shadow:none !important}
+.reference-design [data-module="systems"] [data-role="card"]>img,.reference-design [data-module="systems"] [data-role="card"]>div[aria-hidden]{aspect-ratio:16/10 !important}
+.reference-design [data-module="systems"] [data-role="card"]>div[style*="linear-gradient"]{background:none !important;color:#09263A !important;padding:24px 24px 0 !important;font-weight:700 !important;font-size:20px !important;line-height:1.3 !important}
+.reference-design [data-module="systems"] [data-role="card"]>p{padding:8px 24px 24px !important;color:#4A5866;font-size:15px !important;line-height:22px !important}
+@media(max-width:991px){.reference-design [data-module="systems"]>div>div[style*="grid-template-columns"]{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
+@media(max-width:767px){.reference-design [data-module="systems"]>div>div[style*="grid-template-columns"]{grid-template-columns:1fr !important}}
+
+/* Symptom rows: a fixed grid so every badge and note lines up, whatever the title length */
+.reference-design details[data-role="problem"]>summary{display:grid !important;grid-template-columns:40px minmax(0,1fr) 104px 172px 20px;align-items:center;column-gap:12px !important}
+.reference-design details[data-role="problem"]>summary>span:nth-of-type(3){justify-self:start;white-space:nowrap}
+.reference-design details[data-role="problem"]>summary>span:nth-of-type(4){white-space:nowrap}
+.reference-design details[data-role="problem"]>summary>span[data-symptom="emergency"]{background:#C9302A !important;box-shadow:0 0 0 4px rgba(201,48,42,.18)}
+@media(max-width:720px){
+  .reference-design details[data-role="problem"]>summary{grid-template-columns:40px auto minmax(0,1fr) 20px;row-gap:8px !important}
+  .reference-design details[data-role="problem"]>summary>span:nth-of-type(1){grid-row:1/3;align-self:start}
+  .reference-design details[data-role="problem"]>summary>span:nth-of-type(2){grid-column:2/4}
+  .reference-design details[data-role="problem"]>summary>svg{grid-column:4;grid-row:1}
+  .reference-design details[data-role="problem"]>summary>span:nth-of-type(3){grid-column:2;grid-row:2}
+  .reference-design details[data-role="problem"]>summary>span:nth-of-type(4){grid-column:3;grid-row:2;white-space:normal}
+}
+
+/* Symptom details: the three blocks (causes, safe checks, technician) as navy cards */
+.reference-design details[data-role="problem"]{container-type:inline-size}
+.reference-design details[data-role="problem"]>summary+div{grid-template-columns:1fr !important;gap:14px !important;padding:18px 20px 8px !important}
+.reference-design details[data-role="problem"]>summary+div>div{background:#09263A;border-radius:10px;padding:18px 20px;color:#fff}
+.reference-design details[data-role="problem"]>summary+div>div h3{color:rgba(255,255,255,.72) !important}
+.reference-design details[data-role="problem"]>summary+div>div li{color:#fff}
+.reference-design details[data-role="problem"]>summary+div>div li::marker{color:#DD382B}
+.reference-design details[data-role="problem"]>summary+div>div p{color:rgba(255,255,255,.9) !important}
+.reference-design details[data-role="problem"]>summary+div>div p:last-child:not(:first-of-type){color:#fff !important}
+@container (min-width:460px){.reference-design details[data-role="problem"]>summary+div{grid-template-columns:repeat(2,minmax(0,1fr)) !important}.reference-design details[data-role="problem"]>summary+div>div:nth-child(3){grid-column:1/-1}}
+@container (min-width:860px){.reference-design details[data-role="problem"]>summary+div{grid-template-columns:repeat(3,minmax(0,1fr)) !important}.reference-design details[data-role="problem"]>summary+div>div:nth-child(3){grid-column:auto}}
