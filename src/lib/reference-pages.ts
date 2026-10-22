@@ -7,6 +7,7 @@ import type {PreparedCluster} from './service-navigation'
 import type {ReferenceContentField} from './reference-content-fields'
 import {migrateServiceContent} from './service-base-path'
 import {legacyReplacementPath} from './legacy-service-replacements'
+import type {ServiceSectionsDesign, WorkItem} from './service-page-sections'
 
 export type ReferenceService = (typeof catalog)[number] | (typeof retainedCatalog)[number]
 
@@ -29,6 +30,8 @@ export type ReferenceDocument = ReferenceOverride & {
   responsiveCss?: string
   structuredData?: string
   sections?: Array<{_key?: string; module: string; html: string; contentFields?: ReferenceContentField[]}>
+  workWeHandle?: WorkItem[] | null
+  serviceSections?: ServiceSectionsDesign | null
 }
 
 export function getReferenceService(clusterSlug: string, slug: string): ReferenceService | undefined {

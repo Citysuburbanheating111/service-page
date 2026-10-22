@@ -30,6 +30,7 @@
     "content:audit-drafts-316-325": "tsx scripts/audit-sanity-drafts-306-315.ts --batch=316-325",
     "media:download-316-325": "node scripts/download-service-images-316-325.mjs",
     "content:update-template": "tsx scripts/update-service-template.ts",
+    "content:update-design-system": "tsx scripts/update-service-design-system.ts",
     "content:import-reference-pages": "tsx scripts/import-reference-pages.ts",
     "vercel:pull": "vercel pull --yes --environment=production",
     "vercel:build": "vercel build --prod",
