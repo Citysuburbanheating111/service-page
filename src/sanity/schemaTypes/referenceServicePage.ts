@@ -1,4 +1,5 @@
 import {defineArrayMember, defineField, defineType} from 'sanity'
+import {WORK_ICON_NAMES, WORK_ITEM_COUNT} from '../../lib/work-icons'
 
 const modules = [
   'site-header', 'hero', 'trust', 'quick-facts', 'problems', 'pricing',
@@ -40,6 +41,20 @@ export const referenceServicePage = defineType({
     defineField({name: 'sourcePage', title: 'Retained source content', type: 'reference', to: [{type: 'servicePage'}], group: 'review', readOnly: true}),
     defineField({name: 'scopeStatus', title: 'Existing service scope', type: 'string', group: 'review', readOnly: true}),
     defineField({name: 'photoStatus', title: 'Reference image review', type: 'string', group: 'review', readOnly: true}),
+    defineField({
+      name: 'workWeHandle', title: 'Work We Handle strip', type: 'array', group: 'design',
+      description: `V1 design system. Exactly ${WORK_ITEM_COUNT} items, each taken from this page's own copy: no new claims, prices or promises. Leave empty for work City & Suburban refers out; the page then shows neither the strip nor the 24/7 band. The strip's heading, intro and the 24/7 band are shared in the Service-page template.`,
+      of: [defineArrayMember({
+        type: 'object', name: 'workItem', title: 'Work item',
+        fields: [
+          defineField({name: 'title', title: 'Title', type: 'string', description: '2 to 5 words, sentence case.', validation: (rule) => rule.required().max(40)}),
+          defineField({name: 'text', title: 'One-line description', type: 'string', description: 'About 40 to 60 characters.', validation: (rule) => rule.required().max(70)}),
+          defineField({name: 'icon', title: 'Icon', type: 'string', options: {list: [...WORK_ICON_NAMES]}, initialValue: 'clipboard', validation: (rule) => rule.required()}),
+        ],
+        preview: {select: {title: 'title', subtitle: 'text'}},
+      })],
+      validation: (rule) => rule.custom((items?: unknown[]) => !items?.length || items.length === WORK_ITEM_COUNT || `Add exactly ${WORK_ITEM_COUNT} items, or leave the strip empty.`),
+    }),
     defineField({name: 'responsiveCss', title: 'Responsive design CSS', type: 'text', rows: 8, group: 'design', validation: (rule) => rule.required()}),
     defineField({
       name: 'sections', title: 'Landing page sections, in display order', type: 'array', group: 'design',
