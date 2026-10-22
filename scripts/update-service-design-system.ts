@@ -38,10 +38,26 @@ const TEMPLATE_ID = 'servicePageTemplate-standard-v1'
 const DESIGN_VERSION = 'v1-2026-10'
 type Doc = {_id: string; _rev: string; _type: string; [key: string]: unknown}
 
-const pages = [...catalog, ...retainedCatalog].flatMap((item) => {
-  const items = (workItems as Record<string, Array<{title: string; text: string; icon: string}>>)[`${item.clusterSlug}/${item.slug}`]
-  return items ? [{id: `reference-service-${item.clusterSlug}-${item.legacySlug}`, path: item.livePath, items}] : []
-})
+type Items = Array<{title: string; text: string; icon: string}>
+// --items=<file> reads strips from another work-we-handle.json (for example a batch branch's copy).
+const itemsArg = process.argv.find((arg) => arg.startsWith('--items='))?.slice('--items='.length)
+const strips = (itemsArg ? JSON.parse(fs.readFileSync(path.resolve(itemsArg), 'utf8')) : workItems) as Record<string, Items>
+
+/** Every strip key's Sanity document: catalog pages by their known ID, CMS-only pages by URL. */
+async function resolvePages(): Promise<Array<{id: string; path: string; items: Items}>> {
+  const known = [...catalog, ...retainedCatalog]
+  const resolved: Array<{id: string; path: string; items: Items}> = []
+  for (const [key, items] of Object.entries(strips)) {
+    const [clusterSlug, slug] = key.split('/')
+    const item = known.find((entry) => entry.clusterSlug === clusterSlug && entry.slug === slug)
+    if (item) {resolved.push({id: `reference-service-${item.clusterSlug}-${item.legacySlug}`, path: item.livePath, items}); continue}
+    const ids = await client.fetch<string[]>('*[_type == "referenceServicePage" && clusterSlug == $clusterSlug && slug.current == $slug]._id', {clusterSlug, slug})
+    const bases = [...new Set(ids.map((id) => id.replace(/^drafts\./, '')))]
+    if (bases.length > 1) throw new Error(`/services/${key}/ matches ${bases.length} Sanity documents: ${bases.join(', ')}`)
+    resolved.push({id: bases[0] || `missing:${key}`, path: `/services/${key}/`, items})
+  }
+  return resolved
+}
 
 function strip(items: Array<{title: string; text: string; icon: string}>, pagePath: string) {
   if (items.length !== WORK_ITEM_COUNT) throw new Error(`${pagePath}: ${items.length} work items, expected ${WORK_ITEM_COUNT}`)
@@ -66,6 +82,7 @@ async function ensureDraft(id: string, docs: Doc[]): Promise<{draftId: string; c
 }
 
 async function main() {
+  const pages = await resolvePages()
   const ids = [TEMPLATE_ID, ...pages.map((page) => page.id)]
   const docs = await client.fetch<Doc[]>('*[_id in $all]', {all: [...ids, ...ids.map((id) => `drafts.${id}`)]})
   const backupDirectory = path.resolve('..', '.reference-preview', 'sanity-backups')
