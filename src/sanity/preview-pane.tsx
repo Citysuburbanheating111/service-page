@@ -74,3 +74,27 @@ export function ServicePagePreview(props: {document: {displayed: PreviewDocument
     </div>
   )
 }
+
+type DesignDocument = {title?: string; responsiveCss?: string; sections?: {_key?: string; html?: string}[]}
+
+const widths = [{label: 'Desktop', width: 1440}, {label: 'Laptop', width: 1280}, {label: 'Phone', width: 390}]
+
+/** "Preview" tab for a brand page: its sections as designed, at desktop, laptop or phone width, drafts included. */
+export function DesignPreview(props: {document: {displayed: DesignDocument}}) {
+  const {title = '', responsiveCss = '', sections = []} = props.document.displayed
+  const [width, setWidth] = useState(1440)
+  if (!sections.length) return <p style={{padding: 16, font: '14px system-ui, sans-serif'}}>Add a section to preview this page.</p>
+  const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>${responsiveCss}</style></head><body style="margin:0">${sections.map((section) => section.html || '').join('')}</body></html>`
+  return (
+    <div style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
+      <div style={{display: 'flex', gap: 8, alignItems: 'center', padding: '8px 12px', borderBottom: '1px solid #e5e7eb',
+        font: '13px system-ui, sans-serif', color: '#4b5563'}}>
+        <span style={{flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}>{title} · shows unpublished changes</span>
+        {widths.map((option) => <button key={option.width} type="button" style={{...button, fontWeight: option.width === width ? 700 : 500}} onClick={() => setWidth(option.width)}>{option.label}</button>)}
+      </div>
+      <div style={{flex: 1, overflow: 'auto', background: '#f3f4f6'}}>
+        <iframe srcDoc={html} title={`Preview of ${title}`} sandbox="" style={{display: 'block', width, height: '100%', minHeight: 800, margin: '0 auto', border: 0, background: '#fff'}} />
+      </div>
+    </div>
+  )
+}
