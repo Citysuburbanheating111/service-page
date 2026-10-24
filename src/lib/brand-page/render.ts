@@ -280,6 +280,9 @@ R['recent-jobs'] = (root, {p}) => {
   const whereD = where.map((t) => find(d, t)), whereM = where.map((t) => find(m, t))
   const mText = ['Found a coated flame sensor. Cleaned it and the burners, then tested the flame signal.', 'Found a cracked ignitor. Fitted a genuine one from the van and checked the gas valve.', 'Snow over the vent and a failing inducer. Cleared it and replaced the inducer under warranty.'].map((t) => find(m, t))
   const mOut = [find(m, 'Fixed first visit', 0), find(m, 'Fixed first visit', 1), find(m, 'Part under warranty')]
+  // desktop outcomes: two cards share the same design text, so each is filled by position
+  const dOut = [find(d, 'Fixed on the first visit', 0), find(d, 'Fixed on the first visit', 1), find(d, 'Part covered by warranty')]
+  J.jobs.forEach((j: any, i: number) => setT(dOut[i], j.outcome))
   const photosD = startsWith(d, 'Job photo'), photosM = startsWith(m, 'Job photo')
   J.jobs.forEach((j: any, i: number) => {
     setT(whereD[i], `${j.neighborhood} · ${j.month}`); setT(whereM[i], `${j.neighborhood} · ${j.month}`)
