@@ -1,0 +1,830 @@
+{
+  "_about": "Every field the brand page template uses. Path syntax: a.b for objects, a[] for each item of an array. 'count' = exact number of items, 'min'/'max' = item range for arrays, 'maxLen' = max characters for strings, 'optional' = may be empty until publish (QC warns instead of failing). Limits come from the Paper desktop + mobile layouts (C&S American Standard furnace brand page). Fields marked phone: true are the phone layout: optional, and when empty the page uses the desktop copy. Image fields hold https links to CC0 or public-domain photos (or City & Suburban's own), each recorded in meta.imageSources. hasDefault: true = may stay empty, the page shows a default (the service-area map, City & Suburban's van photo).",
+  "fields": {
+    "meta.primaryKeyword": {
+      "maxLen": 80
+    },
+    "meta.secondaryKeywords": {
+      "min": 1,
+      "max": 30
+    },
+    "meta.city": {
+      "equals": "Chicago"
+    },
+    "meta.brand": {
+      "maxLen": 40
+    },
+    "meta.equipment": {
+      "maxLen": 40
+    },
+    "meta.service": {
+      "maxLen": 40
+    },
+    "meta.slug": {
+      "pattern": "^/[a-z0-9-]+/[a-z0-9-]+-chicago/$"
+    },
+    "meta.seoTitle": {
+      "maxLen": 60,
+      "minLen": 30
+    },
+    "meta.metaDescription": {
+      "maxLen": 155,
+      "minLen": 110
+    },
+    "meta.sources": {
+      "min": 1
+    },
+    "meta.priceDate": {
+      "maxLen": 30
+    },
+    "hero.breadcrumb": {
+      "count": 4
+    },
+    "hero.eyebrow": {
+      "maxLen": 70
+    },
+    "hero.h1": {
+      "maxLen": 70
+    },
+    "hero.lede": {
+      "maxLen": 340
+    },
+    "hero.trustChips": {
+      "count": 3
+    },
+    "hero.trustChips[]": {
+      "maxLen": 40
+    },
+    "hero.formTitle": {
+      "maxLen": 50
+    },
+    "hero.formSubtitle": {
+      "maxLen": 120
+    },
+    "hero.modelFieldPlaceholder": {
+      "maxLen": 40
+    },
+    "hero.symptomChips": {
+      "count": 5
+    },
+    "hero.symptomChips[]": {
+      "maxLen": 30
+    },
+    "hero.mobile.h1": {
+      "maxLen": 50
+    },
+    "hero.mobile.lede": {
+      "maxLen": 140
+    },
+    "hero.mobile.valueStrip": {
+      "count": 3
+    },
+    "hero.mobile.valueStrip[].value": {
+      "maxLen": 9
+    },
+    "hero.mobile.valueStrip[].label": {
+      "maxLen": 32
+    },
+    "models.eyebrow": {
+      "maxLen": 60
+    },
+    "models.h2": {
+      "maxLen": 75
+    },
+    "models.intro": {
+      "maxLen": 160
+    },
+    "models.series": {
+      "count": 4
+    },
+    "models.series[].tag": {
+      "maxLen": 30
+    },
+    "models.series[].name": {
+      "maxLen": 16
+    },
+    "models.series[].summary": {
+      "maxLen": 100
+    },
+    "models.series[].models": {
+      "min": 1,
+      "max": 6
+    },
+    "models.series[].weDo": {
+      "count": 3
+    },
+    "models.series[].weDo[]": {
+      "maxLen": 85
+    },
+    "models.buildsHeading": {
+      "maxLen": 65
+    },
+    "models.buildsNote": {
+      "maxLen": 50
+    },
+    "models.builds": {
+      "count": 3
+    },
+    "models.builds[].label": {
+      "maxLen": 10
+    },
+    "models.builds[].name": {
+      "maxLen": 30
+    },
+    "models.builds[].weDo": {
+      "maxLen": 150
+    },
+    "services.eyebrow": {
+      "maxLen": 50
+    },
+    "services.h2": {
+      "maxLen": 70
+    },
+    "services.intro": {
+      "maxLen": 150
+    },
+    "services.groups": {
+      "count": 4
+    },
+    "services.groups[].name": {
+      "maxLen": 26
+    },
+    "services.groups[].summary": {
+      "maxLen": 90
+    },
+    "services.groups[].services": {
+      "count": 4
+    },
+    "services.groups[].services[].title": {
+      "maxLen": 42
+    },
+    "services.groups[].services[].description": {
+      "maxLen": 110
+    },
+    "services.groups[].services[].mobileDescription": {
+      "maxLen": 55
+    },
+    "recentJobs.eyebrow": {
+      "maxLen": 50
+    },
+    "recentJobs.h2": {
+      "maxLen": 60
+    },
+    "recentJobs.intro": {
+      "maxLen": 120
+    },
+    "recentJobs.jobs": {
+      "count": 3
+    },
+    "recentJobs.jobs[].model": {
+      "maxLen": 26
+    },
+    "recentJobs.jobs[].neighborhood": {
+      "maxLen": 24
+    },
+    "recentJobs.jobs[].month": {
+      "maxLen": 16
+    },
+    "recentJobs.jobs[].title": {
+      "maxLen": 42
+    },
+    "recentJobs.jobs[].found": {
+      "maxLen": 90
+    },
+    "recentJobs.jobs[].weDid": {
+      "maxLen": 100
+    },
+    "recentJobs.jobs[].outcome": {
+      "maxLen": 28
+    },
+    "recentJobs.jobs[].price": {
+      "maxLen": 12
+    },
+    "recentJobs.jobs[].photo": {
+      "pattern": "^https://"
+    },
+    "recentJobs.jobs[].sourceRef": {
+      "optional": true
+    },
+    "pricing.eyebrow": {
+      "maxLen": 50
+    },
+    "pricing.h2": {
+      "maxLen": 70
+    },
+    "pricing.intro": {
+      "maxLen": 150
+    },
+    "pricing.fees": {
+      "count": 3
+    },
+    "pricing.fees[].label": {
+      "maxLen": 30
+    },
+    "pricing.fees[].price": {
+      "maxLen": 8
+    },
+    "pricing.fees[].note": {
+      "maxLen": 100
+    },
+    "pricing.repairs": {
+      "min": 5,
+      "max": 8
+    },
+    "pricing.repairs[].item": {
+      "maxLen": 32
+    },
+    "pricing.repairs[].note": {
+      "maxLen": 60
+    },
+    "pricing.repairs[].range": {
+      "maxLen": 14
+    },
+    "pricing.included": {
+      "count": 3
+    },
+    "pricing.included[]": {
+      "maxLen": 90
+    },
+    "pricing.warrantyNote": {
+      "maxLen": 100
+    },
+    "servicePlan.eyebrow": {
+      "maxLen": 40
+    },
+    "servicePlan.h2": {
+      "maxLen": 60
+    },
+    "servicePlan.body": {
+      "maxLen": 260
+    },
+    "servicePlan.stats": {
+      "count": 3
+    },
+    "servicePlan.stats[].value": {
+      "maxLen": 12
+    },
+    "servicePlan.stats[].label": {
+      "maxLen": 60
+    },
+    "servicePlan.plan.name": {
+      "maxLen": 40
+    },
+    "servicePlan.plan.priceMonthly": {
+      "maxLen": 6
+    },
+    "servicePlan.plan.priceYearly": {
+      "maxLen": 7
+    },
+    "servicePlan.plan.perks": {
+      "count": 5
+    },
+    "servicePlan.plan.perks[]": {
+      "maxLen": 85
+    },
+    "servicePlan.plan.cta": {
+      "maxLen": 20
+    },
+    "financing.eyebrow": {
+      "maxLen": 40
+    },
+    "financing.h2": {
+      "maxLen": 60
+    },
+    "financing.intro": {
+      "maxLen": 140
+    },
+    "financing.options": {
+      "count": 3
+    },
+    "financing.options[].value": {
+      "maxLen": 8
+    },
+    "financing.options[].title": {
+      "maxLen": 32
+    },
+    "financing.options[].body": {
+      "maxLen": 110
+    },
+    "financing.rebates.title": {
+      "maxLen": 30
+    },
+    "financing.rebates.body": {
+      "maxLen": 120
+    },
+    "financing.rebates.cta": {
+      "maxLen": 22
+    },
+    "financing.disclaimer": {
+      "optional": true,
+      "maxLen": 300
+    },
+    "whoYoureCalling.eyebrow": {
+      "maxLen": 30
+    },
+    "whoYoureCalling.h2": {
+      "maxLen": 40
+    },
+    "whoYoureCalling.intro": {
+      "maxLen": 260
+    },
+    "whoYoureCalling.stats": {
+      "count": 4
+    },
+    "whoYoureCalling.stats[].label": {
+      "maxLen": 20
+    },
+    "whoYoureCalling.stats[].value": {
+      "maxLen": 8
+    },
+    "whoYoureCalling.stats[].body": {
+      "maxLen": 100
+    },
+    "whoYoureCalling.whyFamilyHeading": {
+      "maxLen": 50
+    },
+    "whoYoureCalling.whyFamily": {
+      "count": 4
+    },
+    "whoYoureCalling.whyFamily[]": {
+      "maxLen": 80
+    },
+    "reviews.eyebrow": {
+      "maxLen": 40
+    },
+    "reviews.h2": {
+      "maxLen": 45
+    },
+    "reviews.intro": {
+      "maxLen": 160
+    },
+    "reviews.stats": {
+      "count": 4
+    },
+    "reviews.stats[].label": {
+      "maxLen": 65
+    },
+    "reviews.statsSource": {
+      "maxLen": 150
+    },
+    "reviews.reviews": {
+      "min": 4,
+      "max": 8
+    },
+    "reviews.reviews[].name": {
+      "maxLen": 30
+    },
+    "reviews.reviews[].date": {
+      "maxLen": 16
+    },
+    "reviews.reviews[].source": {
+      "maxLen": 16
+    },
+    "reviews.reviews[].tag": {
+      "maxLen": 24
+    },
+    "reviews.reviews[].text": {
+      "maxLen": 420
+    },
+    "process.eyebrow": {
+      "maxLen": 30
+    },
+    "process.h2": {
+      "maxLen": 40
+    },
+    "process.intro": {
+      "maxLen": 80
+    },
+    "process.steps": {
+      "count": 5
+    },
+    "process.steps[].title": {
+      "maxLen": 30
+    },
+    "process.steps[].body": {
+      "maxLen": 140
+    },
+    "serviceArea.eyebrow": {
+      "maxLen": 60
+    },
+    "serviceArea.h2": {
+      "maxLen": 50
+    },
+    "serviceArea.mapEmbedUrl": {
+      "optional": true,
+      "pattern": "^https://www\\.google\\.com/maps/embed",
+      "hasDefault": true
+    },
+    "serviceArea.mapNote": {
+      "maxLen": 100
+    },
+    "serviceArea.facts": {
+      "count": 5
+    },
+    "serviceArea.facts[].label": {
+      "maxLen": 20
+    },
+    "serviceArea.facts[].value": {
+      "maxLen": 110
+    },
+    "serviceArea.areas": {
+      "count": 4
+    },
+    "serviceArea.areas[].name": {
+      "maxLen": 20
+    },
+    "serviceArea.areas[].neighborhoods": {
+      "maxLen": 80
+    },
+    "serviceArea.areas[].unitsWeSee": {
+      "maxLen": 70
+    },
+    "faq.eyebrow": {
+      "maxLen": 30
+    },
+    "faq.h2": {
+      "maxLen": 45
+    },
+    "faq.items": {
+      "count": 5
+    },
+    "faq.items[].question": {
+      "maxLen": 70
+    },
+    "faq.items[].answer": {
+      "maxLen": 260
+    },
+    "closingCta.eyebrow": {
+      "maxLen": 30
+    },
+    "closingCta.h2": {
+      "maxLen": 50
+    },
+    "closingCta.body": {
+      "maxLen": 160
+    },
+    "closingCta.haveReady": {
+      "count": 6
+    },
+    "closingCta.haveReady[]": {
+      "maxLen": 80
+    },
+    "siblingLinks.otherEquipment": {
+      "count": 4
+    },
+    "siblingLinks.otherEquipment[].label": {
+      "maxLen": 50
+    },
+    "siblingLinks.otherEquipment[].url": {
+      "pattern": "^/[a-z0-9-]+/[a-z0-9-]+-chicago/$"
+    },
+    "siblingLinks.otherEquipment[].status": {
+      "oneOf": [
+        "live",
+        "planned"
+      ]
+    },
+    "siblingLinks.otherBrands": {
+      "count": 4
+    },
+    "siblingLinks.otherBrands[].label": {
+      "maxLen": 50
+    },
+    "siblingLinks.otherBrands[].url": {
+      "pattern": "^/[a-z0-9-]+/[a-z0-9-]+-chicago/$"
+    },
+    "siblingLinks.otherBrands[].status": {
+      "oneOf": [
+        "live",
+        "planned"
+      ]
+    },
+    "meta.imageSources": {
+      "min": 3
+    },
+    "meta.imageSources[].slot": {},
+    "meta.imageSources[].url": {
+      "pattern": "^https://"
+    },
+    "meta.imageSources[].license": {
+      "oneOf": [
+        "cc0",
+        "pdm",
+        "public domain",
+        "own"
+      ]
+    },
+    "meta.imageSources[].source": {
+      "pattern": "^https://"
+    },
+    "hero.image": {
+      "pattern": "^https://"
+    },
+    "faq.image": {
+      "pattern": "^https://"
+    },
+    "whoYoureCalling.image": {
+      "optional": true,
+      "pattern": "^https://",
+      "hasDefault": true
+    },
+    "closingCta.image": {
+      "optional": true,
+      "pattern": "^https://",
+      "hasDefault": true
+    },
+    "reviews.reviews[].url": {
+      "pattern": "^https://"
+    },
+    "hero.modelFieldLabel": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 40
+    },
+    "hero.mobile.symptomsHeading": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 32
+    },
+    "hero.mobile.symptomChips": {
+      "optional": true,
+      "phone": true,
+      "count": 4
+    },
+    "hero.mobile.symptomChips[]": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 24
+    },
+    "models.series[].modelChips": {
+      "optional": true,
+      "phone": true,
+      "max": 2
+    },
+    "models.series[].modelChips[]": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 40
+    },
+    "models.mobile.eyebrow": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 40
+    },
+    "models.mobile.h2": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 55
+    },
+    "models.mobile.swipeHint": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 40
+    },
+    "models.mobile.series": {
+      "optional": true,
+      "phone": true,
+      "count": 4
+    },
+    "models.mobile.series[].models": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 48
+    },
+    "models.mobile.series[].weDo": {
+      "optional": true,
+      "phone": true,
+      "count": 3
+    },
+    "models.mobile.series[].weDo[]": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 52
+    },
+    "services.mobile.tabs": {
+      "optional": true,
+      "phone": true,
+      "count": 4
+    },
+    "services.mobile.tabs[]": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 22
+    },
+    "services.mobile.titles": {
+      "optional": true,
+      "phone": true,
+      "count": 4
+    },
+    "services.mobile.titles[]": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 32
+    },
+    "recentJobs.mobile.h2": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 40
+    },
+    "recentJobs.mobile.jobs": {
+      "optional": true,
+      "phone": true,
+      "count": 3
+    },
+    "recentJobs.mobile.jobs[].text": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 110
+    },
+    "recentJobs.mobile.jobs[].outcome": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 22
+    },
+    "pricing.mobile.h2": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 32
+    },
+    "pricing.mobile.fees": {
+      "optional": true,
+      "phone": true,
+      "count": 3
+    },
+    "pricing.mobile.fees[].label": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 22
+    },
+    "pricing.mobile.fees[].note": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 32
+    },
+    "pricing.mobile.repairs": {
+      "optional": true,
+      "phone": true,
+      "max": 8
+    },
+    "pricing.mobile.repairs[]": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 24
+    },
+    "pricing.mobile.included": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 110
+    },
+    "servicePlan.mobile.eyebrow": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 32
+    },
+    "servicePlan.mobile.h2": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 45
+    },
+    "servicePlan.mobile.planLabel": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 20
+    },
+    "servicePlan.mobile.planBody": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 110
+    },
+    "servicePlan.mobile.financingLabel": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 32
+    },
+    "servicePlan.mobile.approval": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 50
+    },
+    "servicePlan.mobile.rebatesTitle": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 16
+    },
+    "servicePlan.mobile.rebatesBody": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 60
+    },
+    "whoYoureCalling.mobile.h2": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 32
+    },
+    "whoYoureCalling.mobile.intro": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 130
+    },
+    "whoYoureCalling.mobile.stats": {
+      "optional": true,
+      "phone": true,
+      "count": 4
+    },
+    "whoYoureCalling.mobile.stats[]": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 34
+    },
+    "reviews.mobile.stats": {
+      "optional": true,
+      "phone": true,
+      "count": 4
+    },
+    "reviews.mobile.stats[]": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 48
+    },
+    "reviews.mobile.reviews": {
+      "optional": true,
+      "phone": true,
+      "count": 2
+    },
+    "reviews.mobile.reviews[].name": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 30
+    },
+    "reviews.mobile.reviews[].text": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 180
+    },
+    "process.mobile.steps": {
+      "optional": true,
+      "phone": true,
+      "count": 5
+    },
+    "process.mobile.steps[].title": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 28
+    },
+    "process.mobile.steps[].body": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 60
+    },
+    "serviceArea.mobile.eyebrow": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 32
+    },
+    "serviceArea.mobile.areas": {
+      "optional": true,
+      "phone": true,
+      "count": 4
+    },
+    "serviceArea.mobile.areas[].name": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 16
+    },
+    "serviceArea.mobile.areas[].neighborhoods": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 70
+    },
+    "faq.trustLine": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 40
+    },
+    "faq.mobile.h2": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 30
+    },
+    "faq.mobile.items": {
+      "optional": true,
+      "phone": true,
+      "count": 5
+    },
+    "faq.mobile.items[].question": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 40
+    },
+    "faq.mobile.firstAnswer": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 140
+    },
+    "closingCta.mobile.body": {
+      "optional": true,
+      "phone": true,
+      "maxLen": 110
+    }
+  }
+}

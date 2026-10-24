@@ -13,6 +13,7 @@ import {legacyReplacementPath} from '@/lib/legacy-service-replacements'
 import {migrateServiceContent} from '@/lib/service-base-path'
 import {renderReferencePage} from '@/lib/reference-page-rendering'
 import {resolveWorkItems} from '@/lib/service-page-sections'
+import {brandPageElement, brandPageMetadata, brandPagePath} from '@/lib/brand-page/route'
 
 type Props = {params: Promise<{serviceSlug: string; areaSlug: string}>}
 
@@ -37,7 +38,8 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   const cluster = clusters.find((item) => item.slug === clusterSlug)
   const service = cluster?.services.find((item) => item.slug === serviceSlug)
   const page = service && primaryPage(service)
-  if (!cluster || !service || !page) return {}
+  if (!cluster) return (await brandPageMetadata(brandPagePath(clusterSlug, serviceSlug))) || {}
+  if (!service || !page) return {}
   const metadata = await metadataClient.fetch(SERVICE_PAGE_METADATA_QUERY, {serviceSlug, areaSlug: page.areaSlug})
   if (!metadata) return {}
   return {
@@ -74,6 +76,11 @@ export default async function ServicePage({params}: Props) {
   const legacy = findNavigationLevel(clusters, firstSlug)
   if (legacy?.kind === 'service' && legacy.service.pages.some((candidate) => candidate.areaSlug === secondSlug)) {
     permanentRedirect(servicePath(legacy.cluster.slug, legacy.service.slug))
+  }
+  // not a service landing page: a brand page, /services/<brand>/<landing page>/
+  if (!cluster) {
+    const brandPage = await brandPageElement(brandPagePath(firstSlug, secondSlug))
+    if (brandPage) return brandPage
   }
   notFound()
 }

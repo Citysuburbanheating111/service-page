@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Ubuntu:wght@400;500;700&display=swap');
+/* City & Suburban service landing page template · Trust & Reviews v3.1 (Paper "city new", brand page). */
+:root{--color-bg:#FFFFFF;--color-fog:#F2F4F6;--color-line:#DCE2E7;--color-text:#3F4B55;--color-muted:#6A7782;--color-navy:#09263A;--color-navy-2:#123349;--color-red:#DD382B;--color-red-dk:#AF281D;--color-blue:#186AA4;--color-blue-tint:#E8F0F7;--color-red-tint:#FCEDEB;--color-star:#FBBC04;--color-google-blue:#4285F4;--color-google-green:#34A853;--color-google-red:#EA4335;--color-yelp:#D32323;--font-display:"Ubuntu",system-ui,sans-serif;--font-body:"Noto Sans",system-ui,sans-serif;--radius-sm:8px;--radius-card:14px;--radius-md:16px;--radius-lg:24px;--radius-pill:999px}
+.cs31-section{display:block;width:100%;font-family:var(--font-body);color:var(--color-text)}
+.cs31-section *{box-sizing:border-box}
+.cs31-d>*,.cs31-m>*{max-width:100%}
+.cs31-m{display:none}
+.cs31-d [style*="width:1200px"]{width:100%!important;max-width:1200px}
+.cs31-d [style*="padding-inline:120px"]{padding-inline:max(48px,calc((100% - 1200px)/2))!important}
+.cs31-d [style*="padding-inline:160px"]{padding-inline:max(56px,calc((100% - 1120px)/2))!important}
+.cs31-d [style*="padding-inline:120px"] [style*="padding-inline:120px"]{padding-inline:0!important}
+@media (max-width:1279px){.cs31-d [style*=";width:360px"],.cs31-d [style*=";width:380px"],.cs31-d [style*=";width:400px"],.cs31-d [style*=";width:420px"],.cs31-d [style*=";width:440px"],.cs31-d [style*=";width:480px"],.cs31-d [style*=";width:640px"],.cs31-d [style*=";width:688px"],.cs31-d [style*=";width:720px"],.cs31-d [style*=";width:760px"]{flex-shrink:1!important;min-width:0;max-width:100%}}
+@media (max-width:1279px){.cs31-d [style*=";width:285px"]{flex:1 1 0!important;width:auto!important;min-width:0}}
+@media (max-width:1023px){
+  .cs31-d{display:none}
+  .cs31-m{display:block}
+  .cs31-m-sticky>:last-child{position:fixed;left:0;right:0;bottom:0;z-index:50}
+  .cs31-m .cs31-track{max-width:100%!important;overflow-x:auto!important;scrollbar-width:none;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+  .cs31-m .cs31-track::-webkit-scrollbar{display:none}
+  .cs31-m .cs31-track>*{flex-shrink:0!important;scroll-snap-align:start}
+  .cs31-m{overflow-x:clip}
+}
