@@ -3,6 +3,7 @@ import {Inter, Noto_Sans, Ubuntu} from 'next/font/google'
 import {draftMode} from 'next/headers'
 import {VisualEditing} from 'next-sanity/visual-editing'
 import {DisableDraftMode} from '@/components/disable-draft-mode'
+import {GoogleTagManager, GoogleTagManagerNoScript} from '@/components/google-tag-manager'
 import {siteUrl} from '@/sanity/env'
 import {SanityLive} from '@/sanity/lib/live'
 import './globals.css'
@@ -27,9 +28,10 @@ export default async function RootLayout({children}: Readonly<{children: React.R
   return (
     <html lang="en">
       <body className={`${inter.variable} ${notoSans.variable} ${ubuntu.variable}`}>
+        {!draft.isEnabled && <GoogleTagManagerNoScript />}
         {children}
         <SanityLive />
-        {draft.isEnabled && <><VisualEditing /><DisableDraftMode /></>}
+        {draft.isEnabled ? <><VisualEditing /><DisableDraftMode /></> : <GoogleTagManager />}
       </body>
     </html>
   )
