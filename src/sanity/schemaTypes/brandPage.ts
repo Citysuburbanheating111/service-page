@@ -1,6 +1,8 @@
 import {defineArrayMember, defineField, defineType} from 'sanity'
 import {brandPageContentFields, brandPageContentGroups} from './brandPageContent'
 
+const SERVICE_CATEGORIES = ['heating', 'cooling', 'air-quality', 'commercial', 'hvac-systems', 'indoor-air-quality-ventilation', 'fireplace-chimney', 'commercial-specialty', 'studio', 'api', 'brands']
+
 const modules = [
   'utility-bar', 'site-header', 'hero', 'models', 'services', 'recent-jobs', 'pricing', 'service-plan', 'financing',
   'who-you-call', 'reviews', 'trust', 'process', 'service-areas', 'faq', 'closing-cta', 'other-brands', 'site-footer',
@@ -8,7 +10,7 @@ const modules = [
 
 /**
  * Brand pages (one brand × equipment × service in Chicago) live apart from the service landing pages.
- * Every text slot of the Paper design is a field; the page at /services{path} is drawn from these fields.
+ * Every text slot of the Paper design is a field; the page at /services/<brand>/<landing page>/ is drawn from these fields.
  */
 export const brandPage = defineType({
   name: 'brandPage',
@@ -24,8 +26,12 @@ export const brandPage = defineType({
     defineField({name: 'slug', title: 'Studio slug', type: 'slug', group: 'identity', options: {source: 'title'}, validation: (rule) => rule.required()}),
     defineField({
       name: 'path', title: 'Page address', type: 'string', group: 'identity',
-      description: 'The page is served at /services followed by this path, e.g. /brands/navien/tankless-water-heater-repair-chicago/.',
-      validation: (rule) => rule.required().regex(/^\/brands\/[a-z0-9-]+\/[a-z0-9-]+\/$/, {name: 'path'}),
+      description: 'The page is served at /services followed by this path: /<brand>/<landing page>/, e.g. /navien/tankless-water-heater-repair-chicago/.',
+      validation: (rule) => rule.required().regex(/^\/[a-z0-9-]+\/[a-z0-9-]+\/$/, {name: 'path'}).custom((value?: string) => {
+        // the first part is the brand; service categories own their own addresses
+        const brand = value?.split('/')[1]
+        return !brand || !SERVICE_CATEGORIES.includes(brand) || `"${brand}" is a service category, not a brand.`
+      }),
     }),
     defineField({name: 'metaTitle', title: 'Meta title', type: 'string', group: 'identity', validation: (rule) => rule.required().max(60)}),
     defineField({name: 'metaDescription', title: 'Meta description', type: 'text', rows: 3, group: 'identity', validation: (rule) => rule.required().max(160)}),

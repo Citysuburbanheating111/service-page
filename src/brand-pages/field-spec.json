@@ -21,7 +21,7 @@
       "maxLen": 40
     },
     "meta.slug": {
-      "pattern": "^/brands/[a-z0-9-]+/[a-z0-9-]+-chicago/$"
+      "pattern": "^/[a-z0-9-]+/[a-z0-9-]+-chicago/$"
     },
     "meta.seoTitle": {
       "maxLen": 60,
@@ -476,7 +476,7 @@
       "maxLen": 50
     },
     "siblingLinks.otherEquipment[].url": {
-      "pattern": "^/brands/[a-z0-9-]+/[a-z0-9-]+-chicago/$"
+      "pattern": "^/[a-z0-9-]+/[a-z0-9-]+-chicago/$"
     },
     "siblingLinks.otherEquipment[].status": {
       "oneOf": [
@@ -491,7 +491,7 @@
       "maxLen": 50
     },
     "siblingLinks.otherBrands[].url": {
-      "pattern": "^/brands/[a-z0-9-]+/[a-z0-9-]+-chicago/$"
+      "pattern": "^/[a-z0-9-]+/[a-z0-9-]+-chicago/$"
     },
     "siblingLinks.otherBrands[].status": {
       "oneOf": [

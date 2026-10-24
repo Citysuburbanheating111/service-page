@@ -46,7 +46,7 @@ for (const file of files) {
   const page = JSON.parse(fs.readFileSync(file, 'utf8'))
   for (const r of page.reviews?.reviews || []) if (!r.url && links[r.name]) r.url = links[r.name]
   const path = page.meta.slug as string
-  const key = path.replace(/^\/brands\/|\/$/g, '').replace(/\//g, '-')
+  const key = path.replace(/^\/|\/$/g, '').replace(/\//g, '-')
   const id = opt('--id') && files.length === 1 ? opt('--id')! : `brandPage-${key}`
   const rendered = renderBrandPage(page)
   const content = Object.fromEntries(['meta', 'hero', 'models', 'services', 'recentJobs', 'pricing', 'servicePlan', 'financing', 'whoYoureCalling', 'reviews', 'process', 'serviceArea', 'faq', 'closingCta', 'siblingLinks'].map((k) => [k, keyed(page[k])]))

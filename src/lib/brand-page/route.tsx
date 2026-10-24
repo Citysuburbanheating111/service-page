@@ -1,5 +1,7 @@
+// Brand pages share the two-part address with the service landing pages:
+// /services/<brand>/<landing page>/ (e.g. /services/navien/tankless-water-heater-repair-chicago/).
+// The [serviceSlug]/[areaSlug] route asks here when the address is not a service landing page.
 import type {Metadata} from 'next'
-import {notFound} from 'next/navigation'
 import {BrandLandingPage} from '@/components/brand-landing-page'
 import {renderBrandPage, type BrandPageContent} from '@/lib/brand-page/render'
 import {DESIGN_CSS, INTERACTION_CSS} from '@/lib/brand-page/styles'
@@ -9,18 +11,21 @@ import {sanityFetch} from '@/sanity/lib/live'
 import {siteUrl} from '@/sanity/env'
 import {BRAND_PAGE_PATHS_QUERY, BRAND_PAGE_QUERY} from '@/sanity/lib/queries'
 
-type Props = {params: Promise<{brand: string; page: string}>}
 type BrandPageDocument = BrandPageContent & {title?: string; path: string; metaTitle?: string; metaDescription?: string; responsiveCss?: string}
 
-const pathOf = (brand: string, page: string) => `/brands/${brand}/${page}/`
+export const brandPagePath = (brand: string, page: string) => `/${brand}/${page}/`
 const canonical = (path: string) => `${siteUrl.replace(/\/+$/, '')}/services${path}`
 
-export async function generateMetadata({params}: Props): Promise<Metadata> {
-  const {brand, page} = await params
-  // Draft-aware, so the Studio preview shows the draft's title too
-  const {data} = await sanityFetch({query: BRAND_PAGE_QUERY, params: {path: pathOf(brand, page)}, stega: false}).catch(() => ({data: null}))
+/** The brand page at this address, drafts included in draft mode; null when there is none. */
+async function findBrandPage(path: string) {
+  const {data} = await sanityFetch({query: BRAND_PAGE_QUERY, params: {path}, stega: false}).catch(() => ({data: null}))
   const doc = data as BrandPageDocument | null
-  if (!doc?.hero) return {}
+  return doc?.hero && doc.meta ? doc : null
+}
+
+export async function brandPageMetadata(path: string): Promise<Metadata | null> {
+  const doc = await findBrandPage(path)
+  if (!doc) return null
   return {
     title: {absolute: doc.metaTitle || doc.meta?.seoTitle || doc.title || ''},
     description: doc.metaDescription || doc.meta?.metaDescription,
@@ -51,15 +56,10 @@ function structuredData(doc: BrandPageDocument) {
   })
 }
 
-export default async function BrandPage({params}: Props) {
-  const {brand, page} = await params
-  const path = pathOf(brand, page)
-  const [{data}, published] = await Promise.all([
-    sanityFetch({query: BRAND_PAGE_QUERY, params: {path}, stega: false}).catch(() => ({data: null})),
-    metadataClient.fetch(BRAND_PAGE_PATHS_QUERY).catch(() => [] as string[]),
-  ])
-  const doc = data as BrandPageDocument | null
-  if (!doc?.hero || !doc.meta) notFound()
+/** The brand page at this address, ready to render; null when there is none. */
+export async function brandPageElement(path: string) {
+  const [doc, published] = await Promise.all([findBrandPage(path), metadataClient.fetch(BRAND_PAGE_PATHS_QUERY).catch(() => [] as string[])])
+  if (!doc) return null
   const rendered = renderBrandPage(doc, {published: published as string[]})
   return <BrandLandingPage
     html={rendered.html}
