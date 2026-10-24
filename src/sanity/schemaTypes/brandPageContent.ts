@@ -34,7 +34,14 @@ export const brandPageContentFields = [
     defineField({name: "metaDescription", title: "Meta description", type: 'text', rows: 3, description: "Up to 155 characters."}),
     defineField({name: "sources", title: "Sources", type: 'array', of: [defineArrayMember({type: 'string'})]}),
     defineField({name: "priceDate", title: "Prices as of", type: 'string', description: "Up to 30 characters."}),
-    defineField({name: "status", title: "Status", type: 'string'})
+    defineField({name: "status", title: "Status", type: 'string'}),
+    defineField({name: "imageSources", title: "Image sources (internal, never shown)", type: 'array', of: [defineArrayMember({type: 'object', name: "imageSourceItem", fields: [
+      defineField({name: "slot", title: "Slot", type: 'string'}),
+      defineField({name: "url", title: "Link", type: 'string'}),
+      defineField({name: "license", title: "License", type: 'string'}),
+      defineField({name: "title", title: "Title", type: 'string'}),
+      defineField({name: "source", title: "Source", type: 'string'})
+    ], preview: {select: {title: "slot"}}})]})
   ]}),
   defineField({group: "hero", name: "hero", title: "Hero", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
     defineField({name: "breadcrumb", title: "Breadcrumb", type: 'array', description: "4 items.", of: [defineArrayMember({type: 'string'})]}),
@@ -53,10 +60,11 @@ export const brandPageContentFields = [
         defineField({name: "value", title: "Value", type: 'string', description: "Up to 9 characters."}),
         defineField({name: "label", title: "Label", type: 'string', description: "Up to 32 characters."})
       ], preview: {select: {title: "value"}}})]}),
-      defineField({name: "symptomsHeading", title: "Symptoms heading", type: 'string'}),
-      defineField({name: "symptomChips", title: "Symptom chips", type: 'array', of: [defineArrayMember({type: 'string'})]})
+      defineField({name: "symptomsHeading", title: "Symptoms heading", type: 'string', description: "Up to 32 characters."}),
+      defineField({name: "symptomChips", title: "Symptom chips", type: 'array', description: "4 items.", of: [defineArrayMember({type: 'string'})]})
     ]}),
-    defineField({name: "modelFieldLabel", title: "Model field label", type: 'string'})
+    defineField({name: "image", title: "Image (https link)", type: 'string'}),
+    defineField({name: "modelFieldLabel", title: "Model field label", type: 'string', description: "Up to 40 characters."})
   ]}),
   defineField({group: "models", name: "models", title: "Models", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
     defineField({name: "eyebrow", title: "Eyebrow", type: 'string', description: "Up to 60 characters."}),
@@ -78,12 +86,12 @@ export const brandPageContentFields = [
       defineField({name: "weDo", title: "What we do", type: 'text', rows: 3, description: "Up to 150 characters."})
     ], preview: {select: {title: "label"}}})]}),
     defineField({name: "mobile", title: "Phone layout (optional: empty uses the desktop copy)", type: 'object', options: {collapsible: true, collapsed: true}, fields: [
-      defineField({name: "eyebrow", title: "Eyebrow", type: 'string'}),
-      defineField({name: "h2", title: "H2 heading", type: 'string'}),
-      defineField({name: "swipeHint", title: "Swipe hint", type: 'string'}),
-      defineField({name: "series", title: "Series", type: 'array', of: [defineArrayMember({type: 'object', name: "serieItem", fields: [
-        defineField({name: "models", title: "Models", type: 'string'}),
-        defineField({name: "weDo", title: "What we do", type: 'array', of: [defineArrayMember({type: 'string'})]})
+      defineField({name: "eyebrow", title: "Eyebrow", type: 'string', description: "Up to 40 characters."}),
+      defineField({name: "h2", title: "H2 heading", type: 'string', description: "Up to 55 characters."}),
+      defineField({name: "swipeHint", title: "Swipe hint", type: 'string', description: "Up to 40 characters."}),
+      defineField({name: "series", title: "Series", type: 'array', description: "4 items.", of: [defineArrayMember({type: 'object', name: "serieItem", fields: [
+        defineField({name: "models", title: "Models", type: 'string', description: "Up to 48 characters."}),
+        defineField({name: "weDo", title: "What we do", type: 'array', description: "3 items.", of: [defineArrayMember({type: 'string'})]})
       ], preview: {select: {title: "models"}}})]})
     ]})
   ]}),
@@ -101,8 +109,8 @@ export const brandPageContentFields = [
       ], preview: {select: {title: "title"}}})]})
     ], preview: {select: {title: "name"}}})]}),
     defineField({name: "mobile", title: "Phone layout (optional: empty uses the desktop copy)", type: 'object', options: {collapsible: true, collapsed: true}, fields: [
-      defineField({name: "tabs", title: "Tabs", type: 'array', of: [defineArrayMember({type: 'string'})]}),
-      defineField({name: "titles", title: "Titles", type: 'array', of: [defineArrayMember({type: 'string'})]})
+      defineField({name: "tabs", title: "Tabs", type: 'array', description: "4 items.", of: [defineArrayMember({type: 'string'})]}),
+      defineField({name: "titles", title: "Titles", type: 'array', description: "4 items.", of: [defineArrayMember({type: 'string'})]})
     ]})
   ]}),
   defineField({group: "recentJobs", name: "recentJobs", title: "Recent jobs", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
@@ -118,14 +126,14 @@ export const brandPageContentFields = [
       defineField({name: "weDid", title: "We did", type: 'string', description: "Up to 100 characters."}),
       defineField({name: "outcome", title: "Outcome", type: 'string', description: "Up to 28 characters."}),
       defineField({name: "price", title: "Price", type: 'string', description: "Up to 12 characters."}),
-      defineField({name: "photo", title: "Photo", type: 'string'}),
+      defineField({name: "photo", title: "Photo (https link)", type: 'string'}),
       defineField({name: "sourceRef", title: "Invoice / job reference", type: 'string'})
     ], preview: {select: {title: "model"}}})]}),
     defineField({name: "mobile", title: "Phone layout (optional: empty uses the desktop copy)", type: 'object', options: {collapsible: true, collapsed: true}, fields: [
-      defineField({name: "h2", title: "H2 heading", type: 'string'}),
-      defineField({name: "jobs", title: "Jobs", type: 'array', of: [defineArrayMember({type: 'object', name: "jobItem", fields: [
-        defineField({name: "text", title: "Text", type: 'string'}),
-        defineField({name: "outcome", title: "Outcome", type: 'string'})
+      defineField({name: "h2", title: "H2 heading", type: 'string', description: "Up to 40 characters."}),
+      defineField({name: "jobs", title: "Jobs", type: 'array', description: "3 items.", of: [defineArrayMember({type: 'object', name: "jobItem", fields: [
+        defineField({name: "text", title: "Text", type: 'string', description: "Up to 110 characters."}),
+        defineField({name: "outcome", title: "Outcome", type: 'string', description: "Up to 22 characters."})
       ], preview: {select: {title: "text"}}})]})
     ]})
   ]}),
@@ -148,13 +156,13 @@ export const brandPageContentFields = [
     defineField({name: "warrantyNote", title: "Warranty note", type: 'string', description: "Up to 100 characters."}),
     defineField({name: "confirmed", title: "Confirmed", type: 'boolean'}),
     defineField({name: "mobile", title: "Phone layout (optional: empty uses the desktop copy)", type: 'object', options: {collapsible: true, collapsed: true}, fields: [
-      defineField({name: "h2", title: "H2 heading", type: 'string'}),
-      defineField({name: "fees", title: "Fees", type: 'array', of: [defineArrayMember({type: 'object', name: "feeItem", fields: [
-        defineField({name: "label", title: "Label", type: 'string'}),
-        defineField({name: "note", title: "Note", type: 'string'})
+      defineField({name: "h2", title: "H2 heading", type: 'string', description: "Up to 32 characters."}),
+      defineField({name: "fees", title: "Fees", type: 'array', description: "3 items.", of: [defineArrayMember({type: 'object', name: "feeItem", fields: [
+        defineField({name: "label", title: "Label", type: 'string', description: "Up to 22 characters."}),
+        defineField({name: "note", title: "Note", type: 'string', description: "Up to 32 characters."})
       ], preview: {select: {title: "label"}}})]}),
       defineField({name: "repairs", title: "Repairs", type: 'array', of: [defineArrayMember({type: 'string'})]}),
-      defineField({name: "included", title: "Included", type: 'string'})
+      defineField({name: "included", title: "Included", type: 'string', description: "Up to 110 characters."})
     ]})
   ]}),
   defineField({group: "servicePlan", name: "servicePlan", title: "Service plan", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
@@ -174,14 +182,14 @@ export const brandPageContentFields = [
     ]}),
     defineField({name: "confirmed", title: "Confirmed", type: 'boolean'}),
     defineField({name: "mobile", title: "Phone layout (optional: empty uses the desktop copy)", type: 'object', options: {collapsible: true, collapsed: true}, fields: [
-      defineField({name: "eyebrow", title: "Eyebrow", type: 'string'}),
-      defineField({name: "h2", title: "H2 heading", type: 'string'}),
-      defineField({name: "planLabel", title: "Plan label", type: 'string'}),
-      defineField({name: "planBody", title: "Plan body", type: 'string'}),
-      defineField({name: "financingLabel", title: "Financing label", type: 'string'}),
-      defineField({name: "approval", title: "Approval", type: 'string'}),
-      defineField({name: "rebatesTitle", title: "Rebates title", type: 'string'}),
-      defineField({name: "rebatesBody", title: "Rebates body", type: 'string'})
+      defineField({name: "eyebrow", title: "Eyebrow", type: 'string', description: "Up to 32 characters."}),
+      defineField({name: "h2", title: "H2 heading", type: 'string', description: "Up to 45 characters."}),
+      defineField({name: "planLabel", title: "Plan label", type: 'string', description: "Up to 20 characters."}),
+      defineField({name: "planBody", title: "Plan body", type: 'string', description: "Up to 110 characters."}),
+      defineField({name: "financingLabel", title: "Financing label", type: 'string', description: "Up to 32 characters."}),
+      defineField({name: "approval", title: "Approval", type: 'string', description: "Up to 50 characters."}),
+      defineField({name: "rebatesTitle", title: "Rebates title", type: 'string', description: "Up to 16 characters."}),
+      defineField({name: "rebatesBody", title: "Rebates body", type: 'string', description: "Up to 60 characters."})
     ]})
   ]}),
   defineField({group: "financing", name: "financing", title: "Financing", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
@@ -212,10 +220,11 @@ export const brandPageContentFields = [
     ], preview: {select: {title: "label"}}})]}),
     defineField({name: "whyFamilyHeading", title: "Why family heading", type: 'string', description: "Up to 50 characters."}),
     defineField({name: "whyFamily", title: "Why a family company matters", type: 'array', description: "4 items.", of: [defineArrayMember({type: 'string'})]}),
+    defineField({name: "image", title: "Image (https link)", type: 'string'}),
     defineField({name: "mobile", title: "Phone layout (optional: empty uses the desktop copy)", type: 'object', options: {collapsible: true, collapsed: true}, fields: [
-      defineField({name: "h2", title: "H2 heading", type: 'string'}),
-      defineField({name: "intro", title: "Intro", type: 'string'}),
-      defineField({name: "stats", title: "Stats", type: 'array', of: [defineArrayMember({type: 'string'})]})
+      defineField({name: "h2", title: "H2 heading", type: 'string', description: "Up to 32 characters."}),
+      defineField({name: "intro", title: "Intro", type: 'text', rows: 3, description: "Up to 130 characters."}),
+      defineField({name: "stats", title: "Stats", type: 'array', description: "4 items.", of: [defineArrayMember({type: 'string'})]})
     ]})
   ]}),
   defineField({group: "reviews", name: "reviews", title: "Reviews", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
@@ -227,20 +236,20 @@ export const brandPageContentFields = [
       defineField({name: "label", title: "Label", type: 'string', description: "Up to 65 characters."}),
       defineField({name: "percent", title: "Percent", type: 'number'})
     ], preview: {select: {title: "label"}}})]}),
-    defineField({name: "statsSource", title: "Stats source", type: 'text', rows: 3, description: "Up to 120 characters."}),
+    defineField({name: "statsSource", title: "Stats source", type: 'text', rows: 3, description: "Up to 150 characters."}),
     defineField({name: "reviews", title: "Reviews", type: 'array', of: [defineArrayMember({type: 'object', name: "reviewItem", fields: [
       defineField({name: "name", title: "Name", type: 'string', description: "Up to 30 characters."}),
       defineField({name: "date", title: "Date", type: 'string', description: "Up to 16 characters."}),
       defineField({name: "source", title: "Source", type: 'string', description: "Up to 16 characters."}),
       defineField({name: "tag", title: "Tag", type: 'string', description: "Up to 24 characters."}),
-      defineField({name: "text", title: "Text", type: 'text', rows: 3, description: "Up to 320 characters."}),
+      defineField({name: "text", title: "Text", type: 'text', rows: 3, description: "Up to 420 characters."}),
       defineField({name: "url", title: "Link", type: 'string'})
     ], preview: {select: {title: "name"}}})]}),
     defineField({name: "mobile", title: "Phone layout (optional: empty uses the desktop copy)", type: 'object', options: {collapsible: true, collapsed: true}, fields: [
-      defineField({name: "stats", title: "Stats", type: 'array', of: [defineArrayMember({type: 'string'})]}),
-      defineField({name: "reviews", title: "Reviews", type: 'array', of: [defineArrayMember({type: 'object', name: "reviewItem", fields: [
-        defineField({name: "name", title: "Name", type: 'string'}),
-        defineField({name: "text", title: "Text", type: 'string'})
+      defineField({name: "stats", title: "Stats", type: 'array', description: "4 items.", of: [defineArrayMember({type: 'string'})]}),
+      defineField({name: "reviews", title: "Reviews", type: 'array', description: "2 items.", of: [defineArrayMember({type: 'object', name: "reviewItem", fields: [
+        defineField({name: "name", title: "Name", type: 'string', description: "Up to 30 characters."}),
+        defineField({name: "text", title: "Text", type: 'text', rows: 3, description: "Up to 180 characters."})
       ], preview: {select: {title: "name"}}})]})
     ]})
   ]}),
@@ -253,9 +262,9 @@ export const brandPageContentFields = [
       defineField({name: "body", title: "Body", type: 'text', rows: 3, description: "Up to 140 characters."})
     ], preview: {select: {title: "title"}}})]}),
     defineField({name: "mobile", title: "Phone layout (optional: empty uses the desktop copy)", type: 'object', options: {collapsible: true, collapsed: true}, fields: [
-      defineField({name: "steps", title: "Steps", type: 'array', of: [defineArrayMember({type: 'object', name: "stepItem", fields: [
-        defineField({name: "title", title: "Title", type: 'string'}),
-        defineField({name: "body", title: "Body", type: 'string'})
+      defineField({name: "steps", title: "Steps", type: 'array', description: "5 items.", of: [defineArrayMember({type: 'object', name: "stepItem", fields: [
+        defineField({name: "title", title: "Title", type: 'string', description: "Up to 28 characters."}),
+        defineField({name: "body", title: "Body", type: 'string', description: "Up to 60 characters."})
       ], preview: {select: {title: "title"}}})]})
     ]})
   ]}),
@@ -274,10 +283,10 @@ export const brandPageContentFields = [
       defineField({name: "unitsWeSee", title: "Units we see", type: 'string', description: "Up to 70 characters."})
     ], preview: {select: {title: "name"}}})]}),
     defineField({name: "mobile", title: "Phone layout (optional: empty uses the desktop copy)", type: 'object', options: {collapsible: true, collapsed: true}, fields: [
-      defineField({name: "eyebrow", title: "Eyebrow", type: 'string'}),
-      defineField({name: "areas", title: "Areas", type: 'array', of: [defineArrayMember({type: 'object', name: "areaItem", fields: [
-        defineField({name: "name", title: "Name", type: 'string'}),
-        defineField({name: "neighborhoods", title: "Neighborhoods", type: 'string'})
+      defineField({name: "eyebrow", title: "Eyebrow", type: 'string', description: "Up to 32 characters."}),
+      defineField({name: "areas", title: "Areas", type: 'array', description: "4 items.", of: [defineArrayMember({type: 'object', name: "areaItem", fields: [
+        defineField({name: "name", title: "Name", type: 'string', description: "Up to 16 characters."}),
+        defineField({name: "neighborhoods", title: "Neighborhoods", type: 'string', description: "Up to 70 characters."})
       ], preview: {select: {title: "name"}}})]})
     ]})
   ]}),
@@ -288,13 +297,14 @@ export const brandPageContentFields = [
       defineField({name: "question", title: "Question", type: 'string', description: "Up to 70 characters."}),
       defineField({name: "answer", title: "Answer", type: 'text', rows: 3, description: "Up to 260 characters."})
     ], preview: {select: {title: "question"}}})]}),
-    defineField({name: "trustLine", title: "Trust line under the rating (optional)", type: 'string'}),
+    defineField({name: "image", title: "Image (https link)", type: 'string'}),
+    defineField({name: "trustLine", title: "Trust line under the rating (optional)", type: 'string', description: "Up to 40 characters."}),
     defineField({name: "mobile", title: "Phone layout (optional: empty uses the desktop copy)", type: 'object', options: {collapsible: true, collapsed: true}, fields: [
-      defineField({name: "h2", title: "H2 heading", type: 'string'}),
-      defineField({name: "items", title: "Items", type: 'array', of: [defineArrayMember({type: 'object', name: "itemItem", fields: [
-        defineField({name: "question", title: "Question", type: 'string'})
+      defineField({name: "h2", title: "H2 heading", type: 'string', description: "Up to 30 characters."}),
+      defineField({name: "items", title: "Items", type: 'array', description: "5 items.", of: [defineArrayMember({type: 'object', name: "itemItem", fields: [
+        defineField({name: "question", title: "Question", type: 'string', description: "Up to 40 characters."})
       ], preview: {select: {title: "question"}}})]}),
-      defineField({name: "firstAnswer", title: "First answer", type: 'string'})
+      defineField({name: "firstAnswer", title: "First answer", type: 'text', rows: 3, description: "Up to 140 characters."})
     ]})
   ]}),
   defineField({group: "closingCta", name: "closingCta", title: "Closing cta", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
@@ -302,8 +312,9 @@ export const brandPageContentFields = [
     defineField({name: "h2", title: "H2 heading", type: 'string', description: "Up to 50 characters."}),
     defineField({name: "body", title: "Body", type: 'text', rows: 3, description: "Up to 160 characters."}),
     defineField({name: "haveReady", title: "Have these ready", type: 'array', description: "6 items.", of: [defineArrayMember({type: 'string'})]}),
+    defineField({name: "image", title: "Image (https link)", type: 'string'}),
     defineField({name: "mobile", title: "Phone layout (optional: empty uses the desktop copy)", type: 'object', options: {collapsible: true, collapsed: true}, fields: [
-      defineField({name: "body", title: "Body", type: 'string'})
+      defineField({name: "body", title: "Body", type: 'string', description: "Up to 110 characters."})
     ]})
   ]}),
   defineField({group: "siblingLinks", name: "siblingLinks", title: "Sibling links", type: 'object', options: {collapsible: true, collapsed: false}, fields: [

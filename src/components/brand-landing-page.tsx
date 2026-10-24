@@ -92,11 +92,22 @@ export function BrandLandingPage({html, style, schema, serviceName}: Props) {
       status.textContent = message
       if (button) button.disabled = false
     }
+    // Blocks rise into view as they scroll in (skipped for reduced motion; without script they simply show)
+    const reveal = [...element.querySelectorAll('.cs31-reveal')]
+    let observer: IntersectionObserver | undefined
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('cs31-js')
+      observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting) { entry.target.classList.add('is-in'); observer?.unobserve(entry.target) }
+      }), {rootMargin: '0px 0px -8% 0px'})
+      reveal.forEach((block) => observer!.observe(block))
+    }
     const tracks = [...element.querySelectorAll('[data-cs-track]')]
     element.addEventListener('click', click)
     element.addEventListener('submit', submit)
     tracks.forEach((t) => t.addEventListener('scroll', scroll, {passive: true}))
     return () => {
+      observer?.disconnect()
       element.removeEventListener('click', click); element.removeEventListener('submit', submit)
       tracks.forEach((t) => t.removeEventListener('scroll', scroll))
     }

@@ -285,11 +285,14 @@ R['recent-jobs'] = (root, {p}) => {
     setT(whereD[i], `${j.neighborhood} · ${j.month}`); setT(whereM[i], `${j.neighborhood} · ${j.month}`)
     setT(mText[i], mob(p, `recentJobs.mobile.jobs[${i}].text`, `${j.found} ${j.weDid}`))
     setT(mOut[i], mob(p, `recentJobs.mobile.jobs[${i}].outcome`, j.outcome))
-    if (has(j.photo)) for (const ph of [photosD[i], photosM[i]]) {
+    const photo = safeUrl(j.photo)
+    if (photo) for (const ph of [photosD[i], photosM[i]]) {
       const frame = ph?.parentNode as HTMLElement
       if (!frame) continue
-      frame.setAttribute('style', `${frame.getAttribute('style') || ''};background-image:url(${attr(j.photo)});background-size:cover;background-position:50%`)
-      frame.set_content('')
+      frame.setAttribute('style', `${frame.getAttribute('style') || ''};background-image:url(${photo});background-size:cover;background-position:50%`)
+      frame.setAttribute('role', 'img'); frame.setAttribute('aria-label', `${j.title} (${j.model})`)
+      // the photo replaces the placeholder icon and caption; the model chip stays on top of it
+      frame.querySelector('svg')?.remove(); ph.remove()
     }
   })
   setT(find(m, 'Furnaces we fixed this winter'), mob(p, 'recentJobs.mobile.h2', J.h2))
@@ -355,7 +358,7 @@ R['who-you-call'] = (root, {p}) => {
   small.forEach((e, i) => setT(e, mob(p, `whoYoureCalling.mobile.stats[${i}]`, W.stats[i].label)))
   link(root, '204 Google reviews, as of 31 Aug 2026', business.reviewsHref, true)
   const h2 = textEls(d).find((e) => norm(e.text) === norm("Who you'reactually calling?") || norm(e.text) === norm(EXAMPLE.whoYoureCalling.h2))
-  if (h2) retag(h2, 'h2')
+  if (h2) { retag(h2, 'h2'); h2.set_content(esc(W.h2)); touched.add(h2) }
 }
 
 R.reviews = (root, {p, reviewUrls}) => {
@@ -529,6 +532,54 @@ R['other-brands'] = (root, {p, w, published}) => {
   retag(find(d, 'Other equipment and brands we service'), 'h2')
 }
 
+// ------------------------------------------------------------------ images and motion
+// The design's photos, by Sanity asset id, and the page field that replaces each one in a section.
+const HERO_PHOTO = 'fad3e33b0c317078d0ad1a3eb57c3c35a5e4d014', VAN_PHOTO = '02480938c85f3349eb657ffee2396714570b3636', FAQ_PHOTO = 'b37fe2b83af45760d7840ba5d4ecf51d19feafd3'
+const PHOTO_FIELDS: Record<string, [string, (p: BrandPageContent) => unknown][]> = {
+  hero: [[HERO_PHOTO, (p) => p.hero?.image]],
+  'who-you-call': [[VAN_PHOTO, (p) => p.whoYoureCalling?.image]],
+  faq: [[FAQ_PHOTO, (p) => p.faq?.image]],
+  'closing-cta': [[VAN_PHOTO, (p) => p.closingCta?.image], [HERO_PHOTO, (p) => p.closingCta?.image || p.hero?.image]],
+}
+const safeUrl = (u: unknown) => typeof u === 'string' && /^https:\/\/[^\s"'()<>]+$/.test(u.trim()) ? u.trim() : ''
+function swapPhotos(root: HTMLElement, module: string, page: BrandPageContent) {
+  for (const [id, pick] of PHOTO_FIELDS[module] || []) {
+    const url = safeUrl(pick(page))
+    // the design's hero photo shows American Standard units: other brands without a photo get the plain gradient
+    if (!url && id === HERO_PHOTO && page.meta?.brand !== EXAMPLE.meta.brand) {
+      for (const e of elements(root)) {
+        const st = e.getAttribute('style') || ''
+        if (st.includes(id)) e.setAttribute('style', st.replace(new RegExp(`,\\s*url\\([^)]*${id}[^)]*\\)`, 'g'), '').replace(new RegExp(`url\\([^)]*${id}[^)]*\\)`, 'g'), 'none'))
+      }
+      continue
+    }
+    if (!url) continue
+    for (const e of elements(root)) {
+      const st = e.getAttribute('style') || ''
+      if (st.includes(id)) e.setAttribute('style', st.replace(new RegExp(`url\\([^)]*${id}[^)]*\\)`, 'g'), `url(${url})`))
+    }
+  }
+}
+/** Classes the motion styles hook onto: cards lift, buttons press, blocks rise into view (as on the live landing pages). */
+function markMotion(root: HTMLElement) {
+  const isCard = (e: HTMLElement) => {
+    const st = e.getAttribute('style') || ''
+    return /border-radius:(var\(--radius-card\)|12px|14px)/.test(st) && /(border-color|background-color:#FFFFFF|background-color:var\(--color-navy-2\))/.test(st)
+      && !(e as any).rawTagName?.match(/^(form|label)$/) && !e.querySelector('iframe,form,input')
+  }
+  const cards = elements(root).filter(isCard)
+  for (const c of cards) if (!cards.some((o) => o !== c && c.querySelector('*') && elements(c).includes(o))) c.classList.add('cs31-card')
+  for (const e of elements(root)) {
+    const tag = (e as any).rawTagName
+    if ((tag === 'a' || tag === 'button') && /border-radius:999px/.test(e.getAttribute('style') || '')) e.classList.add('cs31-btn')
+    if (/background-image:[^;]*url\(/.test(e.getAttribute('style') || '') && !/height:56px|width:159px|408x144|366x64/.test(e.getAttribute('style') || '')) e.classList.add('cs31-media')
+  }
+  for (const layout of root.querySelectorAll('.cs31-d, .cs31-m')) {
+    const top = kids(layout)[0]
+    for (const block of top ? kids(top) : []) block.classList.add('cs31-reveal')
+  }
+}
+
 // ------------------------------------------------------------------ assemble
 const DROP = /^CONFIRM:/
 
@@ -547,6 +598,8 @@ export function renderBrandPage(page: BrandPageContent, opts: {published?: Itera
       const v = getPath(page, path!)
       if (typeof v === 'string' && norm(ownText(e)) === norm(getPath(EXAMPLE, path!))) setT(e, v)
     }
+    swapPhotos(root, s.module, page)
+    markMotion(root)
     const section = kids(root)[0]
     if (SECTION_IDS[s.module]) section.setAttribute('id', SECTION_IDS[s.module])
     return {module: s.module, label: s.label, html: root.toString()}
