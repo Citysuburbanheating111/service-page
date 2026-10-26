@@ -103,11 +103,6 @@ function exPath(module: string, text: string) {
   return all.find((p) => keys.includes(p.split(/[.[]/)[0])) || (keys.length ? undefined : all[0])
 }
 
-const join2 = (list: string[]) => {
-  if (list.length <= 1) return [list.join('')]
-  const h = Math.ceil(list.length / 2)
-  return [list.slice(0, h).join(' · '), list.slice(h).join(' · ')]
-}
 const initial = (name: string) => (name.trim()[0] || '').toUpperCase()
 const firstSentence = (s: string) => (s.split(/(?<=[.!?])\s/)[0] || s).trim()
 
@@ -223,8 +218,15 @@ R.models = (root, {p}) => {
   M.series.forEach((s: any, i: number) => {
     const sl = slotsD[i]
     setT(sl.tag, s.tag); setT(sl.name, s.name); setT(sl.summary, s.summary); sl.weDo.forEach((e: HTMLElement, j: number) => setT(e, s.weDo[j]))
-    const [c1, c2] = Array.isArray(s.modelChips) && s.modelChips.filter(has).length ? s.modelChips.filter(has) : join2(s.models)
-    setT(sl.chips[0], c1); if (c2) setT(sl.chips[1], c2); else pill(sl.chips[1], 2).remove()
+    sl.name.classList.add('cs31-series-name') // long names shrink rather than break mid-word
+    // model chips sit side by side (wrapping), one chip per model unless the page sets its own chip lines
+    const chips: string[] = Array.isArray(s.modelChips) && s.modelChips.filter(has).length ? s.modelChips.filter(has) : s.models
+    const first = pill(sl.chips[0], 2), box = first.parentNode as HTMLElement
+    box.setAttribute('style', `${(box.getAttribute('style') || '').replace(/flex-direction:column/, 'flex-direction:row')};flex-wrap:wrap;align-content:flex-start`)
+    box.setAttribute('data-cs-equal', 'series-chips')
+    fillRun(box, first, kids(box).length, chips, (el, text: string) => { setT(textEls(el)[0], text); el.setAttribute('style', `${el.getAttribute('style') || ''};white-space:nowrap`) })
+    // the tag, name and summary block lines up across the four cards
+    ;(box.previousElementSibling as HTMLElement | null)?.setAttribute('data-cs-equal', 'series-head')
   })
   const chipsM = ['Platinum 95 · Platinum 80', 'Gold 95V · Gold 80V · S9V2', 'Silver 95H · 80H · S9X2 · S8X2', 'Freedom 80/90 · S8B1 · S9B1 · S9X1']
   const weDoM = [['AccuLink control faults, read from the thermostat', 'Variable-speed blower motor and module repair', 'Modulating gas valve set-up'],
@@ -391,6 +393,9 @@ R.reviews = (root, {p, reviewUrls}) => {
     retag(find(el, 'Read more'), 'a', {href: r.url || reviewUrls[r.name] || business.reviewsHref, target: '_blank', rel: 'noopener'})
   })
   carousel(track, find(d2, '· 204 Google reviews').parentNode as HTMLElement)
+  // the line under the cards shows where the carousel is
+  const thumb = elements(d2).find((e) => /background-color:var\(--color-navy\)/.test(e.getAttribute('style') || '') && /height:4px/.test(e.getAttribute('style') || '') && /background-color:var\(--color-fog\)/.test(e.parentNode?.getAttribute?.('style') || ''))
+  if (thumb) thumb.setAttribute('data-cs-progress', '')
   // phone: two quote cards
   const mq = textEls(m2).filter((e) => /^“/.test(decode(ownText(e))))
   const mInit = ['K', 'J'].map((t) => find(m2, t)), mName = ['Ken Davis', 'Jens Pfister'].map((t) => find(m2, t)), mTag = ['Condo furnace repair', 'Condo repairs'].map((t) => find(m2, t))
@@ -430,6 +435,12 @@ R.process = (root, {p}) => {
   setT(find(d, '/ 06'), `/ ${String(n).padStart(2, '0')}`)
   setT(find(d, 'Swipe or use the arrows to see all 6 steps'), `Swipe or use the arrows to see all ${n} steps`)
   const dot = find(d, '6').parentNode as HTMLElement; const prev = dot.previousElementSibling; if (prev && !prev.childNodes.length) prev.remove(); dot.remove()
+  // the numbered dots follow the cards and jump to their step
+  for (let i = 1; i <= n; i++) {
+    const circle = find(d, String(i)).parentNode as HTMLElement
+    retag(circle, 'button', {type: 'button', 'data-cs-dot': String(i - 1), 'aria-label': `Step ${i}`})
+    circle.setAttribute('style', `${circle.getAttribute('style')};padding:0;font:inherit`)
+  }
   const bodiesM = ['Read us the model number and what the light is doing.', '24/7, and no-heat goes to the front of the line.', 'We read the code and show you the failed part.', 'If the furnace has years left, we repair it.', 'On the spot when the part is on the van.'].map((t) => find(m, t))
   const titlesM = EXAMPLE.process.steps.map((s: any, i: number) => tryFind(m, i === 3 ? 'Written price first' : s.title))
   bodiesM.forEach((e, i) => setT(e, mob(p, `process.mobile.steps[${i}].body`, P.steps[i].body)))

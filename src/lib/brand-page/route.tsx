@@ -63,7 +63,9 @@ export async function brandPageElement(path: string) {
   const rendered = renderBrandPage(doc, {published: published as string[]})
   return <BrandLandingPage
     html={rendered.html}
-    style={`${doc.responsiveCss || DESIGN_CSS}\n${INTERACTION_CSS}`}
+    // the design system lives in the code, so a style fix reaches every brand page at once;
+    // the "Page styles" copy in Sanity is only kept for the older Studio schema
+    style={`${DESIGN_CSS}\n${INTERACTION_CSS}`}
     schema={structuredData(doc)}
     serviceName={`${doc.meta.brand} ${doc.meta.equipment.toLowerCase()} ${doc.meta.service.toLowerCase()}`} />
 }

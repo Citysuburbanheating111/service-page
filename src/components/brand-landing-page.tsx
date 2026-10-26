@@ -36,6 +36,18 @@ export function BrandLandingPage({html, style, schema, serviceName}: Props) {
         }
         return
       }
+      // numbered carousels (the process): the arrows and dots step through the cards one at a time
+      const dot = target.closest('[data-cs-dot]')
+      const stepArrow = target.closest('[data-cs-prev],[data-cs-next]')
+      const stepWrap = (dot || stepArrow)?.closest('[data-cs-carousel]')
+      if (stepWrap?.querySelector('[data-cs-dot]')) {
+        const track = stepWrap.querySelector('[data-cs-track]') as HTMLElement
+        const count = track.children.length
+        const current = steps.get(track) ?? 0
+        const index = dot ? Number(dot.getAttribute('data-cs-dot')) : Math.min(count - 1, Math.max(0, current + (stepArrow!.hasAttribute('data-cs-next') ? 1 : -1)))
+        goToStep(track, index)
+        return
+      }
       const arrow = target.closest('[data-cs-prev],[data-cs-next]')
       if (arrow) {
         const track = arrow.closest('[data-cs-carousel]')?.querySelector('[data-cs-track]')
@@ -53,13 +65,86 @@ export function BrandLandingPage({html, style, schema, serviceName}: Props) {
         if (sign) sign.textContent = open ? '−' : '+'
       }
     }
-    function scroll(event: Event) {
-      const track = event.target as HTMLElement
-      const counter = track.closest('[data-cs-carousel]')?.querySelector('[data-cs-counter]')
-      const card = track.firstElementChild as HTMLElement | null
-      if (!counter || !card) return
-      const index = Math.min(track.children.length, Math.round(track.scrollLeft / (card.offsetWidth + 20)) + 1)
-      counter.textContent = String(index).padStart(2, '0')
+    // Carousels: the arrows look active only when there is somewhere to go, the line under the reviews
+    // and the numbered steps follow the scroll. The design's own active/idle looks are reused.
+    const looks = new Map<Element, {active: [string, string]; idle: [string, string]}>()
+    for (const wrap of element.querySelectorAll('[data-cs-carousel]')) {
+      const next = wrap.querySelector('[data-cs-next]'), prev = wrap.querySelector('[data-cs-prev]')
+      if (next && prev) looks.set(wrap, {active: [next.getAttribute('style') || '', next.innerHTML], idle: [prev.getAttribute('style') || '', prev.innerHTML]})
+      // a dot's look = its circle style + its number's style (each dot keeps its own number)
+      const dots = [...wrap.querySelectorAll('[data-cs-dot]')]
+      // numbered carousels move by steps, so the cards must not snap to their own positions
+      const stepTrack = wrap.querySelector<HTMLElement>('[data-cs-track]')
+      if (dots.length && stepTrack) stepTrack.style.scrollSnapType = 'none'
+      if (dots.length > 1) looks.set(dots[0], {
+        active: [dots[0].getAttribute('style') || '', dots[0].firstElementChild?.getAttribute('style') || ''],
+        idle: [dots[1].getAttribute('style') || '', dots[1].firstElementChild?.getAttribute('style') || ''],
+      })
+    }
+    const paint = (el: Element, look: [string, string]) => { el.setAttribute('style', look[0]); el.innerHTML = look[1] }
+    // numbered carousels keep a current step; the track's scroll position maps onto steps 1…n
+    const steps = new Map<HTMLElement, number>()
+    let stepping: HTMLElement | null = null
+    function goToStep(track: HTMLElement, index: number) {
+      const count = track.children.length, max = track.scrollWidth - track.clientWidth
+      steps.set(track, index)
+      stepping = track
+      track.scrollTo({left: count > 1 ? (index / (count - 1)) * max : 0, behavior: 'smooth'})
+      window.setTimeout(() => { if (stepping === track) stepping = null }, 600)
+      update(track)
+    }
+    function update(track: HTMLElement) {
+      const wrap = track.closest('[data-cs-carousel]')
+      if (!wrap) return
+      const max = track.scrollWidth - track.clientWidth
+      const look = looks.get(wrap)
+      const next = wrap.querySelector('[data-cs-next]'), prev = wrap.querySelector('[data-cs-prev]')
+      const numbered = !!wrap.querySelector('[data-cs-dot]')
+      const count = track.children.length
+      // a swipe on a numbered carousel moves the current step with it
+      if (numbered && stepping !== track && max > 0) steps.set(track, Math.round((track.scrollLeft / max) * (count - 1)))
+      if (look && next && prev) {
+        const step = steps.get(track) ?? 0
+        const atStart = numbered ? step <= 0 : track.scrollLeft <= 2
+        const atEnd = numbered ? step >= count - 1 : track.scrollLeft >= max - 2
+        paint(prev, atStart ? look.idle : look.active); paint(next, atEnd ? look.idle : look.active)
+        prev.setAttribute('aria-disabled', String(atStart)); next.setAttribute('aria-disabled', String(atEnd))
+        // the active look carries a right arrow and the idle look a left one: flip where needed
+        if (!atStart) prev.querySelector('svg')?.setAttribute('style', 'transform:scaleX(-1)')
+        if (atEnd) next.querySelector('svg')?.setAttribute('style', 'transform:scaleX(-1)')
+      }
+      const index = steps.get(track) ?? 0
+      const counter = wrap.querySelector('[data-cs-counter]')
+      if (counter) counter.textContent = String(index + 1).padStart(2, '0')
+      const dots = [...wrap.querySelectorAll('[data-cs-dot]')]
+      const dotLook = dots[0] && looks.get(dots[0])
+      if (dotLook) dots.forEach((d, i) => {
+        const [circle, number] = i === index ? dotLook.active : dotLook.idle
+        d.setAttribute('style', circle); d.firstElementChild?.setAttribute('style', number)
+        d.setAttribute('aria-current', String(i === index))
+      })
+      const thumb = wrap.querySelector('[data-cs-progress]') as HTMLElement | null
+      if (thumb && track.scrollWidth) {
+        const width = (track.clientWidth / track.scrollWidth) * 100
+        thumb.style.width = `${width}%`
+        thumb.style.marginLeft = `${max > 0 ? (track.scrollLeft / max) * (100 - width) : 0}%`
+        thumb.style.transition = 'margin-left .15s linear'
+      }
+    }
+    function scroll(event: Event) { update(event.target as HTMLElement) }
+    // Cards in a row line up: the same-named blocks get the height of the tallest one
+    function equalize() {
+      const groups = new Map<string, HTMLElement[]>()
+      element!.querySelectorAll<HTMLElement>('[data-cs-equal]').forEach((el) => {
+        el.style.minHeight = ''
+        const key = `${el.closest('section')?.id}|${el.getAttribute('data-cs-equal')}`
+        groups.set(key, [...(groups.get(key) || []), el])
+      })
+      for (const els of groups.values()) {
+        const visible = els.filter((e) => e.offsetParent)
+        const tallest = Math.max(0, ...visible.map((e) => e.offsetHeight))
+        visible.forEach((e) => { e.style.minHeight = `${tallest}px` })
+      }
     }
     async function submit(event: Event) {
       const form = event.target
@@ -105,8 +190,13 @@ export function BrandLandingPage({html, style, schema, serviceName}: Props) {
     const tracks = [...element.querySelectorAll('[data-cs-track]')]
     element.addEventListener('click', click)
     element.addEventListener('submit', submit)
-    tracks.forEach((t) => t.addEventListener('scroll', scroll, {passive: true}))
+    tracks.forEach((t) => { t.addEventListener('scroll', scroll, {passive: true}); update(t as HTMLElement) })
+    equalize()
+    const resize = () => { equalize(); tracks.forEach((t) => update(t as HTMLElement)) }
+    window.addEventListener('resize', resize)
+    document.fonts?.ready.then(resize)
     return () => {
+      window.removeEventListener('resize', resize)
       observer?.disconnect()
       element.removeEventListener('click', click); element.removeEventListener('submit', submit)
       tracks.forEach((t) => t.removeEventListener('scroll', scroll))
