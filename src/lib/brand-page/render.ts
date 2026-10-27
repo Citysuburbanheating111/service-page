@@ -96,7 +96,7 @@ const exLeaves: [string, string][] = []
 })(EXAMPLE, '')
 const exByText = new Map<string, string[]>()
 for (const [p, v] of exLeaves) { const k = norm(v); exByText.set(k, [...(exByText.get(k) || []), p]) }
-const MODULE_KEYS: Record<string, string[]> = {hero: ['hero'], models: ['models'], services: ['services'], 'recent-jobs': ['recentJobs'], pricing: ['pricing'], 'service-plan': ['servicePlan', 'financing'], financing: ['financing'], 'who-you-call': ['whoYoureCalling'], reviews: ['reviews'], process: ['process'], 'service-areas': ['serviceArea'], faq: ['faq'], 'closing-cta': ['closingCta'], 'other-brands': ['siblingLinks']}
+const MODULE_KEYS: Record<string, string[]> = {hero: ['hero'], models: ['models'], services: ['services'], 'recent-jobs': ['recentJobs'], pricing: ['pricing'], 'service-plan': ['servicePlan', 'financing'], financing: ['financing'], 'who-you-call': ['whoYoureCalling'], reviews: ['reviews'], process: ['process'], 'service-areas': ['serviceArea'], faq: ['faq'], 'closing-cta': ['closingCta'], 'other-brands': ['siblingLinks'], trust: ['trustBand']}
 function exPath(module: string, text: string) {
   const all = exByText.get(norm(text)); if (!all) return undefined
   const keys = MODULE_KEYS[module] || []
@@ -485,7 +485,8 @@ R.faq = (root, {p}) => {
   const list = open.parentNode as HTMLElement
   const closedIcon = kids(kids(list)[1]).slice(-1)[0].toString()
   fillRun(list, open, 5, F.items, (el, item: any, i) => {
-    el.setAttribute('class', `cs31-faq${i === 0 ? ' is-open' : ''}`)
+    // classList, not setAttribute: markMotion's classList.add would otherwise rewrite the class from the stale list
+    el.classList.add('cs31-faq'); if (i === 0) el.classList.add('is-open')
     el.setAttribute('data-cs-faq', '')
     const [num] = kids(el); setT(num, String(i + 1).padStart(2, '0'))
     const [q, a] = textEls(kids(el)[1]); setT(q, item.question); setT(a, item.answer)
@@ -499,7 +500,8 @@ R.faq = (root, {p}) => {
   const openM = mq0.parentNode.parentNode as HTMLElement
   const listM = openM.parentNode as HTMLElement
   fillRun(listM, openM, 5, F.items, (el, item: any, i) => {
-    el.setAttribute('class', `cs31-faq${i === 0 ? ' is-open' : ''}`)
+    // classList, not setAttribute: markMotion's classList.add would otherwise rewrite the class from the stale list
+    el.classList.add('cs31-faq'); if (i === 0) el.classList.add('is-open')
     el.setAttribute('data-cs-faq', '')
     const [q, sign] = textEls(kids(el)[0]); const a = kids(el)[1]
     setT(q, mob(p, `faq.mobile.items[${i}].question`, item.question)); setT(sign, i === 0 ? '−' : '+')

@@ -825,6 +825,106 @@
       "optional": true,
       "phone": true,
       "maxLen": 110
+    },
+    "hero.labels.detailsStep": {
+      "optional": true,
+      "maxLen": 24,
+      "hasDefault": true
+    },
+    "hero.labels.jobStep": {
+      "optional": true,
+      "maxLen": 24,
+      "hasDefault": true
+    },
+    "hero.labels.symptomsQuestion": {
+      "optional": true,
+      "maxLen": 30,
+      "hasDefault": true
+    },
+    "hero.labels.formNote": {
+      "optional": true,
+      "maxLen": 48,
+      "hasDefault": true
+    },
+    "hero.labels.processChip": {
+      "optional": true,
+      "maxLen": 32,
+      "hasDefault": true
+    },
+    "recentJobs.labels.found": {
+      "optional": true,
+      "maxLen": 12,
+      "hasDefault": true
+    },
+    "recentJobs.labels.weDid": {
+      "optional": true,
+      "maxLen": 12,
+      "hasDefault": true
+    },
+    "pricing.labels.includedTitle": {
+      "optional": true,
+      "maxLen": 30,
+      "hasDefault": true
+    },
+    "pricing.labels.warrantyTitle": {
+      "optional": true,
+      "maxLen": 30,
+      "hasDefault": true
+    },
+    "pricing.labels.repairsTitleMobile": {
+      "optional": true,
+      "maxLen": 24,
+      "hasDefault": true
+    },
+    "pricing.labels.includedTitleMobile": {
+      "optional": true,
+      "maxLen": 24,
+      "hasDefault": true
+    },
+    "servicePlan.labels.perMonthMobile": {
+      "optional": true,
+      "maxLen": 10,
+      "hasDefault": true
+    },
+    "whoYoureCalling.labels.ratingTag": {
+      "optional": true,
+      "maxLen": 20,
+      "hasDefault": true
+    },
+    "whoYoureCalling.labels.whyFamilyEyebrow": {
+      "optional": true,
+      "maxLen": 24,
+      "hasDefault": true
+    },
+    "reviews.labels.writeReviewPrompt": {
+      "optional": true,
+      "maxLen": 50,
+      "hasDefault": true
+    },
+    "trustBand.items": {
+      "optional": true,
+      "count": 5,
+      "hasDefault": true
+    },
+    "trustBand.items[]": {
+      "optional": true,
+      "maxLen": 24,
+      "hasDefault": true
+    },
+    "faq.labels.photoCardTitle": {
+      "optional": true,
+      "maxLen": 30,
+      "hasDefault": true
+    },
+    "closingCta.labels.hoursLabel": {
+      "optional": true,
+      "maxLen": 20,
+      "hasDefault": true
+    },
+    "closingCta.labels.haveReadyTitle": {
+      "optional": true,
+      "maxLen": 34,
+      "hasDefault": true
     }
   }
 }

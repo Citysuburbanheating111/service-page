@@ -36,10 +36,10 @@ const shape = merge(reference, phone)
 const SECTIONS = {
   meta: 'Page details & keywords', hero: 'Hero & booking form', models: 'Models we service', services: 'Services we do', recentJobs: 'Recent jobs',
   pricing: 'What we charge', servicePlan: 'Yearly service plan', financing: 'Financing', whoYoureCalling: "Who you're calling", reviews: 'Reviews',
-  process: 'Process', serviceArea: 'Service area & map', faq: 'FAQ', closingCta: 'Closing call to action', siblingLinks: 'Other brands & equipment',
+  trustBand: 'Trust band', process: 'Process', serviceArea: 'Service area & map', faq: 'FAQ', closingCta: 'Closing call to action', siblingLinks: 'Other brands & equipment',
 }
 const LABELS = {
-  h1: 'H1', h2: 'H2 heading', weDo: 'What we do', seoTitle: 'SEO title', metaDescription: 'Meta description', mobile: 'Phone layout (optional: empty uses the desktop copy)',
+  h1: 'H1', h2: 'H2 heading', labels: 'Small labels (optional: empty keeps the design text)', weDo: 'What we do', seoTitle: 'SEO title', metaDescription: 'Meta description', mobile: 'Phone layout (optional: empty uses the desktop copy)',
   lede: 'Intro paragraph', cta: 'Button', url: 'Link', sourceRef: 'Invoice / job reference', mapEmbedUrl: 'Google Maps embed link', faq: 'FAQ',
   tag: 'Tag', modelFieldPlaceholder: 'Model field placeholder', modelFieldLabel: 'Model field label', valueStrip: 'Value strip', haveReady: 'Have these ready',
   whyFamily: 'Why a family company matters', whyFamilyHeading: 'Why family heading', unitsWeSee: 'Units we see', statsSource: 'Stats source',

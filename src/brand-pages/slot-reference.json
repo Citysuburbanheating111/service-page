@@ -22,6 +22,7 @@
     "status": "draft"
   },
   "hero": {
+    "labels": { "detailsStep": "YOUR DETAILS", "jobStep": "YOUR JOB", "symptomsQuestion": "What's happening?", "formNote": "Price agreed before any work starts.", "processChip": "What happens when you call" },
     "breadcrumb": ["Home", "Brands", "American Standard", "Furnace repair & service"],
     "eyebrow": "American Standard furnaces · Chicago & near suburbs",
     "h1": "American Standard furnace repair and service in Chicago",
@@ -147,6 +148,7 @@
     ]
   },
   "recentJobs": {
+    "labels": { "found": "FOUND", "weDid": "WE DID" },
     "eyebrow": "Recent jobs · American Standard only",
     "h2": "American Standard furnaces we fixed this winter",
     "intro": "What the owner noticed, what we found and what it cost. Real jobs from our own invoices.",
@@ -157,6 +159,7 @@
     ]
   },
   "pricing": {
+    "labels": { "includedTitle": "In every price above", "warrantyTitle": "STILL UNDER WARRANTY?", "repairsTitleMobile": "COMMON REPAIRS", "includedTitleMobile": "IN EVERY PRICE" },
     "eyebrow": "What we charge · our own prices",
     "h2": "What we charge to fix your American Standard furnace",
     "intro": "Our own prices on American Standard work, not a national average. You still get the exact figure in writing before we start.",
@@ -183,6 +186,7 @@
     "confirmed": false
   },
   "servicePlan": {
+    "labels": { "perMonthMobile": "/month" },
     "eyebrow": "Yearly service plan",
     "h2": "One visit a year, so it lights first time all winter",
     "body": "Plenty of December no-heat calls come down to a dirty flame sensor or a blocked drain, the things a yearly visit catches. The plan books that visit for you every fall, on any American Standard model.",
@@ -220,6 +224,7 @@
     "confirmed": false
   },
   "whoYoureCalling": {
+    "labels": { "ratingTag": "GOOGLE RATING", "whyFamilyEyebrow": "FAMILY-OWNED" },
     "eyebrow": "About City & Suburban",
     "h2": "Who you're actually calling?",
     "intro": "One family. Second generation. Since 1952. City & Suburban runs from 1225 N Cleaver St, and Rob, the owner, still takes the calls and does the diagnosis on the American Standard jobs that need it.",
@@ -238,6 +243,7 @@
     ]
   },
   "reviews": {
+    "labels": { "writeReviewPrompt": "We'd love to hear about your experience –" },
     "eyebrow": "Google reviews · all 204 read",
     "h2": "What customers say about the work",
     "intro": "Every one of our 204 Google reviews, counted by what reviewers chose to mention: the owner, the speed, the price and the honesty.",
@@ -287,6 +293,7 @@
     ]
   },
   "faq": {
+    "labels": { "photoCardTitle": "Didn't find your question?" },
     "eyebrow": "FAQs · 5 questions",
     "h2": "American Standard furnaces, answered",
     "items": [
@@ -298,6 +305,7 @@
     ]
   },
   "closingCta": {
+    "labels": { "hoursLabel": "Working hours", "haveReadyTitle": "Have these ready when you call" },
     "eyebrow": "Your next step",
     "h2": "No heat, or a furnace that won't stay lit?",
     "body": "Have your American Standard model number to hand and tell us what the light is doing. We'll bring the right parts on the first visit.",
@@ -323,5 +331,6 @@
       { "label": "Lennox furnace repair", "url": "/brands/lennox/furnace-repair-chicago/", "status": "planned" },
       { "label": "Rheem furnace repair", "url": "/brands/rheem/furnace-repair-chicago/", "status": "planned" }
     ]
-  }
+  },
+  "trustBand": { "items": ["5 Star Service", "Transparent Pricing", "Financing", "Certified Professional", "Top Quality Work"] }
 }

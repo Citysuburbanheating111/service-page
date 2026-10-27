@@ -13,6 +13,7 @@ export const brandPageContentGroups = [
   {name: "financing", title: "Financing"},
   {name: "whoYoureCalling", title: "Who you're calling"},
   {name: "reviews", title: "Reviews"},
+  {name: "trustBand", title: "Trust band"},
   {name: "process", title: "Process"},
   {name: "serviceArea", title: "Service area & map"},
   {name: "faq", title: "FAQ"},
@@ -44,6 +45,13 @@ export const brandPageContentFields = [
     ], preview: {select: {title: "slot"}}})]})
   ]}),
   defineField({group: "hero", name: "hero", title: "Hero", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
+    defineField({name: "labels", title: "Small labels (optional: empty keeps the design text)", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
+      defineField({name: "detailsStep", title: "Details step", type: 'string', description: "Up to 24 characters."}),
+      defineField({name: "jobStep", title: "Job step", type: 'string', description: "Up to 24 characters."}),
+      defineField({name: "symptomsQuestion", title: "Symptoms question", type: 'string', description: "Up to 30 characters."}),
+      defineField({name: "formNote", title: "Form note", type: 'string', description: "Up to 48 characters."}),
+      defineField({name: "processChip", title: "Process chip", type: 'string', description: "Up to 32 characters."})
+    ]}),
     defineField({name: "breadcrumb", title: "Breadcrumb", type: 'array', description: "4 items.", of: [defineArrayMember({type: 'string'})]}),
     defineField({name: "eyebrow", title: "Eyebrow", type: 'string', description: "Up to 70 characters."}),
     defineField({name: "h1", title: "H1", type: 'string', description: "Up to 70 characters."}),
@@ -114,6 +122,10 @@ export const brandPageContentFields = [
     ]})
   ]}),
   defineField({group: "recentJobs", name: "recentJobs", title: "Recent jobs", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
+    defineField({name: "labels", title: "Small labels (optional: empty keeps the design text)", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
+      defineField({name: "found", title: "Found", type: 'string', description: "Up to 12 characters."}),
+      defineField({name: "weDid", title: "We did", type: 'string', description: "Up to 12 characters."})
+    ]}),
     defineField({name: "eyebrow", title: "Eyebrow", type: 'string', description: "Up to 50 characters."}),
     defineField({name: "h2", title: "H2 heading", type: 'string', description: "Up to 60 characters."}),
     defineField({name: "intro", title: "Intro", type: 'text', rows: 3, description: "Up to 120 characters."}),
@@ -138,6 +150,12 @@ export const brandPageContentFields = [
     ]})
   ]}),
   defineField({group: "pricing", name: "pricing", title: "Pricing", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
+    defineField({name: "labels", title: "Small labels (optional: empty keeps the design text)", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
+      defineField({name: "includedTitle", title: "Included title", type: 'string', description: "Up to 30 characters."}),
+      defineField({name: "warrantyTitle", title: "Warranty title", type: 'string', description: "Up to 30 characters."}),
+      defineField({name: "repairsTitleMobile", title: "Repairs title mobile", type: 'string', description: "Up to 24 characters."}),
+      defineField({name: "includedTitleMobile", title: "Included title mobile", type: 'string', description: "Up to 24 characters."})
+    ]}),
     defineField({name: "eyebrow", title: "Eyebrow", type: 'string', description: "Up to 50 characters."}),
     defineField({name: "h2", title: "H2 heading", type: 'string', description: "Up to 70 characters."}),
     defineField({name: "intro", title: "Intro", type: 'text', rows: 3, description: "Up to 150 characters."}),
@@ -166,6 +184,9 @@ export const brandPageContentFields = [
     ]})
   ]}),
   defineField({group: "servicePlan", name: "servicePlan", title: "Service plan", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
+    defineField({name: "labels", title: "Small labels (optional: empty keeps the design text)", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
+      defineField({name: "perMonthMobile", title: "Per month mobile", type: 'string', description: "Up to 10 characters."})
+    ]}),
     defineField({name: "eyebrow", title: "Eyebrow", type: 'string', description: "Up to 40 characters."}),
     defineField({name: "h2", title: "H2 heading", type: 'string', description: "Up to 60 characters."}),
     defineField({name: "body", title: "Body", type: 'text', rows: 3, description: "Up to 260 characters."}),
@@ -210,6 +231,10 @@ export const brandPageContentFields = [
     defineField({name: "confirmed", title: "Confirmed", type: 'boolean'})
   ]}),
   defineField({group: "whoYoureCalling", name: "whoYoureCalling", title: "Who youre calling", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
+    defineField({name: "labels", title: "Small labels (optional: empty keeps the design text)", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
+      defineField({name: "ratingTag", title: "Rating tag", type: 'string', description: "Up to 20 characters."}),
+      defineField({name: "whyFamilyEyebrow", title: "Why family eyebrow", type: 'string', description: "Up to 24 characters."})
+    ]}),
     defineField({name: "eyebrow", title: "Eyebrow", type: 'string', description: "Up to 30 characters."}),
     defineField({name: "h2", title: "H2 heading", type: 'string', description: "Up to 40 characters."}),
     defineField({name: "intro", title: "Intro", type: 'text', rows: 3, description: "Up to 260 characters."}),
@@ -228,6 +253,9 @@ export const brandPageContentFields = [
     ]})
   ]}),
   defineField({group: "reviews", name: "reviews", title: "Reviews", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
+    defineField({name: "labels", title: "Small labels (optional: empty keeps the design text)", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
+      defineField({name: "writeReviewPrompt", title: "Write review prompt", type: 'string', description: "Up to 50 characters."})
+    ]}),
     defineField({name: "eyebrow", title: "Eyebrow", type: 'string', description: "Up to 40 characters."}),
     defineField({name: "h2", title: "H2 heading", type: 'string', description: "Up to 45 characters."}),
     defineField({name: "intro", title: "Intro", type: 'text', rows: 3, description: "Up to 160 characters."}),
@@ -252,6 +280,9 @@ export const brandPageContentFields = [
         defineField({name: "text", title: "Text", type: 'text', rows: 3, description: "Up to 180 characters."})
       ], preview: {select: {title: "name"}}})]})
     ]})
+  ]}),
+  defineField({group: "trustBand", name: "trustBand", title: "Trust band", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
+    defineField({name: "items", title: "Items", type: 'array', description: "5 items.", of: [defineArrayMember({type: 'string'})]})
   ]}),
   defineField({group: "process", name: "process", title: "Process", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
     defineField({name: "eyebrow", title: "Eyebrow", type: 'string', description: "Up to 30 characters."}),
@@ -291,6 +322,9 @@ export const brandPageContentFields = [
     ]})
   ]}),
   defineField({group: "faq", name: "faq", title: "FAQ", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
+    defineField({name: "labels", title: "Small labels (optional: empty keeps the design text)", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
+      defineField({name: "photoCardTitle", title: "Photo card title", type: 'string', description: "Up to 30 characters."})
+    ]}),
     defineField({name: "eyebrow", title: "Eyebrow", type: 'string', description: "Up to 30 characters."}),
     defineField({name: "h2", title: "H2 heading", type: 'string', description: "Up to 45 characters."}),
     defineField({name: "items", title: "Items", type: 'array', description: "5 items.", of: [defineArrayMember({type: 'object', name: "itemItem", fields: [
@@ -308,6 +342,10 @@ export const brandPageContentFields = [
     ]})
   ]}),
   defineField({group: "closingCta", name: "closingCta", title: "Closing cta", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
+    defineField({name: "labels", title: "Small labels (optional: empty keeps the design text)", type: 'object', options: {collapsible: true, collapsed: false}, fields: [
+      defineField({name: "hoursLabel", title: "Hours label", type: 'string', description: "Up to 20 characters."}),
+      defineField({name: "haveReadyTitle", title: "Have ready title", type: 'string', description: "Up to 34 characters."})
+    ]}),
     defineField({name: "eyebrow", title: "Eyebrow", type: 'string', description: "Up to 30 characters."}),
     defineField({name: "h2", title: "H2 heading", type: 'string', description: "Up to 50 characters."}),
     defineField({name: "body", title: "Body", type: 'text', rows: 3, description: "Up to 160 characters."}),
