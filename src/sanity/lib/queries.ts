@@ -203,3 +203,6 @@ export const BRAND_PAGE_QUERY = defineQuery(`
 `)
 
 export const BRAND_PAGE_PATHS_QUERY = defineQuery(`*[_type == "brandPage" && defined(path) && defined(hero.h1)].path`)
+
+// Brand directory (/services/brands/, /services/<brand>/): which brand pages are published, by Studio slug and address
+export const BRAND_PAGE_LINKS_QUERY = defineQuery(`*[_type == "brandPage" && defined(path) && defined(hero.h1)]{"slug": slug.current, path}`)
