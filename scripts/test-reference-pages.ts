@@ -74,11 +74,14 @@ for (const untouched of ['/services/heating/', '/services/unrelated/', '/service
   assert.equal(proxy(new NextRequest(`http://localhost${untouched}`)).headers.get('x-middleware-rewrite'), null)
 }
 
+// Pages that exist only in Sanity (no code snapshot) but are a valid redirect destination.
+const cmsOnlyDestinations = new Set(['/services/heating/furnace-repair-near-me/'])
+assert.equal(legacyReplacementPath('furnace-repair-installation'), '/services/heating/furnace-repair-near-me/')
 for (const old of taxonomy.services) {
   const replacement = (migrations.overlaps as Record<string, string>)[old.slug]
   if (replacement) {
     assert.equal(legacyReplacementPath(old.slug), replacement)
-    assert.ok(catalog.some((page) => page.livePath === replacement), `Missing redirect destination: ${old.slug}`)
+    assert.ok(catalog.some((page) => page.livePath === replacement) || cmsOnlyDestinations.has(replacement), `Missing redirect destination: ${old.slug}`)
     assert.ok(!retainedCatalog.some((page) => page.slug === old.slug), `Duplicate keyword card: ${old.slug}`)
     for (const alias of ['service', 'services'].flatMap(base => [`/${base}/${old.slug}/`, `/${base}/${old.clusterSlug}/${old.slug}/`, `/${base}/${old.clusterSlug}/${old.slug}/chicago/`])) {
       const response = proxy(new NextRequest(`http://localhost${alias}?utm=keyword`))

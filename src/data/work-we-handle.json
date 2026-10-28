@@ -850,7 +850,7 @@
       "icon": "thermostat"
     }
   ],
-  "heating/heater-installation-near-me": [
+  "heating/furnace-installation-near-me": [
     {
       "title": "Emergency furnace replacement",
       "text": "A final breakdown replaced, with the price in writing",
@@ -887,7 +887,44 @@
       "icon": "clipboard"
     }
   ],
-  "heating/heater-maintenance-near-me": [
+  "heating/heater-installation-near-me": [
+    {
+      "title": "Furnace replacement",
+      "text": "American Standard furnaces for aging equipment",
+      "icon": "furnace"
+    },
+    {
+      "title": "Furnace sizing review",
+      "text": "Capacity matched to heat loss and duct capacity",
+      "icon": "gauge"
+    },
+    {
+      "title": "Efficiency level choices",
+      "text": "80% and condensing furnace options compared",
+      "icon": "flame"
+    },
+    {
+      "title": "Vent and chimney planning",
+      "text": "Vent route and shared chimney appliances addressed",
+      "icon": "vent"
+    },
+    {
+      "title": "Closet and condo installs",
+      "text": "Cabinet fit, clearances and removal route checked",
+      "icon": "building"
+    },
+    {
+      "title": "Thermostat and control changes",
+      "text": "Controls matched to two-stage or modulating furnaces",
+      "icon": "thermostat"
+    },
+    {
+      "title": "Permit responsibility",
+      "text": "City permit responsibility stated in the written scope",
+      "icon": "clipboard"
+    }
+  ],
+  "heating/furnace-maintenance-near-me": [
     {
       "title": "Annual furnace tune-up",
       "text": "A yearly visit before the first cold day of fall",
@@ -924,7 +961,44 @@
       "icon": "building"
     }
   ],
-  "heating/heater-repair-near-me": [
+  "heating/heater-maintenance-near-me": [
+    {
+      "title": "Furnace tune-up",
+      "text": "Burners, ignition and heat exchanger checked",
+      "icon": "furnace"
+    },
+    {
+      "title": "Seasonal furnace cleaning",
+      "text": "Carbon and dust removed from fouled parts",
+      "icon": "wrench"
+    },
+    {
+      "title": "Filter fit and replacement",
+      "text": "Filter size, seating and airflow resistance checked",
+      "icon": "filter"
+    },
+    {
+      "title": "Combustion safety checks",
+      "text": "Flue draft, flame pattern and gas pressure checked",
+      "icon": "flame"
+    },
+    {
+      "title": "Safety switch testing",
+      "text": "Rollout and limit switches checked in a full cycle",
+      "icon": "shield"
+    },
+    {
+      "title": "Airflow and blower checks",
+      "text": "Blower buildup and weak airflow concerns reviewed",
+      "icon": "fan"
+    },
+    {
+      "title": "Call for heat check",
+      "text": "Thermostat call and furnace response checked",
+      "icon": "thermostat"
+    }
+  ],
+  "heating/furnace-repair-near-me": [
     {
       "title": "No-heat furnace calls",
       "text": "Furnaces that will not start, traced to the failed part",
@@ -959,6 +1033,43 @@
       "title": "Thermostat fault checks",
       "text": "Wiring, settings and batteries checked before any part",
       "icon": "thermostat"
+    }
+  ],
+  "heating/heater-repair-near-me": [
+    {
+      "title": "All-make heater repair",
+      "text": "Every make and model diagnosed and repaired",
+      "icon": "clipboard"
+    },
+    {
+      "title": "Ignition and flame sensor faults",
+      "text": "Igniter or flame sensor faults that interrupt startup",
+      "icon": "flame"
+    },
+    {
+      "title": "Inducer and pressure switch faults",
+      "text": "Faults that stop the furnace start sequence",
+      "icon": "gauge"
+    },
+    {
+      "title": "Blower motor and capacitor repair",
+      "text": "Faults that reduce airflow from the furnace",
+      "icon": "fan"
+    },
+    {
+      "title": "Control board faults",
+      "text": "Board faults that interrupt furnace operation",
+      "icon": "bolt"
+    },
+    {
+      "title": "Safety switch trips",
+      "text": "Trigger found before a tripping switch is replaced",
+      "icon": "shield"
+    },
+    {
+      "title": "Noise and moving-part repair",
+      "text": "Worn motors and rubbing components located",
+      "icon": "wrench"
     }
   ],
   "heating/hvac-maintenance-plans-near-me": [
