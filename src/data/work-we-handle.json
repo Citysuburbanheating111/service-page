@@ -850,7 +850,7 @@
       "icon": "thermostat"
     }
   ],
-  "heating/heater-installation-near-me": [
+  "heating/furnace-installation-near-me": [
     {
       "title": "Emergency furnace replacement",
       "text": "A final breakdown replaced, with the price in writing",
@@ -885,6 +885,80 @@
       "title": "Replacement quote reviews",
       "text": "A second opinion before signing a replacement quote",
       "icon": "clipboard"
+    }
+  ],
+  "heating/heater-installation-near-me": [
+    {
+      "title": "Emergency furnace replacement",
+      "text": "A final breakdown replaced, with the price in writing",
+      "icon": "clock"
+    },
+    {
+      "title": "80% AFUE furnaces",
+      "text": "Mid-efficiency furnaces venting into a lined chimney",
+      "icon": "furnace"
+    },
+    {
+      "title": "90%+ condensing furnaces",
+      "text": "Condensing furnaces with plastic venting and a drain",
+      "icon": "flame"
+    },
+    {
+      "title": "Furnace with central air",
+      "text": "Replacing the furnace and central air together",
+      "icon": "snowflake"
+    },
+    {
+      "title": "Dual-fuel heat pump pairing",
+      "text": "A heat pump for mild days, the furnace for deep cold",
+      "icon": "fan"
+    },
+    {
+      "title": "Ductwork and zoning updates",
+      "text": "Duct transitions, return air upgrades and zoning",
+      "icon": "duct"
+    },
+    {
+      "title": "Replacement quote reviews",
+      "text": "A second opinion before signing a furnace replacement",
+      "icon": "clipboard"
+    }
+  ],
+  "heating/furnace-maintenance-near-me": [
+    {
+      "title": "Annual furnace tune-up",
+      "text": "A yearly visit before the first cold day of fall",
+      "icon": "clock"
+    },
+    {
+      "title": "Burner and flame checks",
+      "text": "Burners, flame sensor, igniter and gas pressure",
+      "icon": "flame"
+    },
+    {
+      "title": "Condensate drain care",
+      "text": "Drain trap, hose and pump on high-efficiency furnaces",
+      "icon": "drop"
+    },
+    {
+      "title": "Electric furnace service",
+      "text": "Elements, sequencers and limit switches tested",
+      "icon": "bolt"
+    },
+    {
+      "title": "Carbon monoxide checks",
+      "text": "Carbon monoxide check as part of gas furnace service",
+      "icon": "shield"
+    },
+    {
+      "title": "Furnace humidifier upkeep",
+      "text": "Pads or steam canisters, water valve and drain",
+      "icon": "vent"
+    },
+    {
+      "title": "Commercial furnace service",
+      "text": "Commercial HVAC service and custom maintenance plans",
+      "icon": "building"
     }
   ],
   "heating/heater-maintenance-near-me": [
@@ -922,6 +996,43 @@
       "title": "Commercial furnace service",
       "text": "Commercial HVAC service and custom maintenance plans",
       "icon": "building"
+    }
+  ],
+  "heating/furnace-repair-near-me": [
+    {
+      "title": "No-heat furnace calls",
+      "text": "Furnaces that will not start, traced to the failed part",
+      "icon": "furnace"
+    },
+    {
+      "title": "Lights then shuts off",
+      "text": "Burners that light, then drop out within minutes",
+      "icon": "flame"
+    },
+    {
+      "title": "Cold air from the vents",
+      "text": "Blower running while the registers blow cold air",
+      "icon": "fan"
+    },
+    {
+      "title": "Banging and squealing noises",
+      "text": "Banging, squealing or scraping from the furnace",
+      "icon": "wrench"
+    },
+    {
+      "title": "Condensate water leaks",
+      "text": "Water pooling around a high-efficiency furnace",
+      "icon": "drop"
+    },
+    {
+      "title": "Oil furnace repair",
+      "text": "Oil furnaces that will not fire or smell of smoke",
+      "icon": "gauge"
+    },
+    {
+      "title": "Thermostat fault checks",
+      "text": "Wiring, settings and batteries checked before any part",
+      "icon": "thermostat"
     }
   ],
   "heating/heater-repair-near-me": [
