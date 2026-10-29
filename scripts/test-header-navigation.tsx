@@ -32,7 +32,9 @@ assert.ok(header.includes('aria-expanded="false"'))
 assert.ok(!header.includes('aria-label="Mobile"'), 'Mobile must reuse the main menu')
 
 // The home page's Services dropdown adds its links to every page's budget.
-const linkBudget = 55 + servicesLinks.length - 1
+// So do dropdown items added beyond the original 24-service menu (the three furnace links, 28/10/2026).
+const menuItemCount = liveMenu.flatMap(group => group.items).length
+const linkBudget = 55 + servicesLinks.length - 1 + (menuItemCount - 24)
 const totals = referenceServices.map(page => {
   const snapshot = getReferenceSnapshot(page.clusterSlug, page.slug)!
   const markup = renderToStaticMarkup(<ReferenceLandingPage snapshot={snapshot} serviceName={page.name} />)
@@ -76,4 +78,4 @@ const nested = '<div data-module="faq"><div><a href="/services/heating/boiler-se
 const refinedNested = refineServicePageLinks(nested)
 assert.equal((refinedNested.match(/href="\/services\/heating\/boiler-service\/"/g) || []).length, 1)
 assert.ok(refinedNested.endsWith('<footer data-module="site-footer"><a href="/services/heating/">Heating</a></footer>'), 'Nested module parsing damaged the following footer')
-console.log(`Link checks passed: full 24-service menu and Services dropdown retained; original copy and actions preserved; all ${totals.length} landing pages have ${Math.min(...totals)}–${Math.max(...totals)} internal placements.`)
+console.log(`Link checks passed: full ${menuItemCount}-service menu and Services dropdown retained; original copy and actions preserved; all ${totals.length} landing pages have ${Math.min(...totals)}–${Math.max(...totals)} internal placements.`)

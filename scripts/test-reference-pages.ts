@@ -25,7 +25,15 @@ assert.equal(catalog.filter((page) => page.qcStatus === 'PASS').length, 16)
 assert.equal(retainedCatalog.length, 17)
 assert.equal(new Set([...catalog, ...retainedCatalog].map(page => page.cardImage)).size, 41, 'Every service card needs a distinct image')
 assert.equal(servicesMenu.href, '/services/')
-assert.deepEqual(liveMenu.flatMap((group) => group.items.map((item) => [item.label, new URL(item.href, LIVE_SITE).pathname])), catalog.map((page) => [page.name, page.livePath]))
+// Menu items for pages published in Sanity only (no code snapshot), placed as on the live home page menu.
+const sanityOnlyMenu = [
+  ['Furnace repair', '/services/heating/furnace-repair-near-me/'],
+  ['Furnace Installation', '/services/heating/furnace-installation-near-me/'],
+  ['Furnace Maintenance', '/services/heating/furnace-maintenance-near-me/'],
+]
+const menuItems = liveMenu.flatMap((group) => group.items.map((item) => [item.label, new URL(item.href, LIVE_SITE).pathname]))
+assert.deepEqual(liveMenu[0].items.slice(1, 4).map((item) => [item.label, item.href]), sanityOnlyMenu, 'Furnace links follow Heater repair, as on the home page')
+assert.deepEqual(menuItems.filter(([, href]) => !sanityOnlyMenu.some(([, path]) => path === href)), catalog.map((page) => [page.name, page.livePath]))
 
 for (const page of catalog) {
   const snapshot = referenceSnapshots[`${page.clusterSlug}/${page.slug}`]

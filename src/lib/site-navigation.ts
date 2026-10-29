@@ -23,6 +23,10 @@ export const liveMenu: MenuGroup[] = [
     href: app('/services/heating/'),
     items: [
       {label: 'Heater repair', href: app('/services/heating/heater-repair-near-me/')},
+      // Added to the live WordPress Heating menu on 28/10/2026 (pages published in Sanity only).
+      {label: 'Furnace repair', href: app('/services/heating/furnace-repair-near-me/')},
+      {label: 'Furnace Installation', href: app('/services/heating/furnace-installation-near-me/')},
+      {label: 'Furnace Maintenance', href: app('/services/heating/furnace-maintenance-near-me/')},
       {label: 'Boiler Services', href: app('/services/heating/boiler-service-near-me/')},
       {label: 'Heat Pump', href: app('/services/heating/heat-pump-near-me/')},
       {label: 'Hybrid Heating Systems', href: app('/services/heating/hybrid-heating-systems-near-me/')},
