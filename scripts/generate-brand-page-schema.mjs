@@ -33,13 +33,21 @@ function merge(a, b) {
 }
 const shape = merge(reference, phone)
 
+// Studio tabs in the order of the Paper design (brand-service-landing-page layout, Oct 29 2026).
 const SECTIONS = {
-  meta: 'Page details & keywords', hero: 'Hero & booking form', models: 'Models we service', services: 'Services we do', recentJobs: 'Recent jobs',
+  meta: 'Page details & keywords', hero: 'Hero & booking form', services: 'Services we do', models: 'Models we service',
+  modelTable: 'Services for each model (table)', parts: 'Parts we look after', comparison: 'Which one fits (comparison)', sizing: 'Sizing',
+  estimateChecks: 'What we check before we quote', installations: 'Installations', recentJobs: 'Recent jobs',
   pricing: 'What we charge', servicePlan: 'Yearly service plan', financing: 'Financing', whoYoureCalling: "Who you're calling", reviews: 'Reviews',
   trustBand: 'Trust band', process: 'Process', serviceArea: 'Service area & map', faq: 'FAQ', closingCta: 'Closing call to action', siblingLinks: 'Other brands & equipment',
+  library: 'Chicago heating library',
 }
 const LABELS = {
-  h1: 'H1', h2: 'H2 heading', labels: 'Small labels (optional: empty keeps the design text)', weDo: 'What we do', seoTitle: 'SEO title', metaDescription: 'Meta description', mobile: 'Phone layout (optional: empty uses the desktop copy)',
+  h1Accent: 'H1 second line (accent colour)', secondaryCta: 'Second button', formTitleAccent: 'Form title, accent word', needOptions: '"What do you need?" options',
+  modelChoices: 'Model chips in the form', modelChoicesLabel: 'Model chips question', onThisPage: '"On this page" chips', jumpTabs: 'Jump tabs (phone)',
+  calloutTitle: 'Callout title', calloutBody: 'Callout text', drawing: 'Line drawing', countLabel: 'Count label', routesHeading: 'Routes heading', routesNote: 'Routes note',
+  inThisGuide: '"In this guide" links', tilesSource: 'Tiles source line', sourceNote: 'Price source note', mapPins: 'Map pins', partnerBrands: 'Partner brand logos', relatedCards: 'Related service cards',
+  footerLabel: 'Card footer label', h1: 'H1', h2: 'H2 heading', labels: 'Small labels (optional: empty keeps the design text)', weDo: 'What we do', seoTitle: 'SEO title', metaDescription: 'Meta description', mobile: 'Phone layout (optional: empty uses the desktop copy)',
   lede: 'Intro paragraph', cta: 'Button', url: 'Link', sourceRef: 'Invoice / job reference', mapEmbedUrl: 'Google Maps embed link', faq: 'FAQ',
   tag: 'Tag', modelFieldPlaceholder: 'Model field placeholder', modelFieldLabel: 'Model field label', valueStrip: 'Value strip', haveReady: 'Have these ready',
   whyFamily: 'Why a family company matters', whyFamilyHeading: 'Why family heading', unitsWeSee: 'Units we see', statsSource: 'Stats source',

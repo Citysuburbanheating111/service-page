@@ -396,7 +396,8 @@
       "maxLen": 80
     },
     "process.steps": {
-      "count": 5
+      "min": 4,
+      "max": 5
     },
     "process.steps[].title": {
       "maxLen": 30
@@ -446,7 +447,8 @@
       "maxLen": 45
     },
     "faq.items": {
-      "count": 5
+      "min": 5,
+      "max": 12
     },
     "faq.items[].question": {
       "maxLen": 70
@@ -464,7 +466,8 @@
       "maxLen": 160
     },
     "closingCta.haveReady": {
-      "count": 6
+      "min": 4,
+      "max": 6
     },
     "closingCta.haveReady[]": {
       "maxLen": 80
@@ -925,6 +928,428 @@
       "optional": true,
       "maxLen": 34,
       "hasDefault": true
+    },
+    "hero.h1Accent": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "hero.secondaryCta": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "hero.formTitleAccent": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "hero.streetPlaceholder": {
+      "optional": true,
+      "maxLen": 40
+    },
+    "hero.needLabel": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "hero.needOptions": {
+      "optional": true,
+      "max": 4
+    },
+    "hero.needOptions[]": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "hero.modelChoicesLabel": {
+      "optional": true,
+      "maxLen": 70
+    },
+    "hero.modelChoices": {
+      "optional": true,
+      "max": 6
+    },
+    "hero.modelChoices[]": {
+      "optional": true,
+      "maxLen": 40
+    },
+    "hero.onThisPage": {
+      "optional": true,
+      "max": 10
+    },
+    "hero.onThisPage[]": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "hero.mobile.jumpTabs": {
+      "optional": true,
+      "max": 5
+    },
+    "hero.mobile.jumpTabs[]": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "hero.labels.bookingPill": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "modelTable.h2": {
+      "optional": true,
+      "maxLen": 70
+    },
+    "modelTable.columns": {
+      "optional": true,
+      "max": 4
+    },
+    "modelTable.columns[].label": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "modelTable.columns[].name": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "modelTable.columns[].note": {
+      "optional": true,
+      "maxLen": 40
+    },
+    "modelTable.rows": {
+      "optional": true,
+      "max": 6
+    },
+    "modelTable.rows[].label": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "modelTable.rows[].cells": {
+      "optional": true,
+      "max": 4
+    },
+    "modelTable.rows[].cells[]": {
+      "optional": true,
+      "maxLen": 50
+    },
+    "modelTable.costs": {
+      "optional": true,
+      "max": 4
+    },
+    "modelTable.costs[].caption": {
+      "optional": true,
+      "maxLen": 60
+    },
+    "modelTable.costs[].price": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "parts.h2": {
+      "optional": true,
+      "maxLen": 90
+    },
+    "parts.note": {
+      "optional": true,
+      "maxLen": 130
+    },
+    "parts.items": {
+      "optional": true,
+      "max": 9
+    },
+    "parts.items[].title": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "parts.items[].body": {
+      "optional": true,
+      "maxLen": 140
+    },
+    "parts.items[].ticks": {
+      "optional": true,
+      "max": 2
+    },
+    "parts.items[].ticks[]": {
+      "optional": true,
+      "maxLen": 40
+    },
+    "parts.items[].footerLabel": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "parts.items[].price": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "parts.items[].chips": {
+      "optional": true,
+      "max": 0
+    },
+    "parts.items[].chips[]": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "parts.items[].image": {
+      "optional": true,
+      "pattern": "^https://",
+      "hasDefault": true
+    },
+    "comparison.h2": {
+      "optional": true,
+      "maxLen": 90
+    },
+    "comparison.options": {
+      "optional": true,
+      "max": 3
+    },
+    "comparison.options[].name": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "comparison.options[].drawing": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "comparison.options[].rows": {
+      "optional": true,
+      "max": 6
+    },
+    "comparison.options[].rows[].label": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "comparison.options[].rows[].value": {
+      "optional": true,
+      "maxLen": 70
+    },
+    "sizing.h2": {
+      "optional": true,
+      "maxLen": 70
+    },
+    "sizing.calloutTitle": {
+      "optional": true,
+      "maxLen": 80
+    },
+    "sizing.calloutBody": {
+      "optional": true,
+      "maxLen": 270
+    },
+    "sizing.note": {
+      "optional": true,
+      "maxLen": 180
+    },
+    "sizing.scenarios": {
+      "optional": true,
+      "max": 3
+    },
+    "sizing.scenarios[].title": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "sizing.scenarios[].body": {
+      "optional": true,
+      "maxLen": 150
+    },
+    "sizing.scenarios[].drawing": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "estimateChecks.h2": {
+      "optional": true,
+      "maxLen": 50
+    },
+    "estimateChecks.count": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "estimateChecks.countLabel": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "estimateChecks.image": {
+      "optional": true,
+      "pattern": "^https://",
+      "hasDefault": true
+    },
+    "estimateChecks.checks": {
+      "optional": true,
+      "max": 10
+    },
+    "estimateChecks.checks[].title": {
+      "optional": true,
+      "maxLen": 40
+    },
+    "estimateChecks.checks[].body": {
+      "optional": true,
+      "maxLen": 130
+    },
+    "estimateChecks.routesHeading": {
+      "optional": true,
+      "maxLen": 60
+    },
+    "estimateChecks.routes": {
+      "optional": true,
+      "max": 3
+    },
+    "estimateChecks.routes[].title": {
+      "optional": true,
+      "maxLen": 50
+    },
+    "estimateChecks.routes[].body": {
+      "optional": true,
+      "maxLen": 90
+    },
+    "estimateChecks.routesNote": {
+      "optional": true,
+      "maxLen": 100
+    },
+    "installations.h2": {
+      "optional": true,
+      "maxLen": 70
+    },
+    "installations.photos": {
+      "optional": true,
+      "max": 5
+    },
+    "installations.photos[].caption": {
+      "optional": true,
+      "pattern": "^https://",
+      "hasDefault": true
+    },
+    "installations.photos[].image": {
+      "optional": true,
+      "pattern": "^https://",
+      "hasDefault": true
+    },
+    "pricing.sourceNote": {
+      "optional": true,
+      "maxLen": 130
+    },
+    "pricing.tilesSource": {
+      "optional": true,
+      "maxLen": 210
+    },
+    "pricing.tiles": {
+      "optional": true,
+      "max": 3
+    },
+    "pricing.tiles[].value": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "pricing.tiles[].label": {
+      "optional": true,
+      "maxLen": 70
+    },
+    "whoYoureCalling.points": {
+      "optional": true,
+      "max": 3
+    },
+    "whoYoureCalling.points[].title": {
+      "optional": true,
+      "maxLen": 40
+    },
+    "whoYoureCalling.points[].body": {
+      "optional": true,
+      "maxLen": 110
+    },
+    "serviceArea.mapPins": {
+      "optional": true,
+      "max": 10
+    },
+    "serviceArea.mapPins[].name": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "closingCta.partnerBrands": {
+      "optional": true,
+      "max": 5
+    },
+    "closingCta.partnerBrands[]": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "siblingLinks.relatedCards": {
+      "optional": true,
+      "max": 3
+    },
+    "siblingLinks.relatedCards[].title": {
+      "optional": true,
+      "maxLen": 50
+    },
+    "siblingLinks.relatedCards[].subtitle": {
+      "optional": true,
+      "maxLen": 50
+    },
+    "siblingLinks.relatedCards[].url": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "siblingLinks.relatedCards[].image": {
+      "optional": true,
+      "pattern": "^https://",
+      "hasDefault": true
+    },
+    "library.h2": {
+      "optional": true,
+      "maxLen": 40
+    },
+    "library.guides": {
+      "optional": true,
+      "max": 4
+    },
+    "library.guides[].label": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "library.guides[].title": {
+      "optional": true,
+      "maxLen": 40
+    },
+    "library.guides[].inThisGuide": {
+      "optional": true,
+      "max": 3
+    },
+    "library.guides[].inThisGuide[]": {
+      "optional": true,
+      "maxLen": 40
+    },
+    "library.guides[].image": {
+      "optional": true,
+      "pattern": "^https://",
+      "hasDefault": true
+    },
+    "library.guides[].intro": {
+      "optional": true,
+      "maxLen": 210
+    },
+    "library.guides[].stats": {
+      "optional": true,
+      "max": 4
+    },
+    "library.guides[].stats[].value": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "library.guides[].stats[].label": {
+      "optional": true,
+      "maxLen": 60
+    },
+    "library.guides[].sections": {
+      "optional": true,
+      "max": 3
+    },
+    "library.guides[].sections[].title": {
+      "optional": true,
+      "maxLen": 40
+    },
+    "library.guides[].sections[].body": {
+      "optional": true,
+      "maxLen": 330
+    },
+    "models.series[].image": {
+      "optional": true,
+      "pattern": "^https://"
+    },
+    "models.series[].tags": {
+      "optional": true,
+      "max": 2
+    },
+    "models.series[].tags[]": {
+      "optional": true,
+      "maxLen": 24
     }
   }
 }
