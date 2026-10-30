@@ -1,0 +1,1384 @@
+{
+  "meta": {
+    "primaryKeyword": "american standard furnace repair",
+    "secondaryKeywords": [
+      "american standard furnace service",
+      "american standard furnace models",
+      "american standard furnace cost",
+      "american standard furnace tune up",
+      "american standard furnace parts"
+    ],
+    "city": "Chicago",
+    "brand": "American Standard",
+    "equipment": "Furnace",
+    "service": "Repair",
+    "slug": "/brands/american-standard/furnace-repair-chicago/",
+    "seoTitle": "American Standard Furnace Repair Chicago | City & Suburban",
+    "metaDescription": "American Standard furnace repair in Chicago. Genuine parts on the van, our price agreed before we start, 24/7 no-heat calls. Family owned since 1952.",
+    "sources": [
+      "https://www.americanstandardair.com/products/furnaces/"
+    ],
+    "priceDate": "October 2026",
+    "status": "draft"
+  },
+  "hero": {
+    "labels": {
+      "detailsStep": "YOUR DETAILS",
+      "jobStep": "YOUR JOB",
+      "symptomsQuestion": "What's happening?",
+      "formNote": "Price agreed before any work starts.",
+      "processChip": "What happens when you call",
+      "bookingPill": "Schedule service 24/7"
+    },
+    "breadcrumb": [
+      "Home",
+      "Brands",
+      "American Standard",
+      "Furnace repair & service"
+    ],
+    "eyebrow": "American Standard furnaces · Chicago & near suburbs",
+    "h1": "American Standard furnace repair and service in Chicago",
+    "lede": "No heat, a blinking light, or a furnace that lights and shuts off? We do American Standard furnace repair, cleaning, tune-ups and replacement across Chicago, from older Silver models to the Platinum 95. Genuine parts on the van, the price agreed before we start, and your warranty kept intact.",
+    "trustChips": [
+      "Partnered with American Standard",
+      "Family owned since 1952",
+      "Genuine parts, warranty protected"
+    ],
+    "formTitle": "Book American Standard furnace service",
+    "formSubtitle": "Read us the model number from the plate inside the lower door and we'll bring the right parts.",
+    "modelFieldPlaceholder": "e.g. Gold S9V2 · or \"not sure\"",
+    "symptomChips": [
+      "No heat",
+      "Blinking light or error code",
+      "Tune-up or cleaning",
+      "Replacement quote",
+      "Something else"
+    ],
+    "mobile": {
+      "h1": "American Standard furnace repair in Chicago",
+      "lede": "Repair, cleaning, tune-ups and replacement on every American Standard model. Genuine parts on the van, price agreed first.",
+      "valueStrip": [
+        {
+          "value": "$89",
+          "label": "Diagnostic, credited to repair"
+        },
+        {
+          "value": "Same day",
+          "label": "No-heat calls go first"
+        },
+        {
+          "value": "1952",
+          "label": "Family owned, Rob on calls"
+        }
+      ],
+      "jumpTabs": [
+        "Services",
+        "Furnaces",
+        "Installations",
+        "What it costs",
+        "Reviews"
+      ]
+    },
+    "h1Accent": "in Chicago",
+    "secondaryCta": "Get a free quote",
+    "formTitleAccent": "quote",
+    "streetPlaceholder": "e.g. Division & Ashland",
+    "needLabel": "What do you need?",
+    "needOptions": [
+      "Furnace repair",
+      "Furnace tune-up",
+      "New furnace",
+      "Something else"
+    ],
+    "modelChoicesLabel": "Which American Standard do you have, or want?",
+    "modelChoices": [
+      "Platinum 95",
+      "Gold S9V2",
+      "Silver S9X1",
+      "Silver S8X1 (80%)",
+      "An older American Standard",
+      "Not sure"
+    ],
+    "onThisPage": [
+      "Services",
+      "Models",
+      "Which furnace fits",
+      "Installations",
+      "What it costs",
+      "About us",
+      "Reviews",
+      "How it works",
+      "Areas",
+      "FAQs"
+    ]
+  },
+  "models": {
+    "eyebrow": "Models we service · 4 series, 3 builds",
+    "h2": "Every American Standard furnace, and what we do for each one",
+    "intro": "Find your series on the plate inside the lower door. Each one fails in its own ways, so each gets its own kind of visit.",
+    "series": [
+      {
+        "tag": "Top of the range",
+        "name": "Platinum",
+        "summary": "Modulating gas valve, variable-speed blower, AccuLink communicating controls.",
+        "models": [
+          "Platinum 95",
+          "Platinum 80"
+        ],
+        "weDo": [
+          "Diagnose communicating-control faults with the AccuLink thermostat linked in",
+          "Repair variable-speed blower motors and their control modules",
+          "Set up the modulating gas valve so it runs low and quiet, not on-off"
+        ],
+        "image": "https://live-asa-headless-cms.pantheonsite.io/wp-content/uploads/2022/10/platinum-95-gas-furnace.png",
+        "tags": [
+          "Quietest heat",
+          "High efficiency"
+        ]
+      },
+      {
+        "tag": "Two-stage & variable speed",
+        "name": "Gold",
+        "summary": "Two-stage burners and variable-speed blowers, built for quieter, steadier heat.",
+        "models": [
+          "Gold 95V",
+          "Gold 80V",
+          "S9V2"
+        ],
+        "weDo": [
+          "Replace inducer motors and pressure switches, then test the vent and hose",
+          "Check both gas-valve stages and set the high and low fire",
+          "Test the control board before replacing it, so you never pay for a guess"
+        ],
+        "image": "https://live-asa-headless-cms.pantheonsite.io/wp-content/uploads/2022/10/gold-s9v2-gas-furnace.png",
+        "tags": [
+          "Most Chicago homes",
+          "Two-stage"
+        ]
+      },
+      {
+        "tag": "Single-stage",
+        "name": "Silver",
+        "summary": "The workhorse in Chicago bungalows and two-flats. Simple, and quick to fix.",
+        "models": [
+          "Silver 95H",
+          "Silver 80H",
+          "S9X2",
+          "S8X2"
+        ],
+        "weDo": [
+          "Replace hot-surface ignitors and flame sensors on the same visit",
+          "Fix overheating and limit-switch shutdowns at the cause, not with a reset",
+          "Clean burners and blower wheel so it lights first time all winter"
+        ],
+        "image": "https://live-asa-headless-cms.pantheonsite.io/wp-content/uploads/2022/10/silver-s9x1-gas-furance.png",
+        "tags": [
+          "Smaller homes"
+        ]
+      },
+      {
+        "tag": "Older & discontinued",
+        "name": "Older models",
+        "summary": "Model plates we still open every winter, some 20 years and older.",
+        "models": [
+          "Freedom 80",
+          "Freedom 90",
+          "S8B1",
+          "S9B1",
+          "S8X1",
+          "S9X1"
+        ],
+        "weDo": [
+          "Source discontinued parts, or a genuine equivalent that fits",
+          "Inspect the heat exchanger and test for carbon monoxide on every visit",
+          "Give you repair and replace numbers side by side, then let you decide"
+        ],
+        "image": "https://live-asa-headless-cms.pantheonsite.io/wp-content/uploads/2022/08/furnace-by-american-standard.png",
+        "tags": [
+          "Older models"
+        ]
+      }
+    ],
+    "buildsHeading": "Same series, different build. What changes on our visit.",
+    "buildsNote": "The number is in the model name on the plate",
+    "builds": [
+      {
+        "label": "80%",
+        "name": "Standard efficiency",
+        "weDo": "Vents up a metal flue into the chimney. We check the draft, the flue liner and the chimney connection along with the burners."
+      },
+      {
+        "label": "95%",
+        "name": "High-efficiency condensing",
+        "weDo": "White PVC pipes out the side wall and a condensate drain. We clear snow-blocked vents, frozen drains and the trap every winter."
+      },
+      {
+        "label": "AccuLink",
+        "name": "Communicating systems",
+        "weDo": "Furnace, thermostat and AC talk to each other. We read the fault history from the thermostat before we open a panel."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "Services we do · 16 in 4 groups",
+    "h2": "Every service we do on American Standard furnaces",
+    "intro": "From a 2 a.m. no-heat call to a yearly clean, a parts claim or a new furnace. One company, one technician who knows the unit.",
+    "groups": [
+      {
+        "name": "Repair & no-heat calls",
+        "summary": "Found and fixed on the first visit when the part is on the van.",
+        "services": [
+          {
+            "title": "No-heat emergency repair",
+            "description": "A live dispatcher 24/7 and a technician the same day, any American Standard model.",
+            "mobileDescription": "24/7 dispatcher, technician the same day."
+          },
+          {
+            "title": "Ignitor & flame sensor replacement",
+            "description": "The most common American Standard fix. Genuine ignitors carried on every van.",
+            "mobileDescription": "The most common fix. Genuine ignitors on the van."
+          },
+          {
+            "title": "Inducer motor & pressure switch repair",
+            "description": "For the hum, rattle or shut-off before the burners light, plus the vent and hose behind it.",
+            "mobileDescription": "The hum or shut-off before the burners light."
+          },
+          {
+            "title": "Control board, gas valve & blower motor",
+            "description": "Tested on our meter first. Boards and motors cost real money, so we confirm before we replace.",
+            "mobileDescription": "Tested on our meter before anything is replaced."
+          }
+        ]
+      },
+      {
+        "name": "Cleaning & tune-ups",
+        "summary": "Booked before the first cold snap, so it lights first time all winter.",
+        "services": [
+          {
+            "title": "Annual furnace tune-up",
+            "description": "Burners, flame sensor, filter, gas pressure, vent and every safety switch, checked and logged.",
+            "mobileDescription": "Every safety switch checked and logged."
+          },
+          {
+            "title": "Burner & flame sensor cleaning",
+            "description": "Clears the soot that makes a furnace light, then shut off a few seconds later.",
+            "mobileDescription": "Stops the light-then-shut-off cycle."
+          },
+          {
+            "title": "Blower wheel & motor cleaning",
+            "description": "A packed wheel moves less air and overheats the unit. We pull it, clean it and balance it.",
+            "mobileDescription": "More air, less overheating."
+          },
+          {
+            "title": "Condensate drain & PVC vent clearing",
+            "description": "For 95% models: the trap, drain line and side-wall vents that freeze or block in a Chicago winter.",
+            "mobileDescription": "Frozen drains and blocked vents on 95% models."
+          }
+        ]
+      },
+      {
+        "name": "Safety & genuine parts",
+        "summary": "The checks and paperwork that keep your family and your warranty safe.",
+        "services": [
+          {
+            "title": "Heat exchanger & CO safety check",
+            "description": "A camera inspection for cracks and a carbon monoxide test, with photos if we find anything.",
+            "mobileDescription": "Camera inspection and CO test."
+          },
+          {
+            "title": "Genuine parts & warranty claims",
+            "description": "We check registration by serial and file the claim, so a covered part costs labor only.",
+            "mobileDescription": "We file the claim; you pay labor only."
+          },
+          {
+            "title": "AccuLink thermostat & controls",
+            "description": "Set up, re-linked or replaced, so the furnace, thermostat and AC work as one system.",
+            "mobileDescription": "Furnace, thermostat and AC working as one."
+          },
+          {
+            "title": "Gas pressure & combustion test",
+            "description": "Measured on our meter, not by eye, so the furnace burns clean and at its rated output.",
+            "mobileDescription": "Measured on our meter, not by eye."
+          }
+        ]
+      },
+      {
+        "name": "Replace & upgrade",
+        "summary": "When repair no longer adds up, or you want more from the system you have.",
+        "services": [
+          {
+            "title": "New American Standard furnace",
+            "description": "Sized to your home, installed by our own crew, registered for the full parts warranty.",
+            "mobileDescription": "Sized, installed and registered by us."
+          },
+          {
+            "title": "Repair-or-replace assessment",
+            "description": "Both numbers on paper, the age of the unit and the parts outlook. You decide.",
+            "mobileDescription": "Both numbers on paper. You decide."
+          },
+          {
+            "title": "Humidifiers, filters & air cleaners",
+            "description": "Added to your furnace for dry Chicago winters and cleaner air in every room.",
+            "mobileDescription": "For dry winters and cleaner air."
+          },
+          {
+            "title": "Matching AC or heat pump",
+            "description": "Paired with your American Standard furnace so the blower and controls match.",
+            "mobileDescription": "Blower and controls that match."
+          }
+        ]
+      }
+    ]
+  },
+  "recentJobs": {
+    "labels": {
+      "found": "FOUND",
+      "weDid": "WE DID"
+    },
+    "eyebrow": "Recent jobs · American Standard only",
+    "h2": "American Standard furnaces we fixed this winter",
+    "intro": "What the owner noticed, what we found and what it cost. Real jobs from our own invoices.",
+    "jobs": [
+      {
+        "model": "Gold S9V2 · 95%",
+        "neighborhood": "Lakeview",
+        "month": "January 2026",
+        "title": "Lit, then shut off every few seconds",
+        "found": "A coated flame sensor. Eight flashes on the board.",
+        "weDid": "Cleaned the sensor, checked the flame signal on our meter, cleaned the burners.",
+        "outcome": "Fixed on the first visit",
+        "price": "$165",
+        "photo": "",
+        "sourceRef": ""
+      },
+      {
+        "model": "Silver 80H · 80%",
+        "neighborhood": "Portage Park",
+        "month": "December 2025",
+        "title": "No heat, no glow, locked out",
+        "found": "A cracked hot-surface ignitor. Two flashes on the board after three tries.",
+        "weDid": "Fitted a genuine ignitor from the van and checked the gas valve feeding it.",
+        "outcome": "Fixed on the first visit",
+        "price": "$240",
+        "photo": "",
+        "sourceRef": ""
+      },
+      {
+        "model": "Platinum 95 · AccuLink",
+        "neighborhood": "Evanston",
+        "month": "February 2026",
+        "title": "Hummed, then stopped before lighting",
+        "found": "Snow over the PVC intake and a failing inducer motor. Three flashes.",
+        "weDid": "Cleared the vent, replaced the inducer under warranty, filed the claim.",
+        "outcome": "Part covered by warranty",
+        "price": "$210 labor",
+        "photo": "",
+        "sourceRef": ""
+      }
+    ]
+  },
+  "pricing": {
+    "labels": {
+      "includedTitle": "In every price above",
+      "warrantyTitle": "STILL UNDER WARRANTY?",
+      "repairsTitleMobile": "COMMON REPAIRS",
+      "includedTitleMobile": "IN EVERY PRICE"
+    },
+    "eyebrow": "What we charge · our own prices",
+    "h2": "What we charge to fix your American Standard furnace",
+    "intro": "Our own prices on American Standard work, not a national average. You still get the exact figure in writing before we start.",
+    "fees": [
+      {
+        "key": "diagnostic",
+        "label": "Diagnostic visit",
+        "price": "$89",
+        "note": "Credited in full when you go ahead with the repair. You only pay it if you don't."
+      },
+      {
+        "key": "tuneup",
+        "label": "Furnace tune-up & clean",
+        "price": "$149",
+        "note": "Burners, flame sensor, blower, drain and vent, plus the CO and combustion test. Any model."
+      },
+      {
+        "key": "afterHours",
+        "label": "Nights, weekends & holidays",
+        "price": "+$75",
+        "note": "One flat add-on for an after-hours call. Every other price on this page stays the same."
+      }
+    ],
+    "repairs": [
+      {
+        "item": "Flame sensor clean or replace",
+        "note": "Usually done on the first visit",
+        "range": "$100–$250"
+      },
+      {
+        "item": "Hot-surface ignitor",
+        "note": "Genuine part, carried on the van",
+        "range": "$150–$350"
+      },
+      {
+        "item": "Pressure switch",
+        "note": "Includes clearing the vent or drain if that's the cause",
+        "range": "$150–$350"
+      },
+      {
+        "item": "Gas valve",
+        "note": "Single-stage, two-stage or modulating",
+        "range": "$250–$600"
+      },
+      {
+        "item": "Control board",
+        "note": "Tested on our meter before we replace it",
+        "range": "$300–$700"
+      },
+      {
+        "item": "Inducer motor",
+        "note": "Most often on 95% condensing models",
+        "range": "$400–$800"
+      },
+      {
+        "item": "Blower motor",
+        "note": "Variable-speed motors on Gold and Platinum cost more",
+        "range": "$450–$1,200"
+      }
+    ],
+    "included": [
+      "Parts and labor. The written price is the price you pay.",
+      "Genuine American Standard parts, never generic.",
+      "A 1-year labor guarantee, and a free return visit if the same fault comes back."
+    ],
+    "warrantyNote": "American Standard covers the part. We file the claim, so you pay labor only.",
+    "confirmed": false,
+    "sourceNote": "Prices from citysuburbanheating.com and City of Chicago permits. Terms and conditions apply.",
+    "tilesSource": "Medians are the declared value on City of Chicago permits in the 24 months to August 2026, as published on our furnace installation page, not a quote.",
+    "tiles": [
+      {
+        "value": "$6,807",
+        "label": "typical furnace-only replacement (81 City permits)"
+      },
+      {
+        "value": "$18,048",
+        "label": "typical furnace permit with other work"
+      },
+      {
+        "value": "$50",
+        "label": "service call offer, valid to October 31, 2026"
+      }
+    ]
+  },
+  "servicePlan": {
+    "labels": {
+      "perMonthMobile": "/month"
+    },
+    "eyebrow": "Yearly service plan",
+    "h2": "One visit a year, so it lights first time all winter",
+    "body": "Plenty of December no-heat calls come down to a dirty flame sensor or a blocked drain, the things a yearly visit catches. The plan books that visit for you every fall, on any American Standard model.",
+    "stats": [
+      {
+        "value": "Every fall",
+        "label": "We call you to book, before the first cold snap"
+      },
+      {
+        "value": "First",
+        "label": "In line when there's no heat, ahead of non-members"
+      },
+      {
+        "value": "15% off",
+        "label": "Any repair on a covered furnace, all year"
+      }
+    ],
+    "plan": {
+      "name": "City & Suburban Comfort Plan",
+      "priceMonthly": "$15",
+      "priceYearly": "$179",
+      "perks": [
+        "One full furnace tune-up and clean every fall",
+        "Heat exchanger, CO and combustion test logged each year",
+        "Priority booking on no-heat calls",
+        "15% off repairs, and no after-hours add-on",
+        "A yearly record that keeps your American Standard warranty paperwork in order"
+      ],
+      "cta": "Join the plan"
+    },
+    "confirmed": false
+  },
+  "financing": {
+    "eyebrow": "Financing · for a new furnace",
+    "h2": "When it's time to replace, pay for it monthly",
+    "intro": "A new American Standard furnace doesn't have to come out of savings in one go, least of all in the middle of January.",
+    "options": [
+      {
+        "value": "0%",
+        "title": "Interest-free for 12 months",
+        "body": "Pay it off within the year and you pay nothing on top of the furnace price."
+      },
+      {
+        "value": "10 yrs",
+        "title": "Fixed monthly payments",
+        "body": "Spread a new furnace over up to 10 years, with the payment set before you sign."
+      },
+      {
+        "value": "Minutes",
+        "title": "Approval at your kitchen table",
+        "body": "Apply with the technician on site. Checking what you qualify for won't touch your credit score."
+      }
+    ],
+    "rebates": {
+      "title": "Rebates on 95% furnaces",
+      "body": "Utility rebates can take money off a high-efficiency American Standard furnace. We fill in the forms for you.",
+      "cta": "See if you qualify"
+    },
+    "disclaimer": "",
+    "confirmed": false
+  },
+  "whoYoureCalling": {
+    "labels": {
+      "ratingTag": "GOOGLE RATING",
+      "whyFamilyEyebrow": "FAMILY-OWNED"
+    },
+    "eyebrow": "About City & Suburban",
+    "h2": "Who you're actually calling?",
+    "intro": "One family. Second generation. Since 1952. City & Suburban runs from 1225 N Cleaver St, and Rob, the owner, still takes the calls and does the diagnosis on the American Standard jobs that need it.",
+    "stats": [
+      {
+        "label": "Owner",
+        "value": "Rob",
+        "body": "Owner-operator. He runs the calls himself, so the person who quotes is the person accountable."
+      },
+      {
+        "label": "Family owned",
+        "value": "1952",
+        "body": "74 years, family owned, now in its second generation."
+      },
+      {
+        "label": "American Standard",
+        "value": "Partner",
+        "body": "Genuine parts on the van, and we file your warranty claims ourselves."
+      },
+      {
+        "label": "Working hours",
+        "value": "24/7",
+        "body": "Working hours. Call any time."
+      }
+    ],
+    "whyFamilyHeading": "Why a family company matters on your furnace",
+    "whyFamily": [
+      "You talk to the person who owns the outcome, not a call center.",
+      "The office books you in, and reviewers name the people who did it.",
+      "Nobody is on commission, so \"your furnace is fine\" means it's fine.",
+      "Your request isn't sold on to three other contractors."
+    ],
+    "points": [
+      {
+        "title": "The price in writing first",
+        "body": "The full price is set in writing before any work starts, with no hidden fees."
+      },
+      {
+        "title": "A satisfaction guarantee",
+        "body": "City & Suburban backs its furnace repairs and installations with a satisfaction guarantee."
+      },
+      {
+        "title": "Open 24 hours, 7 days",
+        "body": "No-heat calls are answered around the clock, with same-day visits when the schedule allows."
+      }
+    ]
+  },
+  "reviews": {
+    "labels": {
+      "writeReviewPrompt": "We'd love to hear about your experience –"
+    },
+    "eyebrow": "Google reviews · all 204 read",
+    "h2": "What customers say about the work",
+    "intro": "Every one of our 204 Google reviews, counted by what reviewers chose to mention: the owner, the speed, the price and the honesty.",
+    "stats": [
+      {
+        "count": 90,
+        "label": "name Rob, or say they dealt with the owner directly",
+        "percent": 44
+      },
+      {
+        "count": 59,
+        "label": "mention a fast response, a same-day visit or arriving on time",
+        "percent": 29
+      },
+      {
+        "count": 43,
+        "label": "call the price fair, reasonable or competitive",
+        "percent": 21
+      },
+      {
+        "count": 29,
+        "label": "mention honesty, trust or no pressure to upsell",
+        "percent": 14
+      }
+    ],
+    "statsSource": "Keyword count across all 204 Google reviews, export of 31 Aug 2026",
+    "reviews": [
+      {
+        "name": "Ken Davis",
+        "date": "2026",
+        "source": "Google",
+        "tag": "Condo furnace repair",
+        "text": "…when my furnace stopped working at my new place I knew who to call and what to expect. They answered on the first call… Rob quickly diagnosed the problem…"
+      },
+      {
+        "name": "Jens Pfister",
+        "date": "2026",
+        "source": "Google",
+        "tag": "Condo repairs",
+        "text": "City & Suburban were the only ones that explained what they would do, when they would do it and did exactly as they said…"
+      },
+      {
+        "name": "Brandi Clinch",
+        "date": "2026",
+        "source": "Google",
+        "tag": "Condo AC repair",
+        "text": "Rob and Carissa were soooo helpful! Rob made it out super quick for a same day AC repair…"
+      },
+      {
+        "name": "Christopher Abbott",
+        "date": "2025",
+        "source": "Google",
+        "tag": "AC replacement",
+        "text": "Rob has taken great care of our HVAC systems for several years…"
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "The process · 5 steps",
+    "h2": "What happens when you call",
+    "intro": "From the first call to a warm house, in five steps.",
+    "steps": [
+      {
+        "title": "You call, Rob listens",
+        "body": "Read us the model number from the American Standard plate and what the light is doing. It often narrows the fault down on the phone."
+      },
+      {
+        "title": "Pick a time",
+        "body": "We're available 24/7, and a no-heat call goes to the front of the line. Pick the window that suits you."
+      },
+      {
+        "title": "On-site diagnosis",
+        "body": "The technician reads the fault code, tests the ignition sequence and shows you the part that failed."
+      },
+      {
+        "title": "Honest price, repair first",
+        "body": "You get the written price before any work. If the furnace has years left, we say so and repair it."
+      },
+      {
+        "title": "We fix it",
+        "body": "Repairs done on the spot where the part is on the van. Installs are scheduled and quoted separately."
+      }
+    ]
+  },
+  "serviceArea": {
+    "eyebrow": "Where we service American Standard furnaces · 4 areas",
+    "h2": "All of Chicago, plus the near suburbs",
+    "mapEmbedUrl": "",
+    "mapNote": "Area edges are approximate. Not sure if we cover your street? Call and ask.",
+    "facts": [
+      {
+        "label": "Coverage",
+        "value": "Every Chicago neighborhood, plus the near suburbs"
+      },
+      {
+        "label": "No-heat calls",
+        "value": "24/7, with the same-day visit going to no-heat first"
+      },
+      {
+        "label": "Parts on the van",
+        "value": "Ignitors, flame sensors, switches and inducers"
+      },
+      {
+        "label": "Our shop",
+        "value": "1225 N Cleaver St, Chicago"
+      },
+      {
+        "label": "Permits",
+        "value": "Repair, cleaning and tune-ups need no permit. For a new furnace, we pull the City of Chicago permit for you."
+      }
+    ],
+    "areas": [
+      {
+        "name": "North Side",
+        "neighborhoods": "Lincoln Park, Lakeview, Ravenswood, Edgewater, Rogers Park.",
+        "unitsWeSee": "Gold and Platinum 95s in rehabbed greystones and condos."
+      },
+      {
+        "name": "Northwest Side",
+        "neighborhoods": "Logan Square, Irving Park, Portage Park, Jefferson Park.",
+        "unitsWeSee": "Silver 80s and older Freedom models in bungalows."
+      },
+      {
+        "name": "West & South Sides",
+        "neighborhoods": "Wicker Park, Bucktown, Pilsen, Bridgeport, Hyde Park, Beverly.",
+        "unitsWeSee": "Silver and Gold 95s in two-flats, one unit per floor."
+      },
+      {
+        "name": "Near suburbs",
+        "neighborhoods": "Evanston, Skokie, Oak Park, Berwyn, Park Ridge, Oak Lawn.",
+        "unitsWeSee": "Two-stage Gold models, many with AccuLink thermostats."
+      }
+    ],
+    "mapPins": [
+      {
+        "name": "Rogers Park"
+      },
+      {
+        "name": "Lakeview"
+      },
+      {
+        "name": "Lincoln Park"
+      },
+      {
+        "name": "Old Town"
+      },
+      {
+        "name": "Logan Square"
+      },
+      {
+        "name": "Bucktown"
+      },
+      {
+        "name": "Wicker Park"
+      },
+      {
+        "name": "Humboldt Park"
+      },
+      {
+        "name": "Ukrainian Village"
+      },
+      {
+        "name": "West Loop"
+      }
+    ]
+  },
+  "faq": {
+    "labels": {
+      "photoCardTitle": "Didn't find your question?"
+    },
+    "eyebrow": "FAQs · 5 questions",
+    "h2": "American Standard furnaces, answered",
+    "items": [
+      {
+        "question": "Will your repair affect my American Standard warranty?",
+        "answer": "No. American Standard covers the parts. We fit genuine parts, check your registration by serial number and file the claim, so a covered part costs you labor only."
+      },
+      {
+        "question": "Where do I find my American Standard model number?",
+        "answer": "On the rating plate inside the lower door, near the blower. Read us the model and serial number when you call and we'll bring the right parts."
+      },
+      {
+        "question": "Why is my American Standard furnace blinking red?",
+        "answer": "The light is a fault code. Tell us how many times it flashes when you call, and our technician brings the parts for that fault."
+      },
+      {
+        "question": "Is it worth repairing a 15-year-old furnace?",
+        "answer": "Often yes for an ignitor, sensor or switch. We put the repair and replacement numbers side by side, check the heat exchanger, and you decide."
+      },
+      {
+        "question": "How fast can you come when there's no heat?",
+        "answer": "We answer 24/7, and a no-heat call goes to the front of the line for a same-day visit."
+      }
+    ]
+  },
+  "closingCta": {
+    "labels": {
+      "hoursLabel": "Working hours",
+      "haveReadyTitle": "Have these ready when you call"
+    },
+    "eyebrow": "Your next step",
+    "h2": "No heat, or a furnace that won't stay lit?",
+    "body": "Have your American Standard model number to hand and tell us what the light is doing. We'll bring the right parts on the first visit.",
+    "haveReady": [
+      "The model and serial number from the plate inside the lower door",
+      "What it's doing: no heat, lights then shuts off, a noise, short-cycling",
+      "How many times the status light flashes, if it's blinking",
+      "When it was installed, or roughly how old it is",
+      "A photo of the rating plate and the thermostat screen",
+      "If it's under warranty: your registration or install paperwork"
+    ],
+    "partnerBrands": [
+      "American Standard",
+      "Carrier",
+      "Trane",
+      "Lennox",
+      "Rheem"
+    ]
+  },
+  "siblingLinks": {
+    "otherEquipment": [
+      {
+        "label": "American Standard air conditioner repair",
+        "url": "/brands/american-standard/air-conditioner-repair-chicago/",
+        "status": "planned"
+      },
+      {
+        "label": "American Standard heat pump repair",
+        "url": "/brands/american-standard/heat-pump-repair-chicago/",
+        "status": "planned"
+      },
+      {
+        "label": "American Standard ductless & mini-split service",
+        "url": "/brands/american-standard/ductless-service-chicago/",
+        "status": "planned"
+      },
+      {
+        "label": "American Standard air cleaners & humidifiers",
+        "url": "/brands/american-standard/air-quality-chicago/",
+        "status": "planned"
+      }
+    ],
+    "otherBrands": [
+      {
+        "label": "Carrier furnace repair",
+        "url": "/brands/carrier/furnace-repair-chicago/",
+        "status": "planned"
+      },
+      {
+        "label": "Trane furnace repair",
+        "url": "/brands/trane/furnace-repair-chicago/",
+        "status": "planned"
+      },
+      {
+        "label": "Lennox furnace repair",
+        "url": "/brands/lennox/furnace-repair-chicago/",
+        "status": "planned"
+      },
+      {
+        "label": "Rheem furnace repair",
+        "url": "/brands/rheem/furnace-repair-chicago/",
+        "status": "planned"
+      }
+    ],
+    "relatedCards": [
+      {
+        "title": "American Standard air conditioners",
+        "subtitle": "Repairs, tune-ups and new installs",
+        "url": "",
+        "image": ""
+      },
+      {
+        "title": "American Standard heat pumps",
+        "subtitle": "Hybrid heat with your furnace",
+        "url": "",
+        "image": ""
+      },
+      {
+        "title": "All American Standard services",
+        "subtitle": "Every American Standard job we do",
+        "url": "",
+        "image": ""
+      }
+    ]
+  },
+  "trustBand": {
+    "items": [
+      "5 Star Service",
+      "Transparent Pricing",
+      "Financing",
+      "Certified Professional",
+      "Top Quality Work"
+    ]
+  },
+  "modelTable": {
+    "h2": "The services we provide for each American Standard",
+    "columns": [
+      {
+        "label": "Platinum 95",
+        "name": "Top of the range",
+        "note": "Bigger homes, quiet heat"
+      },
+      {
+        "label": "Gold S9V2",
+        "name": "Two-stage",
+        "note": "Most Chicago homes"
+      },
+      {
+        "label": "Silver S9X1",
+        "name": "Single-stage",
+        "note": "Smaller homes and condos"
+      },
+      {
+        "label": "Any model",
+        "name": "One you already have",
+        "note": "Came with the house"
+      }
+    ],
+    "rows": [
+      {
+        "label": "Choosing the size",
+        "cells": [
+          "Sized room by room for even heat",
+          "Sized to your coldest days",
+          "Sized for a smaller space",
+          "We check it still fits your home"
+        ]
+      },
+      {
+        "label": "Replacing the old furnace",
+        "cells": [
+          "Old one out, new one in, often in a day",
+          "Old one out, new one in, often in a day",
+          "Old one out, new one in, often in a day",
+          "We tell you honestly if it has years left"
+        ]
+      },
+      {
+        "label": "Thermostat and wiring",
+        "cells": [
+          "Paired with a communicating thermostat",
+          "Wired to a two-stage thermostat",
+          "Works with a standard thermostat",
+          "Thermostat tested on a full cycle"
+        ]
+      },
+      {
+        "label": "Venting and gas line",
+        "cells": [
+          "PVC vent through the wall",
+          "PVC vent through the wall",
+          "PVC vent through the wall",
+          "Vent and draft checked"
+        ]
+      },
+      {
+        "label": "Repairs",
+        "cells": [
+          "Gas valve, blower and controls",
+          "Ignitor, pressure switch, inducer",
+          "Ignitor, flame sensor, control board",
+          "No heat, short cycling, a blinking light"
+        ]
+      },
+      {
+        "label": "Yearly checkups",
+        "cells": [
+          "Cleaned and tested every fall",
+          "Cleaned and tested every fall",
+          "Cleaned and tested every fall",
+          "A full check before winter"
+        ]
+      }
+    ],
+    "costs": [
+      {
+        "caption": "Typical replacement, 81 City permits",
+        "price": "$6,807 median"
+      },
+      {
+        "caption": "Typical replacement, 81 City permits",
+        "price": "$6,807 median"
+      },
+      {
+        "caption": "Typical replacement, 81 City permits",
+        "price": "$6,807 median"
+      },
+      {
+        "caption": "Repair visit",
+        "price": "$50 service call"
+      }
+    ]
+  },
+  "parts": {
+    "h2": "Every part of your American Standard furnace we look after",
+    "note": "Prices from citysuburbanheating.com and City of Chicago permits. Terms and conditions apply.",
+    "items": [
+      {
+        "title": "Hot-surface ignitor",
+        "body": "The part that glows to light the gas. A cracked one is the most common reason a furnace won’t start.",
+        "ticks": [
+          "Carried on the van",
+          "Tested at every tune-up"
+        ],
+        "footerLabel": "Repair visit",
+        "price": "$50 service call",
+        "chips": [],
+        "image": ""
+      },
+      {
+        "title": "Flame sensor",
+        "body": "A small rod that proves the flame is lit. When it’s coated, the burners light, then shut off.",
+        "ticks": [
+          "Cleaned at every tune-up",
+          "Replaced when cleaning isn’t enough"
+        ],
+        "footerLabel": "",
+        "price": "",
+        "chips": [
+          "On the van",
+          "Same visit"
+        ],
+        "image": ""
+      },
+      {
+        "title": "Inducer motor",
+        "body": "The fan that clears the exhaust before the burners light. A loud hum or rattle often starts here.",
+        "ticks": [
+          "Matched to your model and serial number"
+        ],
+        "footerLabel": "Repair visit",
+        "price": "$50 service call",
+        "chips": [],
+        "image": ""
+      },
+      {
+        "title": "Pressure switch",
+        "body": "Proves the exhaust is flowing. A blocked vent or drain trips it, and the furnace stops.",
+        "ticks": [
+          "Tested along with the vent and drain"
+        ],
+        "footerLabel": "",
+        "price": "",
+        "chips": [
+          "Vent checked",
+          "Drain cleared"
+        ],
+        "image": ""
+      },
+      {
+        "title": "Control board",
+        "body": "The furnace’s brain. Its status light flashes a code that tells us where to look.",
+        "ticks": [
+          "Tested on our meter before we replace it",
+          "Flash code read on every visit"
+        ],
+        "footerLabel": "Repair visit",
+        "price": "$50 service call",
+        "chips": [],
+        "image": ""
+      },
+      {
+        "title": "Blower motor",
+        "body": "Moves warm air through your ducts. On Gold and Platinum models it changes speed.",
+        "ticks": [
+          "Checked for current draw and bearing noise",
+          "Variable-speed motors matched to the model"
+        ],
+        "footerLabel": "Repair visit",
+        "price": "$50 service call",
+        "chips": [],
+        "image": ""
+      },
+      {
+        "title": "Gas valve",
+        "body": "Lets gas into the burners. On the Platinum 95 it turns the flame up and down in small steps.",
+        "ticks": [
+          "Gas pressure measured on every visit"
+        ],
+        "footerLabel": "Repair visit",
+        "price": "$50 service call",
+        "chips": [],
+        "image": ""
+      },
+      {
+        "title": "Heat exchanger",
+        "body": "Keeps the flame and exhaust apart from the air you breathe. A crack means the furnace has to be shut off.",
+        "ticks": [
+          "Inspected and CO tested at every tune-up"
+        ],
+        "footerLabel": "Replacement",
+        "price": "$6,807 typical",
+        "chips": [],
+        "image": ""
+      },
+      {
+        "title": "Venting",
+        "body": "The PVC pipes on a 95% furnace, or the chimney liner on an 80% one, carry the exhaust safely outside.",
+        "ticks": [
+          "Checked for draft and leaks on every visit"
+        ],
+        "footerLabel": "",
+        "price": "",
+        "chips": [
+          "City permit"
+        ],
+        "image": ""
+      }
+    ]
+  },
+  "comparison": {
+    "h2": "80% furnace, 95% furnace or heat pump: which fits your home?",
+    "options": [
+      {
+        "name": "80% furnace",
+        "drawing": "furnace80",
+        "rows": [
+          {
+            "label": "Where it sits",
+            "value": "In the basement, venting up a lined chimney"
+          },
+          {
+            "label": "Best fit",
+            "value": "Homes whose chimney already has a sound liner"
+          },
+          {
+            "label": "On the coldest night",
+            "value": "Steady heat, some lost up the chimney"
+          },
+          {
+            "label": "Runs on",
+            "value": "Natural gas"
+          },
+          {
+            "label": "Where the gas goes",
+            "value": "About 80 cents of every gas dollar becomes heat"
+          },
+          {
+            "label": "Upkeep",
+            "value": "A yearly tune-up and a chimney check"
+          }
+        ]
+      },
+      {
+        "name": "95% furnace",
+        "drawing": "furnace95",
+        "rows": [
+          {
+            "label": "Where it sits",
+            "value": "In the basement, venting through the wall in PVC"
+          },
+          {
+            "label": "Best fit",
+            "value": "Most Chicago homes, and the coldest winters"
+          },
+          {
+            "label": "On the coldest night",
+            "value": "Full heat, with almost nothing lost up the vent"
+          },
+          {
+            "label": "Runs on",
+            "value": "Natural gas"
+          },
+          {
+            "label": "Where the gas goes",
+            "value": "Up to 97 cents of every gas dollar becomes heat"
+          },
+          {
+            "label": "Upkeep",
+            "value": "A yearly tune-up and a clear condensate drain"
+          }
+        ]
+      },
+      {
+        "name": "Heat pump",
+        "drawing": "heatPump",
+        "rows": [
+          {
+            "label": "Where it sits",
+            "value": "Outside on a pad, with a coil on the furnace"
+          },
+          {
+            "label": "Best fit",
+            "value": "Homes adding central air, paired with a gas furnace"
+          },
+          {
+            "label": "On the coldest night",
+            "value": "The gas furnace takes over in deep cold"
+          },
+          {
+            "label": "Runs on",
+            "value": "Electricity"
+          },
+          {
+            "label": "Where the energy goes",
+            "value": "Cheap heat in mild weather, less so in a deep freeze"
+          },
+          {
+            "label": "Upkeep",
+            "value": "Checkups in spring and fall"
+          }
+        ]
+      }
+    ]
+  },
+  "sizing": {
+    "h2": "Decide how much house your furnace has to heat",
+    "calloutTitle": "A furnace only heats evenly when it’s sized to the house.",
+    "calloutBody": "Too small and the far rooms stay cold on the worst nights. Too big and it short cycles, wears out sooner and leaves the house uneven. We size it room by room, not by the old furnace’s label.",
+    "note": "What decides the size: the rooms and floors, the windows and insulation, the ducts, and how cold the coldest Chicago night gets.",
+    "scenarios": [
+      {
+        "title": "A condo or flat",
+        "body": "One level with shared walls: a smaller, often single-stage furnace keeps it warm without short cycling.",
+        "drawing": "condo"
+      },
+      {
+        "title": "A bungalow",
+        "body": "A main floor plus a finished basement or attic: a two-stage furnace runs low most days and steps up in a cold snap.",
+        "drawing": "bungalow"
+      },
+      {
+        "title": "A two-flat or a bigger home",
+        "body": "More floors and more rooms: a larger or modulating furnace, sometimes one per unit, with the ducts checked so the top floor gets its share.",
+        "drawing": "twoFlat"
+      }
+    ]
+  },
+  "estimateChecks": {
+    "h2": "What we check before we quote",
+    "count": "10",
+    "countLabel": "checks",
+    "image": "",
+    "checks": [
+      {
+        "title": "Where the furnace sits",
+        "body": "Room around it for service, and the clearances American Standard’s install manual asks for."
+      },
+      {
+        "title": "Your gas line and meter",
+        "body": "The gas line size and pressure, so the new furnace gets all the gas it needs."
+      },
+      {
+        "title": "Venting and chimney",
+        "body": "A 95% furnace vents in PVC through the wall; an 80% one needs a sound, lined chimney."
+      },
+      {
+        "title": "Your ductwork",
+        "body": "Supply and return ducts big enough for the airflow, with no crushed runs or missing returns."
+      },
+      {
+        "title": "Heat exchanger and CO",
+        "body": "On the old furnace, a crack or high carbon monoxide means it can’t stay in service."
+      },
+      {
+        "title": "The size your home needs",
+        "body": "Rooms, floors, windows and insulation, measured, not copied from the old furnace."
+      },
+      {
+        "title": "Your thermostat",
+        "body": "Whether it suits a two-stage or modulating furnace, or needs replacing too."
+      },
+      {
+        "title": "The condensate drain",
+        "body": "A 95% furnace makes water, so it needs a drain or a pump that won’t freeze."
+      },
+      {
+        "title": "Filter and air quality",
+        "body": "The filter size and fit, and whether a humidifier or air cleaner belongs on the new furnace."
+      },
+      {
+        "title": "An American Standard you already have",
+        "body": "For repairs: the model and serial number, its age, the flash code and its service history."
+      }
+    ],
+    "routesHeading": "If your chimney can’t vent the new furnace",
+    "routes": [
+      {
+        "title": "The chimney is lined and sound",
+        "body": "An 80% furnace connects to the existing liner. No chimney work."
+      },
+      {
+        "title": "The chimney is unlined or worn",
+        "body": "A new liner goes in first, so exhaust can’t leak back into the house."
+      },
+      {
+        "title": "Skip the chimney",
+        "body": "A 95% furnace vents through the wall in PVC, so the old chimney isn’t needed."
+      }
+    ],
+    "routesNote": "Which route fits is decided at the visit, before any work starts."
+  },
+  "installations": {
+    "h2": "What an American Standard installation looks like",
+    "photos": [
+      {
+        "caption": "A new American Standard furnace in a Chicago basement",
+        "image": ""
+      },
+      {
+        "caption": "PVC venting through the wall for a 95% furnace",
+        "image": ""
+      },
+      {
+        "caption": "Our van on a Chicago street",
+        "image": ""
+      },
+      {
+        "caption": "A City & Suburban technician at work",
+        "image": ""
+      },
+      {
+        "caption": "American Standard units outside a Chicago home",
+        "image": ""
+      }
+    ]
+  },
+  "library": {
+    "h2": "The Chicago heating library",
+    "guides": [
+      {
+        "label": "Guide 01",
+        "title": "How Chicago homes stay warm",
+        "inThisGuide": [
+          "Furnaces, boilers and gas",
+          "Basements and chimneys",
+          "The Chicago Heat Ordinance"
+        ],
+        "image": "",
+        "intro": "Cook County Assessor data for Chicago’s eight townships (2025 assessment year) shows how most homes here are heated, and where the furnace sits.",
+        "stats": [
+          {
+            "value": "335,769",
+            "label": "properties heated by a warm-air furnace"
+          },
+          {
+            "value": "98,849",
+            "label": "properties heated by hot water or steam"
+          },
+          {
+            "value": "324,305",
+            "label": "properties with a full basement, where most furnaces sit"
+          },
+          {
+            "value": "265,194",
+            "label": "properties with masonry walls, often with an old brick chimney"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Furnaces, boilers and gas",
+            "body": "335,769 properties heat with a warm-air furnace and 98,849 with hot water or steam. A furnace is the most common heat in the city, and most of them burn natural gas, which is why gas pressure and venting are checked on every visit."
+          },
+          {
+            "title": "Basements and chimneys",
+            "body": "Most furnaces sit in the basement: 324,305 properties have a full one. In older brick homes the furnace often vents up a chimney built long before modern furnaces, so the liner gets checked before a new 80% furnace is connected to it."
+          },
+          {
+            "title": "The Chicago Heat Ordinance",
+            "body": "From September 15 to June 1, rental units in Chicago must reach at least 68°F from 8:30 a.m. to 10:30 p.m. and 66°F overnight. A furnace that stops in a rental is an urgent call, and we treat it that way."
+          }
+        ]
+      },
+      {
+        "label": "Guide 02",
+        "title": "What Chicago’s permit record shows",
+        "inThisGuide": [],
+        "image": "",
+        "intro": "",
+        "stats": [],
+        "sections": []
+      },
+      {
+        "label": "Guide 03",
+        "title": "Chicago neighbourhood & suburb guide",
+        "inThisGuide": [],
+        "image": "",
+        "intro": "",
+        "stats": [],
+        "sections": []
+      },
+      {
+        "label": "Guide 04",
+        "title": "American Standard furnace repair: the detail",
+        "inThisGuide": [],
+        "image": "",
+        "intro": "",
+        "stats": [],
+        "sections": []
+      }
+    ]
+  }
+}

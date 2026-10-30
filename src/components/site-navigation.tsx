@@ -57,7 +57,7 @@ export function SiteNavigation() {
               const col = index ? ' is-second-column' : ''
               return [
                 <li className={`site-submenu-heading${col}`} key={column.heading}><span>{column.heading}</span></li>,
-                ...[...column.items, column.all].map(item => <li className={`${item === column.all ? 'site-submenu-all' : ''}${col}`.trim() || undefined} key={item.label}>
+                ...[...column.items, column.all, ...(column.more || [])].map(item => <li className={`${column.items.includes(item) ? '' : 'site-submenu-all'}${col}`.trim() || undefined} key={item.label}>
                   <a href={item.href} onClick={() => setOpen(false)}>{item.label}</a>
                 </li>),
               ]

@@ -72,7 +72,8 @@ export const liveMenu: MenuGroup[] = [
   },
 ]
 
-export type ServicesColumn = {heading: string; items: MenuLink[]; all: MenuLink}
+// `all` closes the column in red; `more` adds red links under it (Brand services → the brands cluster)
+export type ServicesColumn = {heading: string; items: MenuLink[]; all: MenuLink; more?: MenuLink[]}
 
 // Copied from the live home page "Services" menu (21/10/2026).
 export const servicesMenu: MenuLink & {columns: ServicesColumn[]} = {
@@ -88,6 +89,7 @@ export const servicesMenu: MenuLink & {columns: ServicesColumn[]} = {
         {label: 'Commercial Refrigeration & Ice Machine Service', href: app('/services/commercial-specialty/commercial-refrigeration-repair-maintenance-near-me/')},
       ],
       all: {label: 'All services →', href: app('/services/')},
+      more: [{label: 'Brand services →', href: app('/services/brands/')}],
     },
     {
       heading: 'Service areas',

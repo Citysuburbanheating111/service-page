@@ -192,3 +192,17 @@ export const SERVICE_PAGE_METADATA_QUERY = defineQuery(`
     area->slug.current == $areaSlug
   ][0] {"title": seo.title, "description": seo.description, "canonicalUrl": seo.canonicalUrl}
 `)
+
+// Brand pages: every content field of the Paper design, by page address
+export const BRAND_PAGE_QUERY = defineQuery(`
+  *[_type == "brandPage" && path == $path][0] {
+    title, path, metaTitle, metaDescription, responsiveCss,
+    meta, hero, models, services, recentJobs, pricing, servicePlan, financing, whoYoureCalling,
+    reviews, process, serviceArea, faq, closingCta, siblingLinks
+  }
+`)
+
+export const BRAND_PAGE_PATHS_QUERY = defineQuery(`*[_type == "brandPage" && defined(path) && defined(hero.h1)].path`)
+
+// Brand directory (/services/brands/, /services/<brand>/): which brand pages are published, by Studio slug and address
+export const BRAND_PAGE_LINKS_QUERY = defineQuery(`*[_type == "brandPage" && defined(path) && defined(hero.h1)]{"slug": slug.current, path}`)

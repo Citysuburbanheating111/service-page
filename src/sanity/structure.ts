@@ -1,5 +1,5 @@
 import type {DefaultDocumentNodeResolver, StructureResolver} from 'sanity/structure'
-import {DesignPreview, ServicePagePreview} from './preview-pane'
+import {ServicePagePreview} from './preview-pane'
 
 export const structure: StructureResolver = (S) =>
   S.list()
@@ -23,8 +23,6 @@ export const structure: StructureResolver = (S) =>
 
 /** Service landing pages and brand pages open with a "Preview" tab beside the editor. */
 export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType}) =>
-  schemaType === 'referenceServicePage'
+  schemaType === 'referenceServicePage' || schemaType === 'brandPage'
     ? S.document().views([S.view.form(), S.view.component(ServicePagePreview).title('Preview')])
-    : schemaType === 'brandPage'
-      ? S.document().views([S.view.form(), S.view.component(DesignPreview).title('Preview')])
-      : S.document()
+    : S.document()
