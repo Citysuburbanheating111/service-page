@@ -34,7 +34,9 @@
     "content:import-reference-pages": "tsx scripts/import-reference-pages.ts",
     "vercel:pull": "vercel pull --yes --environment=production",
     "vercel:build": "vercel build --prod",
-    "vercel:deploy": "vercel deploy --prebuilt --prod"
+    "vercel:deploy": "vercel deploy --prebuilt --prod",
+    "apps-script:build": "tsx scripts/build-apps-script.ts",
+    "test:apps-script": "tsx scripts/test-apps-script.ts"
   },
   "dependencies": {
     "@portabletext/react": "8.0.1",
@@ -51,6 +53,7 @@
     "@types/node": "26.4.0",
     "@types/react": "19.2.18",
     "@types/react-dom": "19.2.5",
+    "esbuild": "0.28.2",
     "eslint": "9.39.5",
     "eslint-config-next": "16.3.3",
     "tsx": "4.23.12",
