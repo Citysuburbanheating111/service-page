@@ -89,6 +89,7 @@ function run(world: World, action: string, args = '') {
   const respond = (status: number, body: unknown) => ({getResponseCode: () => status, getContentText: () => JSON.stringify(body)})
   const UrlFetchApp = {
     fetch: (url: string, options: Json) => {
+      if (url.length > 2000) throw new Error('Limit Exceeded: URLFetch URL length.') // Apps Script's own limit
       world.fetches.push(url)
       const auth = options.headers.Authorization
       if (auth !== `Bearer ${world.token}` && !(auth === 'Bearer sk-new' && !world.rejectNewToken)) return respond(401, {})
@@ -98,7 +99,9 @@ function run(world: World, action: string, args = '') {
         for (const m of mutations) world.sanityDocs = [...world.sanityDocs.filter((d) => d._id !== m.createOrReplace._id), {...m.createOrReplace, _updatedAt: '2026-11-03T10:00:00Z'}]
         return respond(200, {transactionId: 'tx-1'})
       }
-      return respond(200, {result: fakeQuery(world, Object.fromEntries(new URL(url).searchParams))})
+      const body = options.payload ? JSON.parse(options.payload) : {}
+      const params = Object.fromEntries(Object.entries(body.params || {}).map(([k, v]) => [`$${k}`, JSON.stringify(v)]))
+      return respond(200, {result: fakeQuery(world, {...Object.fromEntries(new URL(url).searchParams), ...params, ...(body.query ? {query: body.query} : {})})})
     },
   }
   const context = vm.createContext({
@@ -154,6 +157,13 @@ async function main() {
     assert.match(world.dialogs[0], /same as Sanity, nothing to push/)
     run(world, 'servicePagesPush')
     assert.equal(world.mutations.length, 0)
+  })
+  await check('checking 40 rows at once stays under the Apps Script URL length limit', () => {
+    const many = Array.from({length: 40}, (_, i) => page(`reference-service-heating-long-test-page-number-${i}`, 'heating', `long-test-page-number-${i}-near-me`))
+    const world = makeWorld({grid: [[...headers], ...many.map(rowOf)], sanityDocs: many.map((p) => structuredClone(p)), selected: many.map((_, i) => i + 2)})
+    run(world, 'servicePagesCheck')
+    assert.equal(world.alerts.length, 0, world.alerts.join(' | '))
+    assert.equal(world.dialogs[0].match(/same as Sanity/g)?.length, many.length)
   })
   await check('an edited row is pushed as a draft after Yes, and the row is stamped', () => {
     const world = makeWorld()
