@@ -137,6 +137,9 @@ const futureSnapshot = renderReferencePage({...futurePage, responsiveCss: '.test
 assert.ok(futureSnapshot.html.includes('<h1>New published CMS service</h1>'))
 assert.ok(futureSnapshot.html.includes('/services/images/new.jpg'))
 assert.equal(futureSnapshot.style, '.test{color:red}')
+// GROQ returns null (not undefined) for a section with no editable fields; it must render, not crash with a 500.
+const noFieldsSnapshot = renderReferencePage({...futurePage, sections: [{module: 'header', html: '<header>Site header</header>', contentFields: null}]})!
+assert.ok(noFieldsSnapshot.html.includes('<header>Site header</header>'))
 assert.equal(renderReferencePage(null), undefined)
 assert.equal(renderReferencePage(null, referenceSnapshots['heating/heater-repair-near-me']), referenceSnapshots['heating/heater-repair-near-me'])
 assert.deepEqual(migrateServiceContent({url: '/service/heating/water-heater-repair-installation/', image: '/service/images/logo.png', neighborhood: '/service-area/lincoln-park/', collection: '/service/heating-services/'}), {

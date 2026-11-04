@@ -29,7 +29,7 @@ export type ReferenceDocument = ReferenceOverride & {
   metaTitle?: string
   responsiveCss?: string
   structuredData?: string
-  sections?: Array<{_key?: string; module: string; html: string; contentFields?: ReferenceContentField[]}>
+  sections?: Array<{_key?: string; module: string; html: string; contentFields?: ReferenceContentField[] | null}>
   workWeHandle?: WorkItem[] | null
   serviceSections?: ServiceSectionsDesign | null
 }

@@ -5,8 +5,9 @@ function escapeHtml(value: string) {
 }
 
 /** Bind native Sanity copy/image fields while preserving the reference markup. */
-export function applyReferenceContentFields(html: string, fields: ReferenceContentField[] = []) {
-  for (const field of fields) {
+export function applyReferenceContentFields(html: string, fields?: ReferenceContentField[] | null) {
+  // A section with no editable fields comes back from GROQ as null, not undefined.
+  for (const field of fields ?? []) {
     if (!/^[\w-]+$/.test(field.target) || typeof field.value !== 'string') continue
     const value = escapeHtml(field.value)
     if (field.kind === 'text') {
