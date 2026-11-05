@@ -51,7 +51,6 @@ export const liveMenu: MenuGroup[] = [
     label: 'Air Quality',
     href: app('/services/air-quality/'),
     items: [
-      {label: 'Dehumidifier Installation', href: app('/services/air-quality/dehumidifier-installation-near-me/')},
       {label: 'Indoor Air Quality Test', href: app('/services/air-quality/indoor-air-quality-test-near-me/')},
       {label: 'Duct Repair', href: app('/services/air-quality/duct-repair-near-me/')},
       {label: 'Duct Maintenance', href: app('/services/air-quality/duct-maintenance-near-me/')},
@@ -82,10 +81,8 @@ export const servicesMenu: MenuLink & {columns: ServicesColumn[]} = {
     {
       heading: 'Other services',
       items: [
-        {label: 'Radiator & Radiant Heat Service', href: app('/services/heating/radiator-radiant-heat-repair-installation-near-me/')},
         {label: 'Window & Portable AC Installation & Repair', href: app('/services/cooling/window-portable-ac-installation-repair-near-me/')},
         {label: 'Air Duct Cleaning, Repair & Sealing', href: app('/services/indoor-air-quality-ventilation/air-duct-cleaning-repair-near-me/')},
-        {label: 'Commercial Refrigeration & Ice Machine Service', href: app('/services/commercial-specialty/commercial-refrigeration-repair-maintenance-near-me/')},
       ],
       all: {label: 'All services →', href: app('/services/')},
     },

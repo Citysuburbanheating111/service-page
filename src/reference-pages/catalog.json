@@ -222,23 +222,6 @@
   },
   {
     "clusterSlug": "air-quality",
-    "slug": "dehumidifier-installation-near-me",
-    "previousSlug": "dehumidifier-installation",
-    "legacySlug": "dehumidifier-installation",
-    "name": "Dehumidifier Installation",
-    "livePath": "/services/air-quality/dehumidifier-installation-near-me/",
-    "canonicalUrl": "https://citysuburbanheating.com/services/air-quality/dehumidifier-installation-near-me/",
-    "previewUrl": "https://maximuslabs-ai.github.io/city-suburban-service-pages-preview/services/air-quality/dehumidifier-installation/",
-    "title": "Whole-Home Dehumidifier Installation in Chicago",
-    "description": "Explore whole-home dehumidifier installation in Chicago with City & Suburban. Compare ducted systems, basement moisture, drainage and AC pairing.",
-    "h1": "Whole-Home Dehumidifier Installation in Chicago",
-    "qcStatus": "NEEDS-PHOTO",
-    "photoStatus": "Needs photo: dehumidifier",
-    "referenceFile": "air-quality--dehumidifier-installation.json",
-    "cardImage": "/services/images/services/city-suburban/316-325/dehumidifier.jpg"
-  },
-  {
-    "clusterSlug": "air-quality",
     "slug": "indoor-air-quality-test-near-me",
     "previousSlug": "indoor-air-quality-test",
     "legacySlug": "indoor-air-quality-test",
