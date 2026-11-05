@@ -1,6 +1,5 @@
 import type {ReferenceSnapshot} from './types'
 import page0 from './heating--heater-repair.json'
-import page1 from './heating--boiler-service.json'
 import page2 from './heating--heat-pump.json'
 import page3 from './heating--hybrid-heating-systems.json'
 import page4 from './heating--hvac-maintenance-plans.json'
@@ -25,13 +24,10 @@ import page23 from './commercial--ductwork-design-repair-services.json'
 import page24 from './heating--water-heater-repair-installation.json'
 import page25 from './hvac-systems--hvac-repair-installation.json'
 import page27 from './indoor-air-quality-ventilation--air-duct-cleaning-repair.json'
-import page28 from './fireplace-chimney--gas-fireplace-repair-installation.json'
 import page29 from './hvac-systems--smart-thermostat-installation-repair.json'
-import page32 from './cooling--window-portable-ac-installation-repair.json'
 
 export const referenceSnapshots: Record<string, ReferenceSnapshot> = {
   'heating/heater-repair-near-me': page0,
-  'heating/boiler-service-near-me': page1,
   'heating/heat-pump-near-me': page2,
   'heating/hybrid-heating-systems-near-me': page3,
   'heating/hvac-maintenance-plans-near-me': page4,
@@ -56,7 +52,5 @@ export const referenceSnapshots: Record<string, ReferenceSnapshot> = {
   'heating/water-heater-repair-installation-near-me': page24,
   'hvac-systems/hvac-repair-installation-near-me': page25,
   'indoor-air-quality-ventilation/air-duct-cleaning-repair-near-me': page27,
-  'fireplace-chimney/gas-fireplace-repair-installation-near-me': page28,
   'hvac-systems/smart-thermostat-installation-repair-near-me': page29,
-  'cooling/window-portable-ac-installation-repair-near-me': page32,
 }

@@ -18,23 +18,6 @@
   },
   {
     "clusterSlug": "heating",
-    "slug": "boiler-service-near-me",
-    "previousSlug": "boiler-service",
-    "legacySlug": "boiler-services",
-    "name": "Boiler Services",
-    "livePath": "/services/heating/boiler-service-near-me/",
-    "canonicalUrl": "https://citysuburbanheating.com/services/heating/boiler-service-near-me/",
-    "previewUrl": "https://maximuslabs-ai.github.io/city-suburban-service-pages-preview/services/heating/boiler-service/",
-    "title": "Boiler Services in Chicago | City & Suburban",
-    "description": "City & Suburban offers boiler services in Chicago, including boiler repair, annual boiler maintenance and replacement discussions, with upfront pricing.",
-    "h1": "Boiler Services in Chicago",
-    "qcStatus": "PASS",
-    "photoStatus": "Passes all checks",
-    "referenceFile": "heating--boiler-service.json",
-    "cardImage": "/services/reference-assets/job-boiler-1.jpg"
-  },
-  {
-    "clusterSlug": "heating",
     "slug": "heat-pump-near-me",
     "previousSlug": "heat-pump",
     "legacySlug": "heat-pumps",
