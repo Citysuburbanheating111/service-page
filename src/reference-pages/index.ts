@@ -12,7 +12,6 @@ import page9 from './cooling--air-conditioning-maintenance.json'
 import page10 from './cooling--air-conditioning-installation.json'
 import page11 from './cooling--cooling-maintenance-plans.json'
 import page12 from './cooling--heat-pump-services.json'
-import page13 from './air-quality--dehumidifier-installation.json'
 import page14 from './air-quality--indoor-air-quality-test.json'
 import page15 from './air-quality--duct-repair.json'
 import page16 from './air-quality--duct-maintenance.json'
@@ -25,21 +24,10 @@ import page22 from './commercial--custom-hvac-maintenance-plan.json'
 import page23 from './commercial--ductwork-design-repair-services.json'
 import page24 from './heating--water-heater-repair-installation.json'
 import page25 from './hvac-systems--hvac-repair-installation.json'
-import page26 from './heating--space-heater-repair-installation.json'
 import page27 from './indoor-air-quality-ventilation--air-duct-cleaning-repair.json'
 import page28 from './fireplace-chimney--gas-fireplace-repair-installation.json'
 import page29 from './hvac-systems--smart-thermostat-installation-repair.json'
-import page30 from './fireplace-chimney--wood-pellet-stove-repair-installation.json'
-import page31 from './fireplace-chimney--chimney-sweeping-inspection-repair.json'
 import page32 from './cooling--window-portable-ac-installation-repair.json'
-import page33 from './indoor-air-quality-ventilation--ceiling-fan-installation-repair.json'
-import page34 from './indoor-air-quality-ventilation--exhaust-fan-installation-repair.json'
-import page35 from './commercial-specialty--commercial-refrigeration-repair-maintenance.json'
-import page36 from './heating--oil-propane-heating-repair-maintenance.json'
-import page37 from './indoor-air-quality-ventilation--dryer-vent-cleaning-repair.json'
-import page38 from './indoor-air-quality-ventilation--attic-fan-installation-repair.json'
-import page39 from './heating--radiator-radiant-heat-repair-installation.json'
-import page40 from './commercial-specialty--generator-installation-repair.json'
 
 export const referenceSnapshots: Record<string, ReferenceSnapshot> = {
   'heating/heater-repair-near-me': page0,
@@ -55,7 +43,6 @@ export const referenceSnapshots: Record<string, ReferenceSnapshot> = {
   'cooling/air-conditioning-installation-near-me': page10,
   'cooling/cooling-maintenance-plans-near-me': page11,
   'cooling/heat-pump-services-near-me': page12,
-  'air-quality/dehumidifier-installation-near-me': page13,
   'air-quality/indoor-air-quality-test-near-me': page14,
   'air-quality/duct-repair-near-me': page15,
   'air-quality/duct-maintenance-near-me': page16,
@@ -68,19 +55,8 @@ export const referenceSnapshots: Record<string, ReferenceSnapshot> = {
   'commercial/ductwork-design-repair-services-near-me': page23,
   'heating/water-heater-repair-installation-near-me': page24,
   'hvac-systems/hvac-repair-installation-near-me': page25,
-  'heating/space-heater-repair-installation-near-me': page26,
   'indoor-air-quality-ventilation/air-duct-cleaning-repair-near-me': page27,
   'fireplace-chimney/gas-fireplace-repair-installation-near-me': page28,
   'hvac-systems/smart-thermostat-installation-repair-near-me': page29,
-  'fireplace-chimney/wood-pellet-stove-repair-installation-near-me': page30,
-  'fireplace-chimney/chimney-sweeping-inspection-repair-near-me': page31,
   'cooling/window-portable-ac-installation-repair-near-me': page32,
-  'indoor-air-quality-ventilation/ceiling-fan-installation-repair-near-me': page33,
-  'indoor-air-quality-ventilation/exhaust-fan-installation-repair-near-me': page34,
-  'commercial-specialty/commercial-refrigeration-repair-maintenance-near-me': page35,
-  'heating/oil-propane-heating-repair-maintenance-near-me': page36,
-  'indoor-air-quality-ventilation/dryer-vent-cleaning-repair-near-me': page37,
-  'indoor-air-quality-ventilation/attic-fan-installation-repair-near-me': page38,
-  'heating/radiator-radiant-heat-repair-installation-near-me': page39,
-  'commercial-specialty/generator-installation-repair-near-me': page40,
 }

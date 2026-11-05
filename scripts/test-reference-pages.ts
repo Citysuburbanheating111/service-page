@@ -17,13 +17,13 @@ import {renderReferencePage} from '../src/lib/reference-page-rendering'
 import {withoutReferenceHeader} from '../src/lib/reference-header'
 
 const counts = Object.fromEntries(['heating', 'cooling', 'air-quality', 'commercial'].map((cluster) => [cluster, catalog.filter((page) => page.clusterSlug === cluster).length]))
-assert.deepEqual(counts, {heating: 7, cooling: 6, 'air-quality': 5, commercial: 6})
-assert.equal(catalog.length, 24)
-assert.equal(new Set(catalog.map((page) => `${page.clusterSlug}/${page.slug}`)).size, 24)
-assert.equal(new Set(catalog.map((page) => page.livePath)).size, 24)
+assert.deepEqual(counts, {heating: 7, cooling: 6, 'air-quality': 4, commercial: 6})
+assert.equal(catalog.length, 23)
+assert.equal(new Set(catalog.map((page) => `${page.clusterSlug}/${page.slug}`)).size, 23)
+assert.equal(new Set(catalog.map((page) => page.livePath)).size, 23)
 assert.equal(catalog.filter((page) => page.qcStatus === 'PASS').length, 16)
-assert.equal(retainedCatalog.length, 17)
-assert.equal(new Set([...catalog, ...retainedCatalog].map(page => page.cardImage)).size, 41, 'Every service card needs a distinct image')
+assert.equal(retainedCatalog.length, 6)
+assert.equal(new Set([...catalog, ...retainedCatalog].map(page => page.cardImage)).size, 29, 'Every service card needs a distinct image')
 assert.equal(servicesMenu.href, '/services/')
 // Menu items for pages published in Sanity only (no code snapshot), placed as on the live home page menu.
 const sanityOnlyMenu = [
@@ -84,12 +84,14 @@ for (const untouched of ['/services/heating/', '/services/unrelated/', '/service
 
 // Pages that exist only in Sanity (no code snapshot) but are a valid redirect destination.
 const cmsOnlyDestinations = new Set(['/services/heating/furnace-repair-near-me/'])
+// Category pages that take over from unrelated services removed from the site.
+const categoryDestinations = new Set(['/services/heating/', '/services/air-quality/', '/services/commercial/'])
 assert.equal(legacyReplacementPath('furnace-repair-installation'), '/services/heating/furnace-repair-near-me/')
 for (const old of taxonomy.services) {
   const replacement = (migrations.overlaps as Record<string, string>)[old.slug]
   if (replacement) {
     assert.equal(legacyReplacementPath(old.slug), replacement)
-    assert.ok(catalog.some((page) => page.livePath === replacement) || cmsOnlyDestinations.has(replacement), `Missing redirect destination: ${old.slug}`)
+    assert.ok(catalog.some((page) => page.livePath === replacement) || cmsOnlyDestinations.has(replacement) || categoryDestinations.has(replacement), `Missing redirect destination: ${old.slug}`)
     assert.ok(!retainedCatalog.some((page) => page.slug === old.slug), `Duplicate keyword card: ${old.slug}`)
     for (const alias of ['service', 'services'].flatMap(base => [`/${base}/${old.slug}/`, `/${base}/${old.clusterSlug}/${old.slug}/`, `/${base}/${old.clusterSlug}/${old.slug}/chicago/`])) {
       const response = proxy(new NextRequest(`http://localhost${alias}?utm=keyword`))
@@ -154,4 +156,43 @@ for (const page of [...catalog, ...retainedCatalog]) {
     assert.equal(response.headers.get('location'), `http://localhost${page.livePath}?utm=old`)
   }
 }
-console.log('Reference checks passed: 24 exact live URLs (all -near-me, old addresses redirect), 17 retained keyword pages, 8 consolidated overlaps, cards, editable markup and schema.')
+// Unrelated services taken off the site: no snapshot, not in the navigation, and both addresses go to the category page.
+const removedPages: Record<string, string[]> = {
+  '/services/heating/': [
+    'heating/space-heater-repair-installation-near-me',
+    'heating/oil-propane-heating-repair-maintenance-near-me',
+    'heating/radiator-radiant-heat-repair-installation-near-me',
+    'fireplace-chimney/wood-pellet-stove-repair-installation-near-me',
+    'fireplace-chimney/chimney-sweeping-inspection-repair-near-me',
+  ],
+  '/services/air-quality/': [
+    'air-quality/dehumidifier-installation-near-me',
+    'indoor-air-quality-ventilation/ceiling-fan-installation-repair-near-me',
+    'indoor-air-quality-ventilation/exhaust-fan-installation-repair-near-me',
+    'indoor-air-quality-ventilation/dryer-vent-cleaning-repair-near-me',
+    'indoor-air-quality-ventilation/attic-fan-installation-repair-near-me',
+  ],
+  '/services/commercial/': [
+    'commercial-specialty/commercial-refrigeration-repair-maintenance-near-me',
+    'commercial-specialty/generator-installation-repair-near-me',
+  ],
+}
+const navigationPaths = new Set(referenceNavigation().flatMap((cluster) => cluster.pages.map((page) => page.livePath)))
+for (const [category, keys] of Object.entries(removedPages)) {
+  for (const key of keys) {
+    const [cluster, slug] = key.split('/')
+    const previousSlug = slug.replace(/-near-me$/, '')
+    assert.equal(referenceSnapshots[key], undefined, `Snapshot still present: ${key}`)
+    assert.equal(getReferenceService(cluster, slug), undefined, `Still in a catalog: ${key}`)
+    assert.ok(!navigationPaths.has(`/services/${key}/`), `Still in the navigation: ${key}`)
+    assert.equal(legacyReplacementPath(slug), category, `Current address: ${key}`)
+    assert.equal(legacyReplacementPath(previousSlug), category, `Previous address: ${key}`)
+    if (taxonomy.services.some((service) => service.clusterSlug === cluster && service.slug === previousSlug)) {
+      const response = proxy(new NextRequest(`http://localhost/services/${cluster}/${previousSlug}/?utm=old`))
+      assert.equal(response.status, 308, `No permanent redirect from ${previousSlug}`)
+      assert.equal(response.headers.get('location'), `http://localhost${category}?utm=old`)
+    }
+  }
+}
+assert.equal(legacyReplacementPath('dehumidifier-installation-repair'), '/services/air-quality/')
+console.log('Reference checks passed: 23 exact live URLs (all -near-me, old addresses redirect), 6 retained keyword pages, 32 consolidated overlaps (12 removed pages go to their category page), cards, editable markup and schema.')
