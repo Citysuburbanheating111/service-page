@@ -40,7 +40,7 @@ const SECTIONS = {
   estimateChecks: 'What we check before we quote', installations: 'Installations', recentJobs: 'Recent jobs',
   pricing: 'What we charge', servicePlan: 'Yearly service plan', financing: 'Financing', whoYoureCalling: "Who you're calling", reviews: 'Reviews',
   trustBand: 'Trust band', process: 'Process', serviceArea: 'Service area & map', faq: 'FAQ', closingCta: 'Closing call to action', siblingLinks: 'Other brands & equipment',
-  library: 'Chicago heating library',
+  library: 'Chicago heating library', bookingPill: 'Booking pill',
 }
 const LABELS = {
   h1Accent: 'H1 second line (accent colour)', secondaryCta: 'Second button', formTitleAccent: 'Form title, accent word', needOptions: '"What do you need?" options',

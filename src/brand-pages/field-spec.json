@@ -24,7 +24,7 @@
       "pattern": "^/[a-z0-9-]+/[a-z0-9-]+-chicago/$"
     },
     "meta.seoTitle": {
-      "maxLen": 60,
+      "maxLen": 80,
       "minLen": 30
     },
     "meta.metaDescription": {
@@ -98,13 +98,13 @@
       "count": 4
     },
     "models.series[].tag": {
-      "maxLen": 30
+      "maxLen": 50
     },
     "models.series[].name": {
-      "maxLen": 16
+      "maxLen": 30
     },
     "models.series[].summary": {
-      "maxLen": 100
+      "maxLen": 140
     },
     "models.series[].models": {
       "min": 1,
@@ -147,7 +147,7 @@
       "count": 4
     },
     "services.groups[].name": {
-      "maxLen": 26
+      "maxLen": 40
     },
     "services.groups[].summary": {
       "maxLen": 90
@@ -162,7 +162,7 @@
       "maxLen": 110
     },
     "services.groups[].services[].mobileDescription": {
-      "maxLen": 55
+      "maxLen": 100
     },
     "recentJobs.eyebrow": {
       "maxLen": 50
@@ -222,26 +222,27 @@
       "maxLen": 30
     },
     "pricing.fees[].price": {
-      "maxLen": 8
+      "maxLen": 20
     },
     "pricing.fees[].note": {
-      "maxLen": 100
+      "maxLen": 180
     },
     "pricing.repairs": {
       "min": 5,
       "max": 8
     },
     "pricing.repairs[].item": {
-      "maxLen": 32
+      "maxLen": 40
     },
     "pricing.repairs[].note": {
       "maxLen": 60
     },
     "pricing.repairs[].range": {
-      "maxLen": 14
+      "maxLen": 20
     },
     "pricing.included": {
-      "count": 3
+      "min": 3,
+      "max": 4
     },
     "pricing.included[]": {
       "maxLen": 90
@@ -378,7 +379,7 @@
       "maxLen": 16
     },
     "reviews.reviews[].source": {
-      "maxLen": 16
+      "maxLen": 30
     },
     "reviews.reviews[].tag": {
       "maxLen": 24
@@ -435,7 +436,7 @@
       "maxLen": 20
     },
     "serviceArea.areas[].neighborhoods": {
-      "maxLen": 80
+      "maxLen": 120
     },
     "serviceArea.areas[].unitsWeSee": {
       "maxLen": 70
@@ -444,7 +445,7 @@
       "maxLen": 30
     },
     "faq.h2": {
-      "maxLen": 45
+      "maxLen": 60
     },
     "faq.items": {
       "min": 5,
@@ -454,7 +455,7 @@
       "maxLen": 70
     },
     "faq.items[].answer": {
-      "maxLen": 260
+      "maxLen": 360
     },
     "closingCta.eyebrow": {
       "maxLen": 30
@@ -550,9 +551,8 @@
       "maxLen": 32
     },
     "hero.mobile.symptomChips": {
-      "optional": true,
-      "phone": true,
-      "count": 4
+      "min": 4,
+      "max": 5
     },
     "hero.mobile.symptomChips[]": {
       "optional": true,
@@ -737,7 +737,7 @@
     "whoYoureCalling.mobile.stats[]": {
       "optional": true,
       "phone": true,
-      "maxLen": 34
+      "maxLen": 50
     },
     "reviews.mobile.stats": {
       "optional": true,
@@ -765,9 +765,8 @@
       "maxLen": 180
     },
     "process.mobile.steps": {
-      "optional": true,
-      "phone": true,
-      "count": 5
+      "min": 4,
+      "max": 5
     },
     "process.mobile.steps[].title": {
       "optional": true,
@@ -777,7 +776,7 @@
     "process.mobile.steps[].body": {
       "optional": true,
       "phone": true,
-      "maxLen": 60
+      "maxLen": 80
     },
     "serviceArea.mobile.eyebrow": {
       "optional": true,
@@ -1063,7 +1062,7 @@
     },
     "parts.items[].ticks[]": {
       "optional": true,
-      "maxLen": 40
+      "maxLen": 50
     },
     "parts.items[].footerLabel": {
       "optional": true,
@@ -1075,7 +1074,7 @@
     },
     "parts.items[].chips": {
       "optional": true,
-      "max": 0
+      "max": 2
     },
     "parts.items[].chips[]": {
       "optional": true,
@@ -1108,7 +1107,7 @@
     },
     "comparison.options[].rows[].label": {
       "optional": true,
-      "maxLen": 20
+      "maxLen": 30
     },
     "comparison.options[].rows[].value": {
       "optional": true,
@@ -1257,10 +1256,6 @@
       "optional": true,
       "max": 5
     },
-    "closingCta.partnerBrands[]": {
-      "optional": true,
-      "maxLen": 30
-    },
     "siblingLinks.relatedCards": {
       "optional": true,
       "max": 3
@@ -1274,8 +1269,7 @@
       "maxLen": 50
     },
     "siblingLinks.relatedCards[].url": {
-      "optional": true,
-      "maxLen": 20
+      "optional": true
     },
     "siblingLinks.relatedCards[].image": {
       "optional": true,
@@ -1296,7 +1290,7 @@
     },
     "library.guides[].title": {
       "optional": true,
-      "maxLen": 40
+      "maxLen": 60
     },
     "library.guides[].inThisGuide": {
       "optional": true,
@@ -1325,7 +1319,7 @@
     },
     "library.guides[].stats[].label": {
       "optional": true,
-      "maxLen": 60
+      "maxLen": 80
     },
     "library.guides[].sections": {
       "optional": true,
@@ -1350,6 +1344,238 @@
     "models.series[].tags[]": {
       "optional": true,
       "maxLen": 24
+    },
+    "meta.secondaryKeywords[]": {
+      "optional": true,
+      "maxLen": 40
+    },
+    "hero.breadcrumb[]": {
+      "optional": true,
+      "maxLen": 40
+    },
+    "hero.labels.nameLabel": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "hero.labels.namePlaceholder": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "hero.labels.phoneLabel": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "hero.labels.phonePlaceholder": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "hero.labels.streetLabel": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "hero.labels.submit": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "hero.labels.orCall": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "hero.labels.onThisPageTitle": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "hero.mobile.reviewCount": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "modelTable.labels.serviceColumn": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "modelTable.labels.costRow": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "modelTable.labels.terms": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "modelTable.mobile.tabs": {
+      "optional": true,
+      "max": 4
+    },
+    "modelTable.mobile.tabs[]": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "modelTable.mobile.rows": {
+      "optional": true,
+      "max": 4
+    },
+    "modelTable.mobile.rows[].label": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "modelTable.mobile.rows[].value": {
+      "optional": true,
+      "maxLen": 100
+    },
+    "parts.mobile.progress": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "comparison.mobile.progress": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "estimateChecks.costNote": {
+      "optional": true,
+      "maxLen": 50
+    },
+    "estimateChecks.costLink": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "pricing.fees[].terms": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "pricing.repairsTitle": {
+      "optional": true,
+      "maxLen": 40
+    },
+    "pricing.labels.priceColumn": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "pricing.labels.cta": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "pricing.financingTitle": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "pricing.financingBody": {
+      "optional": true,
+      "maxLen": 130
+    },
+    "pricing.mobile.seeAll": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "pricing.mobile.financingTick": {
+      "optional": true,
+      "maxLen": 60
+    },
+    "reviews.labels.viewLink": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "reviews.labels.yelpLabel": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "reviews.mobile.googleChip": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "reviews.mobile.yelpChip": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "serviceArea.mapLink": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "serviceArea.mapOutsideLabel": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "serviceArea.mapWaterLabel": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "serviceArea.shop.status": {
+      "optional": true,
+      "maxLen": 40
+    },
+    "serviceArea.shop.cta": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "serviceArea.mobile.mapLink": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "serviceArea.mobile.areaTitles": {
+      "optional": true,
+      "max": 2
+    },
+    "serviceArea.mobile.areaTitles[]": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "faq.trustCard.title": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "faq.trustCard.line": {
+      "optional": true,
+      "maxLen": 40
+    },
+    "faq.mobile.seeAll": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "closingCta.secondaryCta": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "closingCta.partnerBrands[].name": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "closingCta.partnerBrands[].logo": {
+      "optional": true,
+      "pattern": "^https://"
+    },
+    "siblingLinks.h2": {
+      "optional": true,
+      "maxLen": 70
+    },
+    "siblingLinks.otherBrands[].logo": {
+      "optional": true,
+      "pattern": "^https://"
+    },
+    "siblingLinks.mobile.brandLabels": {
+      "optional": true,
+      "max": 4
+    },
+    "siblingLinks.mobile.brandLabels[]": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "library.labels.inThisGuideTitle": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "library.guides[].progress": {
+      "optional": true,
+      "maxLen": 20
+    },
+    "library.mobile.guide3Chip": {
+      "optional": true,
+      "maxLen": 40
+    },
+    "bookingPill.label": {
+      "optional": true,
+      "maxLen": 30
+    },
+    "bookingPill.mobileLabel": {
+      "optional": true,
+      "maxLen": 20
     }
   }
 }
