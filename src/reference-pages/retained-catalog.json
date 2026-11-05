@@ -90,36 +90,6 @@
     "scopeStatus": "core"
   },
   {
-    "clusterSlug": "fireplace-chimney",
-    "directoryClusterSlug": "heating",
-    "slug": "gas-fireplace-repair-installation-near-me",
-    "previousSlug": "gas-fireplace-repair-installation",
-    "legacySlug": "gas-fireplace-repair-installation",
-    "name": "Gas Fireplace Repair & Installation",
-    "livePath": "/services/fireplace-chimney/gas-fireplace-repair-installation-near-me/",
-    "canonicalUrl": "https://citysuburbanheating.com/services/fireplace-chimney/gas-fireplace-repair-installation-near-me/",
-    "previewUrl": "",
-    "title": "Gas Fireplace Repair & Installation in Chicago | City & Suburban",
-    "description": "Chicago gas-fireplace repair and installation scope guide. Capability must be confirmed before booking; includes permit and venting questions to ask.",
-    "h1": "Gas Fireplace Repair and Installation in Chicago",
-    "qcStatus": "RETAINED",
-    "photoStatus": "Existing service copy and media retained",
-    "referenceFile": "fireplace-chimney--gas-fireplace-repair-installation.json",
-    "cardImage": "https://cdn.sanity.io/images/boolyxr0/production/15a5e53180e45dc70390dd268c5bf28d671478f9-1552x1164.jpg",
-    "keyPhrases": [
-      "gas fireplace repair",
-      "gas fireplace installation",
-      "gas fireplace service",
-      "fireplace insert installation",
-      "gas log installation",
-      "fireplace repair",
-      "direct vent fireplace repair"
-    ],
-    "sourceServiceId": "service-309",
-    "sourcePageId": "servicePage-309-chicago",
-    "scopeStatus": "confirm"
-  },
-  {
     "clusterSlug": "hvac-systems",
     "directoryClusterSlug": "heating",
     "slug": "smart-thermostat-installation-repair-near-me",
@@ -148,35 +118,5 @@
     "sourceServiceId": "service-311",
     "sourcePageId": "servicePage-311-chicago",
     "scopeStatus": "core"
-  },
-  {
-    "clusterSlug": "cooling",
-    "directoryClusterSlug": "cooling",
-    "slug": "window-portable-ac-installation-repair-near-me",
-    "previousSlug": "window-portable-ac-installation-repair",
-    "legacySlug": "window-portable-ac-installation-repair",
-    "name": "Window & Portable AC Installation & Repair",
-    "livePath": "/services/cooling/window-portable-ac-installation-repair-near-me/",
-    "canonicalUrl": "https://citysuburbanheating.com/services/cooling/window-portable-ac-installation-repair-near-me/",
-    "previewUrl": "",
-    "title": "Window & Portable AC Installation & Repair in Chicago | City & Suburban",
-    "description": "Window, portable and through-wall AC installation and repair guidance in Chicago, including safe mounting, sleeve fit and repair economics.",
-    "h1": "Window & Portable AC Installation and Repair in Chicago",
-    "qcStatus": "RETAINED",
-    "photoStatus": "Existing service copy and media retained",
-    "referenceFile": "cooling--window-portable-ac-installation-repair.json",
-    "cardImage": "https://cdn.sanity.io/images/boolyxr0/production/ce7c8fddfdce0626de8773541fc30fef120cca90-1920x1440.jpg",
-    "keyPhrases": [
-      "portable ac near me",
-      "window air conditioner repair",
-      "window ac installation",
-      "portable ac repair",
-      "through wall air conditioner",
-      "window unit installation",
-      "room air conditioner service"
-    ],
-    "sourceServiceId": "service-314",
-    "sourcePageId": "servicePage-314-chicago",
-    "scopeStatus": "low-value"
   }
 ]

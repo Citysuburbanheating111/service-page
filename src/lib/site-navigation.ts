@@ -27,7 +27,6 @@ export const liveMenu: MenuGroup[] = [
       {label: 'Furnace repair', href: app('/services/heating/furnace-repair-near-me/')},
       {label: 'Furnace Installation', href: app('/services/heating/furnace-installation-near-me/')},
       {label: 'Furnace Maintenance', href: app('/services/heating/furnace-maintenance-near-me/')},
-      {label: 'Boiler Services', href: app('/services/heating/boiler-service-near-me/')},
       {label: 'Heat Pump', href: app('/services/heating/heat-pump-near-me/')},
       {label: 'Hybrid Heating Systems', href: app('/services/heating/hybrid-heating-systems-near-me/')},
       {label: 'HVAC Maintenance Plans', href: app('/services/heating/hvac-maintenance-plans-near-me/')},
@@ -81,7 +80,6 @@ export const servicesMenu: MenuLink & {columns: ServicesColumn[]} = {
     {
       heading: 'Other services',
       items: [
-        {label: 'Window & Portable AC Installation & Repair', href: app('/services/cooling/window-portable-ac-installation-repair-near-me/')},
         {label: 'Air Duct Cleaning, Repair & Sealing', href: app('/services/indoor-air-quality-ventilation/air-duct-cleaning-repair-near-me/')},
       ],
       all: {label: 'All services →', href: app('/services/')},
