@@ -665,7 +665,7 @@
       "icon": "clipboard"
     }
   ],
-  "heating/heater-installation-near-me": [
+  "heating/heater-installation": [
     {
       "title": "Furnace replacement",
       "text": "American Standard furnaces for aging equipment",
@@ -739,7 +739,7 @@
       "icon": "building"
     }
   ],
-  "heating/heater-maintenance-near-me": [
+  "heating/heater-maintenance": [
     {
       "title": "Furnace tune-up",
       "text": "Burners, ignition and heat exchanger checked",
@@ -813,7 +813,7 @@
       "icon": "thermostat"
     }
   ],
-  "heating/heater-repair-near-me": [
+  "heating/heater-repair": [
     {
       "title": "All-make heater repair",
       "text": "Every make and model diagnosed and repaired",

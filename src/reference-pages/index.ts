@@ -27,12 +27,12 @@ import page27 from './indoor-air-quality-ventilation--air-duct-cleaning-repair.j
 import page29 from './hvac-systems--smart-thermostat-installation-repair.json'
 
 export const referenceSnapshots: Record<string, ReferenceSnapshot> = {
-  'heating/heater-repair-near-me': page0,
+  'heating/heater-repair': page0,
   'heating/heat-pump-near-me': page2,
   'heating/hybrid-heating-systems-near-me': page3,
   'heating/hvac-maintenance-plans-near-me': page4,
-  'heating/heater-installation-near-me': page5,
-  'heating/heater-maintenance-near-me': page6,
+  'heating/heater-installation': page5,
+  'heating/heater-maintenance': page6,
   'cooling/ductless-hvac-service-near-me': page7,
   'cooling/air-conditioning-repair-near-me': page8,
   'cooling/air-conditioning-maintenance-near-me': page9,
