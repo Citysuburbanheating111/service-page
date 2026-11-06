@@ -63,15 +63,15 @@ for (const page of catalog) {
   }
 }
 
-const editable = referenceSnapshots['heating/heater-repair-near-me'].sections.find((section) => section.module === 'hero')!
+const editable = referenceSnapshots['heating/heater-repair'].sections.find((section) => section.module === 'hero')!
 const titleField = editable.contentFields!.find((field) => field.label?.startsWith('H1:'))!
 const editedHero = applyReferenceContentFields(editable.html, [{...titleField, value: 'A heading with <unsafe> & text'}])
 assert.ok(editedHero.includes('A heading with &lt;unsafe&gt; &amp; text'))
 assert.ok(!editedHero.includes('<unsafe>'))
-const faq = referenceSnapshots['heating/heater-repair-near-me'].sections.find((section) => section.module === 'faq')!
+const faq = referenceSnapshots['heating/heater-repair'].sections.find((section) => section.module === 'faq')!
 const faqField = faq.contentFields!.find((field) => field.label?.startsWith('SUMMARY:'))!
 const editedFaq = applyReferenceContentFields(faq.html, [{...faqField, value: 'Updated service question?'}])
-const synchronized = JSON.parse(synchronizeVisibleSchema(referenceSnapshots['heating/heater-repair-near-me'].schema, editedFaq))
+const synchronized = JSON.parse(synchronizeVisibleSchema(referenceSnapshots['heating/heater-repair'].schema, editedFaq))
 assert.equal(synchronized['@graph'].find((node: {'@type': string}) => node['@type'] === 'FAQPage').mainEntity[0].name, 'Updated service question?')
 
 for (const cluster of referenceNavigation()) {
@@ -143,13 +143,16 @@ assert.equal(futureSnapshot.style, '.test{color:red}')
 const noFieldsSnapshot = renderReferencePage({...futurePage, sections: [{module: 'header', html: '<header>Site header</header>', contentFields: null}]})!
 assert.ok(noFieldsSnapshot.html.includes('<header>Site header</header>'))
 assert.equal(renderReferencePage(null), undefined)
-assert.equal(renderReferencePage(null, referenceSnapshots['heating/heater-repair-near-me']), referenceSnapshots['heating/heater-repair-near-me'])
+assert.equal(renderReferencePage(null, referenceSnapshots['heating/heater-repair']), referenceSnapshots['heating/heater-repair'])
 assert.deepEqual(migrateServiceContent({url: '/service/heating/water-heater-repair-installation/', image: '/service/images/logo.png', neighborhood: '/service-area/lincoln-park/', collection: '/service/heating-services/'}), {
   url: '/services/heating/water-heater-repair-installation/', image: '/services/images/logo.png', neighborhood: '/service-area/lincoln-park/', collection: '/services/heating/',
 })
 // "-near-me" URLs: every page's previous address answers with one permanent redirect to the new one.
+// The three heater pages that run Google Ads keep their original URL; their "-near-me" form redirects to it.
+const originalUrlPages = new Set(['heater-repair', 'heater-installation', 'heater-maintenance'])
 for (const page of [...catalog, ...retainedCatalog]) {
-  assert.equal(page.slug, `${page.previousSlug}-near-me`, `Slug is not the near-me form: ${page.slug}`)
+  if (originalUrlPages.has(page.slug)) assert.equal(page.previousSlug, `${page.slug}-near-me`, `Near-me form missing: ${page.slug}`)
+  else assert.equal(page.slug, `${page.previousSlug}-near-me`, `Slug is not the near-me form: ${page.slug}`)
   for (const old of [`/services/${page.clusterSlug}/${page.previousSlug}/`, `/services/${page.clusterSlug}/${page.previousSlug}`, `/service/${page.clusterSlug}/${page.previousSlug}/`]) {
     const response = proxy(new NextRequest(`http://localhost${old}?utm=old`))
     assert.equal(response.status, 308, `No permanent redirect from ${old}`)
@@ -202,4 +205,12 @@ for (const [category, keys] of Object.entries(removedPages)) {
 assert.equal(legacyReplacementPath('dehumidifier-installation-repair'), '/services/air-quality/')
 assert.equal(legacyReplacementPath('boiler-repair-installation'), '/services/heating/')
 assert.equal(legacyReplacementPath('boiler-services'), '/services/heating/')
-console.log('Reference checks passed: 22 exact live URLs (all -near-me, old addresses redirect), 4 retained keyword pages, 39 consolidated overlaps (15 removed pages go to their category page), cards, editable markup and schema.')
+// The ad URLs serve the page directly (no redirect), with or without the trailing slash or a gclid.
+for (const slug of originalUrlPages) {
+  const page = getReferenceService('heating', slug)!
+  assert.equal(page.livePath, `/services/heating/${slug}/`)
+  assert.equal(page.canonicalUrl, `https://citysuburbanheating.com/services/heating/${slug}/`)
+  assert.ok(referenceSnapshots[`heating/${slug}`], `Snapshot key not moved: ${slug}`)
+  assert.equal(proxy(new NextRequest(`http://localhost/services/heating/${slug}/?gclid=ad`)).headers.get('location'), null, `Ad URL redirects: ${slug}`)
+}
+console.log('Reference checks passed: 22 exact live URLs (19 -near-me, 3 heater ad pages on their original URL; old addresses redirect), 4 retained keyword pages, 39 consolidated overlaps (15 removed pages go to their category page), cards, editable markup and schema.')
