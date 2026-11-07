@@ -24,7 +24,20 @@ for (const host of [publicOrigin, 'https://www.citysuburbanheating.com']) {
     checked++;
   }
 }
-for (const path of ['/', '/about-us/', '/wp-admin/', '/service-areas/', '/service-area/lincoln-park/', '/services-other/', '/service/', '/service/heating/']) {
+// The three old ad URLs serve their page directly (no redirect), keeping the query string (gclid).
+const adPages = {'/service/heating/': '/services/heating/', '/service/cooling/': '/services/cooling/', '/hvac_service': '/services/'};
+for (const [path, target] of Object.entries(adPages)) {
+  for (const variant of [path, path.endsWith('/') ? path.slice(0, -1) : `${path}/`, path.toUpperCase()]) {
+    const response = await worker.fetch(new Request(`${publicOrigin}${variant}?gclid=ad1`));
+    assert.equal(call.url, `${origin}${target}?gclid=ad1`, `Ad URL not served: ${variant}`);
+    assert.equal(response.status, 200);
+    assert.equal(response.headers.get('Location'), null);
+    assert.equal(response.headers.get('X-CitySuburban-Proxy'), 'vercel');
+    checked++;
+  }
+}
+// Everything else under those Cloudflare routes stays on WordPress.
+for (const path of ['/', '/about-us/', '/wp-admin/', '/service-areas/', '/service-area/lincoln-park/', '/services-other/', '/service/', '/service/heating-oil/', '/service/heating/extra/', '/service/air-quality/', '/hvac_services/', '/hvac_service/old/']) {
   const response = await worker.fetch(new Request(publicOrigin + path));
   assert.equal(call.url, publicOrigin + path);
   assert.equal(call.options, undefined);
