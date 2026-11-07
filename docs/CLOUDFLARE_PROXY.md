@@ -14,6 +14,17 @@ citysuburbanheating.com/services*
 www.citysuburbanheating.com/services*
 ```
 
+Also attach these six routes to the same Worker. They serve three old Google Ads URLs directly (no redirect): `/service/heating/` shows `/services/heating/`, `/service/cooling/` shows `/services/cooling/` and `/hvac_service` shows `/services/` (`AD_PAGES` in the Worker). Any other path under them passes to WordPress unchanged.
+
+```text
+citysuburbanheating.com/service/heating*
+www.citysuburbanheating.com/service/heating*
+citysuburbanheating.com/service/cooling*
+www.citysuburbanheating.com/service/cooling*
+citysuburbanheating.com/hvac_service*
+www.citysuburbanheating.com/hvac_service*
+```
+
 The broader pattern includes slashless `/services`; the code only proxies the exact `/services` prefix, so `/services-other` stays on WordPress. `/services/*` works for slash-ending/nested URLs, but misses the bare `/services` URL.
 
 Use Worker Routes. A dashboard URL Rewrite Rule alone cannot fetch an external Vercel hostname. [Cloudflare routes](https://developers.cloudflare.com/workers/configuration/routing/routes/), [URL Rewrite Rules](https://developers.cloudflare.com/rules/transform/url-rewrite/).
