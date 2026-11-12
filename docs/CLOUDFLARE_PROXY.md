@@ -25,6 +25,15 @@ citysuburbanheating.com/hvac_service*
 www.citysuburbanheating.com/hvac_service*
 ```
 
+Added 12/11/2026 for three more old ad URLs that WordPress redirected: `/service/air-quality-service/` shows `/services/air-quality/`, and `/service/commercial-hvac-service/` and `/service/commercial-hvac/` show `/services/commercial/`. Attach these four routes to the same Worker:
+
+```text
+citysuburbanheating.com/service/air-quality-service*
+www.citysuburbanheating.com/service/air-quality-service*
+citysuburbanheating.com/service/commercial-hvac*
+www.citysuburbanheating.com/service/commercial-hvac*
+```
+
 The broader pattern includes slashless `/services`; the code only proxies the exact `/services` prefix, so `/services-other` stays on WordPress. `/services/*` works for slash-ending/nested URLs, but misses the bare `/services` URL.
 
 Use Worker Routes. A dashboard URL Rewrite Rule alone cannot fetch an external Vercel hostname. [Cloudflare routes](https://developers.cloudflare.com/workers/configuration/routing/routes/), [URL Rewrite Rules](https://developers.cloudflare.com/rules/transform/url-rewrite/).

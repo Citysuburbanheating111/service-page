@@ -369,7 +369,7 @@
       "icon": "gauge"
     }
   ],
-  "cooling/air-conditioning-installation-near-me": [
+  "cooling/air-conditioning-installation": [
     {
       "title": "Sizing from the house",
       "text": "Size should come from the house, not the old unit's label",
@@ -406,7 +406,7 @@
       "icon": "duct"
     }
   ],
-  "cooling/air-conditioning-maintenance-near-me": [
+  "cooling/air-conditioning-maintenance": [
     {
       "title": "Condenser coil cleaning",
       "text": "Fins rinsed clear of cottonwood, grass and city grime",
@@ -443,7 +443,7 @@
       "icon": "clipboard"
     }
   ],
-  "cooling/air-conditioning-repair-near-me": [
+  "cooling/air-conditioning-repair": [
     {
       "title": "Warm air from the vents",
       "text": "Capacitor, contactor and charge tested before a quote",
@@ -517,7 +517,7 @@
       "icon": "snowflake"
     }
   ],
-  "cooling/ductless-hvac-service-near-me": [
+  "cooling/ductless-hvac-service": [
     {
       "title": "Single-zone and multi-zone",
       "text": "One head per room, or several heads on one outdoor unit",
@@ -591,7 +591,44 @@
       "icon": "thermostat"
     }
   ],
-  "heating/heat-pump-near-me": [
+  "heating/boiler-service": [
+    {
+      "title": "No-heat boiler calls",
+      "text": "Low-water cutoff, ignition and controls traced first",
+      "icon": "flame"
+    },
+    {
+      "title": "Cold radiator fixes",
+      "text": "Stuck air vents, trapped air and zone valves cleared",
+      "icon": "radiator"
+    },
+    {
+      "title": "Banging steam pipes",
+      "text": "Water line, pressure control and pipe pitch put right",
+      "icon": "pipe"
+    },
+    {
+      "title": "Leak and pressure faults",
+      "text": "Relief valves, fill valves and expansion tanks tested",
+      "icon": "gauge"
+    },
+    {
+      "title": "Annual boiler service",
+      "text": "Low-water cutoff flush, burner clean and a CO test",
+      "icon": "wrench"
+    },
+    {
+      "title": "Repair or replace pricing",
+      "text": "Repair and replacement priced side by side in writing",
+      "icon": "clipboard"
+    },
+    {
+      "title": "Round-the-clock boiler calls",
+      "text": "Boiler calls answered 24 hours a day, 7 days a week",
+      "icon": "clock"
+    }
+  ],
+  "heating/heat-pump": [
     {
       "title": "Defrost and ice faults",
       "text": "Defrost boards, sensors and coils sealed in ice",
@@ -850,7 +887,7 @@
       "icon": "wrench"
     }
   ],
-  "heating/hvac-maintenance-plans-near-me": [
+  "heating/hvac-maintenance-plans": [
     {
       "title": "Seasonal heating check-ups",
       "text": "Heating visit booked before the first cold snap",
@@ -887,7 +924,7 @@
       "icon": "shield"
     }
   ],
-  "heating/hybrid-heating-systems-near-me": [
+  "heating/hybrid-heating-systems": [
     {
       "title": "Dual-fuel system installs",
       "text": "Heat pump paired with a gas furnace",

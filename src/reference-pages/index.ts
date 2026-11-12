@@ -1,5 +1,6 @@
 import type {ReferenceSnapshot} from './types'
 import page0 from './heating--heater-repair.json'
+import page1 from './heating--boiler-service.json'
 import page2 from './heating--heat-pump.json'
 import page3 from './heating--hybrid-heating-systems.json'
 import page4 from './heating--hvac-maintenance-plans.json'
@@ -28,15 +29,16 @@ import page29 from './hvac-systems--smart-thermostat-installation-repair.json'
 
 export const referenceSnapshots: Record<string, ReferenceSnapshot> = {
   'heating/heater-repair': page0,
-  'heating/heat-pump-near-me': page2,
-  'heating/hybrid-heating-systems-near-me': page3,
-  'heating/hvac-maintenance-plans-near-me': page4,
+  'heating/boiler-service': page1,
+  'heating/heat-pump': page2,
+  'heating/hybrid-heating-systems': page3,
+  'heating/hvac-maintenance-plans': page4,
   'heating/heater-installation': page5,
   'heating/heater-maintenance': page6,
-  'cooling/ductless-hvac-service-near-me': page7,
-  'cooling/air-conditioning-repair-near-me': page8,
-  'cooling/air-conditioning-maintenance-near-me': page9,
-  'cooling/air-conditioning-installation-near-me': page10,
+  'cooling/ductless-hvac-service': page7,
+  'cooling/air-conditioning-repair': page8,
+  'cooling/air-conditioning-maintenance': page9,
+  'cooling/air-conditioning-installation': page10,
   'cooling/cooling-maintenance-plans-near-me': page11,
   'cooling/heat-pump-services-near-me': page12,
   'air-quality/indoor-air-quality-test-near-me': page14,
