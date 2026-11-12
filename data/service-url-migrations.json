@@ -1,10 +1,10 @@
 {
   "overlaps": {
-    "air-conditioner-repair-installation": "/services/cooling/air-conditioning-repair-near-me/",
+    "air-conditioner-repair-installation": "/services/cooling/air-conditioning-repair/",
     "furnace-repair-installation": "/services/heating/furnace-repair-near-me/",
     "heat-pump-repair-installation": "/services/cooling/heat-pump-services-near-me/",
-    "boiler-repair-installation": "/services/heating/",
-    "ductless-mini-split-installation-repair": "/services/cooling/ductless-hvac-service-near-me/",
+    "boiler-repair-installation": "/services/heating/boiler-service/",
+    "ductless-mini-split-installation-repair": "/services/cooling/ductless-hvac-service/",
     "indoor-air-quality-testing-installation": "/services/air-quality/indoor-air-quality-test-near-me/",
     "humidifier-installation-repair": "/services/air-quality/humidifier-air-cleaner-near-me/",
     "dehumidifier-installation-repair": "/services/air-quality/",
@@ -32,9 +32,6 @@
     "commercial-refrigeration-repair-maintenance": "/services/commercial/",
     "generator-installation-repair-near-me": "/services/commercial/",
     "generator-installation-repair": "/services/commercial/",
-    "boiler-service-near-me": "/services/heating/",
-    "boiler-service": "/services/heating/",
-    "boiler-services": "/services/heating/",
     "gas-fireplace-repair-installation-near-me": "/services/heating/",
     "gas-fireplace-repair-installation": "/services/heating/",
     "window-portable-ac-installation-repair-near-me": "/services/cooling/",

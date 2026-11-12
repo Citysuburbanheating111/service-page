@@ -8,6 +8,10 @@ const AD_PAGES = {
   '/service/heating': '/services/heating/',
   '/service/cooling': '/services/cooling/',
   '/hvac_service': '/services/',
+  // Old WordPress service URLs that WordPress redirected in one or two hops.
+  '/service/air-quality-service': '/services/air-quality/',
+  '/service/commercial-hvac-service': '/services/commercial/',
+  '/service/commercial-hvac': '/services/commercial/',
 };
 
 const worker = {

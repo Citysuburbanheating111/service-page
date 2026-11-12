@@ -17,13 +17,13 @@ import {renderReferencePage} from '../src/lib/reference-page-rendering'
 import {withoutReferenceHeader} from '../src/lib/reference-header'
 
 const counts = Object.fromEntries(['heating', 'cooling', 'air-quality', 'commercial'].map((cluster) => [cluster, catalog.filter((page) => page.clusterSlug === cluster).length]))
-assert.deepEqual(counts, {heating: 6, cooling: 6, 'air-quality': 4, commercial: 6})
-assert.equal(catalog.length, 22)
-assert.equal(new Set(catalog.map((page) => `${page.clusterSlug}/${page.slug}`)).size, 22)
-assert.equal(new Set(catalog.map((page) => page.livePath)).size, 22)
-assert.equal(catalog.filter((page) => page.qcStatus === 'PASS').length, 15)
+assert.deepEqual(counts, {heating: 7, cooling: 6, 'air-quality': 4, commercial: 6})
+assert.equal(catalog.length, 23)
+assert.equal(new Set(catalog.map((page) => `${page.clusterSlug}/${page.slug}`)).size, 23)
+assert.equal(new Set(catalog.map((page) => page.livePath)).size, 23)
+assert.equal(catalog.filter((page) => page.qcStatus === 'PASS').length, 16)
 assert.equal(retainedCatalog.length, 4)
-assert.equal(new Set([...catalog, ...retainedCatalog].map(page => page.cardImage)).size, 26, 'Every service card needs a distinct image')
+assert.equal(new Set([...catalog, ...retainedCatalog].map(page => page.cardImage)).size, 27, 'Every service card needs a distinct image')
 assert.equal(servicesMenu.href, '/services/')
 // Menu items for pages published in Sanity only (no code snapshot), placed as on the live home page menu.
 const sanityOnlyMenu = [
@@ -148,10 +148,15 @@ assert.deepEqual(migrateServiceContent({url: '/service/heating/water-heater-repa
   url: '/services/heating/water-heater-repair-installation/', image: '/services/images/logo.png', neighborhood: '/service-area/lincoln-park/', collection: '/services/heating/',
 })
 // "-near-me" URLs: every page's previous address answers with one permanent redirect to the new one.
-// The three heater pages that run Google Ads keep their original URL; their "-near-me" form redirects to it.
-const originalUrlPages = new Set(['heater-repair', 'heater-installation', 'heater-maintenance'])
+// The 11 pages that run Google Ads keep their original URL; their "-near-me" form redirects to it.
+const originalUrlPages = new Set([
+  'heating/heater-repair', 'heating/heater-installation', 'heating/heater-maintenance', 'heating/boiler-service',
+  'heating/heat-pump', 'heating/hybrid-heating-systems', 'heating/hvac-maintenance-plans',
+  'cooling/ductless-hvac-service', 'cooling/air-conditioning-repair', 'cooling/air-conditioning-maintenance',
+  'cooling/air-conditioning-installation',
+])
 for (const page of [...catalog, ...retainedCatalog]) {
-  if (originalUrlPages.has(page.slug)) assert.equal(page.previousSlug, `${page.slug}-near-me`, `Near-me form missing: ${page.slug}`)
+  if (originalUrlPages.has(`${page.clusterSlug}/${page.slug}`)) assert.equal(page.previousSlug, `${page.slug}-near-me`, `Near-me form missing: ${page.slug}`)
   else assert.equal(page.slug, `${page.previousSlug}-near-me`, `Slug is not the near-me form: ${page.slug}`)
   for (const old of [`/services/${page.clusterSlug}/${page.previousSlug}/`, `/services/${page.clusterSlug}/${page.previousSlug}`, `/service/${page.clusterSlug}/${page.previousSlug}/`]) {
     const response = proxy(new NextRequest(`http://localhost${old}?utm=old`))
@@ -162,7 +167,6 @@ for (const page of [...catalog, ...retainedCatalog]) {
 // Unrelated services taken off the site: no snapshot, not in the navigation, and both addresses go to the category page.
 const removedPages: Record<string, string[]> = {
   '/services/heating/': [
-    'heating/boiler-service-near-me',
     'fireplace-chimney/gas-fireplace-repair-installation-near-me',
     'heating/space-heater-repair-installation-near-me',
     'heating/oil-propane-heating-repair-maintenance-near-me',
@@ -203,14 +207,21 @@ for (const [category, keys] of Object.entries(removedPages)) {
   }
 }
 assert.equal(legacyReplacementPath('dehumidifier-installation-repair'), '/services/air-quality/')
-assert.equal(legacyReplacementPath('boiler-repair-installation'), '/services/heating/')
-assert.equal(legacyReplacementPath('boiler-services'), '/services/heating/')
-// The ad URLs serve the page directly (no redirect), with or without the trailing slash or a gclid.
-for (const slug of originalUrlPages) {
-  const page = getReferenceService('heating', slug)!
-  assert.equal(page.livePath, `/services/heating/${slug}/`)
-  assert.equal(page.canonicalUrl, `https://citysuburbanheating.com/services/heating/${slug}/`)
-  assert.ok(referenceSnapshots[`heating/${slug}`], `Snapshot key not moved: ${slug}`)
-  assert.equal(proxy(new NextRequest(`http://localhost/services/heating/${slug}/?gclid=ad`)).headers.get('location'), null, `Ad URL redirects: ${slug}`)
+// Boiler Services is back on the site (Google Ads points at it): its old addresses go to the page.
+assert.equal(legacyReplacementPath('boiler-repair-installation'), '/services/heating/boiler-service/')
+for (const old of ['boiler-service-near-me', 'boiler-services', 'boiler-repair-installation']) {
+  const response = proxy(new NextRequest(`http://localhost/services/heating/${old}/?utm=old`))
+  assert.equal(response.headers.get('location'), 'http://localhost/services/heating/boiler-service/?utm=old', `Boiler alias: ${old}`)
 }
-console.log('Reference checks passed: 22 exact live URLs (19 -near-me, 3 heater ad pages on their original URL; old addresses redirect), 4 retained keyword pages, 39 consolidated overlaps (15 removed pages go to their category page), cards, editable markup and schema.')
+assert.ok(liveMenu.find(group => group.label === 'Heating')!.items.some(item => item.href.endsWith('/services/heating/boiler-service/')), 'Boiler Services missing from the Heating menu')
+// The ad URLs serve the page directly (no redirect), with a gclid.
+for (const key of originalUrlPages) {
+  const [cluster, slug] = key.split('/')
+  const page = getReferenceService(cluster, slug)!
+  assert.equal(page.livePath, `/services/${key}/`)
+  assert.equal(page.canonicalUrl, `https://citysuburbanheating.com/services/${key}/`)
+  assert.ok(referenceSnapshots[key], `Snapshot key not moved: ${key}`)
+  assert.ok(navigationPaths.has(`/services/${key}/`), `Not in the navigation: ${key}`)
+  assert.equal(proxy(new NextRequest(`http://localhost/services/${key}/?gclid=ad`)).headers.get('location'), null, `Ad URL redirects: ${key}`)
+}
+console.log('Reference checks passed: 23 exact live URLs (12 -near-me, 11 Google Ads pages on their original URL; old addresses redirect), 4 retained keyword pages, 36 consolidated overlaps (14 removed pages go to their category page), cards, editable markup and schema.')
