@@ -14,6 +14,7 @@ import {LIVE_SITE, liveMenu, servicesMenu} from '../src/lib/site-navigation'
 import {applyReferenceContentFields, synchronizeVisibleSchema} from '../src/lib/reference-content-fields'
 import {migrateServiceContent} from '../src/lib/service-base-path'
 import {renderReferencePage} from '../src/lib/reference-page-rendering'
+import {withFinalServiceLinks} from '../src/lib/final-service-links'
 import {withoutReferenceHeader} from '../src/lib/reference-header'
 
 const counts = Object.fromEntries(['heating', 'cooling', 'air-quality', 'commercial'].map((cluster) => [cluster, catalog.filter((page) => page.clusterSlug === cluster).length]))
@@ -143,7 +144,10 @@ assert.equal(futureSnapshot.style, '.test{color:red}')
 const noFieldsSnapshot = renderReferencePage({...futurePage, sections: [{module: 'header', html: '<header>Site header</header>', contentFields: null}]})!
 assert.ok(noFieldsSnapshot.html.includes('<header>Site header</header>'))
 assert.equal(renderReferencePage(null), undefined)
-assert.equal(renderReferencePage(null, referenceSnapshots['heating/heater-repair']), referenceSnapshots['heating/heater-repair'])
+// With no CMS edits the built-in page is served as it is, with internal links on their final address.
+const builtIn = referenceSnapshots['heating/heater-repair']
+assert.deepEqual(renderReferencePage(null, builtIn), {...builtIn, html: withFinalServiceLinks(builtIn.html), schema: withFinalServiceLinks(builtIn.schema)})
+assert.equal(renderReferencePage(null, referenceSnapshots['air-quality/duct-repair-near-me'])!.style, referenceSnapshots['air-quality/duct-repair-near-me'].style)
 assert.deepEqual(migrateServiceContent({url: '/service/heating/water-heater-repair-installation/', image: '/service/images/logo.png', neighborhood: '/service-area/lincoln-park/', collection: '/service/heating-services/'}), {
   url: '/services/heating/water-heater-repair-installation/', image: '/services/images/logo.png', neighborhood: '/service-area/lincoln-park/', collection: '/services/heating/',
 })
