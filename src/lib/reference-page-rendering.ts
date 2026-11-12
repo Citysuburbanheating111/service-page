@@ -3,13 +3,23 @@ import type {ReferenceSnapshot} from '@/reference-pages/types'
 import {applyReferenceContentFields, synchronizeVisibleSchema} from './reference-content-fields'
 import type {ReferenceDocument} from './reference-pages'
 import {migrateServiceContent} from './service-base-path'
+import {withFinalServiceLinks} from './final-service-links'
 
 function htmlAttributes(attributes: Record<string, string>) {
   return Object.entries(attributes).map(([name, value]) => `${name}="${value.replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"`).join(' ')
 }
 
-/** Existing snapshots are fallbacks; new published pages render from CMS sections. */
+/** Existing snapshots are fallbacks; new published pages render from CMS sections.
+ * Internal links point at final addresses, so a page never links to a redirect. */
 export function renderReferencePage(document: ReferenceDocument | null, fallback?: ReferenceSnapshot): Pick<ReferenceSnapshot, 'style' | 'html' | 'schema'> | undefined {
+  const page = composeReferencePage(document, fallback)
+  if (!page) return page
+  const html = withFinalServiceLinks(page.html)
+  const schema = withFinalServiceLinks(page.schema)
+  return html === page.html && schema === page.schema ? page : {...page, html, schema}
+}
+
+function composeReferencePage(document: ReferenceDocument | null, fallback?: ReferenceSnapshot): Pick<ReferenceSnapshot, 'style' | 'html' | 'schema'> | undefined {
   const updated = migrateServiceContent(document)
   if (!updated?.sections?.length) return fallback
   const standard = fallback || referenceSnapshots['heating/heater-repair']

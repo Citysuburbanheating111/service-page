@@ -36,7 +36,8 @@
     "vercel:build": "vercel build --prod",
     "vercel:deploy": "vercel deploy --prebuilt --prod",
     "apps-script:build": "tsx scripts/build-apps-script.ts",
-    "test:apps-script": "tsx scripts/test-apps-script.ts"
+    "test:apps-script": "tsx scripts/test-apps-script.ts",
+    "test:links": "tsx scripts/test-final-service-links.ts"
   },
   "dependencies": {
     "@portabletext/react": "8.0.1",
