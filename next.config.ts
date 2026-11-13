@@ -23,6 +23,12 @@ const nextConfig: NextConfig = {
   env: browserConfig,
   poweredByHeader: false,
   reactStrictMode: true,
+  // Every visitor gets the same complete HTML, whatever the user agent. By default Next.js
+  // builds the page differently for crawlers on its bot list (any "...-Google" agent, so
+  // AdsBot-Google and Google's URL Inspection tool) than for browsers and Googlebot. The text
+  // was the same, but a response that depends on the user agent is what Google Ads checks
+  // for as cloaking. Matching every agent means no user-agent branch at all.
+  htmlLimitedBots: /.*/,
   async redirects() {
     // Sources/destinations are base-relative; basePath re-adds the /services prefix.
     return [
