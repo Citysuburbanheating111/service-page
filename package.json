@@ -19,6 +19,7 @@
     "test:navigation": "tsx scripts/test-service-navigation.ts",
     "test:reference": "tsx scripts/test-reference-pages.ts",
     "test:brand-pages": "tsx scripts/test-brand-pages.ts",
+    "check:brand-pages": "tsx scripts/check-brand-pages.ts",
     "content:brand-page-schema": "node scripts/generate-brand-page-schema.mjs",
     "content:sync-brand-pages": "tsx scripts/sync-brand-pages.ts",
     "content:export-retained-services": "tsx scripts/export-retained-service-content.ts",

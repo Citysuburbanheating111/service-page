@@ -1,4 +1,5 @@
 import {defineArrayMember, defineField, defineType} from 'sanity'
+import {brandPageValidation} from '../../lib/brand-page/qc'
 import {brandPageContentFields, brandPageContentGroups} from './brandPageContent'
 
 const SERVICE_CATEGORIES = ['heating', 'cooling', 'air-quality', 'commercial', 'hvac-systems', 'indoor-air-quality-ventilation', 'fireplace-chimney', 'commercial-specialty', 'studio', 'api', 'brands']
@@ -52,5 +53,8 @@ export const brandPage = defineType({
       })],
     }),
   ],
+  // QC: a [CONFIRM] tag, a missing field or photo, a note, a forbidden claim, an ended offer or an over-long field is an
+  // error, so Publish stays locked until the page is clean (the "QC" tab lists them all; src/lib/brand-page/qc.ts)
+  validation: (rule) => rule.custom((doc) => brandPageValidation(doc)),
   preview: {select: {title: 'title', subtitle: 'path'}},
 })

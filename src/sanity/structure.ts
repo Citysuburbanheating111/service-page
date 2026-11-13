@@ -1,4 +1,5 @@
 import type {DefaultDocumentNodeResolver, StructureResolver} from 'sanity/structure'
+import {BrandPageQcPane} from './brand-page-qc-pane'
 import {ServicePagePreview} from './preview-pane'
 
 export const structure: StructureResolver = (S) =>
@@ -21,8 +22,12 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem('brandPage').title('Brand pages'),
     ])
 
-/** Service landing pages and brand pages open with a "Preview" tab beside the editor. */
-export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType}) =>
-  schemaType === 'referenceServicePage' || schemaType === 'brandPage'
+/** Service landing pages and brand pages open with a "Preview" tab beside the editor; brand pages also get "QC". */
+export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType}) => {
+  if (schemaType === 'brandPage') {
+    return S.document().views([S.view.form(), S.view.component(BrandPageQcPane).title('QC'), S.view.component(ServicePagePreview).title('Preview')])
+  }
+  return schemaType === 'referenceServicePage'
     ? S.document().views([S.view.form(), S.view.component(ServicePagePreview).title('Preview')])
     : S.document()
+}
